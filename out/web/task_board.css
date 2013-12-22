@@ -1,0 +1,14 @@
+@import url(http://fonts.googleapis.com/css?family=Alegreya+Sans);
+
+body {
+  background: #222222;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.2em;
+  margin: 15px;
+}
+
+h1,p {
+  color: white;
+}

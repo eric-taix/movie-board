@@ -1,0 +1,156 @@
+<!DOCTYPE html><html><head><script src="packages/shadow_dom/shadow_dom.debug.js"></script>
+<script src="packages/custom_element/custom-elements.debug.js"></script>
+<script src="packages/browser/interop.js"></script>
+
+    <meta charset="utf-8">
+    <title>Movie board</title>
+    <link rel="stylesheet" href="task_board.css">
+    
+    
+    
+    
+    <script src="task_board.html_bootstrap.dart.js"></script>
+    
+    <style>
+    .top {
+      position: absolute; top: 0px; left: 0px; width: 100%; height: 80px;
+    }
+    .left {
+        position: absolute; top: 80px; left: 0; width: 250px; height: 100%;
+      }
+      .center {
+         position: relative; top: 0px; margin-top: 80px; margin-left: 250px; height: 100%; min-width: 250px;
+      }
+    </style>
+  </head>
+  <body><polymer-element name="j-movie">
+  <template>
+    <style>
+      .movie {
+        display: block;
+        position: relative;
+        float: left;
+        width: 200px;
+        height: 280px;
+        padding: 2px;
+      }
+      .ba {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        z-index: 10000;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        border: solid 1px #444;
+        margin-bottom: 2px;
+        margin-left: 2px;
+        z-index: 10;
+      }
+      
+      .overlay {
+        border: solid 1px #444;
+        position: absolute !important;
+        color: silver;
+        z-index: 100;
+        top: 2px;
+        left: 4px;
+        right: -2px;
+        bottom: 0px;
+        font-size: 14px;
+        text-align: left;
+        padding: 20px;
+        font-weight: bold;
+        background-color: #000;
+        background: rgba(32,32,32,0.85);
+        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=95);
+        display: visible;
+      }
+      
+      .overlay h2 {
+        font-family: 'Alegreya Sans', sans-serif;
+        color: white;
+      }
+    </style>
+    <li class="movie" on-mouseover="{{onOver}}">
+      <!-- Display overlay only if mouse is over -->
+      <template if="{{over}}">
+        <section class="overlay">
+          <h2>{{movie.title}}</h2>
+        </section>
+      </template>
+      <!-- Background display -->
+      <a class="ba" href="" title="{{movie.title}}">BO</a>
+      <img src="{{movie.posterPath}}">
+    </li>
+  </template>
+    
+</polymer-element><polymer-element name="j-movies" on-posterover="{{posterOver}}" on-mouseout="{{postersOut}}" on-filterbygenre="{{filterByGenre}}">
+  <template>
+    <template repeat="{{movie in movies}}">
+      <j-movie movie="{{movie}}"></j-movie>
+    </template>
+  </template>
+    
+</polymer-element><polymer-element name="j-genresmenu">
+  <template>
+    <style>
+      .container {
+        display: block;
+        position: left;
+        background-color: #222222;;
+      }
+      .title {
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+      }
+      div.item {
+        display: block;
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-bottom: 10px;
+        color: white;
+        border-bottom: 1px solid gray;
+        text-decoration: none;  
+        transition: all 0.3s ease-out; 
+      }
+      
+      div.item:hover, div.item:focus {
+        transform: scale(1.2);
+        background-color: white;
+        color: black;
+      }
+      
+      div.item img {
+        float: right;
+        position: relative;
+        right: 0px;
+        width: 20px;
+        height: 20px;
+        display: none;
+                transition: all 0.3s ease-out; 
+      }
+      
+      div.item:hover img {
+        display: inline;
+                transform: scale(1.2);
+                transition: all 0.3s ease-out; 
+      }
+    </style>
+    <div class="container">
+      <template repeat="{{genre in genres}}">
+        <div class="item" on-click="{{selectGenre}}" data-genreid="{{genre.id}}">{{genre.name}}<img src="ui/img/left-arrow.png"></div>
+      </template>
+    </div>
+  </template>
+    
+</polymer-element>
+
+    <div class="top"><h1>Movie board</h1></div>
+    <div class="left"><j-genresmenu></j-genresmenu></div>
+    <div class="center"><j-movies></j-movies></div>
+  
+
+</body></html>

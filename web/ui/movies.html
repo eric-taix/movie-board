@@ -1,0 +1,10 @@
+<link rel="import" href="movie.html">
+      
+<polymer-element name="j-movies" on-posterover="{{posterOver}}" on-mouseout="{{postersOut}}" on-filterbygenre="{{filterByGenre}}">
+  <template>
+    <template repeat="{{movie in movies}}">
+      <j-movie movie="{{movie}}"></j-movie>
+    </template>
+  </template>
+  <script type="application/dart" src="movies.dart"></script>  
+</polymer-element>
