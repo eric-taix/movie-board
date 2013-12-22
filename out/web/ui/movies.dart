@@ -10,7 +10,8 @@ import '../utils.dart';
 @CustomTag('j-movies')
 class MoviesGridUI extends PolymerElement {
   
-  List<Movie> movies = toObservable(moviesService.movies);
+  List<Movie> _allMovies = moviesService.movies;
+  List<Movie> movies = toObservable(new List());
   List<Genre> _genres = toObservable(new List());
   
   MoviesGridUI.created() : super.created() {
@@ -18,7 +19,10 @@ class MoviesGridUI extends PolymerElement {
     service.getGenres().then((List<Genre> g) {
       _genres.clear();
       _genres.addAll(g);
+      _genres.insert(0, new Genre(-1, "All"));
     });
+    movies.clear();
+    movies.addAll(_allMovies);
   }
   
   bool get applyAuthorStyles => true;
@@ -51,7 +55,8 @@ class MoviesGridUI extends PolymerElement {
    * Filter movies by genre
    */
   selectGenre(Event e, var detail, Element target) {
-    movies.removeLast();
-    print(target.attributes['data-genreid']);
+    int genreId = int.parse(target.attributes['data-genreid']);
+    movies.clear();
+    movies.addAll(_allMovies.where((m) => m.genre == genreId));
   }
 }

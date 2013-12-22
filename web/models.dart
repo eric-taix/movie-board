@@ -8,6 +8,7 @@ class Movie {
   String title;
   String posterPath;
   bool featured = true;
+  int genre;
   
   Movie(this.title, this.posterPath, {bool featured : false}) : this.featured = featured;
   

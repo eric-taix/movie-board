@@ -4616,3 +4616,38 @@ build.dart --machine --changed=web/ui/movies.dart
 Done! All files written to "out"
 build.dart finished [1949 ms]
 
+---
+build.dart --machine --changed=web/models.dart
+Done! All files written to "out"
+build.dart finished [2080 ms]
+
+---
+build.dart --machine --changed=web/service/services.dart
+Done! All files written to "out"
+build.dart finished [1965 ms]
+
+---
+build.dart --machine --changed=web/ui/movies.dart
+Done! All files written to "out"
+build.dart finished [2211 ms]
+
+---
+build.dart --machine --changed=web/ui/movies.dart
+Done! All files written to "out"
+build.dart finished [2068 ms]
+
+---
+build.dart --machine --changed=web/ui/movies.dart
+Done! All files written to "out"
+build.dart finished [2176 ms]
+
+---
+build.dart --machine --changed=web/ui/movies.dart
+Done! All files written to "out"
+build.dart finished [1918 ms]
+
+---
+build.dart --machine --changed=web/ui/movies.dart
+Done! All files written to "out"
+build.dart finished [2171 ms]
+
