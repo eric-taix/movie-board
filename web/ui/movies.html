@@ -1,10 +1,17 @@
 <link rel="import" href="movie.html">
       
-<polymer-element name="j-movies" on-posterover="{{posterOver}}" on-mouseout="{{postersOut}}" on-filterbygenre="{{filterByGenre}}">
+<polymer-element name="j-movies" on-posterover="{{posterOver}}" on-mouseout="{{postersOut}}">
   <template>
-    <template repeat="{{movie in movies}}">
-      <j-movie movie="{{movie}}"></j-movie>
-    </template>
+    <div class="container left">
+      <template repeat="{{genre in genres}}">
+        <div class="item" on-click="{{selectGenre}}" data-genreid="{{genre.id}}">{{genre.name}}<img src="img/left-arrow.png"></div>
+      </template>
+    </div>
+    <div id="movies" class="center">
+      <template repeat="{{movie in movies}}">
+        <j-movie movie="{{movie}}"></j-movie>
+      </template>
+    </div>
   </template>
   <script type="application/dart" src="movies.dart"></script>  
 </polymer-element>

@@ -1,36 +1,57 @@
+library movies.ui;
+
 import 'dart:html';
 import 'package:polymer/polymer.dart';
 import '../models.dart';
-import '../services.dart';
+import '../service/services.dart';
 import 'movie.dart';
+import '../utils.dart';
 
 @CustomTag('j-movies')
 class MoviesGridUI extends PolymerElement {
   
   List<Movie> movies = toObservable(moviesService.movies);
+  List<Genre> _genres = toObservable(new List());
   
-  MoviesGridUI.created() : super.created();
+  MoviesGridUI.created() : super.created() {
+    MockGenreService service = new MockGenreService();
+    service.getGenres().then((List<Genre> g) {
+      _genres.clear();
+      _genres.addAll(g);
+    });
+  }
   
+  bool get applyAuthorStyles => true;
+  
+  List<Genre> get genres => _genres;
+  
+  /**
+   * Remove the current over flag except for the current one
+   */
+  void removeOver([MoviePosterUI current = null]) {
+    shadowRoot.querySelector("#movies").children.where(and([isType(MoviePosterUI), notCurrent(current)])).forEach((m) => m.over = false); 
+  }
+  
+  //--------- Events handling ------------
   /**
    * The mouse is over a poster
    */
   posterOver(Event e, var detail, Node target) {
-    shadowRoot.children.where((m) => m is MoviePosterUI).where((m) => m != detail).forEach((m) {
-      m.over = false; 
-    });
+    removeOver(detail);
   }
   
   /**
    * The mouse is out of the grid
    */
   postersOut(Event e, var detail, Node target) {
-    dispatchEvent(new CustomEvent('posterover', detail: this));
+    removeOver();
   }
   
   /**
    * Filter movies by genre
    */
-  filterByGenre(Event e, var detail, Node target) {
-    print(detail);
+  selectGenre(Event e, var detail, Element target) {
+    movies.removeLast();
+    print(target.attributes['data-genreid']);
   }
 }

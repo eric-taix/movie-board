@@ -1,6 +1,6 @@
 import 'package:polymer/polymer.dart';
 import 'dart:html';
-import '../services.dart';
+import '../service/services.dart';
 import '../models.dart';
 
 @CustomTag('j-genresmenu')
@@ -20,6 +20,7 @@ class GenresMenuUI extends PolymerElement {
   
   selectGenre(Event e, var detail, Element target) {
     // target.classes.add("highlighted");
-    dispatchEvent(new CustomEvent('filterbygenre', detail: target.attributes['data-genreid']));
+    dispatchEvent(new CustomEvent('doit'));
+    print('event');
   }
 }

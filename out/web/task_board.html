@@ -11,19 +11,8 @@
     
     <script src="task_board.html_bootstrap.dart.js"></script>
     
-    <style>
-    .top {
-      position: absolute; top: 0px; left: 0px; width: 100%; height: 80px;
-    }
-    .left {
-        position: absolute; top: 80px; left: 0; width: 250px; height: 100%;
-      }
-      .center {
-         position: relative; top: 0px; margin-top: 80px; margin-left: 250px; height: 100%; min-width: 250px;
-      }
-    </style>
   </head>
-  <body><polymer-element name="j-movie">
+  <body><polymer-element name="j-movie" on-doit="{{doit}}">
   <template>
     <style>
       .movie {
@@ -86,58 +75,24 @@
     </li>
   </template>
     
-</polymer-element><polymer-element name="j-movies" on-posterover="{{posterOver}}" on-mouseout="{{postersOut}}" on-filterbygenre="{{filterByGenre}}">
+</polymer-element><polymer-element name="j-movies" on-posterover="{{posterOver}}" on-mouseout="{{postersOut}}">
   <template>
-    <template repeat="{{movie in movies}}">
-      <j-movie movie="{{movie}}"></j-movie>
-    </template>
+    <div class="container left">
+      <template repeat="{{genre in genres}}">
+        <div class="item" on-click="{{selectGenre}}" data-genreid="{{genre.id}}">{{genre.name}}<img src="ui/img/left-arrow.png"></div>
+      </template>
+    </div>
+    <div id="movies" class="center">
+      <template repeat="{{movie in movies}}">
+        <j-movie movie="{{movie}}"></j-movie>
+      </template>
+    </div>
   </template>
     
 </polymer-element><polymer-element name="j-genresmenu">
   <template>
     <style>
-      .container {
-        display: block;
-        position: left;
-        background-color: #222222;;
-      }
-      .title {
-        color: white;
-        font-size: 20px;
-        font-weight: bold;
-      }
-      div.item {
-        display: block;
-        padding-top: 10px;
-        padding-left: 10px;
-        padding-bottom: 10px;
-        color: white;
-        border-bottom: 1px solid gray;
-        text-decoration: none;  
-        transition: all 0.3s ease-out; 
-      }
-      
-      div.item:hover, div.item:focus {
-        transform: scale(1.2);
-        background-color: white;
-        color: black;
-      }
-      
-      div.item img {
-        float: right;
-        position: relative;
-        right: 0px;
-        width: 20px;
-        height: 20px;
-        display: none;
-                transition: all 0.3s ease-out; 
-      }
-      
-      div.item:hover img {
-        display: inline;
-                transform: scale(1.2);
-                transition: all 0.3s ease-out; 
-      }
+  
     </style>
     <div class="container">
       <template repeat="{{genre in genres}}">
@@ -149,8 +104,7 @@
 </polymer-element>
 
     <div class="top"><h1>Movie board</h1></div>
-    <div class="left"><j-genresmenu></j-genresmenu></div>
-    <div class="center"><j-movies></j-movies></div>
+    <j-movies></j-movies>
   
 
 </body></html>
