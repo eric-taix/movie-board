@@ -57,6 +57,6 @@ class MoviesGridUI extends PolymerElement {
   selectGenre(Event e, var detail, Element target) {
     int genreId = int.parse(target.attributes['data-genreid']);
     movies.clear();
-    movies.addAll(_allMovies.where((m) => m.genre == genreId));
+    movies.addAll(_allMovies.where((m) => m.genre == genreId || genreId == -1));
   }
 }
