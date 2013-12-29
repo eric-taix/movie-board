@@ -4656,3 +4656,617 @@ build.dart --machine --changed=web/ui/movies.dart
 Done! All files written to "out"
 build.dart finished [2149 ms]
 
+---
+build.dart --machine --full
+Unable to open file: /home/etaix/perso/dart/movie-board/packages/polymer/builder.dart'file:///home/etaix/perso/dart/movie-board/build.dart': error: line 1 pos 1: library handler failed
+import 'package:polymer/builder.dart';
+^
+build.dart finished [55 ms]
+
+---
+build.dart --machine --clean
+Unable to open file: /home/etaix/perso/dart/movie-board/packages/polymer/builder.dart'file:///home/etaix/perso/dart/movie-board/build.dart': error: line 1 pos 1: library handler failed
+import 'package:polymer/builder.dart';
+^
+build.dart finished [25 ms]
+
+---
+build.dart --machine --full
+Unable to open file: /home/etaix/perso/dart/movie-board/packages/polymer/builder.dart'file:///home/etaix/perso/dart/movie-board/build.dart': error: line 1 pos 1: library handler failed
+import 'package:polymer/builder.dart';
+^
+build.dart finished [33 ms]
+
+---
+build.dart --machine --changed=pubspec.lock
+Done! All files written to "out"
+build.dart finished [2629 ms]
+
+---
+build.dart --machine --clean
+Done! All files written to "out"
+build.dart finished [1944 ms]
+
+---
+build.dart --machine --full
+Done! All files written to "out"
+build.dart finished [2148 ms]
+
+---
+build.dart --machine --changed=web/json/now_playing.json
+Done! All files written to "out"
+build.dart finished [2063 ms]
+
+---
+build.dart --machine --changed=web/json/now_playing.json
+Done! All files written to "out"
+build.dart finished [2065 ms]
+
+---
+build.dart --machine --changed=web/json/import.dart
+Done! All files written to "out"
+build.dart finished [2078 ms]
+
+---
+build.dart --machine --changed=web/json/import.dart
+Done! All files written to "out"
+build.dart finished [2022 ms]
+
+---
+build.dart --machine --changed=web/json/import.dart
+Done! All files written to "out"
+build.dart finished [2110 ms]
+
+---
+build.dart --machine --changed=web/json/import.dart
+Done! All files written to "out"
+build.dart finished [2070 ms]
+
+---
+build.dart --machine --changed=web/json/import.dart
+Done! All files written to "out"
+build.dart finished [2154 ms]
+
+---
+build.dart --machine --changed=web/json/import.dart
+Done! All files written to "out"
+build.dart finished [1814 ms]
+
+---
+build.dart --machine --changed=web/json/import.dart
+Done! All files written to "out"
+build.dart finished [1824 ms]
+
+---
+build.dart --machine --changed=web/json/now_playing.json
+Done! All files written to "out"
+build.dart finished [2012 ms]
+
+---
+build.dart --machine --changed=web/json/now_playing.json
+Done! All files written to "out"
+build.dart finished [2039 ms]
+
+---
+build.dart --machine --changed=web/json/import.dart
+Done! All files written to "out"
+build.dart finished [2158 ms]
+
+---
+build.dart --machine --changed=web/json/now_playing.json
+Done! All files written to "out"
+build.dart finished [1966 ms]
+
+---
+build.dart --machine --changed=web/json/now_playing.json
+Done! All files written to "out"
+build.dart finished [2001 ms]
+
+---
+build.dart --machine --changed=web/json/import.dart
+Done! All files written to "out"
+build.dart finished [1967 ms]
+
+---
+build.dart --machine --changed=web/json/import.dart
+Done! All files written to "out"
+build.dart finished [1972 ms]
+
+---
+build.dart --machine --changed=web/json/import.dart
+Done! All files written to "out"
+build.dart finished [2070 ms]
+
+---
+build.dart --machine --changed=web/json/import.dart
+Done! All files written to "out"
+build.dart finished [2042 ms]
+
+---
+build.dart --machine --changed=web/json/now_playing.json
+Done! All files written to "out"
+build.dart finished [1993 ms]
+
+---
+build.dart --machine --changed=web/json/now_playing.json
+Done! All files written to "out"
+build.dart finished [2086 ms]
+
+---
+build.dart --machine --changed=web/json/now_playing.json
+Done! All files written to "out"
+build.dart finished [1835 ms]
+
+---
+build.dart --machine --changed=web/json/now_playing.json
+Done! All files written to "out"
+build.dart finished [2019 ms]
+
+---
+build.dart --machine --changed=web/json/now_playing.json
+Done! All files written to "out"
+build.dart finished [1973 ms]
+
+---
+build.dart --machine --changed=web/json/now_playing.json
+Done! All files written to "out"
+build.dart finished [1987 ms]
+
+---
+build.dart --machine --changed=web/json/now_playing.json
+Done! All files written to "out"
+build.dart finished [2010 ms]
+
+---
+build.dart --machine --changed=web/json/import.dart
+Done! All files written to "out"
+build.dart finished [1942 ms]
+
+---
+build.dart --machine --changed=web/json/import.dart
+Done! All files written to "out"
+build.dart finished [1990 ms]
+
+---
+build.dart --machine --changed=web/json/import.dart
+Done! All files written to "out"
+build.dart finished [1945 ms]
+
+---
+build.dart --machine --changed=web/json/import.dart
+Done! All files written to "out"
+build.dart finished [1873 ms]
+
+---
+build.dart --machine --changed=web/json/import.dart
+Done! All files written to "out"
+build.dart finished [1814 ms]
+
+---
+build.dart --machine --changed=web/json/import.dart
+Done! All files written to "out"
+build.dart finished [2055 ms]
+
+---
+build.dart --machine --changed=web/json/import.dart
+Done! All files written to "out"
+build.dart finished [2007 ms]
+
+---
+build.dart --machine --changed=web/json/import.dart
+Done! All files written to "out"
+build.dart finished [2087 ms]
+
+---
+build.dart --machine --changed=web/json/import.dart
+Done! All files written to "out"
+build.dart finished [2094 ms]
+
+---
+build.dart --machine --changed=web/json/import.dart
+Done! All files written to "out"
+build.dart finished [1844 ms]
+
+---
+build.dart --machine --changed=pubspec.lock
+Done! All files written to "out"
+build.dart finished [1961 ms]
+
+---
+build.dart --machine --changed=web/json/images/2Aur1bxpCVzyTdWnGtxysInVlAT.jpg --changed=web/json/images/2otPir...
+Done! All files written to "out"
+build.dart finished [2109 ms]
+
+---
+build.dart --machine --changed=web/service/services.dart
+Done! All files written to "out"
+build.dart finished [2094 ms]
+
+---
+build.dart --machine --changed=web/service/services.dart
+Done! All files written to "out"
+build.dart finished [2022 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+Done! All files written to "out"
+build.dart finished [2115 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+Done! All files written to "out"
+build.dart finished [1933 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+Done! All files written to "out"
+build.dart finished [2153 ms]
+
+---
+build.dart --machine --changed=web/service/services.dart
+Done! All files written to "out"
+build.dart finished [2046 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+Done! All files written to "out"
+build.dart finished [2124 ms]
+
+---
+build.dart --machine --changed=web/service/services.dart
+Done! All files written to "out"
+build.dart finished [2082 ms]
+
+---
+build.dart --machine --changed=web/ui/movies.dart
+Done! All files written to "out"
+build.dart finished [1848 ms]
+
+---
+build.dart --machine --changed=web/ui/movies.dart
+Done! All files written to "out"
+build.dart finished [2071 ms]
+
+---
+build.dart --machine --changed=web/ui/movies.dart
+Done! All files written to "out"
+build.dart finished [2009 ms]
+
+---
+build.dart --machine --changed=web/service/services.dart
+Done! All files written to "out"
+build.dart finished [2019 ms]
+
+---
+build.dart --machine --changed=web/service/services.dart
+Done! All files written to "out"
+build.dart finished [2083 ms]
+
+---
+build.dart --machine --changed=web/ui/movies.dart
+Done! All files written to "out"
+build.dart finished [2151 ms]
+
+---
+build.dart --machine --changed=web/ui/movies.dart
+Done! All files written to "out"
+build.dart finished [2099 ms]
+
+---
+build.dart --machine --changed=web/ui/movies.dart
+Done! All files written to "out"
+build.dart finished [2051 ms]
+
+---
+build.dart --machine --changed=web/ui/movies.dart
+Done! All files written to "out"
+build.dart finished [2174 ms]
+
+---
+build.dart --machine --changed=web/ui/movies.dart
+Done! All files written to "out"
+build.dart finished [2150 ms]
+
+---
+build.dart --machine --changed=web/ui/movies.dart
+Done! All files written to "out"
+build.dart finished [2067 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+Done! All files written to "out"
+build.dart finished [2138 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+Done! All files written to "out"
+build.dart finished [1916 ms]
+
+---
+build.dart --machine --clean
+Done! All files written to "out"
+build.dart finished [2086 ms]
+
+---
+build.dart --machine --full
+Done! All files written to "out"
+build.dart finished [2878 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+Done! All files written to "out"
+build.dart finished [2219 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+Done! All files written to "out"
+build.dart finished [2012 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+Done! All files written to "out"
+build.dart finished [2037 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+Done! All files written to "out"
+build.dart finished [2093 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+Done! All files written to "out"
+build.dart finished [1938 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+Done! All files written to "out"
+build.dart finished [2943 ms]
+
+---
+build.dart --machine --changed=web/json/now_playing.json
+Done! All files written to "out"
+build.dart finished [1950 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+Done! All files written to "out"
+build.dart finished [1986 ms]
+
+---
+build.dart --machine --changed=web/ui/movies.html
+Done! All files written to "out"
+build.dart finished [2072 ms]
+
+---
+build.dart --machine --changed=web/ui/movies.dart
+Done! All files written to "out"
+build.dart finished [1996 ms]
+
+---
+build.dart --machine --changed=web/ui/movies.html
+Done! All files written to "out"
+build.dart finished [1953 ms]
+
+---
+build.dart --machine --changed=web/task_board.css
+Done! All files written to "out"
+build.dart finished [2068 ms]
+
+---
+build.dart --machine --changed=web/task_board.css
+Done! All files written to "out"
+build.dart finished [2033 ms]
+
+---
+build.dart --machine --changed=web/ui/movies.dart
+Done! All files written to "out"
+build.dart finished [2173 ms]
+
+---
+build.dart --machine --changed=web/json/upcoming.json
+Done! All files written to "out"
+build.dart finished [2050 ms]
+
+---
+build.dart --machine --changed=web/json/upcoming.json
+Done! All files written to "out"
+build.dart finished [2069 ms]
+
+---
+build.dart --machine --changed=web/json/upcoming.json
+Done! All files written to "out"
+build.dart finished [2142 ms]
+
+---
+build.dart --machine --changed=web/ui/movie.html
+Done! All files written to "out"
+build.dart finished [2086 ms]
+
+---
+build.dart --machine --changed=web/ui/movie.html
+Done! All files written to "out"
+build.dart finished [2123 ms]
+
+---
+build.dart --machine --changed=web/ui/movie.html
+Done! All files written to "out"
+build.dart finished [2067 ms]
+
+---
+build.dart --machine --changed=web/ui/movie.dart
+Done! All files written to "out"
+build.dart finished [2041 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+Done! All files written to "out"
+build.dart finished [2155 ms]
+
+---
+build.dart --machine --changed=web/ui/movie.html
+Done! All files written to "out"
+build.dart finished [2157 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+Done! All files written to "out"
+build.dart finished [2103 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+Done! All files written to "out"
+build.dart finished [2137 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+Done! All files written to "out"
+build.dart finished [2100 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+Done! All files written to "out"
+build.dart finished [1894 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+Done! All files written to "out"
+build.dart finished [2051 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+Done! All files written to "out"
+build.dart finished [2026 ms]
+
+---
+build.dart --machine --changed=web/ui/movie.html
+Done! All files written to "out"
+build.dart finished [2137 ms]
+
+---
+build.dart --machine --changed=web/ui/movie.dart
+Done! All files written to "out"
+build.dart finished [2037 ms]
+
+---
+build.dart --machine --changed=web/ui/movie.html
+Done! All files written to "out"
+build.dart finished [2107 ms]
+
+---
+build.dart --machine --changed=web/ui/movie.html
+Done! All files written to "out"
+build.dart finished [2064 ms]
+
+---
+build.dart --machine --changed=web/ui/movie.html
+Done! All files written to "out"
+build.dart finished [2097 ms]
+
+---
+build.dart --machine --changed=web/ui/movie.html
+Done! All files written to "out"
+build.dart finished [2018 ms]
+
+---
+build.dart --machine --changed=web/ui/movie.html
+Done! All files written to "out"
+build.dart finished [2354 ms]
+
+---
+build.dart --machine --changed=web/ui/movie.html
+Done! All files written to "out"
+build.dart finished [2311 ms]
+
+---
+build.dart --machine --changed=web/ui/movie.html
+Done! All files written to "out"
+build.dart finished [2183 ms]
+
+---
+build.dart --machine --changed=web/ui/movie.html
+Done! All files written to "out"
+build.dart finished [2326 ms]
+
+---
+build.dart --machine --changed=web/ui/movie.html
+Done! All files written to "out"
+build.dart finished [2197 ms]
+
+---
+build.dart --machine --changed=web/ui/movie.html
+Done! All files written to "out"
+build.dart finished [2363 ms]
+
+---
+build.dart --machine --changed=web/task_board.css
+Done! All files written to "out"
+build.dart finished [2361 ms]
+
+---
+build.dart --machine --changed=web/ui/movie.html
+Done! All files written to "out"
+build.dart finished [2056 ms]
+
+---
+build.dart --machine --changed=web/ui/movie.dart
+Done! All files written to "out"
+build.dart finished [2085 ms]
+
+---
+build.dart --machine --changed=web/ui/movie.dart
+Done! All files written to "out"
+build.dart finished [2080 ms]
+
+---
+build.dart --machine --changed=web/ui/movie.dart
+Done! All files written to "out"
+build.dart finished [2036 ms]
+
+---
+build.dart --machine --removed=web/ui/genres.dart --removed=web/ui/genres.html
+error web/task_board.html:10:5: couldn't find imported asset "web/ui/genres.html" in package "task_board".
+    <link rel="import" href="ui/genres.html">
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+error running barback: Transform polymer (ImportInliner) on task_board|web/task_board.html tried to load missing input task_board|web/ui/genres.html.
+build.dart finished [1507 ms]
+
+---
+build.dart --machine --changed=web/task_board.html
+Done! All files written to "out"
+build.dart finished [2104 ms]
+
+---
+build.dart --machine --changed=web/task_board.css
+Done! All files written to "out"
+build.dart finished [2030 ms]
+
+---
+build.dart --machine --changed=web/task_board.css
+Done! All files written to "out"
+build.dart finished [2115 ms]
+
+---
+build.dart --machine --changed=web/task_board.css
+Done! All files written to "out"
+build.dart finished [2171 ms]
+
+---
+build.dart --machine --changed=web/task_board.css
+Done! All files written to "out"
+build.dart finished [2140 ms]
+
+---
+build.dart --machine --changed=web/task_board.css
+Done! All files written to "out"
+build.dart finished [2135 ms]
+
+---
+build.dart --machine --changed=web/task_board.css
+Done! All files written to "out"
+build.dart finished [2086 ms]
+
+---
+build.dart --machine --changed=web/task_board.css
+Done! All files written to "out"
+build.dart finished [1949 ms]
+

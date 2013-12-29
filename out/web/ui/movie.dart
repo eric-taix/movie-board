@@ -1,4 +1,4 @@
-// 360c015ba3d57c3c624687c111f91c27
+//  
 
 import 'dart:html';
 import 'package:polymer/polymer.dart';
@@ -14,6 +14,12 @@ class MoviePosterUI extends PolymerElement with ChangeNotifier  {
   @reflectable @observable bool get over => __$over; bool __$over = false; @reflectable set over(bool value) { __$over = notifyPropertyChange(#over, __$over, value); }
   
   MoviePosterUI.created() : super.created();
+  
+  /// Apply styles which are defined outside the component
+  bool get applyAuthorStyles => true;
+  
+  /// Utility function which generates stars
+  String stars(int rating) => new List.generate(rating, (_) => "\u2605").join();
   
   /**
    * The mouse is over the poster

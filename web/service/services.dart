@@ -9,7 +9,7 @@ import '../models.dart';
 final moviesService = new InMemoryMoviesService();
 
 class InMemoryMoviesService {
-  final List<Movie> movies = [
+  final List<Movie> movies2 = [
      new Movie('Belle et Sébastien', 'img/bes.jpg')..genre=12,
      new Movie('Le Hobbit', 'img/lh.jpg', featured: false)..genre=28,
      new Movie('Hunger games', 'img/hgl.jpg')..genre=28,
@@ -24,6 +24,18 @@ class InMemoryMoviesService {
      new Movie('The lunch box', 'img/thelunchbox.jpg')..genre=35,     
      new Movie('Zulu', 'img/zulu.jpg')..genre=35,          
   ];
+  
+  /**
+   * Returns the movies which are now playing
+   */
+  Future<List<Movie>> getNowPlaying() {
+    Completer completer = new Completer();
+    HttpRequest.getString('json/now_playing.json').then(JSON.decode).then((List l) {
+      List<Movie> movies = l.map((Map map) => new Movie.fromMap(map)).toList();
+      completer.complete(movies);
+    });
+    return completer.future;
+  }
 }
 
 class MockGenreService {

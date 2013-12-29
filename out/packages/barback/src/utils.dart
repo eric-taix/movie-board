@@ -5,6 +5,9 @@
 library barback.utils;
 
 import 'dart:async';
+import 'dart:typed_data';
+
+import 'package:stack_trace/stack_trace.dart';
 
 /// A pair of values.
 class Pair<E, F> {
@@ -79,6 +82,18 @@ String byteToHex(int byte) {
   return DIGITS[(byte ~/ 16) % 16] + DIGITS[byte % 16];
 }
 
+/// Converts [input] into a [Uint8List].
+///
+/// If [input] is a [TypedData], this just returns a view on [input].
+Uint8List toUint8List(List<int> input) {
+  if (input is Uint8List) return input;
+  if (input is TypedData) {
+    // TODO(nweiz): remove "as" when issue 11080 is fixed.
+    return new Uint8List.view((input as TypedData).buffer);
+  }
+  return new Uint8List.fromList(input);
+}
+
 /// Group the elements in [iter] by the value returned by [fn].
 ///
 /// This returns a map whose keys are the return values of [fn] and whose values
@@ -138,12 +153,12 @@ Stream mergeStreams(Iterable<Stream> streams, {bool broadcast: false}) {
 
   for (var stream in streams) {
     stream.listen(
-      controller.add,
-      onError: controller.addError,
-      onDone: () {
-    doneCount++;
-    if (doneCount == streams.length) controller.close();
-  });
+        controller.add,
+        onError: controller.addError,
+        onDone: () {
+      doneCount++;
+      if (doneCount == streams.length) controller.close();
+    });
   }
 
   return controller.stream;
@@ -180,19 +195,71 @@ Future pumpEventQueue([int times=20]) {
 // TODO(jmesserly): doc comment changed to due 14601.
 Future newFuture(callback()) => new Future.value().then((_) => callback());
 
+/// Like [Future.sync], but wraps the Future in [Chain.track] as well.
+Future syncFuture(callback()) => Chain.track(new Future.sync(callback));
+
 /// Returns a buffered stream that will emit the same values as the stream
-/// returned by [future] once [future] completes. If [future] completes to an
-/// error, the return value will emit that error and then close.
-Stream futureStream(Future<Stream> future) {
-  var controller = new StreamController(sync: true);
-  future.then((stream) {
-    stream.listen(
-        controller.add,
+/// returned by [future] once [future] completes.
+///
+/// If [future] completes to an error, the return value will emit that error and
+/// then close.
+///
+/// If [broadcast] is true, a broadcast stream is returned. This assumes that
+/// the stream returned by [future] will be a broadcast stream as well.
+/// [broadcast] defaults to false.
+Stream futureStream(Future<Stream> future, {bool broadcast: false}) {
+  var subscription;
+  var controller;
+
+  future = future.catchError((e, stackTrace) {
+    // Since [controller] is synchronous, it's likely that emitting an error
+    // will cause it to be cancelled before we call close.
+    if (controller != null) controller.addError(e, stackTrace);
+    if (controller != null) controller.close();
+    controller = null;
+  });
+
+  onListen() {
+    future.then((stream) {
+      if (controller == null) return;
+      subscription = stream.listen(
+          controller.add,
+          onError: controller.addError,
+          onDone: controller.close);
+    });
+  }
+
+  onCancel() {
+    if (subscription != null) subscription.cancel();
+    subscription = null;
+    controller = null;
+  }
+
+  if (broadcast) {
+    controller = new StreamController.broadcast(
+        sync: true, onListen: onListen, onCancel: onCancel);
+  } else {
+    controller = new StreamController(
+        sync: true, onListen: onListen, onCancel: onCancel);
+  }
+  return controller.stream;
+}
+
+/// Returns a [Stream] that will emit the same values as the stream returned by
+/// [callback].
+///
+/// [callback] will only be called when the returned [Stream] gets a subscriber.
+Stream callbackStream(Stream callback()) {
+  var subscription;
+  var controller;
+  controller = new StreamController(onListen: () {
+    subscription = callback().listen(controller.add,
         onError: controller.addError,
         onDone: controller.close);
-  }).catchError((e, stackTrace) {
-    controller.addError(e, stackTrace);
-    controller.close();
-  });
+  },
+      onCancel: () => subscription.cancel(),
+      onPause: () => subscription.pause(),
+      onResume: () => subscription.resume(),
+      sync: true);
   return controller.stream;
 }
