@@ -1,4 +1,4 @@
-library movies.models;
+library movie_board.models;
 
 /**
  * A movie model
@@ -8,6 +8,7 @@ class Movie {
   int id;
   String title;
   String posterPath;
+  String backdropPath;
   String releasedDate;
   num popularity;
   int voteAverage;
@@ -23,7 +24,8 @@ class Movie {
   Movie.fromMap(Map<String, Object> map) {
     id = map['id'];
     title = map['title'];
-    posterPath = 'json/images${map['poster_path']}';
+    posterPath = 'json/images/posters${map['poster_path']}';
+    backdropPath = 'json/images/backdrops${map['backdrop_path']}';
     releasedDate = map['release_date'];
     popularity = map['popularity'];
     voteAverage = (map['vote_average'] as num).toInt();
@@ -33,15 +35,15 @@ class Movie {
 }
 
 /**
- * A genre of movie
+ * Movies menu
  */
-class Genre {
+class Menu {
   
   int id;
   String name;
   
-  Genre(this.id, this.name);
-  Genre.fromMap(Map<String, Object> map) {
+  Menu(this.id, this.name);
+  Menu.fromMap(Map<String, Object> map) {
     id = map['id'];
     name = map['name'];
   }

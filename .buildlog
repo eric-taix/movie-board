@@ -5270,3 +5270,1420 @@ build.dart --machine --changed=web/task_board.css
 Done! All files written to "out"
 build.dart finished [1949 ms]
 
+---
+build.dart --machine --changed=web/utils.dart
+Done! All files written to "out"
+build.dart finished [2774 ms]
+
+---
+build.dart --machine --changed=web/ui/movie.dart
+Done! All files written to "out"
+build.dart finished [2158 ms]
+
+---
+build.dart --machine --changed=web/ui/movie.dart
+Done! All files written to "out"
+build.dart finished [2117 ms]
+
+---
+build.dart --machine --changed=web/ui/movies.dart
+Done! All files written to "out"
+build.dart finished [2019 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+Done! All files written to "out"
+build.dart finished [1977 ms]
+
+---
+build.dart --machine --changed=web/utils.dart
+Done! All files written to "out"
+build.dart finished [2070 ms]
+
+---
+build.dart --machine --changed=web/utils.dart
+Done! All files written to "out"
+build.dart finished [2187 ms]
+
+---
+build.dart --machine --changed=web/utils.dart
+Done! All files written to "out"
+build.dart finished [2031 ms]
+
+---
+build.dart --machine --changed=web/ui/movies.dart
+Done! All files written to "out"
+build.dart finished [2148 ms]
+
+---
+build.dart --machine --changed=web/ui/movie.dart
+Done! All files written to "out"
+build.dart finished [2118 ms]
+
+---
+build.dart --machine --changed=web/ui/movie.dart
+Done! All files written to "out"
+build.dart finished [2082 ms]
+
+---
+build.dart --machine --changed=web/ui/movies.dart
+Done! All files written to "out"
+build.dart finished [2004 ms]
+
+---
+build.dart --machine --changed=web/ui/movies.dart
+Done! All files written to "out"
+build.dart finished [2063 ms]
+
+---
+build.dart --machine --changed=web/ui/movies.dart
+Done! All files written to "out"
+build.dart finished [2022 ms]
+
+---
+build.dart --machine --changed=web/utils.dart
+Done! All files written to "out"
+build.dart finished [2089 ms]
+
+---
+build.dart --machine --changed=web/ui/movies.dart
+Done! All files written to "out"
+build.dart finished [2048 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+Done! All files written to "out"
+build.dart finished [2075 ms]
+
+---
+build.dart --machine --changed=web/ui/movies.dart
+Done! All files written to "out"
+build.dart finished [1872 ms]
+
+---
+build.dart --machine --changed=web/service/services.dart
+Done! All files written to "out"
+build.dart finished [2129 ms]
+
+---
+build.dart --machine --changed=web/service/services.dart
+Done! All files written to "out"
+build.dart finished [2104 ms]
+
+---
+build.dart --machine --changed=web/ui/movies.dart
+Done! All files written to "out"
+build.dart finished [2148 ms]
+
+---
+build.dart --machine --changed=web/ui/movies.dart
+Done! All files written to "out"
+build.dart finished [2041 ms]
+
+---
+build.dart --machine --changed=web/service/services.dart
+Done! All files written to "out"
+build.dart finished [2122 ms]
+
+---
+build.dart --machine --changed=web/ui/movies.dart
+Done! All files written to "out"
+build.dart finished [2025 ms]
+
+---
+build.dart --machine --changed=web/ui/movies.dart
+Done! All files written to "out"
+build.dart finished [2092 ms]
+
+---
+build.dart --machine --changed=web/ui/movie_poster.html --removed=web/ui/movie.html
+error web/ui/movies.html:1:1: couldn't find imported asset "web/ui/movie.html" in package "task_board".
+<link rel="import" href="movie.html">
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+warning web/ui/movies.html:12:9: definition for Polymer element with tag name "j-movie" not found.
+        <j-movie movie="{{movie}}"></j-movie>
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+error running barback: Transform polymer (ImportInliner) on task_board|web/task_board.html tried to load missing input task_board|web/ui/movie.html.
+build.dart finished [1446 ms]
+
+---
+build.dart --machine --changed=web/ui/movie_poster.dart --changed=web/ui/movies.dart --removed=web/ui/movie.dar...
+error web/ui/movies.html:1:1: couldn't find imported asset "web/ui/movie.html" in package "task_board".
+<link rel="import" href="movie.html">
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+warning web/ui/movies.html:12:9: definition for Polymer element with tag name "j-movie" not found.
+        <j-movie movie="{{movie}}"></j-movie>
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+error running barback: Transform polymer (ImportInliner) on task_board|web/task_board.html tried to load missing input task_board|web/ui/movie.html.
+build.dart finished [1491 ms]
+
+---
+build.dart --machine --changed=web/ui/movie_poster.html
+[{"method":"error","params":{"file":"web/ui/movies.html","message":"couldn't find imported asset \"web/ui/movie.html\" in package \"task_board\".","line":1,"charStart":0,"charEnd":37}}]
+[{"method":"warning","params":{"file":"web/ui/movies.html","message":"definition for Polymer element with tag name \"j-movie\" not found.","line":12,"charStart":483,"charEnd":510}}]
+build failed with errors: {Transform polymer (Linter) on task_board|web/ui/movies.html threw error: couldn't find imported asset "web/ui/movie.html" in package "task_board".}
+build.dart finished [953 ms]
+
+---
+build.dart --machine --changed=web/ui/movie_poster.dart
+[{"method":"error","params":{"file":"web/ui/movies.html","message":"couldn't find imported asset \"web/ui/movie.html\" in package \"task_board\".","line":1,"charStart":0,"charEnd":37}}]
+[{"method":"warning","params":{"file":"web/ui/movies.html","message":"definition for Polymer element with tag name \"j-movie\" not found.","line":12,"charStart":483,"charEnd":510}}]
+build failed with errors: {Transform polymer (Linter) on task_board|web/ui/movies.html threw error: couldn't find imported asset "web/ui/movie.html" in package "task_board".}
+build.dart finished [963 ms]
+
+---
+build.dart --machine --changed=web/ui/movies.html
+[{"method":"error","params":{"file":"web/ui/movies.html","message":"couldn't find imported asset \"web/ui/movie.html\" in package \"task_board\".","line":1,"charStart":0,"charEnd":37}}]
+[{"method":"warning","params":{"file":"web/ui/movies.html","message":"definition for Polymer element with tag name \"j-movie-poster\" not found.","line":12,"charStart":483,"charEnd":517}}]
+build failed with errors: {Transform polymer (Linter) on task_board|web/ui/movies.html threw error: couldn't find imported asset "web/ui/movie.html" in package "task_board".}
+build.dart finished [978 ms]
+
+---
+build.dart --machine --changed=web/ui/movies.html
+
+build.dart finished [970 ms]
+
+---
+build.dart --machine --changed=web/index.html --removed=web/task_board.html
+
+build.dart finished [987 ms]
+
+---
+build.dart --machine --changed=web/index.css --removed=web/task_board.css
+
+build.dart finished [954 ms]
+
+---
+build.dart --machine --changed=web/services.dart --changed=web/ui/movies.dart --removed=web/service/services.da...
+
+build.dart finished [945 ms]
+
+---
+build.dart --machine --changed=web/movie_poster.dart --changed=web/movie_poster.html --changed=web/movies.dart ...
+[{"method":"error","params":{"file":"web/index.html","message":"couldn't find imported asset \"web/ui/movies.html\" in package \"task_board\".","line":9,"charStart":150,"charEnd":191}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"definition for Polymer element with tag name \"j-movies\" not found.","line":16,"charStart":402,"charEnd":412}}]
+build failed with errors: {Transform polymer (Linter) on task_board|web/index.html threw error: couldn't find imported asset "web/ui/movies.html" in package "task_board".}
+build.dart finished [941 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [945 ms]
+
+---
+build.dart --machine --changed=web/movie_poster.html
+
+build.dart finished [955 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [965 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [958 ms]
+
+---
+build.dart --machine --clean
+
+build.dart finished [978 ms]
+
+---
+build.dart --machine --full
+
+build.dart finished [997 ms]
+
+---
+build.dart --machine --changed=web/movies.dart
+
+build.dart finished [956 ms]
+
+---
+build.dart --machine --changed=web/movie_poster.dart
+
+build.dart finished [950 ms]
+
+---
+build.dart --machine --changed=web/movie_poster.dart
+
+build.dart finished [965 ms]
+
+---
+build.dart --machine --changed=web/movie_poster.dart
+
+build.dart finished [974 ms]
+
+---
+build.dart --machine --changed=pubspec.lock
+
+build.dart finished [973 ms]
+
+---
+build.dart --machine --changed=pubspec.lock
+
+build.dart finished [969 ms]
+
+---
+build.dart --machine --changed=web/movies.dart --changed=web/ui/movie_poster/movie_poster.dart --changed=web/ui...
+[{"method":"error","params":{"file":"web/movies.html","message":"couldn't find imported asset \"web/movie_poster.html\" in package \"task_board\".","line":1,"charStart":0,"charEnd":44}}]
+[{"method":"warning","params":{"file":"web/movies.html","message":"definition for Polymer element with tag name \"j-movie-poster\" not found.","line":12,"charStart":490,"charEnd":524}}]
+build failed with errors: {Transform polymer (Linter) on task_board|web/movies.html threw error: couldn't find imported asset "web/movie_poster.html" in package "task_board".}
+build.dart finished [1006 ms]
+
+---
+build.dart --machine --changed=web/ui/movie_poster/movie_poster.dart
+[{"method":"error","params":{"file":"web/movies.html","message":"couldn't find imported asset \"web/movie_poster.html\" in package \"task_board\".","line":1,"charStart":0,"charEnd":44}}]
+[{"method":"warning","params":{"file":"web/movies.html","message":"definition for Polymer element with tag name \"j-movie-poster\" not found.","line":12,"charStart":490,"charEnd":524}}]
+build failed with errors: {Transform polymer (Linter) on task_board|web/movies.html threw error: couldn't find imported asset "web/movie_poster.html" in package "task_board".}
+build.dart finished [975 ms]
+
+---
+build.dart --machine --changed=web/ui/movie_poster/movie_poster.dart
+[{"method":"error","params":{"file":"web/movies.html","message":"couldn't find imported asset \"web/movie_poster.html\" in package \"task_board\".","line":1,"charStart":0,"charEnd":44}}]
+[{"method":"warning","params":{"file":"web/movies.html","message":"definition for Polymer element with tag name \"j-movie-poster\" not found.","line":12,"charStart":490,"charEnd":524}}]
+build failed with errors: {Transform polymer (Linter) on task_board|web/movies.html threw error: couldn't find imported asset "web/movie_poster.html" in package "task_board".}
+build.dart finished [956 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+[{"method":"error","params":{"file":"web/movies.html","message":"couldn't find imported asset \"web/movie_poster.html\" in package \"task_board\".","line":1,"charStart":0,"charEnd":44}}]
+[{"method":"warning","params":{"file":"web/movies.html","message":"definition for Polymer element with tag name \"j-movie-poster\" not found.","line":12,"charStart":490,"charEnd":524}}]
+build failed with errors: {Transform polymer (Linter) on task_board|web/movies.html threw error: couldn't find imported asset "web/movie_poster.html" in package "task_board".}
+build.dart finished [946 ms]
+
+---
+build.dart --machine --changed=web/movies.dart
+[{"method":"error","params":{"file":"web/movies.html","message":"couldn't find imported asset \"web/movie_poster.html\" in package \"task_board\".","line":1,"charStart":0,"charEnd":44}}]
+[{"method":"warning","params":{"file":"web/movies.html","message":"definition for Polymer element with tag name \"j-movie-poster\" not found.","line":12,"charStart":490,"charEnd":524}}]
+build failed with errors: {Transform polymer (Linter) on task_board|web/movies.html threw error: couldn't find imported asset "web/movie_poster.html" in package "task_board".}
+build.dart finished [955 ms]
+
+---
+build.dart --machine --changed=web/movies.dart
+[{"method":"error","params":{"file":"web/movies.html","message":"couldn't find imported asset \"web/movie_poster.html\" in package \"task_board\".","line":1,"charStart":0,"charEnd":44}}]
+[{"method":"warning","params":{"file":"web/movies.html","message":"definition for Polymer element with tag name \"j-movie-poster\" not found.","line":12,"charStart":490,"charEnd":524}}]
+build failed with errors: {Transform polymer (Linter) on task_board|web/movies.html threw error: couldn't find imported asset "web/movie_poster.html" in package "task_board".}
+build.dart finished [943 ms]
+
+---
+build.dart --machine --changed=web/movies.dart
+[{"method":"error","params":{"file":"web/movies.html","message":"couldn't find imported asset \"web/movie_poster.html\" in package \"task_board\".","line":1,"charStart":0,"charEnd":44}}]
+[{"method":"warning","params":{"file":"web/movies.html","message":"definition for Polymer element with tag name \"j-movie-poster\" not found.","line":12,"charStart":490,"charEnd":524}}]
+build failed with errors: {Transform polymer (Linter) on task_board|web/movies.html threw error: couldn't find imported asset "web/movie_poster.html" in package "task_board".}
+build.dart finished [936 ms]
+
+---
+build.dart --machine --changed=web/movies.dart
+[{"method":"error","params":{"file":"web/movies.html","message":"couldn't find imported asset \"web/movie_poster.html\" in package \"task_board\".","line":1,"charStart":0,"charEnd":44}}]
+[{"method":"warning","params":{"file":"web/movies.html","message":"definition for Polymer element with tag name \"j-movie-poster\" not found.","line":12,"charStart":490,"charEnd":524}}]
+build failed with errors: {Transform polymer (Linter) on task_board|web/movies.html threw error: couldn't find imported asset "web/movie_poster.html" in package "task_board".}
+build.dart finished [949 ms]
+
+---
+build.dart --machine --changed=web/movies.dart
+[{"method":"error","params":{"file":"web/movies.html","message":"couldn't find imported asset \"web/movie_poster.html\" in package \"task_board\".","line":1,"charStart":0,"charEnd":44}}]
+[{"method":"warning","params":{"file":"web/movies.html","message":"definition for Polymer element with tag name \"j-movie-poster\" not found.","line":12,"charStart":490,"charEnd":524}}]
+build failed with errors: {Transform polymer (Linter) on task_board|web/movies.html threw error: couldn't find imported asset "web/movie_poster.html" in package "task_board".}
+build.dart finished [953 ms]
+
+---
+build.dart --machine --changed=web/utils.dart
+[{"method":"error","params":{"file":"web/movies.html","message":"couldn't find imported asset \"web/movie_poster.html\" in package \"task_board\".","line":1,"charStart":0,"charEnd":44}}]
+[{"method":"warning","params":{"file":"web/movies.html","message":"definition for Polymer element with tag name \"j-movie-poster\" not found.","line":12,"charStart":490,"charEnd":524}}]
+build failed with errors: {Transform polymer (Linter) on task_board|web/movies.html threw error: couldn't find imported asset "web/movie_poster.html" in package "task_board".}
+build.dart finished [957 ms]
+
+---
+build.dart --machine --changed=web/movies.dart
+[{"method":"error","params":{"file":"web/movies.html","message":"couldn't find imported asset \"web/movie_poster.html\" in package \"task_board\".","line":1,"charStart":0,"charEnd":44}}]
+[{"method":"warning","params":{"file":"web/movies.html","message":"definition for Polymer element with tag name \"j-movie-poster\" not found.","line":12,"charStart":490,"charEnd":524}}]
+build failed with errors: {Transform polymer (Linter) on task_board|web/movies.html threw error: couldn't find imported asset "web/movie_poster.html" in package "task_board".}
+build.dart finished [967 ms]
+
+---
+build.dart --machine --changed=web/services.dart
+[{"method":"error","params":{"file":"web/movies.html","message":"couldn't find imported asset \"web/movie_poster.html\" in package \"task_board\".","line":1,"charStart":0,"charEnd":44}}]
+[{"method":"warning","params":{"file":"web/movies.html","message":"definition for Polymer element with tag name \"j-movie-poster\" not found.","line":12,"charStart":490,"charEnd":524}}]
+build failed with errors: {Transform polymer (Linter) on task_board|web/movies.html threw error: couldn't find imported asset "web/movie_poster.html" in package "task_board".}
+build.dart finished [965 ms]
+
+---
+build.dart --machine --changed=web/services.dart
+[{"method":"error","params":{"file":"web/movies.html","message":"couldn't find imported asset \"web/movie_poster.html\" in package \"task_board\".","line":1,"charStart":0,"charEnd":44}}]
+[{"method":"warning","params":{"file":"web/movies.html","message":"definition for Polymer element with tag name \"j-movie-poster\" not found.","line":12,"charStart":490,"charEnd":524}}]
+build failed with errors: {Transform polymer (Linter) on task_board|web/movies.html threw error: couldn't find imported asset "web/movie_poster.html" in package "task_board".}
+build.dart finished [943 ms]
+
+---
+build.dart --machine --changed=web/services.dart
+[{"method":"error","params":{"file":"web/movies.html","message":"couldn't find imported asset \"web/movie_poster.html\" in package \"task_board\".","line":1,"charStart":0,"charEnd":44}}]
+[{"method":"warning","params":{"file":"web/movies.html","message":"definition for Polymer element with tag name \"j-movie-poster\" not found.","line":12,"charStart":490,"charEnd":524}}]
+build failed with errors: {Transform polymer (Linter) on task_board|web/movies.html threw error: couldn't find imported asset "web/movie_poster.html" in package "task_board".}
+build.dart finished [944 ms]
+
+---
+build.dart --machine --changed=web/services.dart
+[{"method":"error","params":{"file":"web/movies.html","message":"couldn't find imported asset \"web/movie_poster.html\" in package \"task_board\".","line":1,"charStart":0,"charEnd":44}}]
+[{"method":"warning","params":{"file":"web/movies.html","message":"definition for Polymer element with tag name \"j-movie-poster\" not found.","line":12,"charStart":490,"charEnd":524}}]
+build failed with errors: {Transform polymer (Linter) on task_board|web/movies.html threw error: couldn't find imported asset "web/movie_poster.html" in package "task_board".}
+build.dart finished [955 ms]
+
+---
+build.dart --machine --changed=web/services.dart
+[{"method":"error","params":{"file":"web/movies.html","message":"couldn't find imported asset \"web/movie_poster.html\" in package \"task_board\".","line":1,"charStart":0,"charEnd":44}}]
+[{"method":"warning","params":{"file":"web/movies.html","message":"definition for Polymer element with tag name \"j-movie-poster\" not found.","line":12,"charStart":490,"charEnd":524}}]
+build failed with errors: {Transform polymer (Linter) on task_board|web/movies.html threw error: couldn't find imported asset "web/movie_poster.html" in package "task_board".}
+build.dart finished [931 ms]
+
+---
+build.dart --machine --changed=web/ui/movie_poster/movie_poster.dart
+[{"method":"error","params":{"file":"web/movies.html","message":"couldn't find imported asset \"web/movie_poster.html\" in package \"task_board\".","line":1,"charStart":0,"charEnd":44}}]
+[{"method":"warning","params":{"file":"web/movies.html","message":"definition for Polymer element with tag name \"j-movie-poster\" not found.","line":12,"charStart":490,"charEnd":524}}]
+build failed with errors: {Transform polymer (Linter) on task_board|web/movies.html threw error: couldn't find imported asset "web/movie_poster.html" in package "task_board".}
+build.dart finished [974 ms]
+
+---
+build.dart --machine --changed=web/ui/movie_poster/movie_poster.dart
+[{"method":"error","params":{"file":"web/movies.html","message":"couldn't find imported asset \"web/movie_poster.html\" in package \"task_board\".","line":1,"charStart":0,"charEnd":44}}]
+[{"method":"warning","params":{"file":"web/movies.html","message":"definition for Polymer element with tag name \"j-movie-poster\" not found.","line":12,"charStart":490,"charEnd":524}}]
+build failed with errors: {Transform polymer (Linter) on task_board|web/movies.html threw error: couldn't find imported asset "web/movie_poster.html" in package "task_board".}
+build.dart finished [934 ms]
+
+---
+build.dart --machine --changed=web/ui/movie_poster/movie_poster.dart
+[{"method":"error","params":{"file":"web/movies.html","message":"couldn't find imported asset \"web/movie_poster.html\" in package \"task_board\".","line":1,"charStart":0,"charEnd":44}}]
+[{"method":"warning","params":{"file":"web/movies.html","message":"definition for Polymer element with tag name \"j-movie-poster\" not found.","line":12,"charStart":490,"charEnd":524}}]
+build failed with errors: {Transform polymer (Linter) on task_board|web/movies.html threw error: couldn't find imported asset "web/movie_poster.html" in package "task_board".}
+build.dart finished [956 ms]
+
+---
+build.dart --machine --changed=web/ui/movie_poster/movie_poster.dart
+[{"method":"error","params":{"file":"web/movies.html","message":"couldn't find imported asset \"web/movie_poster.html\" in package \"task_board\".","line":1,"charStart":0,"charEnd":44}}]
+[{"method":"warning","params":{"file":"web/movies.html","message":"definition for Polymer element with tag name \"j-movie-poster\" not found.","line":12,"charStart":490,"charEnd":524}}]
+build failed with errors: {Transform polymer (Linter) on task_board|web/movies.html threw error: couldn't find imported asset "web/movie_poster.html" in package "task_board".}
+build.dart finished [962 ms]
+
+---
+build.dart --machine --changed=web/ui/movie_poster/movie_poster.dart
+[{"method":"error","params":{"file":"web/movies.html","message":"couldn't find imported asset \"web/movie_poster.html\" in package \"task_board\".","line":1,"charStart":0,"charEnd":44}}]
+[{"method":"warning","params":{"file":"web/movies.html","message":"definition for Polymer element with tag name \"j-movie-poster\" not found.","line":12,"charStart":490,"charEnd":524}}]
+build failed with errors: {Transform polymer (Linter) on task_board|web/movies.html threw error: couldn't find imported asset "web/movie_poster.html" in package "task_board".}
+build.dart finished [971 ms]
+
+---
+build.dart --machine --changed=pubspec.lock
+[{"method":"error","params":{"file":"web/movies.html","message":"couldn't find imported asset \"web/movie_poster.html\" in package \"task_board\".","line":1,"charStart":0,"charEnd":44}}]
+[{"method":"warning","params":{"file":"web/movies.html","message":"definition for Polymer element with tag name \"j-movie-poster\" not found.","line":12,"charStart":490,"charEnd":524}}]
+build failed with errors: {Transform polymer (Linter) on task_board|web/movies.html threw error: couldn't find imported asset "web/movie_poster.html" in package "task_board".}
+build.dart finished [940 ms]
+
+---
+build.dart --machine --changed=web/movie_poster/movie_poster.dart --changed=web/movie_poster/movie_poster.html ...
+[{"method":"error","params":{"file":"web/movies.html","message":"couldn't find imported asset \"web/movie_poster.html\" in package \"task_board\".","line":1,"charStart":0,"charEnd":44}}]
+[{"method":"warning","params":{"file":"web/movies.html","message":"definition for Polymer element with tag name \"j-movie-poster\" not found.","line":12,"charStart":490,"charEnd":524}}]
+build failed with errors: {Transform polymer (Linter) on task_board|web/movies.html threw error: couldn't find imported asset "web/movie_poster.html" in package "task_board".}
+build.dart finished [949 ms]
+
+---
+build.dart --machine --changed=web/movies.dart
+[{"method":"error","params":{"file":"web/movies.html","message":"couldn't find imported asset \"web/movie_poster.html\" in package \"task_board\".","line":1,"charStart":0,"charEnd":44}}]
+[{"method":"warning","params":{"file":"web/movies.html","message":"definition for Polymer element with tag name \"j-movie-poster\" not found.","line":12,"charStart":490,"charEnd":524}}]
+build failed with errors: {Transform polymer (Linter) on task_board|web/movies.html threw error: couldn't find imported asset "web/movie_poster.html" in package "task_board".}
+build.dart finished [967 ms]
+
+---
+build.dart --machine --changed=web/movies.html
+
+build.dart finished [958 ms]
+
+---
+build.dart --machine --changed=web/movie_poster/movie_poster.dart --changed=web/movies.dart
+
+build.dart finished [1015 ms]
+
+---
+build.dart --machine --changed=web/movie_poster/movie_poster.dart
+
+build.dart finished [961 ms]
+
+---
+build.dart --machine --changed=web/movie_poster/movie_poster.html
+[{"method":"warning","params":{"file":"web/movies.html","message":"definition for Polymer element with tag name \"j-movie-poster\" not found.","line":12,"charStart":503,"charEnd":537}}]
+build.dart finished [975 ms]
+
+---
+build.dart --machine --changed=web/movie_poster/poster.dart --changed=web/movies.dart --removed=web/movie_poste...
+[{"method":"warning","params":{"file":"web/movies.html","message":"definition for Polymer element with tag name \"j-movie-poster\" not found.","line":12,"charStart":503,"charEnd":537}}]
+build.dart finished [1042 ms]
+
+---
+build.dart --machine --changed=web/movie_poster/poster.html --removed=web/movie_poster/movie_poster.html
+[{"method":"error","params":{"file":"web/movies.html","message":"couldn't find imported asset \"web/movie_poster/movie_poster.html\" in package \"task_board\".","line":1,"charStart":0,"charEnd":57}}]
+[{"method":"warning","params":{"file":"web/movies.html","message":"definition for Polymer element with tag name \"j-movie-poster\" not found.","line":12,"charStart":503,"charEnd":537}}]
+build failed with errors: {Transform polymer (Linter) on task_board|web/movies.html threw error: couldn't find imported asset "web/movie_poster/movie_poster.html" in package "task_board".}
+build.dart finished [1074 ms]
+
+---
+build.dart --machine --changed=web/movies.html
+[{"method":"error","params":{"file":"web/movies.html","message":"couldn't find imported asset \"web/poster/poster.html\" in package \"task_board\".","line":1,"charStart":0,"charEnd":45}}]
+[{"method":"warning","params":{"file":"web/movies.html","message":"definition for Polymer element with tag name \"j-movie-poster\" not found.","line":12,"charStart":491,"charEnd":525}}]
+build failed with errors: {Transform polymer (Linter) on task_board|web/movies.html threw error: couldn't find imported asset "web/poster/poster.html" in package "task_board".}
+build.dart finished [940 ms]
+
+---
+build.dart --machine --changed=web/movies.html
+[{"method":"warning","params":{"file":"web/movies.html","message":"definition for Polymer element with tag name \"j-movie-poster\" not found.","line":12,"charStart":497,"charEnd":531}}]
+build.dart finished [957 ms]
+
+---
+build.dart --machine --changed=pubspec.lock
+[{"method":"warning","params":{"file":"web/movies.html","message":"definition for Polymer element with tag name \"j-movie-poster\" not found.","line":12,"charStart":497,"charEnd":531}}]
+build.dart finished [959 ms]
+
+---
+build.dart --machine --changed=web/movies.dart --changed=web/poster/poster.dart --changed=web/poster/poster.htm...
+[{"method":"error","params":{"file":"web/movies.html","message":"couldn't find imported asset \"web/movie_poster/poster.html\" in package \"task_board\".","line":1,"charStart":0,"charEnd":51}}]
+[{"method":"warning","params":{"file":"web/movies.html","message":"definition for Polymer element with tag name \"j-movie-poster\" not found.","line":12,"charStart":497,"charEnd":531}}]
+build failed with errors: {Transform polymer (Linter) on task_board|web/movies.html threw error: couldn't find imported asset "web/movie_poster/poster.html" in package "task_board".}
+build.dart finished [972 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.html
+[{"method":"error","params":{"file":"web/movies.html","message":"couldn't find imported asset \"web/movie_poster/poster.html\" in package \"task_board\".","line":1,"charStart":0,"charEnd":51}}]
+[{"method":"warning","params":{"file":"web/movies.html","message":"definition for Polymer element with tag name \"j-movie-poster\" not found.","line":12,"charStart":497,"charEnd":531}}]
+build failed with errors: {Transform polymer (Linter) on task_board|web/movies.html threw error: couldn't find imported asset "web/movie_poster/poster.html" in package "task_board".}
+build.dart finished [954 ms]
+
+---
+build.dart --machine --changed=pubspec.lock
+[{"method":"error","params":{"file":"web/movies.html","message":"couldn't find imported asset \"web/movie_poster/poster.html\" in package \"task_board\".","line":1,"charStart":0,"charEnd":51}}]
+[{"method":"warning","params":{"file":"web/movies.html","message":"definition for Polymer element with tag name \"j-movie-poster\" not found.","line":12,"charStart":497,"charEnd":531}}]
+build failed with errors: {Transform polymer (Linter) on task_board|web/movies.html threw error: couldn't find imported asset "web/movie_poster/poster.html" in package "task_board".}
+build.dart finished [957 ms]
+
+---
+build.dart --machine --changed=web/poster_grid/movies.dart --changed=web/poster_grid/movies.html --removed=web/...
+[{"method":"error","params":{"file":"web/poster_grid/movies.html","message":"couldn't find imported asset \"web/poster_grid/movie_poster/poster.html\" in package \"task_board\".","line":1,"charStart":0,"charEnd":51}}]
+[{"method":"warning","params":{"file":"web/poster_grid/movies.html","message":"definition for Polymer element with tag name \"j-movie-poster\" not found.","line":12,"charStart":497,"charEnd":531}}]
+[{"method":"error","params":{"file":"web/index.html","message":"couldn't find imported asset \"web/movies.html\" in package \"task_board\".","line":9,"charStart":145,"charEnd":183}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"definition for Polymer element with tag name \"j-movies\" not found.","line":16,"charStart":394,"charEnd":404}}]
+build failed with errors: {Transform polymer (Linter) on task_board|web/poster_grid/movies.html threw error: couldn't find imported asset "web/poster_grid/movie_poster/poster.html" in package "task_board"., Transform polymer (Linter) on task_board|web/index.html threw error: couldn't find imported asset "web/movies.html" in package "task_board".}
+build.dart finished [962 ms]
+
+---
+build.dart --machine --changed=web/index.html
+[{"method":"error","params":{"file":"web/poster_grid/movies.html","message":"couldn't find imported asset \"web/poster_grid/movie_poster/poster.html\" in package \"task_board\".","line":1,"charStart":0,"charEnd":51}}]
+[{"method":"warning","params":{"file":"web/poster_grid/movies.html","message":"definition for Polymer element with tag name \"j-movie-poster\" not found.","line":12,"charStart":497,"charEnd":531}}]
+build failed with errors: {Transform polymer (Linter) on task_board|web/poster_grid/movies.html threw error: couldn't find imported asset "web/poster_grid/movie_poster/poster.html" in package "task_board".}
+build.dart finished [975 ms]
+
+---
+build.dart --machine --changed=web/poster_grid/movies.html
+[{"method":"error","params":{"file":"web/poster_grid/movies.html","message":"couldn't find imported asset \"web/poster_grid/poster/poster.html\" in package \"task_board\".","line":1,"charStart":0,"charEnd":45}}]
+[{"method":"warning","params":{"file":"web/poster_grid/movies.html","message":"definition for Polymer element with tag name \"j-movie-poster\" not found.","line":12,"charStart":491,"charEnd":525}}]
+build failed with errors: {Transform polymer (Linter) on task_board|web/poster_grid/movies.html threw error: couldn't find imported asset "web/poster_grid/poster/poster.html" in package "task_board".}
+build.dart finished [963 ms]
+
+---
+build.dart --machine --changed=web/poster_grid/movies.html
+[{"method":"error","params":{"file":"web/poster_grid/movies.html","message":"couldn't find imported asset \"web/poster_grid/poster/poster.html\" in package \"task_board\".","line":1,"charStart":0,"charEnd":45}}]
+[{"method":"warning","params":{"file":"web/poster_grid/movies.html","message":"definition for Polymer element with tag name \"movie-poster\" not found.","line":12,"charStart":491,"charEnd":523}}]
+build failed with errors: {Transform polymer (Linter) on task_board|web/poster_grid/movies.html threw error: couldn't find imported asset "web/poster_grid/poster/poster.html" in package "task_board".}
+build.dart finished [938 ms]
+
+---
+build.dart --machine --changed=web/poster_grid/movies.html
+
+build.dart finished [986 ms]
+
+---
+build.dart --machine --changed=web/poster_grid/movies.dart
+
+build.dart finished [970 ms]
+
+---
+build.dart --machine --changed=web/poster_grid/movies.dart
+
+build.dart finished [952 ms]
+
+---
+build.dart --machine --changed=pubspec.lock
+
+build.dart finished [980 ms]
+
+---
+build.dart --machine --changed=web/posters/movies.dart --changed=web/posters/movies.html --removed=web/poster_g...
+[{"method":"error","params":{"file":"web/index.html","message":"couldn't find imported asset \"web/poster_grid/movies.html\" in package \"task_board\".","line":9,"charStart":145,"charEnd":195}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"definition for Polymer element with tag name \"j-movies\" not found.","line":16,"charStart":406,"charEnd":416}}]
+build failed with errors: {Transform polymer (Linter) on task_board|web/index.html threw error: couldn't find imported asset "web/poster_grid/movies.html" in package "task_board".}
+build.dart finished [944 ms]
+
+---
+build.dart --machine --changed=web/index.html
+[{"method":"error","params":{"file":"web/index.html","message":"couldn't find imported asset \"web/posters/posters.html\" in package \"task_board\".","line":9,"charStart":145,"charEnd":192}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"definition for Polymer element with tag name \"j-movies\" not found.","line":16,"charStart":403,"charEnd":413}}]
+build failed with errors: {Transform polymer (Linter) on task_board|web/index.html threw error: couldn't find imported asset "web/posters/posters.html" in package "task_board".}
+build.dart finished [959 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.html --removed=web/posters/movies.html
+
+build.dart finished [1003 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart --removed=web/posters/movies.dart
+
+build.dart finished [1039 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [974 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [974 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.html
+[{"method":"warning","params":{"file":"web/index.html","message":"definition for Polymer element with tag name \"j-movies\" not found.","line":16,"charStart":403,"charEnd":413}}]
+build.dart finished [974 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"definition for Polymer element with tag name \"j-movies\" not found.","line":16,"charStart":403,"charEnd":413}}]
+build.dart finished [978 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [948 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [976 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.html
+
+build.dart finished [955 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [996 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [961 ms]
+
+---
+build.dart --machine --clean
+
+build.dart finished [963 ms]
+
+---
+build.dart --machine --full
+
+build.dart finished [972 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.html
+
+build.dart finished [972 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [974 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [998 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1005 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1010 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [990 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1016 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1001 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1019 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.html
+
+build.dart finished [993 ms]
+
+---
+build.dart --machine --changed=web/json/import.dart
+
+build.dart finished [974 ms]
+
+---
+build.dart --machine --changed=web/json/import.dart
+
+build.dart finished [980 ms]
+
+---
+build.dart --machine --changed=web/json/import.dart
+
+build.dart finished [984 ms]
+
+---
+build.dart --machine --changed=web/json/import.dart
+
+build.dart finished [980 ms]
+
+---
+build.dart --machine --changed=web/json/import.dart
+
+build.dart finished [981 ms]
+
+---
+build.dart --machine --changed=pubspec.lock
+
+build.dart finished [986 ms]
+
+---
+build.dart --machine --changed=web/json/import.dart
+
+build.dart finished [976 ms]
+
+---
+build.dart --machine --changed=web/json/import.dart
+
+build.dart finished [971 ms]
+
+---
+build.dart --machine --changed=web/json/img2/2Aur1bxpCVzyTdWnGtxysInVlAT.jpg --changed=web/json/img2/2otPirPWbW...
+
+build.dart finished [973 ms]
+
+---
+build.dart --machine --changed=web/json/img2/2Aur1bxpCVzyTdWnGtxysInVlAT.jpg --changed=web/json/img2/2otPirPWbW...
+
+build.dart finished [997 ms]
+
+---
+build.dart --machine --changed=web/json/import.dart
+
+build.dart finished [979 ms]
+
+---
+build.dart --machine --changed=web/json/img2/2Aur1bxpCVzyTdWnGtxysInVlAT.jpg --changed=web/json/img2/2otPirPWbW...
+
+build.dart finished [961 ms]
+
+---
+build.dart --machine --changed=web/json/import.dart
+
+build.dart finished [981 ms]
+
+---
+build.dart --machine --changed=web/json/import.dart
+
+build.dart finished [953 ms]
+
+---
+build.dart --machine --changed=web/json/import.dart
+
+build.dart finished [1004 ms]
+
+---
+build.dart --machine --changed=pubspec.lock
+
+build.dart finished [963 ms]
+
+---
+build.dart --machine --changed=pubspec.lock
+
+build.dart finished [979 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/5Dd6NeZZFk1E1yxAksz0qZHcKPp.jpg --changed=web/json/ima...
+
+build.dart finished [1069 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/5Dd6NeZZFk1E1yxAksz0qZHcKPp.jpg --changed=web/json/ima...
+
+build.dart finished [1082 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/5Dd6NeZZFk1E1yxAksz0qZHcKPp.jpg --changed=web/json/ima...
+
+build.dart finished [1048 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/7BqRYnVXoxtTjlETp0belv1JzPJ.jpg --changed=web/json/ima...
+
+build.dart finished [1069 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/7BqRYnVXoxtTjlETp0belv1JzPJ.jpg --changed=web/json/ima...
+
+build.dart finished [1044 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/7BqRYnVXoxtTjlETp0belv1JzPJ.jpg --changed=web/json/ima...
+
+build.dart finished [1069 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/7BqRYnVXoxtTjlETp0belv1JzPJ.jpg --changed=web/json/ima...
+
+build.dart finished [1081 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/7BqRYnVXoxtTjlETp0belv1JzPJ.jpg --changed=web/json/ima...
+
+build.dart finished [1041 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/awepqjHYn1lXUIqz8rTfZadsVSv.jpg --changed=web/json/ima...
+
+build.dart finished [1076 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/awepqjHYn1lXUIqz8rTfZadsVSv.jpg --changed=web/json/ima...
+
+build.dart finished [1026 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/awepqjHYn1lXUIqz8rTfZadsVSv.jpg --changed=web/json/ima...
+
+build.dart finished [1045 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/awepqjHYn1lXUIqz8rTfZadsVSv.jpg --changed=web/json/ima...
+
+build.dart finished [1023 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/ffJff2KWHd2rbwYWPRxKxTBypRB.jpg --changed=web/json/ima...
+
+build.dart finished [1021 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/wemkx5CeiS56v8Vyl2H9eQ7Rigq.jpg --removed=web/json/img...
+
+build.dart finished [992 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/wemkx5CeiS56v8Vyl2H9eQ7Rigq.jpg
+
+build.dart finished [985 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+
+build.dart finished [998 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+
+build.dart finished [957 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+
+build.dart finished [975 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.html
+
+build.dart finished [968 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.html
+
+build.dart finished [959 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.html
+
+build.dart finished [965 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1037 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [978 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [990 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1031 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [993 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1017 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1011 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1027 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1018 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [987 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [983 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1028 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [991 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [987 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [977 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [978 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1005 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.html
+
+build.dart finished [961 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [998 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1015 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [994 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [991 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [988 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [1055 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [1001 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.html
+
+build.dart finished [969 ms]
+
+---
+build.dart --machine --removed=web/img/allislost.jpg --removed=web/img/atos.jpg --removed=web/img/bes.jpg --rem...
+
+build.dart finished [969 ms]
+
+---
+build.dart --machine --changed=web/img/movie-clapper-board-hi.png
+
+build.dart finished [999 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.html
+
+build.dart finished [973 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.html
+
+build.dart finished [970 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [972 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1009 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [975 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1002 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1025 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [992 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [999 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [984 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [999 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [1023 ms]
+
+---
+build.dart --machine --changed=web/services.dart
+
+build.dart finished [972 ms]
+
+---
+build.dart --machine --changed=web/services.dart
+
+build.dart finished [975 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [990 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [990 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [983 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [1000 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [973 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [979 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.html
+
+build.dart finished [959 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1007 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [990 ms]
+
+---
+build.dart --machine --changed=web/services.dart
+
+build.dart finished [976 ms]
+
+---
+build.dart --machine --changed=web/services.dart
+
+build.dart finished [963 ms]
+
+---
+build.dart --machine --changed=web/services.dart
+
+build.dart finished [977 ms]
+
+---
+build.dart --machine --changed=web/services.dart
+
+build.dart finished [968 ms]
+
+---
+build.dart --machine --changed=web/services.dart
+
+build.dart finished [974 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [987 ms]
+
+---
+build.dart --machine --changed=web/json/upcoming.json
+
+build.dart finished [988 ms]
+
+---
+build.dart --machine --changed=web/json/upcoming.json
+
+build.dart finished [977 ms]
+
+---
+build.dart --machine --changed=web/json/import.dart
+
+build.dart finished [991 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/5NA3xjZxZt6dX4aMLnwFIl2ELq.jpg --changed=web/json/imag...
+
+build.dart finished [1039 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/c84yL713Qq33w4pTDB3tQ3D6KiI.jpg --changed=web/json/ima...
+
+build.dart finished [1015 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/xYucQImC9FIS7HXhwwUxgepeOlS.jpg
+
+build.dart finished [1001 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/5NA3xjZxZt6dX4aMLnwFIl2ELq.jpg --changed=web/json/imag...
+
+build.dart finished [1031 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/5NA3xjZxZt6dX4aMLnwFIl2ELq.jpg --changed=web/json/imag...
+
+build.dart finished [1005 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/aKdfFihGoCCUokcR5ZeotwzFW5g.jpg --changed=web/json/ima...
+
+build.dart finished [999 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/5NA3xjZxZt6dX4aMLnwFIl2ELq.jpg --changed=web/json/imag...
+
+build.dart finished [1029 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/5NA3xjZxZt6dX4aMLnwFIl2ELq.jpg --changed=web/json/imag...
+
+build.dart finished [1020 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/5NA3xjZxZt6dX4aMLnwFIl2ELq.jpg --changed=web/json/imag...
+
+build.dart finished [1051 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/5NA3xjZxZt6dX4aMLnwFIl2ELq.jpg --changed=web/json/imag...
+
+build.dart finished [1021 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/5NA3xjZxZt6dX4aMLnwFIl2ELq.jpg --changed=web/json/imag...
+
+build.dart finished [1023 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/jPeHX1rqTb44JyNoHzCM77lD0k4.jpg --changed=web/json/ima...
+
+build.dart finished [1032 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/jPeHX1rqTb44JyNoHzCM77lD0k4.jpg --changed=web/json/ima...
+
+build.dart finished [1014 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/l50jqsHUSHKQHWHQL9aFODF1kmO.jpg --changed=web/json/ima...
+
+build.dart finished [1003 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/l50jqsHUSHKQHWHQL9aFODF1kmO.jpg --changed=web/json/ima...
+
+build.dart finished [1008 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/l50jqsHUSHKQHWHQL9aFODF1kmO.jpg --changed=web/json/ima...
+
+build.dart finished [979 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/xYucQImC9FIS7HXhwwUxgepeOlS.jpg
+
+build.dart finished [1026 ms]
+
+---
+build.dart --machine --removed=web/json/genre/list.json
+
+build.dart finished [995 ms]
+
+---
+build.dart --machine --changed=web/json/import.dart
+
+build.dart finished [981 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/5NA3xjZxZt6dX4aMLnwFIl2ELq.jpg --changed=web/json/imag...
+
+build.dart finished [1037 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/5NA3xjZxZt6dX4aMLnwFIl2ELq.jpg --changed=web/json/imag...
+
+build.dart finished [1034 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/5NA3xjZxZt6dX4aMLnwFIl2ELq.jpg --changed=web/json/imag...
+
+build.dart finished [1046 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/6pCLzhp06ua2ltbukUsD2KiEDsJ.jpg --changed=web/json/ima...
+
+build.dart finished [992 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/6pCLzhp06ua2ltbukUsD2KiEDsJ.jpg --changed=web/json/ima...
+
+build.dart finished [983 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/6pCLzhp06ua2ltbukUsD2KiEDsJ.jpg --changed=web/json/ima...
+
+build.dart finished [999 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/c84yL713Qq33w4pTDB3tQ3D6KiI.jpg --changed=web/json/ima...
+
+build.dart finished [970 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/xYucQImC9FIS7HXhwwUxgepeOlS.jpg
+
+build.dart finished [969 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/xYucQImC9FIS7HXhwwUxgepeOlS.jpg
+
+build.dart finished [1038 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/xYucQImC9FIS7HXhwwUxgepeOlS.jpg
+
+build.dart finished [987 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.html
+
+build.dart finished [998 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [979 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [975 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [1005 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [998 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [1002 ms]
+
+---
+build.dart --machine --changed=web/models.dart --changed=web/posters/posters.dart
+
+build.dart finished [1027 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+
+build.dart finished [966 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [1082 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [985 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.html
+
+build.dart finished [998 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.html
+
+build.dart finished [990 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.html
+
+build.dart finished [1007 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.html
+
+build.dart finished [994 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [977 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [996 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [989 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.html
+
+build.dart finished [1021 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.html
+
+build.dart finished [1000 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [1013 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [1007 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1033 ms]
+

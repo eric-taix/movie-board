@@ -1,20 +1,10 @@
-library movies.utils;
+library movie_board.utils;
 
-/**
- * Utility functions
- */
+//============= Utility functions ============
 
-
-/**
- * Each predicate must match
- */
 and(Iterable predicates) => (e) => predicates.every((p) => p(e));
 
-/**
- * At least one predicate much match
- */
 or(Iterable predicates) => (e) => predicates.any((p) => p(e));
-
 
 Function isType(Type type) => (m) => m.runtimeType == type;
 
