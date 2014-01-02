@@ -14,6 +14,8 @@ class InMemoryMoviesService {
   
   Future<List<Movie>> getUpcoming() => _getMovies('json/upcoming.json');
   
+  Future<List<Movie>> getTopRatedTVSeries() => _getMovies('json/tv_top_rated.json');
+  
   Future<List<Movie>> _getMovies(String jsonUrl) {
     Completer completer = new Completer();
     HttpRequest.getString(jsonUrl).then(JSON.decode).then((List l) {

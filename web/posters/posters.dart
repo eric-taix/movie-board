@@ -17,10 +17,11 @@ class MoviesGridUI extends PolymerElement {
   List<Menu> menus = new List();
   
   MoviesGridUI.created() : super.created() {
-    menus.add(new Menu(1, "Films en salle"));
-    menus.add(new Menu(2, "Prochainement"));
-    menus.add(new Menu(2, "Series TV"));
-    moviesService.getUpcoming().then((List m) {
+    menus.add(new Menu(0, "All"));
+    menus.add(new Menu(1, "Now playing"));
+    menus.add(new Menu(2, "Upcoming"));
+    menus.add(new Menu(3, "Top rated TV Series"));
+    moviesService.getNowPlaying().then((List m) {
       movies.clear();
       movies.addAll(m);
     });
@@ -29,7 +30,6 @@ class MoviesGridUI extends PolymerElement {
   bool get applyAuthorStyles => true;
   
   _updateMovies(List m) {
-    movies.clear();
     movies.addAll(m);
   }
   
@@ -60,9 +60,12 @@ class MoviesGridUI extends PolymerElement {
    */
   selectMenu(Event e, var detail, Element target) {
     int menuId = int.parse(target.attributes['data-menuid']);
+    movies.clear();
     switch(menuId) {
+      case 0: moviesService.getNowPlaying().then(_updateMovies); moviesService.getUpcoming().then(_updateMovies); moviesService.getTopRatedTVSeries().then(_updateMovies); break;
       case 1 : moviesService.getNowPlaying().then(_updateMovies); break;
       case 2 : moviesService.getUpcoming().then(_updateMovies); break;
+      case 3 : moviesService.getTopRatedTVSeries().then(_updateMovies); break;
     }
   }
 }
