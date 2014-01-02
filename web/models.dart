@@ -17,14 +17,12 @@ class Movie {
   int genre;
 
   
-  Movie.sample() : this("Hunger Games", "img/hgl.jpg");
-
   Movie(this.title, this.posterPath, {bool featured : false});
   
   Movie.fromMap(Map<String, Object> map) {
     id = map['id'];
     title = map['title'];
-    posterPath = 'json/images/posters${map['poster_path']}';
+    posterPath = map['poster_path'] != null ? 'json/images/posters${map['poster_path']}' : 'img/no-poster-w130.jpg';
     backdropPath = 'json/images/backdrops${map['backdrop_path']}';
     releasedDate = map['release_date'];
     popularity = map['popularity'];

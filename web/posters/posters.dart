@@ -3,7 +3,7 @@ library movies;
 import 'dart:html';
 
 import 'package:polymer/polymer.dart';
-
+ 
 import '../poster/poster.dart';
 import '../models.dart';
 import '../utils.dart';

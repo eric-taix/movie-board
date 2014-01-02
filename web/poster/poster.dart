@@ -11,7 +11,7 @@ import '../models.dart';
 @CustomTag("movie-poster")
 class Poster extends PolymerElement {
   
-  @published Movie movie = new Movie.sample();
+  @published Movie movie;
   @observable bool over = false;
   
   Poster.created() : super.created();

@@ -11,10 +11,14 @@ saveImage(String imgAttrName, int imageWidth, [String imagePath = 'images']) => 
       });
 };
 
-main(args) {
-  File f = new File('upcoming.json');
+getImages(File f) {
   f.readAsString().then(JSON.decode).then((List movies) {
-    movies.where(attrNotNull('poster_path')).forEach(saveImage('poster_path', 300, 'images/posters'));
-    movies.where(attrNotNull('backdrop_path')).forEach(saveImage('backdrop_path', 1920, 'images/backdrops'));
+    movies.where(attrNotNull('poster_path')).forEach(saveImage('poster_path', 342, 'images/posters'));
+    movies.where(attrNotNull('backdrop_path')).forEach(saveImage('backdrop_path', 1280, 'images/backdrops'));
   });
+}
+
+main(args) {
+  getImages(new File('now_playing.json'));
+  getImages(new File('upcoming.json'));
 }

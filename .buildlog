@@ -6687,3 +6687,307 @@ build.dart --machine --changed=web/index.css
 
 build.dart finished [1033 ms]
 
+---
+build.dart --machine --changed=pubspec.lock --changed=web/json/images/2Aur1bxpCVzyTdWnGtxysInVlAT.jpg --changed...
+Unable to open file: /Users/eric/dart/task_board/packages/polymer/builder.dart'file:///Users/eric/dart/task_board/build.dart': error: line 1 pos 1: library handler failed
+import 'package:polymer/builder.dart';
+^
+build.dart finished [74 ms]
+
+---
+build.dart --machine --changed=web/img/movie-clapper-board-hi.png --changed=web/index.css --changed=web/index.h...
+Unable to open file: /Users/eric/dart/task_board/packages/polymer/builder.dart'file:///Users/eric/dart/task_board/build.dart': error: line 1 pos 1: library handler failed
+import 'package:polymer/builder.dart';
+^
+build.dart finished [59 ms]
+
+---
+build.dart --machine --clean
+Unable to open file: /Users/eric/dart/task_board/packages/polymer/builder.dart'file:///Users/eric/dart/task_board/build.dart': error: line 1 pos 1: library handler failed
+import 'package:polymer/builder.dart';
+^
+build.dart finished [60 ms]
+
+---
+build.dart --machine --full
+Unable to open file: /Users/eric/dart/task_board/packages/polymer/builder.dart'file:///Users/eric/dart/task_board/build.dart': error: line 1 pos 1: library handler failed
+import 'package:polymer/builder.dart';
+^
+build.dart finished [73 ms]
+
+---
+build.dart --machine --clean
+Unable to open file: /Users/eric/dart/task_board/packages/polymer/builder.dart'file:///Users/eric/dart/task_board/build.dart': error: line 1 pos 1: library handler failed
+import 'package:polymer/builder.dart';
+^
+build.dart finished [64 ms]
+
+---
+build.dart --machine --full
+Unable to open file: /Users/eric/dart/task_board/packages/polymer/builder.dart'file:///Users/eric/dart/task_board/build.dart': error: line 1 pos 1: library handler failed
+import 'package:polymer/builder.dart';
+^
+build.dart finished [61 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+Unable to open file: /Users/eric/dart/task_board/packages/polymer/builder.dart'file:///Users/eric/dart/task_board/build.dart': error: line 1 pos 1: library handler failed
+import 'package:polymer/builder.dart';
+^
+build.dart finished [65 ms]
+
+---
+build.dart --machine --full
+
+build.dart finished [1208 ms]
+
+---
+build.dart --machine --changed=web/json/import.dart
+
+build.dart finished [1002 ms]
+
+---
+build.dart --machine --changed=web/json/import.dart
+
+build.dart finished [996 ms]
+
+---
+build.dart --machine --changed=web/json/import.dart
+
+build.dart finished [987 ms]
+
+---
+build.dart --machine --removed=web/json/images/posters/2Aur1bxpCVzyTdWnGtxysInVlAT.jpg --removed=web/json/image...
+
+build.dart finished [983 ms]
+
+---
+build.dart --machine --removed=web/json/images/backdrops/5Dd6NeZZFk1E1yxAksz0qZHcKPp.jpg --removed=web/json/ima...
+
+build.dart finished [921 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/5NA3xjZxZt6dX4aMLnwFIl2ELq.jpg --changed=web/json/imag...
+
+build.dart finished [1015 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/5Dd6NeZZFk1E1yxAksz0qZHcKPp.jpg --changed=web/json/ima...
+
+build.dart finished [1017 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/5Dd6NeZZFk1E1yxAksz0qZHcKPp.jpg --changed=web/json/ima...
+
+build.dart finished [996 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/5Dd6NeZZFk1E1yxAksz0qZHcKPp.jpg --changed=web/json/ima...
+
+build.dart finished [993 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/5Dd6NeZZFk1E1yxAksz0qZHcKPp.jpg --changed=web/json/ima...
+
+build.dart finished [1008 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/awepqjHYn1lXUIqz8rTfZadsVSv.jpg --changed=web/json/ima...
+
+build.dart finished [1015 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/awepqjHYn1lXUIqz8rTfZadsVSv.jpg --changed=web/json/ima...
+
+build.dart finished [1037 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/jnGydHpWBqxWvw0bAMj0ebpsR5F.jpg --changed=web/json/ima...
+
+build.dart finished [1003 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/l50jqsHUSHKQHWHQL9aFODF1kmO.jpg --changed=web/json/ima...
+
+build.dart finished [986 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/ffJff2KWHd2rbwYWPRxKxTBypRB.jpg --changed=web/json/ima...
+
+build.dart finished [1036 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/ffJff2KWHd2rbwYWPRxKxTBypRB.jpg --changed=web/json/ima...
+
+build.dart finished [1008 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/ffJff2KWHd2rbwYWPRxKxTBypRB.jpg --changed=web/json/ima...
+
+build.dart finished [1046 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/ffJff2KWHd2rbwYWPRxKxTBypRB.jpg --changed=web/json/ima...
+
+build.dart finished [1067 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/ffJff2KWHd2rbwYWPRxKxTBypRB.jpg --changed=web/json/ima...
+
+build.dart finished [1011 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/ffJff2KWHd2rbwYWPRxKxTBypRB.jpg --changed=web/json/ima...
+
+build.dart finished [1000 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/ffJff2KWHd2rbwYWPRxKxTBypRB.jpg --changed=web/json/ima...
+
+build.dart finished [1024 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/ffJff2KWHd2rbwYWPRxKxTBypRB.jpg --changed=web/json/ima...
+
+build.dart finished [980 ms]
+
+---
+build.dart --machine --changed=web/json/images/qlAll8FyQD6E2PSkZ3ID90YFxs1.jpg --removed=web/json/images/backdr...
+
+build.dart finished [1003 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/qlAll8FyQD6E2PSkZ3ID90YFxs1.jpg --removed=web/json/ima...
+
+build.dart finished [1001 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/5Dd6NeZZFk1E1yxAksz0qZHcKPp.jpg --changed=web/json/ima...
+
+build.dart finished [1038 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/5Dd6NeZZFk1E1yxAksz0qZHcKPp.jpg --changed=web/json/ima...
+
+build.dart finished [999 ms]
+
+---
+build.dart --machine --removed=web/json/images/posters/2Aur1bxpCVzyTdWnGtxysInVlAT.jpg --removed=web/json/image...
+
+build.dart finished [976 ms]
+
+---
+build.dart --machine --changed=web/json/import.dart
+
+build.dart finished [959 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/5Dd6NeZZFk1E1yxAksz0qZHcKPp.jpg --changed=web/json/ima...
+
+build.dart finished [1063 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/7BqRYnVXoxtTjlETp0belv1JzPJ.jpg --changed=web/json/ima...
+
+build.dart finished [1062 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/7BqRYnVXoxtTjlETp0belv1JzPJ.jpg --changed=web/json/ima...
+
+build.dart finished [1065 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/7BqRYnVXoxtTjlETp0belv1JzPJ.jpg --changed=web/json/ima...
+
+build.dart finished [1038 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/awepqjHYn1lXUIqz8rTfZadsVSv.jpg --changed=web/json/ima...
+
+build.dart finished [1027 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/awepqjHYn1lXUIqz8rTfZadsVSv.jpg --changed=web/json/ima...
+
+build.dart finished [1014 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/ffJff2KWHd2rbwYWPRxKxTBypRB.jpg --changed=web/json/ima...
+
+build.dart finished [1017 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/ffJff2KWHd2rbwYWPRxKxTBypRB.jpg --changed=web/json/ima...
+
+build.dart finished [985 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/ffJff2KWHd2rbwYWPRxKxTBypRB.jpg --changed=web/json/ima...
+
+build.dart finished [995 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/ffJff2KWHd2rbwYWPRxKxTBypRB.jpg --changed=web/json/ima...
+
+build.dart finished [984 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/ffJff2KWHd2rbwYWPRxKxTBypRB.jpg --changed=web/json/ima...
+
+build.dart finished [995 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/ffJff2KWHd2rbwYWPRxKxTBypRB.jpg --changed=web/json/ima...
+
+build.dart finished [999 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/ffJff2KWHd2rbwYWPRxKxTBypRB.jpg --changed=web/json/ima...
+
+build.dart finished [984 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/ffJff2KWHd2rbwYWPRxKxTBypRB.jpg --changed=web/json/ima...
+
+build.dart finished [1001 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/ffJff2KWHd2rbwYWPRxKxTBypRB.jpg --changed=web/json/ima...
+
+build.dart finished [990 ms]
+
+---
+build.dart --machine --changed=web/json/images/backdrops/ffJff2KWHd2rbwYWPRxKxTBypRB.jpg --changed=web/json/ima...
+
+build.dart finished [968 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+
+build.dart finished [992 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+
+build.dart finished [1014 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+
+build.dart finished [1030 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+
+build.dart finished [1001 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [986 ms]
+
+---
+build.dart --machine --removed=web/json/images/backdropsqlAll8FyQD6E2PSkZ3ID90YFxs1.jpg
+
+build.dart finished [1026 ms]
+
