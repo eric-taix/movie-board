@@ -7136,3 +7136,693 @@ build.dart --machine --changed=web/posters/posters.dart
 
 build.dart finished [1033 ms]
 
+---
+build.dart --machine --changed=web/posters/posters.html
+
+build.dart finished [1015 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [1020 ms]
+
+---
+build.dart --machine --removed=web/json/images/backdropsqlAll8FyQD6E2PSkZ3ID90YFxs1.jpg
+
+build.dart finished [1054 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.html
+
+build.dart finished [1013 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.html
+
+build.dart finished [1045 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.html
+
+build.dart finished [1029 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [1017 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [1021 ms]
+
+---
+build.dart --machine --changed=web/services.dart
+
+build.dart finished [1024 ms]
+
+---
+build.dart --machine --changed=web/services.dart
+
+build.dart finished [1022 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+
+build.dart finished [1066 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+
+build.dart finished [1047 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+
+build.dart finished [1059 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+
+build.dart finished [1024 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [1025 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [1046 ms]
+
+---
+build.dart --machine --changed=web/services.dart
+
+build.dart finished [1050 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [1023 ms]
+
+---
+build.dart --machine --clean
+
+build.dart finished [1030 ms]
+
+---
+build.dart --machine --full
+
+build.dart finished [1227 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [1039 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [1049 ms]
+
+---
+build.dart --machine --changed=web/services.dart
+
+build.dart finished [1049 ms]
+
+---
+build.dart --machine --changed=web/services.dart
+
+build.dart finished [1033 ms]
+
+---
+build.dart --machine --changed=web/services.dart
+
+build.dart finished [1030 ms]
+
+---
+build.dart --machine --changed=web/services.dart
+
+build.dart finished [1321 ms]
+
+---
+build.dart --machine --changed=web/services.dart
+
+build.dart finished [1035 ms]
+
+---
+build.dart --machine --changed=web/services.dart
+
+build.dart finished [1040 ms]
+
+---
+build.dart --machine --changed=web/services.dart
+
+build.dart finished [1034 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.html
+
+build.dart finished [1027 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.html
+
+build.dart finished [1041 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1077 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1100 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1099 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.html
+
+build.dart finished [1080 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1086 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1084 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1116 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.html
+
+build.dart finished [1026 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.html
+
+build.dart finished [1021 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.html
+
+build.dart finished [1032 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [1032 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [1051 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [1034 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [1033 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [1024 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1093 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1108 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1050 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.html
+
+build.dart finished [1027 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.html
+
+build.dart finished [1047 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1061 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1065 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1105 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1107 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1143 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1061 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1092 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1058 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1057 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1079 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1060 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1067 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1060 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1059 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1047 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1096 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1041 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1107 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1106 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1043 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1101 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1056 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1054 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.html
+
+build.dart finished [1045 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1062 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1118 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1066 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1056 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1060 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1052 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1128 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1070 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1068 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1130 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1108 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1064 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1117 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.html
+
+build.dart finished [1050 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.html
+
+build.dart finished [1104 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.html
+
+build.dart finished [1056 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [1063 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [1037 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.html
+
+build.dart finished [1050 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [1038 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [1051 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [1054 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [1070 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [1074 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+
+build.dart finished [1044 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [1055 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.html
+
+build.dart finished [1040 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [1018 ms]
+
+---
+build.dart --machine --changed=build/img/movie-clapper-board-hi.png --changed=build/img/no-poster-w130.jpg --ch...
+
+build.dart finished [1215 ms]
+
+---
+build.dart --machine --removed=build/img/movie-clapper-board-hi.png --removed=build/img/no-poster-w130.jpg --re...
+
+build.dart finished [1072 ms]
+
+---
+build.dart --machine --changed=build/img/movie-clapper-board-hi.png --changed=build/img/no-poster-w130.jpg --ch...
+
+build.dart finished [1093 ms]
+
+---
+build.dart --machine --removed=build/img/movie-clapper-board-hi.png --removed=build/img/no-poster-w130.jpg --re...
+
+build.dart finished [1147 ms]
+
+---
+build.dart --machine --changed=build/img/movie-clapper-board-hi.png --changed=build/img/no-poster-w130.jpg --ch...
+
+build.dart finished [1160 ms]
+
+---
+build.dart --machine --removed=build/img/movie-clapper-board-hi.png --removed=build/img/no-poster-w130.jpg --re...
+
+build.dart finished [1145 ms]
+
+---
+build.dart --machine --changed=build/img/movie-clapper-board-hi.png --changed=build/img/no-poster-w130.jpg --ch...
+
+build.dart finished [1171 ms]
+
+---
+build.dart --machine --removed=build/img/movie-clapper-board-hi.png --removed=build/img/no-poster-w130.jpg --re...
+
+build.dart finished [1137 ms]
+
+---
+build.dart --machine --changed=build/img/movie-clapper-board-hi.png --changed=build/img/no-poster-w130.jpg --ch...
+
+build.dart finished [1061 ms]
+
+---
+build.dart --machine --removed=build/img/movie-clapper-board-hi.png --removed=build/img/no-poster-w130.jpg --re...
+
+build.dart finished [1124 ms]
+
+---
+build.dart --machine --changed=build/img/movie-clapper-board-hi.png --changed=build/img/no-poster-w130.jpg --ch...
+
+build.dart finished [1033 ms]
+
+---
+build.dart --machine --removed=build/img/movie-clapper-board-hi.png --removed=build/img/no-poster-w130.jpg --re...
+
+build.dart finished [1176 ms]
+
+---
+build.dart --machine --changed=pubspec.yaml
+
+build.dart finished [1030 ms]
+
+---
+build.dart --machine --changed=build/img/movie-clapper-board-hi.png --changed=build/img/no-poster-w130.jpg --ch...
+
+build.dart finished [1081 ms]
+
+---
+build.dart --machine --removed=build/img/movie-clapper-board-hi.png --removed=build/img/no-poster-w130.jpg --re...
+
+build.dart finished [1163 ms]
+
+---
+build.dart --machine --changed=build/img/movie-clapper-board-hi.png --changed=build/img/no-poster-w130.jpg --ch...
+
+build.dart finished [1035 ms]
+
+---
+build.dart --machine --changed=pubspec.yaml
+
+build.dart finished [1055 ms]
+
+---
+build.dart --machine --clean
+
+build.dart finished [1048 ms]
+
+---
+build.dart --machine --full
+
+build.dart finished [1251 ms]
+
+---
+build.dart --machine --changed=pubspec.yaml
+
+build.dart finished [967 ms]
+
+---
+build.dart --machine --changed=pubspec.yaml
+
+build.dart finished [1130 ms]
+
+---
+build.dart --machine --removed=build/img/movie-clapper-board-hi.png --removed=build/img/no-poster-w130.jpg --re...
+
+build.dart finished [1119 ms]
+
+---
+build.dart --machine --changed=build/img/movie-clapper-board-hi.png --changed=build/img/no-poster-w130.jpg --ch...
+
+build.dart finished [1153 ms]
+
+---
+build.dart --machine --changed=build/index.html
+
+build.dart finished [1088 ms]
+
+---
+build.dart --machine --changed=build/index.html
+
+build.dart finished [1079 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+
+build.dart finished [1099 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+
+build.dart finished [1050 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+
+build.dart finished [1065 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+
+build.dart finished [1070 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+
+build.dart finished [1055 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+
+build.dart finished [1083 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+
+build.dart finished [1097 ms]
+
+---
+build.dart --machine --removed=build/img/movie-clapper-board-hi.png --removed=build/img/no-poster-w130.jpg --re...
+
+build.dart finished [1123 ms]
+
+---
+build.dart --machine --changed=build/img/movie-clapper-board-hi.png --changed=build/img/no-poster-w130.jpg --ch...
+
+build.dart finished [1044 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+
+build.dart finished [1114 ms]
+

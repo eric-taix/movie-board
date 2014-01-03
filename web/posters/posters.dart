@@ -16,20 +16,27 @@ class MoviesGridUI extends PolymerElement {
   List<Movie> movies = toObservable(new List());
   List<Menu> menus = new List();
   
+  @observable String title;
+  @observable String searchFilter = "";
+  
   MoviesGridUI.created() : super.created() {
-    menus.add(new Menu(0, "All"));
-    menus.add(new Menu(1, "Now playing"));
-    menus.add(new Menu(2, "Upcoming"));
-    menus.add(new Menu(3, "Top rated TV Series"));
-    moviesService.getNowPlaying().then((List m) {
-      movies.clear();
-      movies.addAll(m);
-    });
+    Menu homeMenu = new Menu(0, "All", moviesService.getAll);
+    menus.add(homeMenu);
+    menus.add(new Menu(1, "Now playing", moviesService.getNowPlaying));
+    menus.add(new Menu(2, "Upcoming", moviesService.getUpcoming));
+    menus.add(new Menu(3, "Top rated TV Series", moviesService.getTopRatedTVSeries));
+    _applyMenu(homeMenu);
   }
   
   bool get applyAuthorStyles => true;
   
+  _applyMenu(Menu menu) {
+    title = menu.name;
+    menu.retriever().then(_updateMovies);
+  }
+  
   _updateMovies(List m) {
+    movies.clear();
     movies.addAll(m);
   }
   
@@ -39,6 +46,8 @@ class MoviesGridUI extends PolymerElement {
   void removeOver([Poster current = null]) {
     shadowRoot.querySelector("#movies").children.where(and([isType(Poster), notCurrent(current)])).forEach((m) => m.over = false); 
   }
+  
+  filter(String search) => (List<Movie> movies) => searchFilter.isNotEmpty ? movies.where((Movie m) => m.title.toLowerCase().contains(searchFilter.toLowerCase())).toList() : movies;
   
   //--------- Events handling ------------
   /**
@@ -60,13 +69,7 @@ class MoviesGridUI extends PolymerElement {
    */
   selectMenu(Event e, var detail, Element target) {
     int menuId = int.parse(target.attributes['data-menuid']);
-    movies.clear();
-    switch(menuId) {
-      case 0: moviesService.getNowPlaying().then(_updateMovies); moviesService.getUpcoming().then(_updateMovies); moviesService.getTopRatedTVSeries().then(_updateMovies); break;
-      case 1 : moviesService.getNowPlaying().then(_updateMovies); break;
-      case 2 : moviesService.getUpcoming().then(_updateMovies); break;
-      case 3 : moviesService.getTopRatedTVSeries().then(_updateMovies); break;
-    }
+    _applyMenu(menus[menuId]);
   }
 }
 

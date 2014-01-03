@@ -1,12 +1,16 @@
 library movie_board.models;
 
+import 'package:polymer/polymer.dart';
+import 'services.dart';
+
 /**
  * A movie model
  */
+@observable
 class Movie {
   
   int id;
-  String title;
+  @observable String title;
   String posterPath;
   String backdropPath;
   String releasedDate;
@@ -21,7 +25,7 @@ class Movie {
   
   Movie.fromMap(Map<String, Object> map) {
     id = map['id'];
-    title = map['title'];
+    title = map['title'] != null ? map['title'] : map['original_name'];
     posterPath = map['poster_path'] != null ? 'json/images/posters${map['poster_path']}' : 'img/no-poster-w130.jpg';
     backdropPath = 'json/images/backdrops${map['backdrop_path']}';
     releasedDate = map['release_date'];
@@ -35,12 +39,14 @@ class Movie {
 /**
  * Movies menu
  */
+@observable
 class Menu {
   
   int id;
   String name;
+  MoviesRetriever retriever;
   
-  Menu(this.id, this.name);
+  Menu(this.id, this.name, this.retriever);
   Menu.fromMap(Map<String, Object> map) {
     id = map['id'];
     name = map['name'];

@@ -8,7 +8,18 @@ import 'models.dart';
 
 final moviesService = new InMemoryMoviesService();
 
+typedef Future<List<Movie>> MoviesRetriever(); 
+
 class InMemoryMoviesService {
+  
+  Future<List<Movie>> getAll() {
+    Completer completer = new Completer();
+    Future.wait([getNowPlaying(), getUpcoming(), getTopRatedTVSeries()]).then((List<List<Movie>> r) {
+      List<Movie> result = r.reduce((List<Movie> list1, List<Movie> list2) => list1..addAll(list2));
+      completer.complete(result);
+    });
+    return completer.future;
+  }
   
   Future<List<Movie>> getNowPlaying() => _getMovies('json/now_playing.json');
   

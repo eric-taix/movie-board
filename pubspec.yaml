@@ -1,9 +1,8 @@
 name: task_board
 description: A sample Polymer application
 dependencies:
-  custom_element: any
-  polymer: any
-  polymer_expressions: any
+  polymer: 0.9.1
 transformers:
 - polymer:
-    entry_points: web/task_board.html
+    entry_points:
+    - web/index.html
