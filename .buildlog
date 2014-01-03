@@ -7137,6 +7137,7 @@ build.dart --machine --changed=web/posters/posters.dart
 build.dart finished [1033 ms]
 
 ---
+<<<<<<< HEAD
 build.dart --machine --changed=web/posters/posters.html
 
 build.dart finished [1015 ms]
@@ -7285,45 +7286,115 @@ build.dart finished [1034 ms]
 build.dart --machine --changed=web/posters/posters.html
 
 build.dart finished [1027 ms]
+=======
+build.dart --machine --changed=pubspec.lock --changed=web/img/no-poster-w130.jpg --changed=web/img/no-poster-w1...
+Unable to open file: /home/etaix/perso/dart/movie-board/packages/polymer/builder.dart'file:///home/etaix/perso/dart/movie-board/build.dart': error: line 1 pos 1: library handler failed
+import 'package:polymer/builder.dart';
+^
+build.dart finished [107 ms]
+
+---
+build.dart --machine --clean
+Unable to open file: /home/etaix/perso/dart/movie-board/packages/polymer/builder.dart'file:///home/etaix/perso/dart/movie-board/build.dart': error: line 1 pos 1: library handler failed
+import 'package:polymer/builder.dart';
+^
+build.dart finished [36 ms]
+
+---
+build.dart --machine --full
+Unable to open file: /home/etaix/perso/dart/movie-board/packages/polymer/builder.dart'file:///home/etaix/perso/dart/movie-board/build.dart': error: line 1 pos 1: library handler failed
+import 'package:polymer/builder.dart';
+^
+build.dart finished [44 ms]
+
+---
+build.dart --machine --changed=web/index.html
+Unable to open file: /home/etaix/perso/dart/movie-board/packages/polymer/builder.dart'file:///home/etaix/perso/dart/movie-board/build.dart': error: line 1 pos 1: library handler failed
+import 'package:polymer/builder.dart';
+^
+build.dart finished [35 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+Unable to open file: /home/etaix/perso/dart/movie-board/packages/polymer/builder.dart'file:///home/etaix/perso/dart/movie-board/build.dart': error: line 1 pos 1: library handler failed
+import 'package:polymer/builder.dart';
+^
+build.dart finished [36 ms]
+
+---
+build.dart --machine --changed=pubspec.lock
+
+build.dart finished [1757 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [1311 ms]
+>>>>>>> 87fc33a407f12507492067a035875999216a5255
 
 ---
 build.dart --machine --changed=web/posters/posters.html
 
+<<<<<<< HEAD
 build.dart finished [1041 ms]
+=======
+build.dart finished [2691 ms]
+>>>>>>> 87fc33a407f12507492067a035875999216a5255
 
 ---
 build.dart --machine --changed=web/index.css
 
+<<<<<<< HEAD
 build.dart finished [1077 ms]
+=======
+build.dart finished [1140 ms]
+>>>>>>> 87fc33a407f12507492067a035875999216a5255
 
 ---
 build.dart --machine --changed=web/index.css
 
+<<<<<<< HEAD
 build.dart finished [1100 ms]
+=======
+build.dart finished [1164 ms]
+>>>>>>> 87fc33a407f12507492067a035875999216a5255
 
 ---
 build.dart --machine --changed=web/index.css
 
+<<<<<<< HEAD
 build.dart finished [1099 ms]
 
 ---
 build.dart --machine --changed=web/posters/posters.html
 
 build.dart finished [1080 ms]
+=======
+build.dart finished [1167 ms]
+>>>>>>> 87fc33a407f12507492067a035875999216a5255
 
 ---
 build.dart --machine --changed=web/index.css
 
+<<<<<<< HEAD
 build.dart finished [1086 ms]
+=======
+build.dart finished [1299 ms]
+>>>>>>> 87fc33a407f12507492067a035875999216a5255
 
 ---
 build.dart --machine --changed=web/index.css
 
+<<<<<<< HEAD
 build.dart finished [1084 ms]
+=======
+build.dart finished [1197 ms]
+>>>>>>> 87fc33a407f12507492067a035875999216a5255
 
 ---
 build.dart --machine --changed=web/index.css
 
+<<<<<<< HEAD
 build.dart finished [1116 ms]
 
 ---
@@ -7365,20 +7436,72 @@ build.dart finished [1033 ms]
 build.dart --machine --changed=web/posters/posters.dart
 
 build.dart finished [1024 ms]
+=======
+build.dart finished [1185 ms]
 
 ---
 build.dart --machine --changed=web/index.css
 
+build.dart finished [1487 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1156 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1132 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1328 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1597 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1285 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1233 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1174 ms]
+>>>>>>> 87fc33a407f12507492067a035875999216a5255
+
+---
+build.dart --machine --changed=web/index.css
+
+<<<<<<< HEAD
 build.dart finished [1093 ms]
+=======
+build.dart finished [3270 ms]
+>>>>>>> 87fc33a407f12507492067a035875999216a5255
 
 ---
 build.dart --machine --changed=web/index.css
 
+<<<<<<< HEAD
 build.dart finished [1108 ms]
+=======
+build.dart finished [1256 ms]
+>>>>>>> 87fc33a407f12507492067a035875999216a5255
 
 ---
 build.dart --machine --changed=web/index.css
 
+<<<<<<< HEAD
 build.dart finished [1050 ms]
 
 ---
@@ -7390,186 +7513,345 @@ build.dart finished [1027 ms]
 build.dart --machine --changed=web/posters/posters.html
 
 build.dart finished [1047 ms]
+=======
+build.dart finished [1835 ms]
 
 ---
 build.dart --machine --changed=web/index.css
 
+build.dart finished [2002 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1796 ms]
+>>>>>>> 87fc33a407f12507492067a035875999216a5255
+
+---
+build.dart --machine --changed=web/index.css
+
+<<<<<<< HEAD
 build.dart finished [1061 ms]
+=======
+build.dart finished [1113 ms]
+>>>>>>> 87fc33a407f12507492067a035875999216a5255
 
 ---
 build.dart --machine --changed=web/index.css
 
+<<<<<<< HEAD
 build.dart finished [1065 ms]
+=======
+build.dart finished [1178 ms]
+>>>>>>> 87fc33a407f12507492067a035875999216a5255
 
 ---
 build.dart --machine --changed=web/index.css
 
+<<<<<<< HEAD
 build.dart finished [1105 ms]
+=======
+build.dart finished [1361 ms]
+>>>>>>> 87fc33a407f12507492067a035875999216a5255
 
 ---
 build.dart --machine --changed=web/index.css
 
+<<<<<<< HEAD
 build.dart finished [1107 ms]
+=======
+build.dart finished [1298 ms]
+>>>>>>> 87fc33a407f12507492067a035875999216a5255
 
 ---
 build.dart --machine --changed=web/index.css
 
+<<<<<<< HEAD
 build.dart finished [1143 ms]
 
 ---
 build.dart --machine --changed=web/index.css
 
 build.dart finished [1061 ms]
+=======
+build.dart finished [1484 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.html
+
+build.dart finished [1154 ms]
+>>>>>>> 87fc33a407f12507492067a035875999216a5255
 
 ---
 build.dart --machine --changed=web/index.css
 
+<<<<<<< HEAD
 build.dart finished [1092 ms]
+=======
+build.dart finished [1161 ms]
+>>>>>>> 87fc33a407f12507492067a035875999216a5255
 
 ---
 build.dart --machine --changed=web/index.css
 
+<<<<<<< HEAD
 build.dart finished [1058 ms]
+=======
+build.dart finished [1197 ms]
+>>>>>>> 87fc33a407f12507492067a035875999216a5255
 
 ---
 build.dart --machine --changed=web/index.css
 
+<<<<<<< HEAD
 build.dart finished [1057 ms]
+=======
+build.dart finished [1428 ms]
+>>>>>>> 87fc33a407f12507492067a035875999216a5255
 
 ---
 build.dart --machine --changed=web/index.css
 
+<<<<<<< HEAD
 build.dart finished [1079 ms]
+=======
+build.dart finished [1178 ms]
+>>>>>>> 87fc33a407f12507492067a035875999216a5255
 
 ---
 build.dart --machine --changed=web/index.css
 
+<<<<<<< HEAD
 build.dart finished [1060 ms]
+=======
+build.dart finished [1183 ms]
+>>>>>>> 87fc33a407f12507492067a035875999216a5255
 
 ---
 build.dart --machine --changed=web/index.css
 
+<<<<<<< HEAD
 build.dart finished [1067 ms]
 
 ---
 build.dart --machine --changed=web/index.css
 
 build.dart finished [1060 ms]
+=======
+build.dart finished [1156 ms]
+
+---
+build.dart --machine --changed=web/img/icon-search.png
+
+build.dart finished [4396 ms]
+>>>>>>> 87fc33a407f12507492067a035875999216a5255
 
 ---
 build.dart --machine --changed=web/index.css
 
+<<<<<<< HEAD
 build.dart finished [1059 ms]
+=======
+build.dart finished [1205 ms]
+>>>>>>> 87fc33a407f12507492067a035875999216a5255
 
 ---
 build.dart --machine --changed=web/index.css
 
+<<<<<<< HEAD
 build.dart finished [1047 ms]
+=======
+build.dart finished [1164 ms]
+>>>>>>> 87fc33a407f12507492067a035875999216a5255
 
 ---
 build.dart --machine --changed=web/index.css
 
+<<<<<<< HEAD
 build.dart finished [1096 ms]
+=======
+build.dart finished [1134 ms]
+>>>>>>> 87fc33a407f12507492067a035875999216a5255
 
 ---
 build.dart --machine --changed=web/index.css
 
+<<<<<<< HEAD
 build.dart finished [1041 ms]
+=======
+build.dart finished [1441 ms]
+>>>>>>> 87fc33a407f12507492067a035875999216a5255
 
 ---
 build.dart --machine --changed=web/index.css
 
+<<<<<<< HEAD
 build.dart finished [1107 ms]
+=======
+build.dart finished [1142 ms]
+>>>>>>> 87fc33a407f12507492067a035875999216a5255
 
 ---
 build.dart --machine --changed=web/index.css
 
+<<<<<<< HEAD
 build.dart finished [1106 ms]
+=======
+build.dart finished [1253 ms]
+>>>>>>> 87fc33a407f12507492067a035875999216a5255
 
 ---
 build.dart --machine --changed=web/index.css
 
+<<<<<<< HEAD
 build.dart finished [1043 ms]
+=======
+build.dart finished [1235 ms]
+>>>>>>> 87fc33a407f12507492067a035875999216a5255
 
 ---
 build.dart --machine --changed=web/index.css
 
+<<<<<<< HEAD
 build.dart finished [1101 ms]
+=======
+build.dart finished [1184 ms]
+>>>>>>> 87fc33a407f12507492067a035875999216a5255
 
 ---
 build.dart --machine --changed=web/index.css
 
+<<<<<<< HEAD
 build.dart finished [1056 ms]
+=======
+build.dart finished [1262 ms]
+>>>>>>> 87fc33a407f12507492067a035875999216a5255
 
 ---
 build.dart --machine --changed=web/index.css
 
+<<<<<<< HEAD
 build.dart finished [1054 ms]
+=======
+build.dart finished [1132 ms]
+>>>>>>> 87fc33a407f12507492067a035875999216a5255
 
 ---
 build.dart --machine --changed=web/posters/posters.html
 
+<<<<<<< HEAD
 build.dart finished [1045 ms]
+=======
+build.dart finished [1853 ms]
+>>>>>>> 87fc33a407f12507492067a035875999216a5255
 
 ---
 build.dart --machine --changed=web/index.css
 
+<<<<<<< HEAD
 build.dart finished [1062 ms]
+=======
+build.dart finished [1261 ms]
+>>>>>>> 87fc33a407f12507492067a035875999216a5255
 
 ---
 build.dart --machine --changed=web/index.css
 
+<<<<<<< HEAD
 build.dart finished [1118 ms]
+=======
+build.dart finished [1125 ms]
+>>>>>>> 87fc33a407f12507492067a035875999216a5255
 
 ---
 build.dart --machine --changed=web/index.css
 
+<<<<<<< HEAD
 build.dart finished [1066 ms]
+=======
+build.dart finished [1873 ms]
+>>>>>>> 87fc33a407f12507492067a035875999216a5255
 
 ---
 build.dart --machine --changed=web/index.css
 
+<<<<<<< HEAD
 build.dart finished [1056 ms]
+=======
+build.dart finished [1612 ms]
+>>>>>>> 87fc33a407f12507492067a035875999216a5255
 
 ---
 build.dart --machine --changed=web/index.css
 
+<<<<<<< HEAD
 build.dart finished [1060 ms]
+=======
+build.dart finished [1227 ms]
+>>>>>>> 87fc33a407f12507492067a035875999216a5255
 
 ---
 build.dart --machine --changed=web/index.css
 
+<<<<<<< HEAD
 build.dart finished [1052 ms]
+=======
+build.dart finished [1176 ms]
+>>>>>>> 87fc33a407f12507492067a035875999216a5255
 
 ---
 build.dart --machine --changed=web/index.css
 
+<<<<<<< HEAD
 build.dart finished [1128 ms]
+=======
+build.dart finished [1247 ms]
+>>>>>>> 87fc33a407f12507492067a035875999216a5255
 
 ---
 build.dart --machine --changed=web/index.css
 
+<<<<<<< HEAD
 build.dart finished [1070 ms]
+=======
+build.dart finished [1143 ms]
+>>>>>>> 87fc33a407f12507492067a035875999216a5255
 
 ---
 build.dart --machine --changed=web/index.css
 
+<<<<<<< HEAD
 build.dart finished [1068 ms]
+=======
+build.dart finished [1233 ms]
+>>>>>>> 87fc33a407f12507492067a035875999216a5255
 
 ---
 build.dart --machine --changed=web/index.css
 
+<<<<<<< HEAD
 build.dart finished [1130 ms]
+=======
+build.dart finished [1310 ms]
+>>>>>>> 87fc33a407f12507492067a035875999216a5255
 
 ---
 build.dart --machine --changed=web/index.css
 
+<<<<<<< HEAD
 build.dart finished [1108 ms]
+=======
+build.dart finished [1233 ms]
+>>>>>>> 87fc33a407f12507492067a035875999216a5255
 
 ---
 build.dart --machine --changed=web/index.css
 
+<<<<<<< HEAD
 build.dart finished [1064 ms]
+=======
+build.dart finished [1342 ms]
+>>>>>>> 87fc33a407f12507492067a035875999216a5255
 
 ---
 build.dart --machine --changed=web/index.css
@@ -7577,6 +7859,7 @@ build.dart --machine --changed=web/index.css
 build.dart finished [1117 ms]
 
 ---
+<<<<<<< HEAD
 build.dart --machine --changed=web/posters/posters.html
 
 build.dart finished [1050 ms]
@@ -7825,4 +8108,109 @@ build.dart finished [1044 ms]
 build.dart --machine --changed=web/models.dart
 
 build.dart finished [1114 ms]
+=======
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1114 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1212 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1144 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1136 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1191 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1150 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1188 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1225 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1653 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1419 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1245 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1202 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1254 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [3785 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1923 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1216 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1338 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1183 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1217 ms]
+>>>>>>> 87fc33a407f12507492067a035875999216a5255
+
+---
+build.dart --machine --changed=pubspec.lock --changed=web/img/icon-search.png --changed=web/index.css --changed...
+Unable to open file: /Users/eric/dart/task_board/packages/args/args.dart'package:polymer/builder.dart': error: line 85 pos 1: library handler failed
+import 'package:args/args.dart';
+^
+'file:///Users/eric/dart/task_board/build.dart': error: line 1 pos 1: library handler failed
+import 'package:polymer/builder.dart';
+^
+build.dart finished [154 ms]
 

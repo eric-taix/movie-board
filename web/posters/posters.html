@@ -8,8 +8,13 @@
       </template>
     </div>
     <div id="movies" class="center">
+<<<<<<< HEAD
     <div class="section-title"><h1>>>> {{title}}</h1><input placeholder="Search for a movie, a TV show" type="text" value="{{searchFilter}}"></div>
       <template repeat="{{movie in movies | filter(searchFilter)}}">
+=======
+      <div class="toolbar"><label>Search : </label><input type="text" placeholder="Search for movie, tv show..."></div>
+      <template repeat="{{movie in movies}}">
+>>>>>>> 87fc33a407f12507492067a035875999216a5255
         <movie-poster movie="{{movie}}"></movie-poster>
       </template>
     </div>
