@@ -1,1 +1,53 @@
-My github page
+<!DOCTYPE html><html><head><script src="packages/shadow_dom/shadow_dom.debug.js"></script>
+<script src="packages/custom_element/custom-elements.debug.js"></script>
+<script src="packages/browser/interop.js"></script>
+
+    <meta charset="utf-8">
+    <title>Movie board</title>
+    <link rel="stylesheet" href="index.css">
+    
+    
+    
+    <script src="index.html_bootstrap.dart.js"></script>
+    
+  </head>
+  <body><polymer-element name="movie-poster">
+  <template>
+    <style>
+    </style>
+    <li class="movie" on-mouseover="{{onOver}}">
+      <!-- Display overlay only if mouse is over -->
+      <template if="{{over}}">
+        <section class="overlay">
+          <h2>{{movie.title}}</h2>
+          <div>Date de sortie: {{movie.releasedDate}}</div>
+          <div>Note: <span class="rating">{{movie.voteAverage | stars}}</span><span>{{10-movie.voteAverage | stars}}</span></div>
+          <div>Votants: {{movie.voteCount}}</div>
+        </section>
+      </template>
+      <!-- Background display -->
+      <img src="{{movie.posterPath}}">
+    </li>
+  </template>
+    
+</polymer-element><polymer-element name="movie-posters" on-posterover="{{posterOver}}" on-mouseout="{{postersOut}}">
+  <template>
+    <div class="container left">
+      <template repeat="{{menu in menus}}">
+        <div class="menu" on-click="{{selectMenu}}" data-menuid="{{menu.id}}">{{menu.name}}</div>
+      </template>
+    </div>
+    <div id="movies" class="center">
+    <div class="section-title"><h1>&gt;&gt;&gt; {{title}}</h1><input placeholder="Search for a movie, a TV show" type="text" value="{{searchFilter}}"></div>
+      <template repeat="{{movie in movies | filter(searchFilter)}}">
+        <movie-poster movie="{{movie}}"></movie-poster>
+      </template>
+    </div>
+  </template>
+    
+</polymer-element>
+    <div class="top"><h1><img src="img/movie-clapper-board-hi.png" width="100px">Movie board</h1></div>
+    <movie-posters></movie-posters>
+  
+
+</body></html>

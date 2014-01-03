@@ -1,0 +1,165 @@
+@import url(http://fonts.googleapis.com/css?family=Alegreya+Sans+SC);
+
+body {
+  background: #222222;
+  font-family: 'Alegreya Sans SC', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.2em;
+  margin: 15px;
+}
+
+h1 {
+  color: white;
+  padding-left: 50px;
+  padding-top: 0px;
+  vertical-align: middle;
+  font-size: 75px;
+  font-weight: bold;
+}
+
+h1 img {
+  vertical-align: middle; 
+  padding-right: 40px;
+}
+
+.top {
+  position: absolute; top: 0px; left: 0px; width: 100%; height: 180px;
+  z-index: 1000;
+}
+.left {
+    position: absolute; top: 180px; left: 0px; width: 250px; height: 100%;
+}
+.center {
+   position: relative; top: 0px; margin-top: 180px; margin-left: 250px; height: 100%; min-width: 250px;
+}
+.section-title {
+  width: 100%;
+
+}
+
+.section-title h1 {
+  color: white;
+  font-size: 20px;
+  display: inline-block;
+    padding-left: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.section-title input {
+  float: right;
+  right: 0px;
+  padding-top: 4px;
+  border-radius: 6px;
+  margin-right: 50px;
+  margin-top: 10px;
+  height: 14px;
+  width: 300px;
+  font-size: 14px;
+  font-family: 'Alegreya Sans SC', sans-serif;
+  border-color: transparent;
+}
+
+#backdrop {
+    height: auto;;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 900;
+}
+.container {
+  display: block;
+  position: left;
+  background-color: #222222;
+  z-index: 2000;
+}
+
+.title {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+div.menu {
+  display: block;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  color: white;
+  border-bottom: 1px solid gray;
+  text-decoration: none;  
+  transition: all 0.3s ease-out; 
+}
+
+div.menu:hover, div.item:focus {
+  transform: scale(1.2);
+  background-color: white;
+  color: black;
+}
+
+div.menu img {
+  float: right;
+  position: relative;
+  right: 0px;
+  width: 20px;
+  height: 20px;
+  display: none;
+  transition: all 0.3s ease-out; 
+}
+
+div.menu:hover img {
+  display: inline;
+  transform: scale(1.2);
+  transition: all 0.3s ease-out; 
+}
+
+#movies {
+   z-index: 1000;
+}
+.movie {
+  display: block;
+  position: relative;
+  float: left;
+  width: 260px;
+  height: 380px;
+  padding: 2px;
+}
+
+.movie img {
+  width: 100%;
+  height: 100%;
+  border: solid 1px #444;
+  margin-bottom: 2px;
+  margin-left: 2px;
+  z-index: 10;
+}
+      
+.movie .overlay {
+  border: solid 1px #444;
+  position: absolute !important;
+  color: silver;
+  z-index: 100;
+  top: 2px;
+  left: 4px;
+  right: -2px;
+  bottom: 0px;
+  font-size: 14px;
+  text-align: left;
+  padding: 20px;
+  font-weight: bold;
+  background-color: #000;
+  background: rgba(32,32,32,0.85);
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=95);
+  display: visible;
+}
+      
+.movie .overlay h2 {
+  font-family: 'Alegreya Sans SC', sans-serif;
+  color: white;
+}
+      
+.rating {
+  color: yellow;
+}
