@@ -9,6 +9,7 @@
       </template>
     </div>
     <div id="movies" class="center">
+      <div class="toolbar"><label>Search : </label><input type="text" placeholder="Search for movie, tv show..."></div>
       <template repeat="{{movie in movies}}">
         <movie-poster movie="{{movie}}"></movie-poster>
       </template>

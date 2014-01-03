@@ -14,24 +14,25 @@ h1 {
   padding-left: 50px;
   padding-top: 0px;
   vertical-align: middle;
-  font-size: 75px;
+  font-size: 65px;
   font-weight: bold;
 }
 
 h1 img {
   vertical-align: middle; 
   padding-right: 40px;
+  width: 50px;
 }
 
 .top {
-  position: absolute; top: 0px; left: 0px; width: 100%; height: 180px;
+  position: absolute; top: 0px; left: 0px; width: 100%; height: 120px;
   z-index: 1000;
 }
 .left {
-    position: absolute; top: 180px; left: 0px; width: 250px; height: 100%;
+    position: absolute; top: 120px; left: 0px; width: 250px; height: 100%;
 }
 .center {
-   position: relative; top: 0px; margin-top: 180px; margin-left: 250px; height: 100%; min-width: 250px;
+   position: relative; top: 0px; margin-top: 120px; margin-left: 250px; height: 100%; min-width: 250px;
 }
 
 #backdrop {
@@ -91,6 +92,42 @@ div.menu:hover img {
 #movies {
    z-index: 1000;
 }
+
+#movies .toolbar {
+  height: 75px;
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background: gray;
+  border: 1px solid black;;
+  box-shadow: 0 3px 3px rgba(0,0,0,0.2) inset, 0 -1px 0 rgba(0,0,0,0.05) inset;
+}
+
+#movies .toolbar label {
+  margin-left: 30px;
+  margin-top: 20px;
+  color: white;
+  font-size: 26px;
+}
+
+#movies .toolbar input {
+    margin-left: 10px;
+    margin-top: 20px;
+    background: url(img/icon-search.png) 315px 6px no-repeat, linear-gradient(to bottom, #f7f7f8 0%,#ffffff 100%);
+    border-radius: 3px;
+    border: none;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2) inset, 0 -1px 0 rgba(0,0,0,0.05) inset;
+    transition: all 0.2s linear;
+    font-family: "Helvetica Neue", sans-serif;
+    font-size: 13px;
+    color: #222222;
+    position: relative;
+    height: 36px;
+    width: 300px;
+    padding-left: 10px;
+      padding-right: 40px;
+}
+
 .movie {
   display: block;
   position: relative;

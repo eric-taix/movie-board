@@ -7136,3 +7136,428 @@ build.dart --machine --changed=web/posters/posters.dart
 
 build.dart finished [1033 ms]
 
+---
+build.dart --machine --changed=pubspec.lock --changed=web/img/no-poster-w130.jpg --changed=web/img/no-poster-w1...
+Unable to open file: /home/etaix/perso/dart/movie-board/packages/polymer/builder.dart'file:///home/etaix/perso/dart/movie-board/build.dart': error: line 1 pos 1: library handler failed
+import 'package:polymer/builder.dart';
+^
+build.dart finished [107 ms]
+
+---
+build.dart --machine --clean
+Unable to open file: /home/etaix/perso/dart/movie-board/packages/polymer/builder.dart'file:///home/etaix/perso/dart/movie-board/build.dart': error: line 1 pos 1: library handler failed
+import 'package:polymer/builder.dart';
+^
+build.dart finished [36 ms]
+
+---
+build.dart --machine --full
+Unable to open file: /home/etaix/perso/dart/movie-board/packages/polymer/builder.dart'file:///home/etaix/perso/dart/movie-board/build.dart': error: line 1 pos 1: library handler failed
+import 'package:polymer/builder.dart';
+^
+build.dart finished [44 ms]
+
+---
+build.dart --machine --changed=web/index.html
+Unable to open file: /home/etaix/perso/dart/movie-board/packages/polymer/builder.dart'file:///home/etaix/perso/dart/movie-board/build.dart': error: line 1 pos 1: library handler failed
+import 'package:polymer/builder.dart';
+^
+build.dart finished [35 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+Unable to open file: /home/etaix/perso/dart/movie-board/packages/polymer/builder.dart'file:///home/etaix/perso/dart/movie-board/build.dart': error: line 1 pos 1: library handler failed
+import 'package:polymer/builder.dart';
+^
+build.dart finished [36 ms]
+
+---
+build.dart --machine --changed=pubspec.lock
+
+build.dart finished [1757 ms]
+
+---
+build.dart --machine --changed=web/index.html
+
+build.dart finished [1311 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.html
+
+build.dart finished [2691 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1140 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1164 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1167 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1299 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1197 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1185 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1487 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1156 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1132 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1328 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1597 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1285 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1233 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1174 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [3270 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1256 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1835 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [2002 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1796 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1113 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1178 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1361 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1298 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1484 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.html
+
+build.dart finished [1154 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1161 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1197 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1428 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1178 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1183 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1156 ms]
+
+---
+build.dart --machine --changed=web/img/icon-search.png
+
+build.dart finished [4396 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1205 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1164 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1134 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1441 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1142 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1253 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1235 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1184 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1262 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1132 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.html
+
+build.dart finished [1853 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1261 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1125 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1873 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1612 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1227 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1176 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1247 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1143 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1233 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1310 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1233 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1342 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1117 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1114 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1212 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1144 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1136 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1191 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1150 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1188 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1225 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1653 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1419 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1245 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1202 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1254 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [3785 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1923 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1216 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1338 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1183 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1217 ms]
+
