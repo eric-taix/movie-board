@@ -24,66 +24,21 @@ h1 img {
   width: 50px;
 }
 
-.top {
-  position: absolute; top: 0px; left: 0px; width: 100%; height: 120px;
+.header {
+  position: fixed; top: 0px; left: 0px; width: 100%; height: 120px;
   z-index: 1000;
 }
-.left {
-    position: absolute; top: 120px; left: 0px; width: 250px; height: 100%;
-}
-.center {
-   position: relative; top: 0px; margin-top: 120px; margin-left: 250px; height: 100%; min-width: 250px;
-}
-.section-title {
-  width: 100%;
 
-}
-
-.section-title h1 {
-  color: white;
-  font-size: 20px;
-  display: inline-block;
-    padding-left: 4px;
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-.section-title input {
-  float: right;
-  right: 0px;
-  padding-top: 4px;
-  border-radius: 6px;
-  margin-right: 50px;
-  margin-top: 10px;
-  height: 14px;
-  width: 300px;
-  font-size: 14px;
-  font-family: 'Alegreya Sans SC', sans-serif;
-  border-color: transparent;
-}
-
-#backdrop {
-    height: auto;;
-    width: 100%;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    z-index: 900;
-}
-.container {
+/** ========== Menu styles ========= */
+.menu {
   display: block;
   position: left;
   background-color: #222222;
   z-index: 2000;
+  position: fixed; top: 200px; left: 0px; width: 250px; height: 100%;
 }
 
-.title {
-  color: white;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-div.menu {
+.menu .item {
   display: block;
   padding-top: 10px;
   padding-left: 10px;
@@ -94,40 +49,36 @@ div.menu {
   transition: all 0.3s ease-out; 
 }
 
-div.menu:hover, div.item:focus {
+.menu .item:hover, div.item:focus {
   transform: scale(1.2);
   background-color: white;
   color: black;
 }
 
-div.menu img {
-  float: right;
-  position: relative;
-  right: 0px;
-  width: 20px;
-  height: 20px;
-  display: none;
-  transition: all 0.3s ease-out; 
-}
-
-div.menu:hover img {
+.menu .item:hover img {
   display: inline;
   transform: scale(1.2);
   transition: all 0.3s ease-out; 
 }
 
+/** ============== Movies styles (items and container) ======= */
 #movies {
    z-index: 1000;
+   position: relative; top: 0px; margin-top: 120px; margin-left: 250px; height: 100%; min-width: 250px;
+   background-color: red;
 }
 
 #movies .toolbar {
   height: 75px;
-  width: 100%;
-  border-radius: 5px;
+  border-radius: 5px 0px 0px 5px;
   margin-bottom: 10px;
   background: gray;
   border: 1px solid black;;
   box-shadow: 0 3px 3px rgba(0,0,0,0.2) inset, 0 -1px 0 rgba(0,0,0,0.05) inset;
+  position: fixed;
+  top: 100px;
+  left: 265px;
+  right: 0px;
 }
 
 #movies .toolbar label {
@@ -152,7 +103,23 @@ div.menu:hover img {
     height: 36px;
     width: 300px;
     padding-left: 10px;
-      padding-right: 40px;
+    padding-right: 40px;
+}
+
+#movies .content {
+  top: 190px;
+  left: 265px;
+  right: 0px;
+  position: fixed;
+  bottom: 0px;
+  overflow: scroll;
+  background-color: yellow;
+  padding: 15px;
+  border-radius: 5px 0px 0px 5px;
+  margin-bottom: 10px;
+  background: gray;
+  border: 1px solid black;;
+  box-shadow: 0 3px 3px rgba(0,0,0,0.2) inset, 0 -1px 0 rgba(0,0,0,0.05) inset;
 }
 
 .movie {
