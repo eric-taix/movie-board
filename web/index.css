@@ -134,23 +134,26 @@ h1 img {
   float: left;
   width: 260px;
   height: 380px;
-  padding: 2px;
+  margin: 2px;
+      border: solid 1px #444;
 }
 
 .movie img {
+  position: relative;
+  top: 0px;
+  left: 0px;
   width: 100%;
   height: 100%;
-  margin-bottom: 0px;
-  margin-left: 2px;
   z-index: 10;
+  visibility: visible;
 }
       
 .movie .overlay {
-  border: solid 1px #444;
+
   position: absolute !important;
   top: 0px;
-  left: 4px;
-  right: -2px;
+  left: 0px;
+  right: 0px;
   bottom: 0px;
   color: silver;
   z-index: 100;
@@ -165,6 +168,7 @@ h1 img {
 }
   
 .movie:hover .overlay {
+
     background: rgba(32,32,32,0.90);
 }
 
