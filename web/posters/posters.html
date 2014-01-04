@@ -2,9 +2,14 @@
       
 <polymer-element name="movie-posters" on-posterover="{{posterOver}}">
   <template>
-    <div class="menu">
+    <div id="menu" class="menu">
       <template repeat="{{menu in menus}}">
-        <div class="item" on-click="{{selectMenu}}" data-menuid="{{menu.id}}">{{menu.name}}</div>
+        <template if="{{menu.selected}}">
+          <div class="item item-selected" on-click="{{selectMenu}}" data-menuid="{{menu.id}}">{{menu.name}}</div>
+        </template>
+        <template if="{{!menu.selected}}">
+          <div class="item" on-click="{{selectMenu}}" data-menuid="{{menu.id}}">{{menu.name}}</div>
+        </template>
       </template>
     </div>
     <div id="movies">

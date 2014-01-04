@@ -14,7 +14,7 @@ h1 {
   padding-left: 50px;
   padding-top: 0px;
   vertical-align: middle;
-  font-size: 65px;
+  font-size: 45px;
   font-weight: bold;
 }
 
@@ -32,10 +32,9 @@ h1 img {
 /** ========== Menu styles ========= */
 .menu {
   display: block;
-  position: left;
-  background-color: #222222;
+  background-color: transparent;
   z-index: 2000;
-  position: fixed; top: 200px; left: 0px; width: 250px; height: 100%;
+  position: fixed; top: 230px; left: 30px; width: 196px;
 }
 
 .menu .item {
@@ -44,40 +43,47 @@ h1 img {
   padding-left: 10px;
   padding-bottom: 10px;
   color: white;
-  border-bottom: 1px solid gray;
   text-decoration: none;  
   transition: all 0.3s ease-out; 
+  cursor: pointer;
 }
 
-.menu .item:hover, div.item:focus {
+.menu .item:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.menu .item-selected {
+  background-color: gray;
+  color: white;
+  border-radius: 5px 0px 0px 5px;
+  border: none;
+  box-shadow: 0px 3px 3px -3px #000000 inset;
   transform: scale(1.2);
-  background-color: white;
-  color: black;
 }
 
-.menu .item:hover img {
-  display: inline;
-  transform: scale(1.2);
-  transition: all 0.3s ease-out; 
+.menu .item-selected:hover {
+  text-decoration: none;
+  cursor: default;
 }
-
+  
 /** ============== Movies styles (items and container) ======= */
 #movies {
    z-index: 1000;
-   position: relative; top: 0px; margin-top: 120px; margin-left: 250px; height: 100%; min-width: 250px;
+   position: relative; top: 0px; margin-top: 120px; margin-left: 230px; height: 100%; min-width: 250px;
    background-color: red;
 }
 
 #movies .toolbar {
   height: 75px;
   border-radius: 5px 0px 0px 5px;
+  border: 1px solid black;
+  box-shadow: 0 3px 3px rgba(0,0,0,0.2) inset, 0 -1px 0 rgba(0,0,0,0.05) inset;
   margin-bottom: 10px;
   background: gray;
-  border: 1px solid black;;
-  box-shadow: 0 3px 3px rgba(0,0,0,0.2) inset, 0 -1px 0 rgba(0,0,0,0.05) inset;
   position: fixed;
   top: 100px;
-  left: 265px;
+  left: 225px;
   right: 0px;
 }
 
@@ -108,7 +114,7 @@ h1 img {
 
 #movies .content {
   top: 190px;
-  left: 265px;
+  left: 225px;
   right: 0px;
   position: fixed;
   bottom: 0px;
@@ -118,7 +124,7 @@ h1 img {
   border-radius: 5px 0px 0px 5px;
   margin-bottom: 10px;
   background: gray;
-  border: 1px solid black;;
+  border: 1px solid black;
   box-shadow: 0 3px 3px rgba(0,0,0,0.2) inset, 0 -1px 0 rgba(0,0,0,0.05) inset;
 }
 
@@ -134,8 +140,7 @@ h1 img {
 .movie img {
   width: 100%;
   height: 100%;
-  border: solid 1px #444;
-  margin-bottom: 2px;
+  margin-bottom: 0px;
   margin-left: 2px;
   z-index: 10;
 }
@@ -143,27 +148,40 @@ h1 img {
 .movie .overlay {
   border: solid 1px #444;
   position: absolute !important;
-  color: silver;
-  z-index: 100;
-  top: 2px;
+  top: 0px;
   left: 4px;
   right: -2px;
   bottom: 0px;
+  color: silver;
+  z-index: 100;
+
   font-size: 14px;
   text-align: left;
   padding: 20px;
   font-weight: bold;
   background-color: #000;
-  background: rgba(32,32,32,0.85);
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=95);
-  display: visible;
+  background: rgba(32,32,32,0.0);
+  transition: visibility 0.3s, background 0.3s;
 }
-      
+  
+.movie:hover .overlay {
+    background: rgba(32,32,32,0.90);
+}
+
 .movie .overlay h2 {
   font-family: 'Alegreya Sans SC', sans-serif;
   color: white;
+  padding-top: 4px;
 }
-      
-.rating {
+    
+.movie .overlay h2, .movie .overlay div {
+  color: transparent;
+  transition: color 0.3s;
+}    
+    
+.movie:hover .overlay h2, .movie:hover .overlay div {
+    color: white;
+}      
+.movie:hover .rating {
   color: yellow;
 }

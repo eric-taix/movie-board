@@ -10,7 +10,7 @@ import 'services.dart';
 class Movie {
   
   int id;
-  @observable String title;
+  String title;
   String posterPath;
   String backdropPath;
   String releasedDate;
@@ -43,10 +43,11 @@ class Movie {
 class Menu {
   
   int id;
-  String name;
+  @observable String name;
+  bool selected = false;
   MoviesRetriever retriever;
   
-  Menu(this.id, this.name, this.retriever);
+  Menu(this.id, this.name, this.retriever, [this.selected = false]);
   Menu.fromMap(Map<String, Object> map) {
     id = map['id'];
     name = map['name'];

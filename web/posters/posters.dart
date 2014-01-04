@@ -14,13 +14,13 @@ import '../services.dart';
 class MoviesGridUI extends PolymerElement {
   
   List<Movie> movies = toObservable(new List());
-  List<Menu> menus = new List();
+  List<Menu> menus = toObservable(new List());
   
   @observable String title;
   @observable String searchFilter = "";
   
   MoviesGridUI.created() : super.created() {
-    Menu homeMenu = new Menu(0, "All", moviesService.getAll);
+    Menu homeMenu = new Menu(0, "All", moviesService.getAll, true);
     menus.add(homeMenu);
     menus.add(new Menu(1, "Now playing", moviesService.getNowPlaying));
     menus.add(new Menu(2, "Upcoming", moviesService.getUpcoming));
@@ -69,7 +69,11 @@ class MoviesGridUI extends PolymerElement {
    */
   selectMenu(Event e, var detail, Element target) {
     int menuId = int.parse(target.attributes['data-menuid']);
-    _applyMenu(menus[menuId]);
+    if (!target.classes.contains("item-selected")) {
+      target.parent.children.forEach((Element ele) => ele.classes.remove("item-selected"));
+      target.classes.add("item-selected");
+      _applyMenu(menus[menuId]);
+    }
   }
 }
 

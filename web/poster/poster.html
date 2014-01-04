@@ -3,16 +3,12 @@
     <style>
     </style>
     <li class="movie" on-mouseover="{{onOver}}" >
-      <!-- Display overlay only if mouse is over -->
-      <template if="{{over}}">
-        <section class="overlay">
-          <h2>{{movie.title}}</h2>
-          <div>Date de sortie: {{movie.releasedDate}}</div>
-          <div>Note: <span class="rating">{{movie.voteAverage | stars}}</span><span>{{10-movie.voteAverage | stars}}</span></div>
-          <div>Votants: {{movie.voteCount}}</div>
-        </section>
-      </template>
-      <!-- Background display -->
+      <section class="overlay">
+        <h2>{{movie.title}}</h2>
+        <div>Date de sortie: {{movie.releasedDate}}</div>
+        <div>Note: <span class="rating">{{movie.voteAverage | stars}}</span><span>{{10-movie.voteAverage | stars}}</span></div>
+        <div>Votants: {{movie.voteCount}}</div>
+      </section>
       <img src="{{movie.posterPath}}">
     </li>
   </template>
