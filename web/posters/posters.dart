@@ -4,9 +4,7 @@ import 'dart:html';
 
 import 'package:polymer/polymer.dart';
  
-import '../poster/poster.dart';
 import '../models.dart';
-import '../utils.dart';
 import '../services.dart';
 
 
@@ -16,7 +14,6 @@ class MoviesGridUI extends PolymerElement {
   List<Movie> movies = toObservable(new List());
   List<Menu> menus = toObservable(new List());
   
-  @observable String title;
   @observable String searchFilter = "";
   
   MoviesGridUI.created() : super.created() {
@@ -30,43 +27,21 @@ class MoviesGridUI extends PolymerElement {
   
   bool get applyAuthorStyles => true;
   
+  // Applies a menu : retrieves the new list according to the menu and updates movies list
   _applyMenu(Menu menu) {
-    title = menu.name;
     menu.retriever().then(_updateMovies);
   }
   
+  // Updates the movies list
   _updateMovies(List m) {
     movies.clear();
     movies.addAll(m);
   }
   
-  /**
-   * Remove the current over flag except for the current one
-   */
-  void removeOver([Poster current = null]) {
-    shadowRoot.querySelector("#movies").children.where(and([isType(Poster), notCurrent(current)])).forEach((m) => m.over = false); 
-  }
-  
+  // Filters movies according to the search term
   filter(String search) => (List<Movie> movies) => searchFilter.isNotEmpty ? movies.where((Movie m) => m.title.toLowerCase().contains(searchFilter.toLowerCase())).toList() : movies;
   
-  //--------- Events handling ------------
-  /**
-   * The mouse is over a poster
-   */
-  posterOver(Event e, var detail, Node target) {
-    removeOver(detail);
-  }
-  
-  /**
-   * The mouse is out of the grid
-   */
-  postersOut(Event e, var detail, Node target) {
-    removeOver();
-  }
-  
-  /**
-   * A menu has been selected
-   */
+  // A menu has been selected
   selectMenu(Event e, var detail, Element target) {
     int menuId = int.parse(target.attributes['data-menuid']);
     if (!target.classes.contains("item-selected")) {

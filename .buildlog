@@ -9965,3 +9965,53 @@ build.dart --machine --changed=web/index.css
 
 build.dart finished [1964 ms]
 
+---
+build.dart --machine --changed=web/posters/posters.html
+
+build.dart finished [1096 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [1059 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1086 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.html
+
+build.dart finished [1064 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1076 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [1085 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [1083 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [1082 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [1085 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [1087 ms]
+
