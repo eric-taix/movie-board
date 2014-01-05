@@ -6,8 +6,7 @@ import 'services.dart';
 /**
  * A movie model
  */
-@observable
-class Movie {
+class Movie extends Object with Observable {
   
   int id;
   String title;
@@ -17,9 +16,7 @@ class Movie {
   num popularity;
   int voteAverage;
   int voteCount;
-  
-  int genre;
-
+  @observable bool favorite = false;
   
   Movie(this.title, this.posterPath, {bool featured : false});
   
@@ -33,14 +30,12 @@ class Movie {
     voteAverage = (map['vote_average'] as num).toInt();
     voteCount = map['vote_count'];
   }
-  
 }
 
 /**
  * Movies menu
  */
-@observable
-class Menu {
+  class Menu extends Object with Observable {
   
   int id;
   @observable String name;

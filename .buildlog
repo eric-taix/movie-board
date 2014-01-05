@@ -10165,3 +10165,1140 @@ build.dart --machine --changed=web/index.css
 
 build.dart finished [1153 ms]
 
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1095 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1094 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.html
+
+build.dart finished [1097 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+
+build.dart finished [1083 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+
+build.dart finished [1099 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1092 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.html
+
+build.dart finished [1095 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1088 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.html
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Numeric entity didn't end with ';'.","line":6,"charStart":124,"charEnd":131}}]
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Numeric entity didn't end with ';'.","line":6,"charStart":124,"charEnd":131}}]
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Numeric entity didn't end with ';'.","line":6,"charStart":124,"charEnd":131}}]
+build.dart finished [1077 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.html
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Numeric entity didn't end with ';'.","line":6,"charStart":125,"charEnd":132}}]
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Numeric entity didn't end with ';'.","line":6,"charStart":125,"charEnd":132}}]
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Numeric entity didn't end with ';'.","line":6,"charStart":125,"charEnd":132}}]
+build.dart finished [1096 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.html
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Numeric entity didn't end with ';'.","line":6,"charStart":125,"charEnd":133}}]
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Numeric entity didn't end with ';'.","line":6,"charStart":125,"charEnd":133}}]
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Numeric entity didn't end with ';'.","line":6,"charStart":125,"charEnd":133}}]
+build.dart finished [1077 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.html
+
+build.dart finished [1065 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1095 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1117 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1129 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1171 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1169 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1177 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1177 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1163 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1184 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1081 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1083 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1173 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1162 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1154 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1172 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1137 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1180 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1174 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1166 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1187 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1157 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1097 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1109 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1112 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1190 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1164 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1188 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1194 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1170 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1178 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1095 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1230 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1175 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1097 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1167 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1182 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1135 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1171 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1287 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1156 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1098 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1174 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1167 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1146 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1187 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1185 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1203 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1196 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1072 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.html
+
+build.dart finished [1071 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1123 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1097 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1096 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.html
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Invalid event handler body \"{{likeIt(movie)}}\". Declare a method in your custom element \"void handlerName(event, detail, target)\" and use the form on-click=\"handlerName\".","line":6,"charStart":125,"charEnd":153}}]
+build.dart finished [1095 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.html
+
+build.dart finished [1058 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.html
+
+build.dart finished [1076 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1061 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.html
+
+build.dart finished [1104 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1104 ms]
+
+---
+build.dart --machine --changed=web/index.css
+
+build.dart finished [1113 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.html
+
+build.dart finished [1084 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.html
+
+build.dart finished [1067 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1138 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1069 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+
+build.dart finished [1170 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1113 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.html
+
+build.dart finished [1100 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1094 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.html
+
+build.dart finished [1113 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1109 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1097 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1113 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.html
+
+build.dart finished [1100 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1123 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+
+build.dart finished [1137 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1110 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.html
+
+build.dart finished [1121 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1107 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1122 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1104 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1095 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1104 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+
+build.dart finished [1123 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+
+build.dart finished [1106 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+
+build.dart finished [1112 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+
+build.dart finished [1122 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1108 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1130 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+
+build.dart finished [1232 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.html
+
+build.dart finished [1107 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1089 ms]
+
+---
+build.dart --machine --changed=pubspec.yaml
+Unhandled exception:
+Syntax error on line 4, column 14: invalid YAML in mapping value
+#0      Parser.parseFailed (package:yaml/src/parser.dart:426:5)
+#1      Parser.l_yamlStream (package:yaml/src/parser.dart:1871:34)
+#2      loadYamlStream (package:yaml/yaml.dart:77:39)
+#3      loadYaml (package:yaml/yaml.dart:62:30)
+#4      readCurrentPackageFromPubspec (package:polymer/src/build/runner.dart:76:18)
+#5      lint (package:polymer/builder.dart:153:77)
+#6      build (package:polymer/builder.dart:121:14)
+#7      main (file:///Users/eric/dart/task_board/build.dart:4:8)
+#8      _startIsolate.isolateStartHandler (dart:isolate-patch/isolate_patch.dart:188)
+#9      _RawReceivePortImpl._handleMessage (dart:isolate-patch/isolate_patch.dart:93)
+build.dart finished [326 ms]
+
+---
+build.dart --machine --changed=pubspec.yaml
+
+build.dart finished [1109 ms]
+
+---
+build.dart --machine --changed=pubspec.lock
+
+build.dart finished [1072 ms]
+
+---
+build.dart --machine --full
+
+build.dart finished [1305 ms]
+
+---
+build.dart --machine --changed=pubspec.yaml
+
+build.dart finished [1077 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1085 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1080 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1077 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1273 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1081 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1080 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1139 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1105 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1068 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1095 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1098 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+
+build.dart finished [1107 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+
+build.dart finished [1104 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.html
+
+build.dart finished [1101 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1062 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1289 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.html
+
+build.dart finished [1076 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.html
+
+build.dart finished [1084 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1091 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1110 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1113 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+
+build.dart finished [1111 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+
+build.dart finished [1094 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+
+build.dart finished [1121 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+
+build.dart finished [1125 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+
+build.dart finished [1106 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+
+build.dart finished [1094 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.html
+
+build.dart finished [1091 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1116 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+
+build.dart finished [1088 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1086 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1094 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1097 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+
+build.dart finished [1105 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.html
+
+build.dart finished [1088 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.html
+
+build.dart finished [1086 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.html
+
+build.dart finished [1084 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+
+build.dart finished [1098 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+
+build.dart finished [1112 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [1098 ms]
+
+---
+build.dart --machine --changed=web/services.dart
+
+build.dart finished [1114 ms]
+
+---
+build.dart --machine --changed=web/services.dart
+
+build.dart finished [1109 ms]
+
+---
+build.dart --machine --changed=web/services.dart
+
+build.dart finished [1086 ms]
+
+---
+build.dart --machine --changed=web/services.dart
+
+build.dart finished [1108 ms]
+
+---
+build.dart --machine --changed=web/services.dart
+
+build.dart finished [1125 ms]
+
+---
+build.dart --machine --changed=web/services.dart
+
+build.dart finished [1091 ms]
+
+---
+build.dart --machine --changed=web/services.dart
+
+build.dart finished [1212 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1111 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1093 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [1111 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [1096 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.html
+
+build.dart finished [1103 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.html
+
+build.dart finished [1096 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1085 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1097 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.html
+
+build.dart finished [1090 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+
+build.dart finished [1088 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+
+build.dart finished [1119 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.html
+
+build.dart finished [1059 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.html
+
+build.dart finished [1098 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.html
+
+build.dart finished [1091 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.html
+
+build.dart finished [1084 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1093 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.html
+
+build.dart finished [1104 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [1089 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.html
+
+build.dart finished [1076 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1096 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1097 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1124 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+
+build.dart finished [1082 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [1112 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [1104 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [1074 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.dart
+
+build.dart finished [1117 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.html
+
+build.dart finished [1109 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.html
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":289}}]
+build.dart finished [1113 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.html
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Invalid event handler body \"javascript:location.href='http://www.uol.com.br/'\". Declare a method in your custom element \"void handlerName(event, detail, target)\" and use the form on-click=\"handlerName\".","line":7,"charStart":230,"charEnd":290}}]
+build.dart finished [1098 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.html
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":289}}]
+build.dart finished [1083 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.html
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1099 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.html
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1118 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.html
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1139 ms]
+
+---
+build.dart --machine --changed=web/posters/posters.html
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1106 ms]
+
+---
+build.dart --machine --changed=web/index.css
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1124 ms]
+
+---
+build.dart --machine --changed=web/index.css
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1147 ms]
+
+---
+build.dart --machine --changed=web/index.css
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1130 ms]
+
+---
+build.dart --machine --changed=web/index.css
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1173 ms]
+
+---
+build.dart --machine --changed=web/index.css
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1161 ms]
+
+---
+build.dart --machine --changed=web/index.css
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1137 ms]
+
+---
+build.dart --machine --changed=web/index.css
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1141 ms]
+
+---
+build.dart --machine --changed=web/index.css
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1161 ms]
+
+---
+build.dart --machine --changed=web/index.css
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1164 ms]
+
+---
+build.dart --machine --changed=web/index.css
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1189 ms]
+
+---
+build.dart --machine --changed=web/index.css
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1174 ms]
+
+---
+build.dart --machine --changed=web/index.css
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1195 ms]
+
+---
+build.dart --machine --changed=web/index.css
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1103 ms]
+
+---
+build.dart --machine --changed=web/index.css
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1100 ms]
+
+---
+build.dart --machine --changed=web/index.css
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1136 ms]
+
+---
+build.dart --machine --changed=web/index.css
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1122 ms]
+
+---
+build.dart --machine --changed=web/index.css
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1098 ms]
+
+---
+build.dart --machine --changed=web/index.css
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1112 ms]
+
+---
+build.dart --machine --changed=web/index.css
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1110 ms]
+
+---
+build.dart --machine --changed=web/index.css
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1188 ms]
+
+---
+build.dart --machine --changed=web/index.css
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1166 ms]
+
+---
+build.dart --machine --changed=web/index.css
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1177 ms]
+
+---
+build.dart --machine --changed=web/index.css
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1166 ms]
+
+---
+build.dart --machine --changed=web/index.css
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1178 ms]
+
+---
+build.dart --machine --changed=web/index.css
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1100 ms]
+
+---
+build.dart --machine --changed=web/index.css
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1176 ms]
+
+---
+build.dart --machine --changed=web/index.css
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1167 ms]
+
+---
+build.dart --machine --changed=web/index.css
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1160 ms]
+
+---
+build.dart --machine --changed=web/index.css
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1117 ms]
+
+---
+build.dart --machine --changed=web/index.css
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1089 ms]
+
+---
+build.dart --machine --changed=web/index.css
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1123 ms]
+
+---
+build.dart --machine --changed=web/index.css
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1128 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1104 ms]
+
+---
+build.dart --machine --changed=web/poster/poster.dart
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1122 ms]
+

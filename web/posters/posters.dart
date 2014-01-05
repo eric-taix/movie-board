@@ -12,7 +12,8 @@ import '../services.dart';
 class MoviesGridUI extends PolymerElement {
   
   List<Movie> movies = toObservable(new List());
-  List<Menu> menus = toObservable(new List());
+  List<Menu> menus = new List();
+  Menu _currentMenu;
   
   @observable String searchFilter = "";
   
@@ -22,6 +23,7 @@ class MoviesGridUI extends PolymerElement {
     menus.add(new Menu(1, "Now playing", moviesService.getNowPlaying));
     menus.add(new Menu(2, "Upcoming", moviesService.getUpcoming));
     menus.add(new Menu(3, "Top rated TV Series", moviesService.getTopRatedTVSeries));
+    menus.add(new Menu(4, "Favorites", moviesService.getFavorites));
     _applyMenu(homeMenu);
   }
   
@@ -30,6 +32,7 @@ class MoviesGridUI extends PolymerElement {
   // Applies a menu : retrieves the new list according to the menu and updates movies list
   _applyMenu(Menu menu) {
     menu.retriever().then(_updateMovies);
+    _currentMenu = menu;
   }
   
   // Updates the movies list
@@ -49,6 +52,12 @@ class MoviesGridUI extends PolymerElement {
       target.classes.add("item-selected");
       _applyMenu(menus[menuId]);
     }
+  }
+  
+  updateFavorite(Event e, Movie detail, Element target) {
+    moviesService.updateFavorite(detail);
+    // In case the current menu is favorite, then remove the movie if it is not more a favorite
+    if (_currentMenu != null && _currentMenu.id == 4 && !detail.favorite) movies.remove(detail);
   }
 }
 

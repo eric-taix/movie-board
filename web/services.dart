@@ -12,6 +12,8 @@ typedef Future<List<Movie>> MoviesRetriever();
 
 class InMemoryMoviesService {
   
+  List<Movie> _favorites = new List();
+  
   Future<List<Movie>> getAll() {
     Completer completer = new Completer();
     Future.wait([getNowPlaying(), getUpcoming(), getTopRatedTVSeries()]).then((List<List<Movie>> r) {
@@ -26,6 +28,16 @@ class InMemoryMoviesService {
   Future<List<Movie>> getUpcoming() => _getMovies('json/upcoming.json');
   
   Future<List<Movie>> getTopRatedTVSeries() => _getMovies('json/tv_top_rated.json');
+  
+  // Add a movie to favorites
+  updateFavorite(Movie m) => m.favorite ? _favorites.add(m) : _favorites.remove(m);
+  
+  // Returns the favorites list
+  Future<List<Movie>> getFavorites()  {
+    Completer completer = new Completer();
+    completer.complete(_favorites);
+    return completer.future;
+  }
   
   Future<List<Movie>> _getMovies(String jsonUrl) {
     Completer completer = new Completer();

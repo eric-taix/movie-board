@@ -15,9 +15,14 @@
     <div id="movies">
       <div class="toolbar"><label>Search : </label><input type="text" placeholder="Search for movie, tv show..." value="{{searchFilter}}"></div>
       <div class="content">
+        <template if="{{movies.isNotEmpty}}">
           <template repeat="{{movie in movies | filter(searchFilter)}}">
-            <movie-poster movie="{{movie}}"></movie-poster>
+            <movie-poster movie="{{movie}}" on-updatefavorite="{{updateFavorite}}"></movie-poster>
           </template>
+        </template>
+        <template if="{{movies.isEmpty}}">
+          <span class="info">Sorry but there's nothing to display</span> 
+        </template>
       </div>
     </div>
   </template>

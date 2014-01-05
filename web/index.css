@@ -29,6 +29,19 @@ h1 img {
   z-index: 1000;
 }
 
+.info {
+  color: white;
+  font-size: 32px;
+  position: absolute;
+  text-align: center;
+  vertical-align: middle;
+  left: 0px;
+  right: 0px;
+  top: 50%;
+  bottom: 0px;
+  display: block;
+  word-wrap: break-xord;
+}
 /** ========== Menu styles ========= */
 .menu {
   display: block;
@@ -126,6 +139,7 @@ h1 img {
   background: gray;
   border: 1px solid black;
   box-shadow: 0 3px 3px rgba(0,0,0,0.2) inset, 0 -1px 0 rgba(0,0,0,0.05) inset;
+  
 }
 
 .movie {
@@ -135,11 +149,30 @@ h1 img {
   width: 260px;
   height: 380px;
   margin: 2px;
-      border: solid 1px #444;
+  border: solid 1px #444;
+}
+
+.movie .liked, .movie .liked-selected {
+  position: absolute !important;
+  right: 5px;
+  top: 15px;
+  font-size: 30px;
+  color: rgba(70,70,70,1);
+  z-index: 200;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.movie .liked-selected {
+  color: red;
+}
+
+.movie .liked:hover, .movie .liked-selected:hover {
+  text-shadow:0px 0px 5px white;
 }
 
 .movie img {
-  position: relative;
+  position: absolute !important;
   top: 0px;
   left: 0px;
   width: 100%;
@@ -149,7 +182,6 @@ h1 img {
 }
       
 .movie .overlay {
-
   position: absolute !important;
   top: 0px;
   left: 0px;
@@ -157,7 +189,6 @@ h1 img {
   bottom: 0px;
   color: silver;
   z-index: 100;
-
   font-size: 14px;
   text-align: left;
   padding: 20px;
@@ -168,7 +199,6 @@ h1 img {
 }
   
 .movie:hover .overlay {
-
     background: rgba(32,32,32,0.90);
 }
 
