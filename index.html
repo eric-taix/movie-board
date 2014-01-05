@@ -15,38 +15,57 @@
   <template>
     <style>
     </style>
-    <li class="movie" on-mouseover="{{onOver}}">
-      <!-- Display overlay only if mouse is over -->
-      <template if="{{over}}">
-        <section class="overlay">
-          <h2>{{movie.title}}</h2>
-          <div>Date de sortie: {{movie.releasedDate}}</div>
-          <div>Note: <span class="rating">{{movie.voteAverage | stars}}</span><span>{{10-movie.voteAverage | stars}}</span></div>
-          <div>Votants: {{movie.voteCount}}</div>
-        </section>
-      </template>
-      <!-- Background display -->
+    <li class="movie">
+      <span class="{{movie.favorite | favoriteClass }}" on-click="{{flipFavorite}}">♥</span>
+      <section class="overlay" onclick="javascript:location.href='#/movies/{{movie.id}}'">
+        <h2>{{movie.title}}</h2>
+        <div>Date de sortie: {{movie.releasedDate}}</div>
+        <div>Note: <span class="rating">{{movie.voteAverage | stars}}</span><span>{{10-movie.voteAverage | stars}}</span></div>
+        <div>Votants: {{movie.voteCount}}</div>
+      </section>
       <img src="{{movie.posterPath}}">
     </li>
   </template>
     
-</polymer-element><polymer-element name="movie-posters" on-posterover="{{posterOver}}" on-mouseout="{{postersOut}}">
+</polymer-element><polymer-element name="movie-posters">
   <template>
-    <div class="container left">
+    <!-- Menu on the left side -->
+    <div id="menu" class="menu">
       <template repeat="{{menu in menus}}">
-        <div class="menu" on-click="{{selectMenu}}" data-menuid="{{menu.id}}">{{menu.name}}</div>
+        <template if="{{menu.selected}}">
+          <div class="item item-selected" on-click="{{selectMenu}}" data-menuid="{{menu.id}}">{{menu.name}}</div>
+        </template>
+        <template if="{{!menu.selected}}">
+          <div class="item" on-click="{{selectMenu}}" data-menuid="{{menu.id}}">{{menu.name}}</div>
+        </template>
       </template>
     </div>
-    <div id="movies" class="center">
-    <div class="section-title"><h1>&gt;&gt;&gt; {{title}}</h1><input placeholder="Search for a movie, a TV show" type="text" value="{{searchFilter}}"></div>
-      <template repeat="{{movie in movies | filter(searchFilter)}}">
-        <movie-poster movie="{{movie}}"></movie-poster>
-      </template>
+    <!-- Movie content -->
+    <div id="movies">
+      <div class="toolbar">
+        <label>Search : </label><input type="text" placeholder="Search for movie, tv show..." value="{{searchFilter}}">
+        <label>Sort by :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <a href="#" class="gb gb-left" on-click="{{sort}}" data-field="title">A-Z</a>
+        <a href="#" class="gb" on-click="{{sort}}" data-field="vote">★</a>
+        <a href="#" class="gb gb-right" on-click="{{sort}}" data-field="favorite">♥</a>
+      </div>
+      <div class="content">
+        <!-- If there's at least one element -->
+        <template if="{{movies.isNotEmpty}}">
+          <template repeat="{{movie in movies | filter(searchFilter) | sortBy(sortField, sortAscending)}}">
+            <movie-poster movie="{{movie}}" on-updatefavorite="{{updateFavorite}}"></movie-poster>
+          </template>
+        </template>
+        <!-- If there's no element -->
+        <template if="{{movies.isEmpty}}">
+          <span class="info">Sorry but there's nothing to display</span> 
+        </template>
+      </div>
     </div>
   </template>
     
 </polymer-element>
-    <div class="top"><h1><img src="img/movie-clapper-board-hi.png" width="100px">Movie board</h1></div>
+    <div class="header"><h1><img src="img/movie-clapper-board-hi.png" width="100px">Movie board</h1></div>
     <movie-posters></movie-posters>
   
 
