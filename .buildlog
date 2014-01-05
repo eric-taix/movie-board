@@ -11552,3 +11552,68 @@ build.dart --machine --changed=web/models.dart
 [{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
 build.dart finished [1218 ms]
 
+---
+build.dart --machine --changed=web/index.css
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1194 ms]
+
+---
+build.dart --machine --removed=build/img/movie-clapper-board-hi.png --removed=build/img/no-poster-w130.jpg --re...
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1061 ms]
+
+---
+build.dart --machine --changed=web/index.css
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1169 ms]
+
+---
+build.dart --machine --changed=build/img/icon-search.png --changed=build/img/movie-clapper-board-hi.png --chang...
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1387 ms]
+
+---
+build.dart --machine --changed=pubspec.yaml
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1215 ms]
+
+---
+build.dart --machine --changed=build/img/icon-search.png --changed=build/img/movie-clapper-board-hi.png --chang...
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1131 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1147 ms]
+
+---
+build.dart --machine --changed=web/models.dart
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1148 ms]
+
+---
+build.dart --machine --changed=build/img/icon-search.png --changed=build/img/movie-clapper-board-hi.png --chang...
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1215 ms]
+
+---
+build.dart --machine --changed=build/json/upcoming.json
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1149 ms]
+
+---
+build.dart --machine --changed=README.md --changed=build/img/icon-search.png --changed=build/img/movie-clapper-...
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1581 ms]
+
+---
+build.dart --machine --changed=README.md
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1196 ms]
+
+---
+build.dart --machine --changed=README.md
+[{"method":"warning","params":{"file":"web/poster/poster.html","message":"Event handler \"onclick\" will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName\" if you want a Dart handler that will automatically update the UI based on model changes.","line":7,"charStart":230,"charEnd":288}}]
+build.dart finished [1161 ms]
+

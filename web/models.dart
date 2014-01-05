@@ -6,6 +6,7 @@ import 'services.dart';
 /**
  * A movie model
  */
+@observable
 class Movie extends Object with Observable {
   
   // Available comparators
@@ -46,7 +47,8 @@ class Movie extends Object with Observable {
 /**
  * Movies menu
  */
-  class Menu extends Object with Observable {
+@observable
+class Menu extends Object with Observable {
   
   int id;
   @observable String name;
