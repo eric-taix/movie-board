@@ -8,6 +8,13 @@ import 'services.dart';
  */
 class Movie extends Object with Observable {
   
+  // Available comparators
+  static final Map _comparators = {
+    "title": (Movie a, Movie b) => a.title.compareTo(b.title),
+    "vote": (Movie a, Movie b) => a.voteAverage.compareTo(b.voteAverage) * -1,
+    "favorite": (Movie a, Movie b) => a.favorite && !b.favorite ? -1 : b.favorite && !a.favorite ? 1 : 0,
+  };
+  
   int id;
   String title;
   String posterPath;
@@ -18,7 +25,7 @@ class Movie extends Object with Observable {
   int voteCount;
   @observable bool favorite = false;
   
-  Movie(this.title, this.posterPath, {bool featured : false});
+  Movie(this.title, this.posterPath);
   
   Movie.fromMap(Map<String, Object> map) {
     id = map['id'];
@@ -30,6 +37,10 @@ class Movie extends Object with Observable {
     voteAverage = (map['vote_average'] as num).toInt();
     voteCount = map['vote_count'];
   }
+  
+  /// Get a comparator according to a field: if it does not exist then all movies are equals
+  static getComparator(String field) => _comparators.containsKey(field) ? _comparators[field] : (a, b) => 0;
+
 }
 
 /**

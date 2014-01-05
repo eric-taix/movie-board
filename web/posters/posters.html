@@ -2,6 +2,7 @@
       
 <polymer-element name="movie-posters">
   <template>
+    <!-- Menu on the left side -->
     <div id="menu" class="menu">
       <template repeat="{{menu in menus}}">
         <template if="{{menu.selected}}">
@@ -12,14 +13,23 @@
         </template>
       </template>
     </div>
+    <!-- Movie content -->
     <div id="movies">
-      <div class="toolbar"><label>Search : </label><input type="text" placeholder="Search for movie, tv show..." value="{{searchFilter}}"></div>
+      <div class="toolbar">
+        <label>Search : </label><input type="text" placeholder="Search for movie, tv show..." value="{{searchFilter}}">
+        <label>Sort by :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <a href="#" class="gb gb-left" on-click="{{sort}}" data-field="title">A-Z</a>
+        <a href="#" class="gb" on-click="{{sort}}" data-field="vote">&#x2605;</a>
+        <a href="#" class="gb gb-right" on-click="{{sort}}" data-field="favorite">&#x2665;</a>
+      </div>
       <div class="content">
+        <!-- If there's at least one element -->
         <template if="{{movies.isNotEmpty}}">
-          <template repeat="{{movie in movies | filter(searchFilter)}}">
+          <template repeat="{{movie in movies | filter(searchFilter) | sortBy(sortField, sortAscending)}}">
             <movie-poster movie="{{movie}}" on-updatefavorite="{{updateFavorite}}"></movie-poster>
           </template>
         </template>
+        <!-- If there's no element -->
         <template if="{{movies.isEmpty}}">
           <span class="info">Sorry but there's nothing to display</span> 
         </template>

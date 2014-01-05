@@ -12,6 +12,9 @@ import '../services.dart';
 class MoviesGridUI extends PolymerElement {
   
   List<Movie> movies = toObservable(new List());
+  @observable String sortField = "";
+  @observable bool sortAscending = true;
+  
   List<Menu> menus = new List();
   Menu _currentMenu;
   
@@ -29,24 +32,30 @@ class MoviesGridUI extends PolymerElement {
   
   bool get applyAuthorStyles => true;
   
-  // Applies a menu : retrieves the new list according to the menu and updates movies list
+  /// Applies a menu : retrieves the new list according to the menu and updates movies list
   _applyMenu(Menu menu) {
     menu.retriever().then(_updateMovies);
     _currentMenu = menu;
   }
   
-  // Updates the movies list
+  /// Updates the movies list
   _updateMovies(List m) {
     movies.clear();
     movies.addAll(m);
   }
   
-  // Filters movies according to the search term
+  /// Filters movies according to the search term
   filter(String search) => (List<Movie> movies) => searchFilter.isNotEmpty ? movies.where((Movie m) => m.title.toLowerCase().contains(searchFilter.toLowerCase())).toList() : movies;
+    
+  /// Sort according to a field's name : if this field is already the current sorting field then reverse the sort
+  sortBy(String field, bool ascending) => (Iterable games) {
+    var list = games.toList()..sort(Movie.getComparator(field));
+    return ascending ? list : list.reversed;
+  };
   
-  // A menu has been selected
+  /// A menu has been selected
   selectMenu(Event e, var detail, Element target) {
-    int menuId = int.parse(target.attributes['data-menuid']);
+    int menuId = int.parse(target.dataset['menuid']);
     if (!target.classes.contains("item-selected")) {
       target.parent.children.forEach((Element ele) => ele.classes.remove("item-selected"));
       target.classes.add("item-selected");
@@ -54,10 +63,23 @@ class MoviesGridUI extends PolymerElement {
     }
   }
   
+  /// A movie's favorite attribute has been modified
   updateFavorite(Event e, Movie detail, Element target) {
     moviesService.updateFavorite(detail);
-    // In case the current menu is favorite, then remove the movie if it is not more a favorite
+    // In case the current menu is favorite, then remove the movie if it's not more a favorite
     if (_currentMenu != null && _currentMenu.id == 4 && !detail.favorite) movies.remove(detail);
+    
+  }
+  
+  /// A sort button has been clicked
+  sort(Event e, var detail, Element target) {
+    var field = target.dataset['field'];
+    sortAscending = field == sortField ? !sortAscending : true;
+    sortField = field;
+    if (!target.classes.contains("gb-selected")) {
+      target.parent.children.forEach((Element ele) => ele.classes.remove("gb-selected"));
+      target.classes.add("gb-selected");
+    }
   }
 }
 
