@@ -67,8 +67,7 @@ class MoviesGridUI extends PolymerElement {
   updateFavorite(Event e, Movie detail, Element target) {
     moviesService.save(detail);
     // In case the current menu is favorite, then remove the movie if it's not more a favorite
-    if (_currentMenu != null && _currentMenu.id == 4 && !detail.favorite) movies.remove(detail);
-    
+    if (_currentMenu != null && _currentMenu.id == 4 && !detail.favorite) movies = movies.where((Movie m) => m != detail).toList();
   }
   
   /// A sort button has been clicked
