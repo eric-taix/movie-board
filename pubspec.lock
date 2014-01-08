@@ -24,7 +24,7 @@ packages:
   csslib:
     description: csslib
     source: hosted
-    version: "0.9.1"
+    version: "0.9.2"
   custom_element:
     description: custom_element
     source: hosted
