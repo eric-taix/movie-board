@@ -17,6 +17,7 @@ class Movie extends Object with Observable {
   };
   
   int id;
+  String tag;
   String title;
   String posterPath;
   String backdropPath;
@@ -30,6 +31,7 @@ class Movie extends Object with Observable {
   
   Movie.fromMap(Map<String, Object> map) {
     id = map['id'];
+    tag = map['tag'];
     title = map['title'] != null ? map['title'] : map['original_name'];
     posterPath = map['poster_path'] != null ? 'json/images/posters${map['poster_path']}' : 'img/no-poster-w130.jpg';
     backdropPath = 'json/images/backdrops${map['backdrop_path']}';
@@ -42,6 +44,10 @@ class Movie extends Object with Observable {
   /// Get a comparator according to a field: if it does not exist then all movies are equals
   static getComparator(String field) => _comparators.containsKey(field) ? _comparators[field] : (a, b) => 0;
 
+  /// Hashcode relies on movie's id
+  int get hashCode => id;
+  /// Equals relies also on movies's id
+  bool operator ==(Movie other) => other != null ? id == other.id : false;
 }
 
 /**

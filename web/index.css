@@ -179,8 +179,9 @@ h1 img {
   height: 100%;
   z-index: 10;
   visibility: visible;
+  opacity: 1;
 }
-      
+
 .movie .overlay {
   position: absolute !important;
   top: 0px;

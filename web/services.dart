@@ -6,43 +6,51 @@ import 'dart:convert';
 
 import 'models.dart';
 
-final moviesService = new InMemoryMoviesService();
+final MovieService moviesService = new InMemoryMoviesService();
 
 typedef Future<List<Movie>> MoviesRetriever(); 
 
-class InMemoryMoviesService {
+/**
+ * Movie service definition
+ */
+abstract class MovieService {
+  Future<List<Movie>> getAllMovies();
+  Future<List<Movie>> getFavorites();
+  Future<List<Movie>> getMovies(String tag);
+  Future<Movie> getMovie(int id);
+  void save(Movie m);
+}
+
+/**
+ * InMemory movie service implementation (for tests purpose - it does not rely on backend)
+ */
+class InMemoryMoviesService extends MovieService {
   
-  List<Movie> _favorites = new List();
+  Map<int, Movie> _allMovies = new Map();
   
-  Future<List<Movie>> getAll() {
-    Completer completer = new Completer();
-    Future.wait([getNowPlaying(), getUpcoming(), getTopRatedTVSeries()]).then((List<List<Movie>> r) {
-      List<Movie> result = r.reduce((List<Movie> list1, List<Movie> list2) => list1..addAll(list2));
-      completer.complete(result);
-    });
-    return completer.future;
+  /// Retrieve all movies
+  Future<Iterable<Movie>> getAllMovies() {
+    if (_allMovies.isEmpty) return _getMovies('json/all.json')..then((List<Movie> m) => _allMovies = new Map.fromIterable(m, key: (Movie m) => m.id));
+    else return new Future(() => _allMovies.values);
   }
+  /// Retrieve favorites
+  Future<Iterable<Movie>> getFavorites() => new Future(() => _allMovies.values.where((Movie m) => m.favorite).toList());
   
-  Future<List<Movie>> getNowPlaying() => _getMovies('json/now_playing.json');
+  /// Retrieves movies which have the specified tag
+  Future<Iterable<Movie>> getMovies(String tag) => new Future(() => _allMovies.values.where((Movie m) => m.tag == tag).toList());
   
-  Future<List<Movie>> getUpcoming() => _getMovies('json/upcoming.json');
+  /// Retrieve a specific movie from its ID
+  Future<Movie> getMovie(int id) => new Future(() => _allMovies[id]);
   
-  Future<List<Movie>> getTopRatedTVSeries() => _getMovies('json/tv_top_rated.json');
+  /// Save a movie
+  void save(Movie m) { }
   
-  // Add a movie to favorites
-  updateFavorite(Movie m) => m.favorite ? _favorites.add(m) : _favorites.remove(m);
-  
-  // Returns the favorites list
-  Future<List<Movie>> getFavorites()  {
-    Completer completer = new Completer();
-    completer.complete(_favorites);
-    return completer.future;
-  }
-  
+
+  // Internal method to retrieve movies from a json url (also works without server - only dartium)
   Future<List<Movie>> _getMovies(String jsonUrl) {
     Completer completer = new Completer();
-    HttpRequest.getString(jsonUrl).then(JSON.decode).then((List l) {
-      List<Movie> movies = l.map((Map map) => new Movie.fromMap(map)).toList();
+    HttpRequest.getString(jsonUrl).then(JSON.decode).then((List jsonMovies) {
+      List<Movie> movies = jsonMovies.map((Map map) => new Movie.fromMap(map)).toList();
       completer.complete(movies);
     });
     return completer.future;

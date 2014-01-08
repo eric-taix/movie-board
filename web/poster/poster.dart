@@ -25,5 +25,9 @@ class Poster extends PolymerElement {
     movie.favorite = !movie.favorite;
     dispatchEvent(new CustomEvent('updatefavorite', detail: movie));
   }
+  
+  showDetail(Event e, var detail, Element target) {
+    window.location.href = "#/movies/${movie.id}";
+  }
 }
 
