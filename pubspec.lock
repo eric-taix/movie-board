@@ -61,6 +61,10 @@ packages:
     description: polymer_expressions
     source: hosted
     version: "0.9.1"
+  route:
+    description: route
+    source: hosted
+    version: "0.4.6"
   shadow_dom:
     description: shadow_dom
     source: hosted
