@@ -1,4 +1,4 @@
-library movies;
+library movies.posters;
 
 import 'dart:html';
 import 'dart:async';
@@ -11,7 +11,7 @@ import '../utils.dart';
 
 
 @CustomTag('movie-posters')
-class MoviesGridUI extends PolymerElement {
+class PostersGrid extends PolymerElement {
   
   @observable
   Iterable<Movie> movies = toObservable(new List());
@@ -24,7 +24,7 @@ class MoviesGridUI extends PolymerElement {
   @observable String searchFilter = "";
   @observable String searchTerm = "";
   
-  MoviesGridUI.created() : super.created() {
+  PostersGrid.created() : super.created() {
     Menu homeMenu = new Menu(0, "All", moviesService.getAllMovies, true);
     menus.add(homeMenu);
     menus.add(new Menu(1, "Now playing", _retrieveNowPlaying));

@@ -1,4 +1,4 @@
-library movie_board.movie_poster;
+library movies.poster;
 
 import 'dart:html';
 import 'package:polymer/polymer.dart';

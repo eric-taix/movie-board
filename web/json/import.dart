@@ -18,8 +18,30 @@ getImages(File f) {
   });
 }
 
+saveAllMoviesJSON(String file, String apiKey) {
+  new File(file).readAsString().then(JSON.decode).then((List movies) => movies.forEach((Map movie) {
+    String baseApi = movie['tag'] == 'tv_top_rated' ? 'tv' : 'movie';
+    saveMovieJSON(movie['id'], movie['poster_path'], apiKey); 
+  }));
+}
+
+saveMovieJSON(int movieId, String posterPath, String apiKey, {String baseApi : 'movie'}) {
+  new HttpClient().getUrl(Uri.parse('http://api.themoviedb.org/3/${baseApi}/${movieId}?api_key=${apiKey}&append_to_response=trailers'))
+    .then((HttpClientRequest request) => request.close())
+      .then((HttpClientResponse response) {
+        response.transform(UTF8.decoder).toList().then((data) {
+          Map map = JSON.decode(data.join(''))..['poster_path'] = posterPath;
+          String result = JSON.encode(map);
+          File f = new File('movies/${movieId}.json');
+          f.writeAsString(result);
+        });
+      });
+}
+
 main(args) {
 //  getImages(new File('now_playing.json'));
 //  getImages(new File('upcoming.json'));
-  getImages(new File('tv_top_rated.json'));
+//  getImages(new File('tv_top_rated.json'));
+//  saveMovieJSON(550);
+  saveAllMoviesJSON('all.json','360c015ba3d57c3c624687c111f91c27');
 }

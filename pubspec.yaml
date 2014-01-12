@@ -1,7 +1,7 @@
 name: task_board
 description: A sample Polymer application
 dependencies:
-  polymer: 0.9.1
+  polymer: any
   route: any
 transformers:
 - polymer:

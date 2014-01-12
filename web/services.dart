@@ -17,7 +17,7 @@ abstract class MovieService {
   Future<List<Movie>> getAllMovies();
   Future<List<Movie>> getFavorites();
   Future<List<Movie>> getMovies(String tag);
-  Future<Movie> getMovie(int id);
+  Future<MovieDetail> getMovieDetail(int id);
   void save(Movie m);
 }
 
@@ -40,12 +40,20 @@ class InMemoryMoviesService extends MovieService {
   Future<Iterable<Movie>> getMovies(String tag) => new Future(() => _allMovies.values.where((Movie m) => m.tag == tag).toList());
   
   /// Retrieve a specific movie from its ID
-  Future<Movie> getMovie(int id) => new Future(() => _allMovies[id]);
+  Future<MovieDetail> getMovieDetail(int id) => _getMovieDetail('json/movies/${id}.json');
   
   /// Save a movie
   void save(Movie m) { }
   
-
+  // Internal method to retrieve a movie's detail from a json url (also works without server - only dartium)
+  Future<MovieDetail> _getMovieDetail(String jsonUrl) {
+    Completer completer = new Completer();
+    HttpRequest.getString(jsonUrl).then(JSON.decode).then((Map jsonMovie) {
+      completer.complete(new MovieDetail.fromMap(jsonMovie));
+    });
+    return completer.future;
+  }
+  
   // Internal method to retrieve movies from a json url (also works without server - only dartium)
   Future<List<Movie>> _getMovies(String jsonUrl) {
     Completer completer = new Completer();

@@ -50,8 +50,42 @@ class Movie extends Object with Observable {
   bool operator ==(Movie other) => other != null ? id == other.id : false;
 }
 
+class MovieDetail {
+  int id;
+  String backdropPath;
+  String genre;
+  String tagLine;
+  String overview;
+  String posterPath;
+  String productionCountry;
+  String releaseDate;
+  String title;
+  String trailer;
+  int voteAverage;
+  int voteCount;
+  String country;
+  
+  MovieDetail.fromMap(Map<String, Object> map) {
+    id = map['id'];
+    backdropPath = map['backdrop_path'];
+    genre = map['genres'] != null && (map['genres'] as List).isNotEmpty ? (map['genres'] as List)[0]['name'] : '';
+    tagLine = map['tagline']!= null && (map['tagline'] as String).isNotEmpty ? "\"${map['tagline']}\"" : "";
+    overview = map['overview'];
+    posterPath = map['poster_path'] != null ? 'json/images/posters${map['poster_path']}' : 'img/no-poster-w130.jpg';
+    productionCountry = map['production_countries'] != null && (map['production_countries'] as List).isNotEmpty ? (map['production_countries'] as List)[0]['name'] : "";
+    releaseDate = map['release_date'];
+    title = map['title'];
+    List trailers = map['trailers'] != null ? ((map['trailers'] as Map)['youtube'] as List) : [];
+    trailer = trailers.isNotEmpty? ((map['trailers'] as Map)['youtube'] as List)[0]['source'] : '';
+    voteAverage = (map['vote_average'] as num) != null ? (map['vote_average'] as num).toInt() : 0;
+    voteCount = map['vote_count'];
+    country = map['production_countries'] != null ? ((map['production_countries'] as List)[0] as Map)['name'] : "";
+  }
+  
+}
+
 /**
- * Movies menu
+ * Menu
  */
 @observable
 class Menu extends Object with Observable {

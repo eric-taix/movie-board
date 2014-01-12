@@ -1,0 +1,30 @@
+<polymer-element name="movie-card">
+  <template>
+    <link rel="stylesheet" href="card.css">
+    <div class="card">
+      <div class="line">
+        <img class="poster" src="{{movie.posterPath}}">
+        <div class="header">
+          <div class="title">{{movie.title}}</div>
+          <div class="tagline">{{movie.tagLine}}</div>
+          <div class="vote">Rating : <span class="rating">{{movie.voteAverage | stars}}</span><span>{{10-movie.voteAverage | stars}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vote count : {{movie.voteCount}}</div>
+          <template if="{{movie.trailer.isNotEmpty}}">
+            <a class="trailer" on-click="{{openTrailer}}"><img src="img/play.png"></a>
+          </template>
+          <div class="overview">{{movie.overview}}</div>
+        </div>
+      </div>
+      <br/>
+      <div class="line">
+        <div class="genre">Genre: {{movie.genre}}</div>
+        <div class="genre">Date: {{movie.releaseDate}}</div>
+        <div class="genre">Country: {{movie.country}}</div>
+      </div>
+      <div class="line">
+        <textarea placeholder="Your comment here" class="comment" value="{{comment}}" multiple="multiple">{{comment}}</textarea>
+      </div>
+      <a class="btn" on-click="{{saveComment}}">Save</a>
+    </div>
+  </template>
+  <script type="application/dart" src="card.dart"></script>
+</polymer-element>
