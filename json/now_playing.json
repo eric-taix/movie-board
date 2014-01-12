@@ -1,6 +1,6 @@
 [
 {
-  "adult": false,
+  "tag": "now_playing","adult": false,
   "backdrop_path": "/7BqRYnVXoxtTjlETp0belv1JzPJ.jpg",
   "id": 57158,
   "original_title": "The Hobbit: The Desolation of Smaug",
@@ -12,7 +12,7 @@
   "vote_count": 182
   },
   {
-  "adult": false,
+  "tag": "now_playing","adult": false,
   "backdrop_path": "qlAll8FyQD6E2PSkZ3ID90YFxs1.jpg",
   "id": 172803,
   "original_title": "Hours",
@@ -24,7 +24,7 @@
   "vote_count": 26
   },
   {
-  "adult": false,
+  "tag": "now_playing","adult": false,
   "backdrop_path": "/8DtQhSXPDowtoXV9vywKQEyOlvp.jpg",
   "id": 106646,
   "original_title": "The Wolf of Wall Street",
@@ -36,7 +36,7 @@
   "vote_count": 12
   },
   {
-  "adult": false,
+  "tag": "now_playing","adult": false,
   "backdrop_path": "/ffJff2KWHd2rbwYWPRxKxTBypRB.jpg",
   "id": 168672,
   "original_title": "American Hustle",
@@ -48,7 +48,7 @@
   "vote_count": 21
   },
   {
-  "adult": false,
+  "tag": "now_playing","adult": false,
   "backdrop_path": "/wemkx5CeiS56v8Vyl2H9eQ7Rigq.jpg",
   "id": 230222,
   "original_title": "Tarzan",
@@ -60,7 +60,7 @@
   "vote_count": 3
   },
   {
-  "adult": false,
+  "tag": "now_playing","adult": false,
   "backdrop_path": "/mrvlpJFAzKwZZkLm9VD7Rh2VECi.jpg",
   "id": 116745,
   "original_title": "The Secret Life of Walter Mitty",
@@ -72,7 +72,7 @@
   "vote_count": 10
   },
   {
-  "adult": false,
+  "tag": "now_playing","adult": false,
   "backdrop_path": "/noQw3MlnYYASctocGTH2qoLTQ7V.jpg",
   "id": 140823,
   "original_title": "Saving Mr. Banks",
@@ -84,7 +84,7 @@
   "vote_count": 13
   },
   {
-  "adult": false,
+  "tag": "now_playing","adult": false,
   "backdrop_path": "/mTMnfiWuvhbCdez9LAzbYy0vLSG.jpg",
   "id": 109443,
   "original_title": "Anchorman 2: The Legend Continues",
@@ -96,7 +96,7 @@
   "vote_count": 14
   },
   {
-  "adult": false,
+  "tag": "now_playing","adult": false,
   "backdrop_path": "/jCscmcou3Y7appIefa7cyUiJRbG.jpg",
   "id": 238589,
   "original_title": "Enemies Closer",
@@ -108,7 +108,7 @@
   "vote_count": 8
   },
   {
-  "adult": false,
+  "tag": "now_playing","adult": false,
   "backdrop_path": null,
   "id": 239530,
   "original_title": "Majokko Shimai no Yoyo to Nene",
@@ -120,7 +120,7 @@
   "vote_count": 0
   },
   {
-  "adult": false,
+  "tag": "now_playing","adult": false,
   "backdrop_path": "/6pCLzhp06ua2ltbukUsD2KiEDsJ.jpg",
   "id": 180894,
   "original_title": "Ninja: Shadow of a Tear",
@@ -132,7 +132,7 @@
   "vote_count": 4
   },
   {
-  "adult": false,
+  "tag": "now_playing","adult": false,
   "backdrop_path": "/jnGydHpWBqxWvw0bAMj0ebpsR5F.jpg",
   "id": 64686,
   "original_title": "47 Ronin",
@@ -144,7 +144,7 @@
   "vote_count": 10
   },
   {
-  "adult": false,
+  "tag": "now_playing","adult": false,
   "backdrop_path": "/pH6IGq7KZKcKiuIJRrnrycMdTpF.jpg",
   "id": 239523,
   "original_title": "劇場版 HUNTERxHUNTER THE LAST MISSION",
@@ -156,7 +156,7 @@
   "vote_count": 0
   },
   {
-  "adult": false,
+  "tag": "now_playing","adult": false,
   "backdrop_path": "/sB8KE4wg9ijNl0SLG9IyEy2vxOq.jpg",
   "id": 229405,
   "original_title": "Panic in the Mailroom",
@@ -168,7 +168,7 @@
   "vote_count": 10
   },
   {
-  "adult": false,
+  "tag": "now_playing","adult": false,
   "backdrop_path": null,
   "id": 243790,
   "original_title": "A Young Doctor's Notebook and Other Stories",
@@ -180,7 +180,7 @@
   "vote_count": 1
   },
   {
-  "adult": false,
+  "tag": "now_playing","adult": false,
   "backdrop_path": "/awepqjHYn1lXUIqz8rTfZadsVSv.jpg",
   "id": 175555,
   "original_title": "Tyler Perry's A Madea Christmas",
@@ -192,7 +192,7 @@
   "vote_count": 1
   },
   {
-  "adult": false,
+  "tag": "now_playing","adult": false,
   "backdrop_path": "/ojAvtm8yCcyQvhLVmdDA12eeZS2.jpg",
   "id": 64807,
   "original_title": "Grudge Match",
@@ -204,7 +204,7 @@
   "vote_count": 1
   },
   {
-  "adult": false,
+  "tag": "now_playing","adult": false,
   "backdrop_path": "/t4I19gZ15kNnSfoajwf4oWNWpWx.jpg",
   "id": 44977,
   "original_title": "Dhoom 3",
@@ -216,7 +216,7 @@
   "vote_count": 4
   },
   {
-  "adult": false,
+  "tag": "now_playing","adult": false,
   "backdrop_path": "/5Dd6NeZZFk1E1yxAksz0qZHcKPp.jpg",
   "id": 111473,
   "original_title": "The Invisible Woman",
@@ -228,7 +228,7 @@
   "vote_count": 0
   },
   {
-  "adult": false,
+  "tag": "now_playing","adult": false,
   "backdrop_path": "/zTe27FXP113lHiv6qCADhQHqemd.jpg",
   "id": 227359,
   "original_title": "Force of Execution",

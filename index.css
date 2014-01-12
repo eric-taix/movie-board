@@ -42,6 +42,52 @@ h1 img {
   display: block;
 }
 
+/** ========== Window ========= */
+.window {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  color: white;
+  z-index: 2000;
+}
+
+.window:after {
+  content: '';
+  background-color: black;
+  position: absolute;
+  opacity: 0.7;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+}
+
+.window .container {
+  height: 630px;
+  width: 1000px;
+  background: #222;
+  position: absolute;
+  margin: -350px 0 0 -500px;
+  left: 50%;
+  top: 50%;
+  border: 4px solid white;
+  border-radius: 10px;
+  z-index: 2001;  
+  background-color: black;
+}
+
+.window .close-button {
+  position: absolute;
+    z-index: 2001; 
+  right: -15px;
+  top: -15px;
+  width: 35px;
+  height: 35px;
+  background: url('img/close_button.png') no-repeat;
+  
+}
 /** ========== Menu styles ========= */
 .menu {
   display: block;
@@ -179,8 +225,9 @@ h1 img {
   height: 100%;
   z-index: 10;
   visibility: visible;
+  opacity: 1;
 }
-      
+
 .movie .overlay {
   position: absolute !important;
   top: 0px;
@@ -220,6 +267,23 @@ h1 img {
   color: yellow;
 }
 
+.movie .comment {
+  padding-top: 20px;
+  color: gray;
+  font-style: italic;
+}
+
+.movie .comment img {
+  opacity: 0;
+  transition: opacity 0.3s;
+  width: 16px;
+  height: 16px;
+  float: left;
+}
+
+.movie:hover .comment img {
+  opacity: 1;
+}
 /** ============= Group button **/
 
 .gb {
