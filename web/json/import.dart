@@ -43,5 +43,5 @@ main(args) {
 //  getImages(new File('upcoming.json'));
 //  getImages(new File('tv_top_rated.json'));
 //  saveMovieJSON(550);
-  saveAllMoviesJSON('all.json','360c015ba3d57c3c624687c111f91c27');
+  saveAllMoviesJSON('all.json','');
 }
