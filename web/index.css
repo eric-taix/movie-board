@@ -267,6 +267,23 @@ h1 img {
   color: yellow;
 }
 
+.movie .comment {
+  padding-top: 20px;
+  color: gray;
+  font-style: italic;
+}
+
+.movie .comment img {
+  opacity: 0;
+  transition: opacity 0.3s;
+  width: 16px;
+  height: 16px;
+  float: left;
+}
+
+.movie:hover .comment img {
+  opacity: 1;
+}
 /** ============= Group button **/
 
 .gb {

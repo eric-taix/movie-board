@@ -23,7 +23,9 @@
       <div class="line">
         <textarea placeholder="Your comment here" class="comment" value="{{comment}}" multiple="multiple">{{comment}}</textarea>
       </div>
-      <a class="btn" on-click="{{saveComment}}">Save</a>
+      <div class="toolbar">
+        <a class="btn" on-click="{{saveComment}}">Save</a>
+      </div>
     </div>
   </template>
   <script type="application/dart" src="card.dart"></script>

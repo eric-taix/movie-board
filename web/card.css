@@ -60,6 +60,16 @@
   border-bottom: 1px solid gray;
 }
 
+.toolbar {
+  position: absolute;
+  bottom: 30px;
+  right : 10px;
+}
+
+.toolbar a {
+  margin: 6px;
+}
+
 .btn {
   cursor: pointer;
   background: #3498db;
@@ -77,9 +87,6 @@
   padding: 10px 20px 10px 20px;
   border: solid #1f628d 0px;
   text-decoration: none;
-  position: absolute;
-  bottom: 10px;
-  right : 10px;
 }
 
 .btn:hover {

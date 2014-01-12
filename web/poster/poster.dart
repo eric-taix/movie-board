@@ -9,8 +9,15 @@ import '../models.dart';
 class Poster extends PolymerElement {
   
   @published Movie movie;
+  @observable String comment;
   
   Poster.created() : super.created();
+  
+  movieChanged(Movie oldMovie) {
+    if (movie != null) {
+      comment = window.localStorage["${movie.id}"];
+    }
+  }
   
   /// Apply styles which are defined outside the component
   bool get applyAuthorStyles => true;
@@ -26,6 +33,7 @@ class Poster extends PolymerElement {
     dispatchEvent(new CustomEvent('updatefavorite', detail: movie));
   }
   
+  /// Show the detail of the current movie
   showDetail(Event e, var detail, Element target) {
     window.location.href = "#/movies/${movie.id}";
   }

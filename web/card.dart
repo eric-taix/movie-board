@@ -34,6 +34,7 @@ class Card extends PolymerElement {
     window.open("http://www.youtube.com/watch?v=${movie.trailer}", "_blank");
   }
   
+  /// Save a comment into the local storage
   saveComment(Event e, var detail, Element target) {
     window.localStorage["${movie.id}"] = comment;
     dispatchEvent(new CustomEvent('close'));

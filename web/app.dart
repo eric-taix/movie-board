@@ -31,6 +31,7 @@ class Application extends PolymerElement {
     route.applyPath(path);
   };
   
+  /// Go to the previous url
   goBack(Event e, var detail, Element target) {
     window.history.back();
   }

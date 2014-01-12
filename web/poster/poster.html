@@ -6,9 +6,10 @@
       <span class="{{movie.favorite | favoriteClass }}" on-click="{{flipFavorite}}">&#x2665;</span>
       <section class="overlay" on-click="{{showDetail}}"> 
         <h2>{{movie.title}}</h2>
-        <div>Date de sortie: {{movie.releasedDate}}</div>
-        <div>Note: <span class="rating">{{movie.voteAverage | stars}}</span><span>{{10-movie.voteAverage | stars}}</span></div>
-        <div>Votants: {{movie.voteCount}}</div>
+        <div>Release date: {{movie.releasedDate}}</div>
+        <div>Rating: <span class="rating">{{movie.voteAverage | stars}}</span><span>{{10-movie.voteAverage | stars}}</span></div>
+        <div>Voters : {{movie.voteCount}}</div>
+        <div class="comment">{{comment}}</div>
       </section>
       <img src="{{movie.posterPath}}">
     </li>
