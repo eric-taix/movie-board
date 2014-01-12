@@ -1,7 +1,36 @@
 library movie_board.models;
 
+import 'dart:convert';
+import 'dart:html';
+
 import 'package:polymer/polymer.dart';
 import 'services.dart';
+
+
+/**
+ * Data which are storage on the client
+ */
+class MovieStorage {
+  
+  bool favorite;
+  String comment;
+  int _movieId;
+  
+  MovieStorage.fromLocalStorage(this._movieId) {
+    try {
+      String data = window.localStorage["${_movieId}"];
+      Map map = JSON.decode(data);
+      favorite = map['fav'] != null ? map['fav'] : false;
+      comment = map['comment'] != null ? map['comment'] : "";
+    }
+    catch(e) {
+      favorite = false;
+      comment = "";
+    }
+  }
+  
+  save() => window.localStorage["${_movieId}"] = '{ "fav" : ${favorite}, "comment" : "${comment}" }';
+}
 
 /**
  * A movie model
@@ -20,9 +49,7 @@ class Movie extends Object with Observable {
   String tag;
   String title;
   String posterPath;
-  String backdropPath;
   String releasedDate;
-  num popularity;
   int voteAverage;
   int voteCount;
   @observable bool favorite = false;
@@ -34,10 +61,8 @@ class Movie extends Object with Observable {
     tag = map['tag'];
     title = map['title'] != null ? map['title'] : map['original_name'];
     posterPath = map['poster_path'] != null ? 'json/images/posters${map['poster_path']}' : 'img/no-poster-w130.jpg';
-    backdropPath = 'json/images/backdrops${map['backdrop_path']}';
     releasedDate = map['release_date'];
-    popularity = map['popularity'];
-    voteAverage = (map['vote_average'] as num).toInt();
+    voteAverage = map['vote_average'] != null ? (map['vote_average'] as num).toInt() : 0;
     voteCount = map['vote_count'];
   }
   
@@ -50,38 +75,34 @@ class Movie extends Object with Observable {
   bool operator ==(Movie other) => other != null ? id == other.id : false;
 }
 
-class MovieDetail {
+/**
+ * A movie detail is a [Movie] with extends attributes
+ */
+class MovieDetail extends Movie {
   int id;
-  String backdropPath;
+  String tag;
+  String title;
+  String posterPath;
+  String releaseDate;
+  int voteAverage;
+  int voteCount;
+  
   String genre;
   String tagLine;
   String overview;
-  String posterPath;
   String productionCountry;
-  String releaseDate;
-  String title;
   String trailer;
-  int voteAverage;
-  int voteCount;
   String country;
   
-  MovieDetail.fromMap(Map<String, Object> map) {
-    id = map['id'];
-    backdropPath = map['backdrop_path'];
+  MovieDetail.fromMap(Map<String, Object> map) : super.fromMap(map) {
     genre = map['genres'] != null && (map['genres'] as List).isNotEmpty ? (map['genres'] as List)[0]['name'] : '';
     tagLine = map['tagline']!= null && (map['tagline'] as String).isNotEmpty ? "\"${map['tagline']}\"" : "";
     overview = map['overview'];
-    posterPath = map['poster_path'] != null ? 'json/images/posters${map['poster_path']}' : 'img/no-poster-w130.jpg';
     productionCountry = map['production_countries'] != null && (map['production_countries'] as List).isNotEmpty ? (map['production_countries'] as List)[0]['name'] : "";
-    releaseDate = map['release_date'];
-    title = map['title'];
     List trailers = map['trailers'] != null ? ((map['trailers'] as Map)['youtube'] as List) : [];
     trailer = trailers.isNotEmpty? ((map['trailers'] as Map)['youtube'] as List)[0]['source'] : '';
-    voteAverage = (map['vote_average'] as num) != null ? (map['vote_average'] as num).toInt() : 0;
-    voteCount = map['vote_count'];
     country = map['production_countries'] != null ? ((map['production_countries'] as List)[0] as Map)['name'] : "";
   }
-  
 }
 
 /**

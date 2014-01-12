@@ -11,11 +11,18 @@ class Poster extends PolymerElement {
   @published Movie movie;
   @observable String comment;
   
+  MovieStorage store;
+  
   Poster.created() : super.created();
   
   movieChanged(Movie oldMovie) {
     if (movie != null) {
-      comment = window.localStorage["${movie.id}"];
+      store = new MovieStorage.fromLocalStorage(movie.id);
+      comment = store.comment;
+      bool fav = store.favorite;
+      if (fav != movie.favorite) {
+        flipFavorite(null, null, null);
+      }
     }
   }
   
@@ -31,6 +38,8 @@ class Poster extends PolymerElement {
   flipFavorite(Event e, var detail, Element target) {
     movie.favorite = !movie.favorite;
     dispatchEvent(new CustomEvent('updatefavorite', detail: movie));
+    store.favorite = movie.favorite;
+    store.save();
   }
   
   /// Show the detail of the current movie

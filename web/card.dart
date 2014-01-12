@@ -21,7 +21,7 @@ class Card extends PolymerElement {
     if (movieId != null) {
       moviesService.getMovieDetail(movieId).then((MovieDetail md) {
         movie = md; 
-        comment = window.localStorage["${movie.id}"];
+        comment = new MovieStorage.fromLocalStorage(movieId).comment;
       });
     }
   }
@@ -36,7 +36,9 @@ class Card extends PolymerElement {
   
   /// Save a comment into the local storage
   saveComment(Event e, var detail, Element target) {
-    window.localStorage["${movie.id}"] = comment;
+    MovieStorage store = new MovieStorage.fromLocalStorage(movie.id);
+    store.comment = comment;
+    store.save();
     dispatchEvent(new CustomEvent('close'));
   }
 }
