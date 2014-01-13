@@ -17,6 +17,8 @@ class Card extends PolymerElement {
   
   Card.created() : super.created();
   
+  bool get applyAuthorStyles => true;
+  
   movieIdChanged(int oldValue) {
     if (movieId != null) {
       moviesService.getMovieDetail(movieId).then((MovieDetail md) {

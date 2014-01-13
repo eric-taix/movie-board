@@ -1,32 +1,32 @@
 <polymer-element name="movie-card">
   <template>
-    <link rel="stylesheet" href="card.css">
     <div class="card">
-      <div class="line">
         <img class="poster" src="{{movie.posterPath}}">
-        <div class="header">
-          <div class="title">{{movie.title}}</div>
-          <div class="tagline">{{movie.tagLine}}</div>
-          <div class="vote">Rating : <span class="rating">{{movie.voteAverage | stars}}</span><span>{{10-movie.voteAverage | stars}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vote count : {{movie.voteCount}}</div>
+        <div class="content">
+          <table>
+            <tr><td colspan="6"><span class="title">{{movie.title}}</span></td></tr>
+            <tr><td colspan="6"><span class="tagline">{{movie.tagLine}}</span></td></tr>
+            <tr>
+              <td colspan="3"><span class="vote">Rating : </span><span class="rating">{{movie.voteAverage | stars}}</span><span>{{10-movie.voteAverage | stars}}</span></td>
+              <td colspan="3"><span class="vote">Vote count : {{movie.voteCount}}</span></td>
+            </tr>
+            <tr><td colspan="6"><span class="overview">{{movie.overview}}</span></td></tr>
+            <tr>
+              <td colspan="2"><span class="genre">Genre: {{movie.genre}}</span></td>
+              <td colspan="2"><span class="genre">Date: {{movie.releasedDate}}</span></td>
+              <td colspan="2"><span class="genre">Country: {{movie.country}}</span></td>
+            </tr>
+            <tr><td colspan="6"><textarea placeholder="Your comment here" class="comment" value="{{comment}}" multiple="multiple">{{comment}}</textarea></td></tr>
+          </table>
           <template if="{{movie.trailer.isNotEmpty}}">
-            <a class="trailer" on-click="{{openTrailer}}"><img src="img/play.png"></a>
+             <a class="trailer" on-click="{{openTrailer}}"><img src="img/play.png"></a>
           </template>
-          <div class="overview">{{movie.overview}}</div>
         </div>
-      </div>
-      <br/>
-      <div class="line">
-        <div class="genre">Genre: {{movie.genre}}</div>
-        <div class="genre">Date: {{movie.releaseDate}}</div>
-        <div class="genre">Country: {{movie.country}}</div>
-      </div>
-      <div class="line">
-        <textarea placeholder="Your comment here" class="comment" value="{{comment}}" multiple="multiple">{{comment}}</textarea>
-      </div>
-      <div class="toolbar">
-        <a class="btn" on-click="{{saveComment}}">Save</a>
-      </div>
+            <div class="toolbar">
+      <a class="btn" on-click="{{saveComment}}">Save</a>
     </div>
+    </div>
+
   </template>
   <script type="application/dart" src="card.dart"></script>
 </polymer-element>

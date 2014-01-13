@@ -1,4 +1,4 @@
-<link rel="import" href="../poster/poster.html">
+<link rel="import" href="poster.html">
       
 <polymer-element name="movie-posters">
   <template>
@@ -24,13 +24,13 @@
       </div>
       <div class="content">
         <!-- If there's at least one element -->
-        <template if="{{movies.isNotEmpty}}">
+        <template if="{{hasMovies}}">
           <template repeat="{{movie in movies | filter(searchFilter) | sortBy(sortField, sortAscending)}}">
             <movie-poster movie="{{movie}}" on-updatefavorite="{{updateFavorite}}"></movie-poster>
           </template>
         </template>
         <!-- If there's no element -->
-        <template if="{{movies.isEmpty}}">
+        <template if="{{!hasMovies}}">
           <span class="info">Sorry but there's nothing to display</span> 
         </template>
       </div>

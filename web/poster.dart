@@ -3,7 +3,7 @@ library movies.poster;
 import 'dart:html';
 import 'package:polymer/polymer.dart';
 
-import '../models.dart';
+import 'models.dart';
 
 @CustomTag("movie-poster")
 class Poster extends PolymerElement {
@@ -15,6 +15,7 @@ class Poster extends PolymerElement {
   
   Poster.created() : super.created();
   
+  /// The movie attribut has changed
   movieChanged(Movie oldMovie) {
     if (movie != null) {
       store = new MovieStorage.fromLocalStorage(movie.id);
@@ -32,6 +33,7 @@ class Poster extends PolymerElement {
   /// Utility function which generates stars
   String stars(int rating) => new List.generate(rating, (_) => "\u2605").join();
   
+  /// Utility function to transform a bool to a class
   String favoriteClass(bool fav) => fav ? "liked-selected" : "liked";
   
   /// Flip (true <--> false) the movie's favorite attribute

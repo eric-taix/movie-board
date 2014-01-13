@@ -7,9 +7,7 @@ import 'package:polymer/polymer.dart';
 import 'services.dart';
 
 
-/**
- * Data which are storage on the client
- */
+/// A storage to save movie's local datas
 class MovieStorage {
   
   bool favorite;
@@ -32,10 +30,7 @@ class MovieStorage {
   save() => window.localStorage["${_movieId}"] = '{ "fav" : ${favorite}, "comment" : "${comment}" }';
 }
 
-/**
- * A movie model
- */
-@observable
+/// A movie with no detail
 class Movie extends Object with Observable {
   
   // Available comparators
@@ -45,13 +40,13 @@ class Movie extends Object with Observable {
     "favorite": (Movie a, Movie b) => a.favorite && !b.favorite ? -1 : b.favorite && !a.favorite ? 1 : 0,
   };
   
-  int id;
-  String tag;
-  String title;
-  String posterPath;
-  String releasedDate;
-  int voteAverage;
-  int voteCount;
+  @observable int id;
+  @observable String tag;
+  @observable String title;
+  @observable String posterPath;
+  @observable String releasedDate;
+  @observable int voteAverage;
+  @observable int voteCount;
   @observable bool favorite = false;
   
   Movie(this.title, this.posterPath);
@@ -75,24 +70,14 @@ class Movie extends Object with Observable {
   bool operator ==(Movie other) => other != null ? id == other.id : false;
 }
 
-/**
- * A movie detail is a [Movie] with extends attributes
- */
-class MovieDetail extends Movie {
-  int id;
-  String tag;
-  String title;
-  String posterPath;
-  String releaseDate;
-  int voteAverage;
-  int voteCount;
-  
-  String genre;
-  String tagLine;
-  String overview;
-  String productionCountry;
-  String trailer;
-  String country;
+/// A movie with more details
+class MovieDetail extends Movie with Observable {
+  @observable String genre;
+  @observable String tagLine;
+  @observable String overview;
+  @observable String productionCountry;
+  @observable String trailer;
+  @observable String country;
   
   MovieDetail.fromMap(Map<String, Object> map) : super.fromMap(map) {
     genre = map['genres'] != null && (map['genres'] as List).isNotEmpty ? (map['genres'] as List)[0]['name'] : '';
@@ -105,15 +90,12 @@ class MovieDetail extends Movie {
   }
 }
 
-/**
- * Menu
- */
-@observable
+/// A menu
 class Menu extends Object with Observable {
   
-  int id;
+  @observable int id;
   @observable String name;
-  bool selected = false;
+  @observable bool selected = false;
   MoviesRetriever retriever;
   
   Menu(this.id, this.name, this.retriever, [this.selected = false]);

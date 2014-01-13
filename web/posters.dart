@@ -5,18 +5,18 @@ import 'dart:async';
 
 import 'package:polymer/polymer.dart';
  
-import '../models.dart';
-import '../services.dart';
-import '../utils.dart';
+import 'models.dart';
+import 'services.dart';
+import 'utils.dart';
 
 
 @CustomTag('movie-posters')
 class PostersGrid extends PolymerElement {
   
-  @observable
-  Iterable<Movie> movies = toObservable(new List());
+  @observable Iterable<Movie> movies = toObservable(new List());
   @observable String sortField = "";
   @observable bool sortAscending = true;
+  @observable bool hasMovies = false;
   
   List<Menu> menus = new List();
   Menu _currentMenu;
@@ -38,7 +38,7 @@ class PostersGrid extends PolymerElement {
   
   /// Applies a menu : retrieves the new list according to the menu and updates movies list
   _applyMenu(Menu menu) {
-    menu.retriever().then((Iterable<Movie> m) => movies = m);
+    menu.retriever().then((Iterable<Movie> m) => _updateMovies(m));
     _currentMenu = menu;
   }
   
@@ -48,16 +48,7 @@ class PostersGrid extends PolymerElement {
   _retrieveFavorites() => moviesService.getFavorites();
   
   /// The search term has been changed (automatically called when the observable searchTerm is modified)
-  Timer searchTermTimer = null;
-  searchTermChanged(String oldValue) {
-    // If there's an active timer then reset it
-    if (searchTermTimer != null && searchTermTimer.isActive) searchTermTimer.cancel();
-    // Apply the searchTerm to the searchFilter after a certain amout of time
-    searchTermTimer = new Timer(new Duration(milliseconds: 400), () {
-      searchFilter = searchTerm;
-      searchTermTimer = null;
-    });
-  }
+  searchTermChanged(String oldValue) => applyDelayed(400, () => searchFilter = searchTerm);
   
   /// Filters movies according to the search term
   filter(String search) => (Iterable<Movie> movies) => searchFilter.isNotEmpty ? movies.where((Movie m) => m.title.toLowerCase().contains(searchFilter.toLowerCase())).toList() : movies;
@@ -80,7 +71,7 @@ class PostersGrid extends PolymerElement {
   updateFavorite(Event e, Movie detail, Element target) {
     moviesService.save(detail);
     // In case the current menu is favorite, then remove the movie if it's not more a favorite
-    if (_currentMenu != null && _currentMenu.id == 4 && !detail.favorite) movies = movies.where((Movie m) => m != detail).toList();
+    if (_currentMenu != null && _currentMenu.id == 4 && !detail.favorite) _updateMovies(movies.where((Movie m) => m != detail).toList());
   }
   
   /// A sort button has been clicked
@@ -89,6 +80,11 @@ class PostersGrid extends PolymerElement {
     sortAscending = field == sortField ? !sortAscending : true;
     sortField = field;
     applySelectedCSS(target, "gb");
+  }
+  
+  _updateMovies(Iterable<Movie> newMovies) {
+    movies = newMovies;
+    hasMovies = movies.isNotEmpty;
   }
 }
 

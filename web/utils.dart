@@ -1,6 +1,7 @@
 library movie_board.utils;
 
 import 'dart:html';
+import 'dart:async';
 
 //============= Utility functions ============
 
@@ -25,4 +26,18 @@ bool applySelectedCSS(Element target, String classPrefix) {
     return true;
   }
   return false;
+}
+
+/**
+ * Apply a function after a certain amout of milliseconds and reset it if a timer has been alredy launched
+ */
+Timer timer = null;
+applyDelayed(int ms, Function f) {
+  // If there's an active timer then reset it
+  if (timer != null && timer.isActive) timer.cancel();
+  // Apply the searchTerm to the searchFilter after a certain amout of time
+  timer = new Timer(new Duration(milliseconds: 400), () {
+    f();
+    timer = null;
+  });
 }
