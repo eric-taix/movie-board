@@ -7,6 +7,7 @@ import 'package:polymer/polymer.dart';
 import 'services.dart';
 
 
+
 /// A storage to save movie's local datas
 class MovieStorage {
   
@@ -31,7 +32,7 @@ class MovieStorage {
 }
 
 /// A movie with no detail
-class Movie extends Object with Observable {
+class Movie extends Observable {
   
   // Available comparators
   static final Map _comparators = {
@@ -47,7 +48,9 @@ class Movie extends Object with Observable {
   @observable String releasedDate;
   @observable int voteAverage;
   @observable int voteCount;
-  @observable bool favorite = false;
+  @observable bool favorite ;
+  
+  MovieStorage _storage;
   
   Movie(this.title, this.posterPath);
   
@@ -59,8 +62,19 @@ class Movie extends Object with Observable {
     releasedDate = map['release_date'];
     voteAverage = map['vote_average'] != null ? (map['vote_average'] as num).toInt() : 0;
     voteCount = map['vote_count'];
+    _storage = new MovieStorage.fromLocalStorage(id);
+    favorite = _storage.favorite;
+
+    new PathObserver(this, "favorite").changes.listen((List<ChangeRecord> records) {
+      _storage.favorite = (records.first as PropertyChangeRecord).newValue;
+      _storage.save();
+    });
   }
   
+  favoriteChanged(bool oldValue) {
+    print('yu');
+  }
+
   /// Get a comparator according to a field: if it does not exist then all movies are equals
   static getComparator(String field) => _comparators.containsKey(field) ? _comparators[field] : (a, b) => 0;
 
@@ -86,7 +100,7 @@ class MovieDetail extends Movie with Observable {
     productionCountry = map['production_countries'] != null && (map['production_countries'] as List).isNotEmpty ? (map['production_countries'] as List)[0]['name'] : "";
     List trailers = map['trailers'] != null ? ((map['trailers'] as Map)['youtube'] as List) : [];
     trailer = trailers.isNotEmpty? ((map['trailers'] as Map)['youtube'] as List)[0]['source'] : '';
-    country = map['production_countries'] != null ? ((map['production_countries'] as List)[0] as Map)['name'] : "";
+    country = map['production_countries'] != null && (map['production_countries'] as List).isNotEmpty ? ((map['production_countries'] as List)[0] as Map)['name'] : "";
   }
 }
 

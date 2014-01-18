@@ -6,14 +6,17 @@ import 'package:polymer/polymer.dart';
 import 'package:route/client.dart';
 import 'package:route/url_pattern.dart';
 
+import 'posters.dart';
+
 @CustomTag('movie-app')
 class Application extends PolymerElement {
   
   bool get applyAuthorStyles => true;
   
-  // Define all routes starting from specific routes to general route (typicaly home route should be defined at the end)
+  // Define all routes starting from specific routes to general route (typically home route should be defined at the end)
   Route movieRoute = new Route('movie.view', new UrlPattern(r'/(.*)#/movies/(\d+)'));
   Route homeRoute = new Route('home', new UrlPattern(r'/(.*)'));
+  Posters posters;
   
   @observable Route route;
   
@@ -23,6 +26,7 @@ class Application extends PolymerElement {
     ..addHandler(homeRoute.pattern, _routeHandler(homeRoute))
     ..listen();
     route = homeRoute;
+    posters = $['posters'];
   }
   
   /// Handles the new route by setting the current route to the new route
@@ -39,7 +43,6 @@ class Application extends PolymerElement {
   int asInt(String value) => int.parse(value); 
 }
 
-@observable
 class Route {
   String _name;
   UrlPattern _pattern;
@@ -52,6 +55,5 @@ class Route {
   
   applyPath(String path) => _parameters = _pattern.parse(path);
   
-  /// Returns the parameter at position [index] (first parameter is index 1)
   operator [](int index) => index < _parameters.length ? _parameters[index] : null;
 }

@@ -11,20 +11,10 @@ class Poster extends PolymerElement {
   @published Movie movie;
   @observable String comment;
   
-  MovieStorage store;
-  
   Poster.created() : super.created();
   
   /// The movie attribut has changed
   movieChanged(Movie oldMovie) {
-    if (movie != null) {
-      store = new MovieStorage.fromLocalStorage(movie.id);
-      comment = store.comment;
-      bool fav = store.favorite;
-      if (fav != movie.favorite) {
-        flipFavorite(null, null, null);
-      }
-    }
   }
   
   /// Apply styles which are defined outside the component
@@ -40,8 +30,6 @@ class Poster extends PolymerElement {
   flipFavorite(Event e, var detail, Element target) {
     movie.favorite = !movie.favorite;
     dispatchEvent(new CustomEvent('updatefavorite', detail: movie));
-    store.favorite = movie.favorite;
-    store.save();
   }
   
   /// Show the detail of the current movie

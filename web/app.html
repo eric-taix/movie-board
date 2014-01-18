@@ -3,8 +3,8 @@
   <link rel="import" href="dialog.html">
   <link rel="import" href="card.html">
   <template>
-    <div class="header"><h1><a href="#"><img src="img/movie-clapper-board-hi.png" width="100px"></a>Movie board</h1></div>
-    <movie-posters></movie-posters>
+    <div class="header"><a href="#"><img src="img/DartLogo.png"></a><h1>Movie board</h1></div>
+    <movie-posters id="posters"></movie-posters>
     <template if="{{route == movieRoute}}">
       <movie-dialog on-close="{{goBack}}">
         <movie-card movieId="{{route[1] | asInt}}"></movie-card>

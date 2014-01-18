@@ -11,7 +11,7 @@ import 'utils.dart';
 
 
 @CustomTag('movie-posters')
-class PostersGrid extends PolymerElement {
+class Posters extends PolymerElement {
   
   @observable Iterable<Movie> movies = toObservable(new List());
   @observable String sortField = "";
@@ -24,7 +24,7 @@ class PostersGrid extends PolymerElement {
   @observable String searchFilter = "";
   @observable String searchTerm = "";
   
-  PostersGrid.created() : super.created() {
+  Posters.created() : super.created() {
     Menu homeMenu = new Menu(0, "All", moviesService.getAllMovies, true);
     menus.add(homeMenu);
     menus.add(new Menu(1, "Now playing", _retrieveNowPlaying));
@@ -85,6 +85,11 @@ class PostersGrid extends PolymerElement {
   _updateMovies(Iterable<Movie> newMovies) {
     movies = newMovies;
     hasMovies = movies.isNotEmpty;
+  }
+  
+  refreshList() {
+    Observable.dirtyCheck();
+    movies = new List.from(movies);
   }
 }
 
