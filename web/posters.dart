@@ -27,10 +27,10 @@ class Posters extends PolymerElement {
   Posters.created() : super.created() {
     Menu homeMenu = new Menu(0, "All", moviesService.getAllMovies, true);
     menus..add(homeMenu)
-          ..add(new Menu(1, "Now playing", _retrieveNowPlaying))
-          ..add(new Menu(2, "Upcoming", _retrieveUpcoming))
-          ..add(new Menu(3, "Top rated TV Series", _retrieveTopRatedTV))
-          ..add(new Menu(4, "Favorites", moviesService.getFavorites));
+          ..add(new Menu(1, "Now playing", () => moviesService.getMovies("now_playing")))
+          ..add(new Menu(2, "Upcoming", () => moviesService.getMovies("upcoming")))
+          ..add(new Menu(3, "Top rated TV Series", () => moviesService.getMovies("tv_top_rated")))
+          ..add(new Menu(4, "Favorites", () => moviesService.getFavorites()));
     _applyMenu(homeMenu);
   }
   
@@ -38,11 +38,6 @@ class Posters extends PolymerElement {
   
   /// Applies a menu : retrieves the new list according to the menu and updates movies list
   _applyMenu(Menu menu) => _currentMenu = menu ..retriever().then((Iterable<Movie> m) => _updateMovies(m));
-  
-  _retrieveNowPlaying() => moviesService.getMovies("now_playing");
-  _retrieveUpcoming() => moviesService.getMovies("upcoming");
-  _retrieveTopRatedTV() => moviesService.getMovies("tv_top_rated");
-  _retrieveFavorites() => moviesService.getFavorites();
   
   /// The search term has been changed (automatically called when the observable searchTerm is modified)
   searchTermChanged(String oldValue) => applyDelayed(400, () => searchFilter = searchTerm);
