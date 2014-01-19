@@ -9,7 +9,6 @@ import 'models.dart';
 class Poster extends PolymerElement {
   
   @published Movie movie;
-  @observable String comment;
   
   Poster.created() : super.created();
   

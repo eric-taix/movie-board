@@ -49,6 +49,7 @@ class Movie extends Observable {
   @observable int voteAverage;
   @observable int voteCount;
   @observable bool favorite ;
+  @observable String comment;
   
   MovieStorage _storage;
   
@@ -62,17 +63,22 @@ class Movie extends Observable {
     releasedDate = map['release_date'];
     voteAverage = map['vote_average'] != null ? (map['vote_average'] as num).toInt() : 0;
     voteCount = map['vote_count'];
+    
+    // Load favorite and comment attributes from local storage
     _storage = new MovieStorage.fromLocalStorage(id);
     favorite = _storage.favorite;
-
-    new PathObserver(this, "favorite").changes.listen((List<ChangeRecord> records) {
-      _storage.favorite = (records.first as PropertyChangeRecord).newValue;
-      _storage.save();
+    comment = _storage.comment;
+    changes.listen((List<ChangeRecord> record) {
+      record.forEach((PropertyChangeRecord propertyRecord) {
+        if (propertyRecord.name == const Symbol('comment')) {
+          _storage.comment = propertyRecord.newValue;
+        }
+        if (propertyRecord.name == const Symbol('favorite')) {
+          _storage.favorite = propertyRecord.newValue;
+        }
+        _storage.save();
+      });
     });
-  }
-  
-  favoriteChanged(bool oldValue) {
-    print('yu');
   }
 
   /// Get a comparator according to a field: if it does not exist then all movies are equals
@@ -92,6 +98,10 @@ class MovieDetail extends Movie with Observable {
   @observable String productionCountry;
   @observable String trailer;
   @observable String country;
+
+  
+  /// String.isNotEmpty is removed from tree shaking, so used a getter instead
+  @reflectable bool get hasTrailer => trailer != null ? trailer.isNotEmpty : false;
   
   MovieDetail.fromMap(Map<String, Object> map) : super.fromMap(map) {
     genre = map['genres'] != null && (map['genres'] as List).isNotEmpty ? (map['genres'] as List)[0]['name'] : '';

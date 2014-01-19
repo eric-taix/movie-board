@@ -16,6 +16,8 @@ class Application extends PolymerElement {
   // Define all routes starting from specific routes to general route (typically home route should be defined at the end)
   Route movieRoute = new Route('movie.view', new UrlPattern(r'/(.*)#/movies/(\d+)'));
   Route homeRoute = new Route('home', new UrlPattern(r'/(.*)'));
+  
+  // A reference to the [Posters] grid
   Posters posters;
   
   @observable Route route;
@@ -35,11 +37,16 @@ class Application extends PolymerElement {
     route.applyPath(path);
   };
   
-  /// Go to the previous url
-  goBack(Event e, var detail, Element target) {
+  /// The detail dialog has been closed
+  detailClosed(Event e, var detail, Element target) {
     window.history.back();
+    // The dialog has been closed using "Save": apply changes to the current posters
+    if (detail != null) {
+      posters.movieModified(detail);
+    }
   }
   
+  /// Convert a String to an int
   int asInt(String value) => int.parse(value); 
 }
 

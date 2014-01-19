@@ -82,14 +82,17 @@ class Posters extends PolymerElement {
     applySelectedCSS(target, "gb");
   }
   
+  /// A movie has been modified: reflect the change into the current list
+  movieModified(Movie md) {
+    Movie m = movies.firstWhere((Movie m) => m.id == md.id);
+    if (m != null) {
+      m.favorite = md.favorite;
+      m.comment = md.comment;
+    }
+  }
   _updateMovies(Iterable<Movie> newMovies) {
     movies = newMovies;
     hasMovies = movies.isNotEmpty;
-  }
-  
-  refreshList() {
-    Observable.dirtyCheck();
-    movies = new List.from(movies);
   }
 }
 

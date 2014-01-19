@@ -6,7 +6,7 @@
     <div class="header"><a href="#"><img src="img/DartLogo.png"></a><h1>Movie board</h1></div>
     <movie-posters id="posters"></movie-posters>
     <template if="{{route == movieRoute}}">
-      <movie-dialog on-close="{{goBack}}">
+      <movie-dialog on-close="{{detailClosed}}">
         <movie-card movieId="{{route[1] | asInt}}"></movie-card>
       </movie-dialog>
     </template>

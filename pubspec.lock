@@ -12,7 +12,7 @@ packages:
   barback:
     description: barback
     source: hosted
-    version: "0.9.0"
+    version: "0.11.0+1"
   browser:
     description: browser
     source: hosted
@@ -21,10 +21,6 @@ packages:
     description: collection
     source: hosted
     version: "0.9.0"
-  csslib:
-    description: csslib
-    source: hosted
-    version: "0.9.2"
   custom_element:
     description: custom_element
     source: hosted
@@ -52,11 +48,11 @@ packages:
   path:
     description: path
     source: hosted
-    version: "0.9.0"
+    version: "1.0.0"
   polymer:
     description: polymer
     source: hosted
-    version: "0.9.1"
+    version: "0.9.4"
   polymer_expressions:
     description: polymer_expressions
     source: hosted
@@ -76,7 +72,7 @@ packages:
   stack_trace:
     description: stack_trace
     source: hosted
-    version: "0.9.0"
+    version: "0.9.1"
   template_binding:
     description: template_binding
     source: hosted

@@ -2,6 +2,7 @@
   <template>
     <div class="card">
         <img class="poster" src="{{movie.posterPath}}">
+        <span class="{{favorite | favoriteClass }}" on-click="{{flipFavorite}}">&#x2665;</span>
         <div class="content">
           <table>
             <tr><td colspan="6"><span class="title">{{movie.title}}</span></td></tr>
@@ -18,12 +19,12 @@
             </tr>
             <tr><td colspan="6"><textarea placeholder="Your comment here" class="comment" value="{{comment}}" multiple="multiple">{{comment}}</textarea></td></tr>
           </table>
-          <template if="{{movie.trailer.isNotEmpty}}">
-             <a class="trailer" on-click="{{openTrailer}}"><img src="img/play.png"></a>
+          <template if="{{movie.hasTrailer}}">
+             <a class="trailer" on-click="{{openTrailer}}"><img class="trailer" src="img/play.png"></a>
           </template>
         </div>
         <div class="toolbar">
-          <a class="btn" on-click="{{saveComment}}">Save</a>
+          <a class="btn" on-click="{{save}}">Save</a>
         </div>
     </div>
 

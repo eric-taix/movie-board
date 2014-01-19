@@ -3,15 +3,6 @@ library movie_board.utils;
 import 'dart:html';
 import 'dart:async';
 
-//============= Utility functions ============
-
-and(Iterable predicates) => (e) => predicates.every((p) => p(e));
-
-or(Iterable predicates) => (e) => predicates.any((p) => p(e));
-
-Function isType(Type type) => (m) => m.runtimeType == type;
-
-Function notCurrent(current) => (m) => m != current;
 
 /**
  *  Apply the selected class to the current class prefix
