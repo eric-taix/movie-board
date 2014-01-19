@@ -4,6 +4,7 @@ import 'dart:html';
 import 'package:polymer/polymer.dart';
 
 import 'models.dart';
+import 'utils.dart';
 
 @CustomTag("movie-poster")
 class Poster extends PolymerElement {
@@ -19,21 +20,15 @@ class Poster extends PolymerElement {
   /// Apply styles which are defined outside the component
   bool get applyAuthorStyles => true;
   
-  /// Utility function which generates stars
-  String stars(int rating) => new List.generate(rating, (_) => "\u2605").join();
-  
-  /// Utility function to transform a bool to a class
-  String favoriteClass(bool fav) => fav ? "liked-selected" : "liked";
+  /// Filter which generates stars
+  Function asStars = intToStars();
+  /// Filter which generatee the selected class
+  Function asFavoriteClass = selectedToClass('favorite');
   
   /// Flip (true <--> false) the movie's favorite attribute
-  flipFavorite(Event e, var detail, Element target) {
-    movie.favorite = !movie.favorite;
-    dispatchEvent(new CustomEvent('updatefavorite', detail: movie));
-  }
+  flipFavorite(Event e, var detail, Element target) => dispatchEvent(new CustomEvent('updatefavorite', detail: movie ..favorite = !movie.favorite));
   
   /// Show the detail of the current movie
-  showDetail(Event e, var detail, Element target) {
-    window.location.href = "#/movies/${movie.id}";
-  }
+  showDetail(Event e, var detail, Element target) => window.location.href = "#/movies/${movie.id}";
 }
 

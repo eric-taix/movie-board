@@ -202,7 +202,7 @@ h1 {
   border: solid 1px #444;
 }
 
-.movie .liked, .movie .liked-selected {
+.movie .favorite, .movie .favorite-selected {
   position: absolute !important;
   right: 5px;
   top: 15px;
@@ -213,11 +213,11 @@ h1 {
   cursor: pointer;
 }
 
-.movie .liked-selected {
+.movie .favorite-selected {
   color: red;
 }
 
-.movie .liked:hover, .movie .liked-selected:hover {
+.movie .favorite:hover, .movie .favorite-selected:hover {
   text-shadow:0px 0px 5px white;
 }
 

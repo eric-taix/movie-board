@@ -2,13 +2,13 @@
   <template>
     <div class="card">
         <img class="poster" src="{{movie.posterPath}}">
-        <span class="{{favorite | favoriteClass }}" on-click="{{flipFavorite}}">&#x2665;</span>
+        <span class="{{favorite | asFavoriteClass }}" on-click="{{flipFavorite}}">&#x2665;</span>
         <div class="content">
           <table>
             <tr><td colspan="6"><span class="title">{{movie.title}}</span></td></tr>
             <tr><td colspan="6"><span class="tagline">{{movie.tagLine}}</span></td></tr>
             <tr>
-              <td colspan="3"><span class="vote">Rating : </span><span class="rating">{{movie.voteAverage | stars}}</span><span>{{10-movie.voteAverage | stars}}</span></td>
+              <td colspan="3"><span class="vote">Rating : </span><span class="rating">{{movie.voteAverage | asStars}}</span><span>{{10-movie.voteAverage | asStars}}</span></td>
               <td colspan="3"><span class="vote">Vote count : {{movie.voteCount}}</span></td>
             </tr>
             <tr><td colspan="6"><span class="overview">{{movie.overview}}</span></td></tr>

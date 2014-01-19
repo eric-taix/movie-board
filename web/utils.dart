@@ -3,6 +3,14 @@ library movie_board.utils;
 import 'dart:html';
 import 'dart:async';
 
+/// Function which generates stars
+Function intToStars() => (int nb) => new List.generate(nb, (_) => "\u2605").join();
+
+/// Function which returns a CSS style according
+Function selectedToClass(String prefix) => (bool selected) => selected ? "${prefix}-selected" : prefix;
+
+/// Function which converts a [String] to an [int]
+Function stringToInt() => (String value) => int.parse(value); 
 
 /**
  *  Apply the selected class to the current class prefix

@@ -26,21 +26,18 @@ class Posters extends PolymerElement {
   
   Posters.created() : super.created() {
     Menu homeMenu = new Menu(0, "All", moviesService.getAllMovies, true);
-    menus.add(homeMenu);
-    menus.add(new Menu(1, "Now playing", _retrieveNowPlaying));
-    menus.add(new Menu(2, "Upcoming", _retrieveUpcoming));
-    menus.add(new Menu(3, "Top rated TV Series", _retrieveTopRatedTV));
-    menus.add(new Menu(4, "Favorites", moviesService.getFavorites));
+    menus..add(homeMenu)
+          ..add(new Menu(1, "Now playing", _retrieveNowPlaying))
+          ..add(new Menu(2, "Upcoming", _retrieveUpcoming))
+          ..add(new Menu(3, "Top rated TV Series", _retrieveTopRatedTV))
+          ..add(new Menu(4, "Favorites", moviesService.getFavorites));
     _applyMenu(homeMenu);
   }
   
   bool get applyAuthorStyles => true;
   
   /// Applies a menu : retrieves the new list according to the menu and updates movies list
-  _applyMenu(Menu menu) {
-    menu.retriever().then((Iterable<Movie> m) => _updateMovies(m));
-    _currentMenu = menu;
-  }
+  _applyMenu(Menu menu) => _currentMenu = menu ..retriever().then((Iterable<Movie> m) => _updateMovies(m));
   
   _retrieveNowPlaying() => moviesService.getMovies("now_playing");
   _retrieveUpcoming() => moviesService.getMovies("upcoming");

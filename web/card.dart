@@ -7,14 +7,20 @@ import 'package:polymer/polymer.dart';
 
 import 'services.dart';
 import 'models.dart';
+import 'utils.dart';
 
 @CustomTag('movie-card')
 class Card extends PolymerElement {
   
   @published int movieId;
   @observable MovieDetail movie;
+  // Note: comment and favorite values are extracted from [MovieDetail] because we don't want to store 
+  // new values before the user clicks the "Save" button. Therefore the view is binded to the attributes below and not 
+  // directly to the business model
   @observable String comment;
   @observable bool favorite;
+  
+  
   Card.created() : super.created();
   
   bool get applyAuthorStyles => true;
@@ -30,24 +36,19 @@ class Card extends PolymerElement {
     }
   }
   
-  /// Utility function which generates stars
-  String stars(int rating) => new List.generate(rating, (_) => "\u2605").join();
-  
-  /// Utility function to transform a bool to a class
-  String favoriteClass(bool fav) => fav ? "favorite-selected" : "favorite";
-  
+  /// Filter to generate stars
+  Function asStars = intToStars();
+  /// Filter to generate the selected class
+  Function asFavoriteClass = selectedToClass('favorite');
+
   /// Flip (true <--> false) the movie's favorite attribute
   flipFavorite(Event e, var detail, Element target) => favorite = !favorite;
   
   /// Open the trailer in a new window
-  openTrailer(Event e, var detail, Element target) {
-    window.open("http://www.youtube.com/watch?v=${movie.trailer}", "_blank");
-  }
+  openTrailer(Event e, var detail, Element target) => window.open("http://www.youtube.com/watch?v=${movie.trailer}", "_blank");
   
   /// Save comment and favorite
-  save(Event e, var detail, Element target) {
-    movie.comment = comment;
-    movie.favorite = favorite;
-    dispatchEvent(new CustomEvent('close', detail: movie));
-  }
+  save(Event e, var detail, Element target) => dispatchEvent(new CustomEvent('close', detail: movie ..comment=comment ..favorite=favorite));
 }
+
+

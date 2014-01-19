@@ -7,6 +7,7 @@ import 'package:route/client.dart';
 import 'package:route/url_pattern.dart';
 
 import 'posters.dart';
+import 'utils.dart';
 
 @CustomTag('movie-app')
 class Application extends PolymerElement {
@@ -41,13 +42,12 @@ class Application extends PolymerElement {
   detailClosed(Event e, var detail, Element target) {
     window.history.back();
     // The dialog has been closed using "Save": apply changes to the current posters
-    if (detail != null) {
-      posters.movieModified(detail);
-    }
+    if (detail != null) posters.movieModified(detail);
   }
   
-  /// Convert a String to an int
-  int asInt(String value) => int.parse(value); 
+  /// Filter to generate the selected class
+  Function asInt = stringToInt();
+
 }
 
 class Route {

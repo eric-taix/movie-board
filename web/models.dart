@@ -28,6 +28,7 @@ class MovieStorage {
     }
   }
   
+  /// Save current values to the local storage
   save() => window.localStorage["${_movieId}"] = '{ "fav" : ${favorite}, "comment" : "${comment}" }';
 }
 
