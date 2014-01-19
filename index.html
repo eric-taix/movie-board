@@ -14,13 +14,13 @@
     <style>
     </style>
     <li class="movie">
-      <span class="{{movie.favorite | favoriteClass }}" on-click="{{flipFavorite}}">♥</span>
+      <span class="{{movie.favorite | asFavoriteClass }}" on-click="{{flipFavorite}}">♥</span>
       <section class="overlay" on-click="{{showDetail}}"> 
-        <h2>{{movie.title}}</h2>
+        <h2>{{movie.title}}</h2> 
         <div>Release date: {{movie.releasedDate}}</div>
-        <div>Rating: <span class="rating">{{movie.voteAverage | stars}}</span><span>{{10-movie.voteAverage | stars}}</span></div>
+        <div>Rating: <span class="rating">{{movie.voteAverage | asStars}}</span><span>{{10-movie.voteAverage | asStars}}</span></div>
         <div>Voters : {{movie.voteCount}}</div>
-        <div class="comment">{{comment}}</div>
+        <div class="comment">{{movie.comment}}</div>
       </section>
       <img src="{{movie.posterPath}}">
     </li>
@@ -75,44 +75,45 @@
     
 </polymer-element><polymer-element name="movie-card">
   <template>
-    <link rel="stylesheet" href="card.css">
     <div class="card">
-      <div class="line">
         <img class="poster" src="{{movie.posterPath}}">
-        <div class="header">
-          <div class="title">{{movie.title}}</div>
-          <div class="tagline">{{movie.tagLine}}</div>
-          <div class="vote">Rating : <span class="rating">{{movie.voteAverage | stars}}</span><span>{{10-movie.voteAverage | stars}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vote count : {{movie.voteCount}}</div>
-          <template if="{{movie.trailer.isNotEmpty}}">
-            <a class="trailer" on-click="{{openTrailer}}"><img src="img/play.png"></a>
+        <span class="{{favorite | asFavoriteClass }}" on-click="{{flipFavorite}}">♥</span>
+        <div class="content">
+          <table>
+            <tbody><tr><td colspan="6"><span class="title">{{movie.title}}</span></td></tr>
+            <tr><td colspan="6"><span class="tagline">{{movie.tagLine}}</span></td></tr>
+            <tr>
+              <td colspan="3"><span class="vote">Rating : </span><span class="rating">{{movie.voteAverage | asStars}}</span><span>{{10-movie.voteAverage | asStars}}</span></td>
+              <td colspan="3"><span class="vote">Vote count : {{movie.voteCount}}</span></td>
+            </tr>
+            <tr><td colspan="6"><span class="overview">{{movie.overview}}</span></td></tr>
+            <tr>
+              <td colspan="2"><span class="genre">Genre: {{movie.genre}}</span></td>
+              <td colspan="2"><span class="genre">Date: {{movie.releasedDate}}</span></td>
+              <td colspan="2"><span class="genre">Country: {{movie.country}}</span></td>
+            </tr>
+            <tr><td colspan="6"><textarea placeholder="Your comment here" class="comment" value="{{comment}}" multiple="multiple">{{comment}}</textarea></td></tr>
+          </tbody></table>
+          <template if="{{movie.hasTrailer}}">
+             <a class="trailer" on-click="{{openTrailer}}"><img class="trailer" src="img/play.png"></a>
           </template>
-          <div class="overview">{{movie.overview}}</div>
         </div>
-      </div>
-      <br>
-      <div class="line">
-        <div class="genre">Genre: {{movie.genre}}</div>
-        <div class="genre">Date: {{movie.releaseDate}}</div>
-        <div class="genre">Country: {{movie.country}}</div>
-      </div>
-      <div class="line">
-        <textarea placeholder="Your comment here" class="comment" value="{{comment}}" multiple="multiple">{{comment}}</textarea>
-      </div>
-      <div class="toolbar">
-        <a class="btn" on-click="{{saveComment}}">Save</a>
-      </div>
+        <div class="toolbar">
+          <a class="btn" on-click="{{save}}">Save</a>
+        </div>
     </div>
+
   </template>
   
 </polymer-element><polymer-element name="movie-app">
-  <link rel="import" href="posters/posters.html">
+  <link rel="import" href="posters.html">
   <link rel="import" href="dialog.html">
   <link rel="import" href="card.html">
   <template>
-    <div class="header"><h1><a href="#"><img src="img/movie-clapper-board-hi.png" width="100px"></a>Movie board</h1></div>
-    <movie-posters></movie-posters>
+    <div class="header"><a href="#"><img src="img/DartLogo.png"></a><h1>Movie board</h1></div>
+    <movie-posters id="posters"></movie-posters>
     <template if="{{route == movieRoute}}">
-      <movie-dialog on-close="{{goBack}}">
+      <movie-dialog on-close="{{detailClosed}}">
         <movie-card movieid="{{route[1] | asInt}}"></movie-card>
       </movie-dialog>
     </template>

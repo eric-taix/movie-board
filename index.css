@@ -6,26 +6,34 @@ body {
   font-size: 14px;
   font-weight: normal;
   line-height: 1.2em;
-  margin: 15px;
+  margin: 0px;
+  padding: 0px;
 }
 
 h1 {
   color: white;
-  padding-left: 50px;
-  padding-top: 0px;
+  padding-left: 70px;
+  padding-top: 5px;
   vertical-align: middle;
   font-size: 45px;
   font-weight: bold;
+  text-shadow: 2px 2px 10px #DDD;
+  margin-left: 80px;
 }
 
-h1 img {
-  vertical-align: middle; 
-  padding-right: 40px;
-  width: 50px;
+.header a img {
+  vertical-align: top; 
+  width: 100px;
+  padding-top: 0px;
+  margin-top: 0px;
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  float: left;
 }
 
 .header {
-  position: fixed; top: 0px; left: 0px; width: 100%; height: 120px;
+  position: absolute; top: 0px; left: 0px; width: 100%; height: 80px;
   z-index: 1000;
 }
 
@@ -65,11 +73,11 @@ h1 img {
 }
 
 .window .container {
-  height: 630px;
-  width: 1000px;
+  height: 500px;
+  width: 900px;
   background: #222;
   position: absolute;
-  margin: -350px 0 0 -500px;
+  margin: -250px 0 0 -450px;
   left: 50%;
   top: 50%;
   border: 4px solid white;
@@ -93,7 +101,7 @@ h1 img {
   display: block;
   background-color: transparent;
   z-index: 2000;
-  position: fixed; top: 230px; left: 30px; width: 196px;
+  position: fixed; top: 230px; left: 10px; width: 137px;
 }
 
 .menu .item {
@@ -103,7 +111,6 @@ h1 img {
   padding-bottom: 10px;
   color: white;
   text-decoration: none;  
-  transition: all 0.3s ease-out; 
   cursor: pointer;
 }
 
@@ -118,7 +125,6 @@ h1 img {
   border-radius: 5px 0px 0px 5px;
   border: none;
   box-shadow: 0px 3px 3px -3px #000000 inset;
-  transform: scale(1.2);
 }
 
 .menu .item-selected:hover {
@@ -129,7 +135,7 @@ h1 img {
 /** ============== Movies styles (items and container) ======= */
 #movies {
    z-index: 1000;
-   position: relative; top: 0px; margin-top: 120px; margin-left: 230px; height: 100%; min-width: 250px;
+   position: relative; top: 0px; margin-top: 80px; margin-left: 230px; height: 100%; min-width: 250px;
    background-color: red;
 }
 
@@ -138,25 +144,23 @@ h1 img {
   border-radius: 5px 0px 0px 5px;
   border: 1px solid black;
   box-shadow: 0 3px 3px rgba(0,0,0,0.2) inset, 0 -1px 0 rgba(0,0,0,0.05) inset;
-  margin-bottom: 10px;
   background: gray;
   position: fixed;
-  top: 100px;
-  left: 225px;
+  top: 80px;
+  left: 145px;
   right: 0px;
 }
 
 #movies .toolbar label {
-  margin-left: 80px;
-  margin-top: 20px;
+  margin-left: 60px;
   color: white;
-  font-size: 26px;
+  font-size: 20px;
 }
 
 #movies .toolbar input {
     margin-left: 10px;
     margin-top: 20px;
-    background: url(img/icon-search.png) 315px 6px no-repeat, linear-gradient(to bottom, #f7f7f8 0%,#ffffff 100%);
+    background: url(img/icon-search.png) 7px 6px no-repeat, linear-gradient(to bottom, #f7f7f8 0%,#ffffff 100%);
     border-radius: 3px;
     border: none;
     box-shadow: 0 1px 2px rgba(0,0,0,0.2) inset, 0 -1px 0 rgba(0,0,0,0.05) inset;
@@ -167,13 +171,13 @@ h1 img {
     position: relative;
     height: 36px;
     width: 300px;
-    padding-left: 10px;
-    padding-right: 40px;
+    padding-left: 40px;
+    padding-right: 0px;
 }
 
 #movies .content {
-  top: 190px;
-  left: 225px;
+  top: 170px;
+  left: 145px;
   right: 0px;
   position: fixed;
   bottom: 0px;
@@ -192,13 +196,13 @@ h1 img {
   display: block;
   position: relative;
   float: left;
-  width: 260px;
-  height: 380px;
+  width: 200px;
+  height: 300px;
   margin: 2px;
   border: solid 1px #444;
 }
 
-.movie .liked, .movie .liked-selected {
+.movie .favorite, .movie .favorite-selected {
   position: absolute !important;
   right: 5px;
   top: 15px;
@@ -209,11 +213,11 @@ h1 img {
   cursor: pointer;
 }
 
-.movie .liked-selected {
+.movie .favorite-selected {
   color: red;
 }
 
-.movie .liked:hover, .movie .liked-selected:hover {
+.movie .favorite:hover, .movie .favorite-selected:hover {
   text-shadow:0px 0px 5px white;
 }
 
@@ -267,7 +271,7 @@ h1 img {
   color: yellow;
 }
 
-.movie .comment {
+.movie:hover .overlay .comment {
   padding-top: 20px;
   color: gray;
   font-style: italic;
@@ -361,4 +365,135 @@ h1 img {
 	-webkit-border-bottom-left-radius:0px;
 	-moz-border-radius-bottomleft:0px;
 	border-bottom-left-radius:0px;
+}
+
+/**======== Card (details) =========*/
+.card {
+  width: 100%;
+  height: 100%;
+}
+
+.card .poster {
+  float: left;
+  padding-right: 10px;
+  width: 250px;
+}
+
+.card .favorite, .card .favorite-selected {
+  font-size: 40px;
+  position: absolute;
+  left: 10px;
+  top: 25px;
+  color: rgba(70,70,70,1);
+  z-index: 200;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.card .favorite-selected {
+  color: red;
+}
+
+.card .favorite:hover, .card .favorite-selected:hover {
+  text-shadow:0px 0px 5px white;
+}
+
+.card .content {
+  position: relative;
+  width: auto;
+  padding: 40px;
+}
+
+.card .content table tr td {
+  padding: 10px;
+}
+
+.card .line {
+  width: auto;
+  border: 1px solid green;
+  position: relative;
+}
+
+.card .title {
+  font-size: 35px;
+}
+
+.card .tagline {
+  font-style: italic;
+  font-size: 20px;
+}
+
+.card .rating {
+  color: yellow;
+}
+
+.card .trailer {
+  right: 10px;
+  top: 50px;
+  cursor: pointer;
+  position: absolute;
+}
+
+.card .overview {
+  padding-top: 20px;
+  font-size: 13px;
+  position: relative;
+  width: auto;
+}
+
+.card .genre {
+  display: inline-block;
+  padding-right: 30px;
+  font-size: 15px;
+  position: relative;
+}
+
+.card .comment {
+  width: 550px;
+  height: 120px;
+  background-color: transparent;
+  color: gray;
+  font-size: 14px;
+  border: 0px;
+  border-bottom: 1px solid gray;
+  position: relative;
+}
+
+.card .toolbar {
+  position: absolute;
+  bottom: 25px;
+  right : 10px;
+}
+
+.card .toolbar a {
+  margin: 6px;
+}
+
+.card .btn {
+  cursor: pointer;
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 28px;
+  -moz-border-radius: 28px;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  border: solid #1f628d 0px;
+  text-decoration: none;
+}
+
+.card .btn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
 }
