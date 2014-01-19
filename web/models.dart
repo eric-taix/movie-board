@@ -56,6 +56,15 @@ class Movie extends Observable {
   
   Movie(this.title, this.posterPath);
   
+  Movie.sample() {
+    id = 1;
+    title = "Dart Flight School";
+    posterPath = "img/dart-flight-school.jpg";
+    releasedDate="2014/02/19";
+    voteAverage = 10;
+    voteCount = 80;
+  }
+  
   Movie.fromMap(Map<String, Object> map) {
     id = map['id'];
     tag = map['tag'];
