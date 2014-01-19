@@ -52,7 +52,7 @@ Before starting this codelab, you need :
 *   to install [Dart-Editor](http://www.dartlang.org) (This codelab has been tested with v1.1.1)  
 *   to have a modern browser (it has been tested with Chrome 32.0, Firefox 26.0, Safari 6.1)  
 
-Then download the compressed archive of this project by clicking the download button on the right side of this page (or fork the project if you are confortable with GitHub)  
+Then download the compressed archive of this project by clicking the download button on the right side of this page (or fork the project if you are confortable with GitHub) and finaly uncrompressed it on your laptop. 
   
 # User stories
 This codelab is divided into the following user-stories :
@@ -72,7 +72,7 @@ Static HTML templates and Cascaded Styles Sheets are provided. This codelab does
 Please use provided templates as it without modification. Of course HTML and CSS code may be improved but this is not the purpose of this codelab: it work ;-)  
 
 # Ready ?
-Everything is OK ? So you are ready to [start](docs/user-story-1.md)
+Everything is OK ? So you are ready to [start the codelab](docs/user-story-1.md)
   
 # Credits
 [+Eric Taix](https://plus.google.com/u/0/+EricTaix)  
@@ -82,7 +82,7 @@ XXXXX
 XXXXX  
 XXXXX  
   
-Also I'd like to thanks students of Polytech who tested this codelab, send pull-request:  
+Also I'd like to thanks students of Polytech who tested this codelab, sent pull-request:  
 *  XXXXX  
 *  XXXXX  
 *  XXXXX  
