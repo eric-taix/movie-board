@@ -13,10 +13,6 @@ class Poster extends PolymerElement {
   
   Poster.created() : super.created();
   
-  /// The movie attribut has changed
-  movieChanged(Movie oldMovie) {
-  }
-  
   /// Apply styles which are defined outside the component
   bool get applyAuthorStyles => true;
   
