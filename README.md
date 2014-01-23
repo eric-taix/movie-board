@@ -52,7 +52,11 @@ Before starting this codelab, you need :
 *   to install [Dart-Editor](http://www.dartlang.org) (This codelab has been tested with v1.1.1)  
 *   to have a modern browser (it has been tested with Chrome 32.0, Firefox 26.0, Safari 6.1)  
 
-Then download the compressed archive of this project by clicking the download button on the right side of this page (or fork the project if you are confortable with GitHub) and finaly uncrompressed it on your laptop. 
+Then download the compressed archive of this project by clicking the download button on the right side of this page (or fork the project if you are confortable with GitHub) and finaly uncompress it on your laptop. 
+
+Launch Dart editor and open the `movie-board-final` sub-directory. Right click on `index.html` and select Run as dartium option. Verify is the application runs fine and then close the folder.
+  
+**Important: the `final` directory contains the final application, so don't try to have a look to files in this directory: Cheating is not playing !**  
   
 # User stories
 This codelab is divided into the following user-stories :
