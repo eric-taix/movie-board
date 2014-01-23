@@ -6,11 +6,19 @@
     <title>Sample app</title>
     <link rel="stylesheet" href="movie_board.css">
     
-    <link rel="import" href="poster.html">
+    <!-- import the click-counter -->
+    <link rel="import" href="clickcounter.html">
     <script type="application/dart">export 'package:polymer/init.dart';</script>
     <script src="packages/browser/dart.js"></script>
   </head>
   <body>
-     <movie-poster></movie-poster>
+    <h1>Movie Board</h1>
+    
+    <p>Welcome to the Montpellier JUG Dart Flight !</p>
+    
+    <div id="sample_container_id">
+      <click-counter count="5"></click-counter>
+    </div>
+
   </body>
 </html>
