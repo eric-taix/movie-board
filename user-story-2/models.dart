@@ -22,7 +22,7 @@ class Movie extends Observable {
     title=json['title'];
     posterPath=json['poster_path'];
     releasedDate=json['release_date'];
-    voteAverage=json['vote_average'];
+    voteAverage=(json['vote_average'] as num).toInt();
     voteCount=json['vote_count'];
   }
 }
