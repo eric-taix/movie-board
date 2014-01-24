@@ -15,9 +15,9 @@ typedef Future<List<Movie>> MoviesRetriever();
  */
 abstract class MovieService {
   
-  Future<List<Movie>> getAllMovies();
-  Future<List<Movie>> getFavorites();
-  Future<List<Movie>> getMovies(String tag);
+  Future<Iterable<Movie>> getAllMovies();
+  Future<Iterable<Movie>> getFavorites();
+  Future<Iterable<Movie>> getMovies(String tag);
   Future<MovieDetail> getMovieDetail(int id);
   void save(Movie m);
 }
