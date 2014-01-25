@@ -3,7 +3,7 @@
   <link rel="import" href="dialog.html">
   <link rel="import" href="card.html">
   <template>
-    <div class="header"><a href="#"><img src="img/DartLogo.png"></a><h1>Movie board</h1></div>
+    <div class="header"><a href="#"><img src="../common/img/DartLogo.png"></a><h1>Movie board</h1></div>
     <movie-posters id="posters"></movie-posters>
     <template if="{{route == movieRoute}}">
       <movie-dialog on-close="{{detailClosed}}">
@@ -11,5 +11,5 @@
       </movie-dialog>
     </template>
   </template>
-  <script type="application/dart" src="app.dart"></script>  
+  <script type="application/dart" src="app.dart"></script>
 </polymer-element>
