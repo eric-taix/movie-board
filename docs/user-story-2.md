@@ -124,6 +124,7 @@
      - Essayez de n'écrire pas plus de 6 lignes de code pour l'implémentation de `getAllMovies`
      
  
+###[Prochaine user-story >>>](user-story-3.md)
 
 ****
     
@@ -140,8 +141,13 @@
 >
 > - Un constructeur de type `factory` permet de contrôler ce qui est réellement créé. Les cas d'utilisation sont variés, comme retourner une implémentation différente, retourner une instance d'un cache plutôt qu'une nouvelle valeur, retourner un Singleton. Son nom est apparenté au pattern du même nom.  
 > 
-> - Un grand nombre des méthodes de `Iterable` retournent des `LazyIterable`. Sur ce type de liste les éléments ne sont parcourus que lorsque l'on y accède et ceci à des fins d'optimisation. Pour affecter un `LazyIterable` a une `List`, il faut appeler la méthode `toList()`.
+> - Un grand nombre des méthodes de `Iterable` retournent des `LazyIterable`. Sur ce type de liste les éléments ne sont parcourus que lorsque l'on y accède et ceci à des fins d'optimisation. Pour affecter un `LazyIterable` a une `List`, il faut appeler la méthode `toList()` sinon une erreur est déclenchée.
 > 
+> **Aller plus loin**:  
 > 
+> [Use Future Based APIs](https://www.dartlang.org/docs/tutorials/futures/)  
+> [Fetch Data Dynamically](https://www.dartlang.org/docs/tutorials/fetchdata/)  
+> [Collections In Dart - Dart Tips, Ep 5](https://www.dartlang.org/dart-tips/dart-tips-ep-5.html)  
+> [Using Futures in Dart for Better Async Code](http://blog.sethladd.com/2012/03/using-futures-in-dart-for-better-async.html)
 
 
