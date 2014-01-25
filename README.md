@@ -54,7 +54,7 @@ Before starting this codelab, you need :
 
 Then download the compressed archive of this project by clicking the download button on the right side of this page (or fork the project if you are confortable with GitHub) and finaly uncompress it on your laptop. 
 
-Launch Dart editor and open the `movie-board-final` sub-directory. Right click on `index.html` and select Run as dartium option. Verify is the application runs fine and then close the folder.
+Launch Dart editor and open the `movie-board-final` sub-directory. Right click on `movie_board.html` and select Run as dartium option. Verify is the application runs fine and then close the folder.
   
 **Important: the `final` directory contains the final application, so don't try to have a look to files in this directory: Cheating is not playing !**  
   
