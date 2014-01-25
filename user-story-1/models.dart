@@ -12,7 +12,7 @@ class Movie extends Observable {
   Movie.sample() {
     id = 1;
     title = "Eric Taix";
-    posterPath = "img/dart-flight-school.jpg";
+    posterPath = "../common/img/dart-flight-school.jpg";
     releasedDate="2014/02/19";
     voteAverage = 1;
     voteCount = 8000;

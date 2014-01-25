@@ -2,35 +2,54 @@ library movie.services;
 
 import 'dart:async';
 import 'dart:convert';
+import 'dart:html';
 
 import 'models.dart';
 
-final MovieService moviesService = new InMemoryMovieService();
+final MovieService moviesService = new MovieService();
 
+/// Service definition
 abstract class MovieService {
+  
+  factory MovieService() => new HttpMovieService();
   
   Future<List<Movie>> getAllMovies();
   
 }
 
+/// In memory service implementation
 class InMemoryMovieService implements MovieService {
   
   List<Movie> _movies;
   
   InMemoryMovieService() {
-    _movies = JSON.decode(ALL_JSON).map((Map map) => new Movie.fromJSON(map)).toList();
+    _movies = JSON.decode(IN_MEMORY_JSON).map((Map map) => new Movie.fromJSON(map)).toList();
   }
   
   Future<List<Movie>> getAllMovies() => new Future(() => _movies);
-  
+
 }
 
+/// HTTP service implementation
+class HttpMovieService implements MovieService {
+  
+  List<Movie> _movies;
+  
+  Future<List<Movie>> getAllMovies() {
+    Completer completer = new Completer();
+    HttpRequest.getString('../common/json/all.json').then(JSON.decode).then((List ms) {
+      _movies = ms.map((Map map) => new Movie.fromJSON(map)).toList();
+      completer.complete(_movies);
+    });
+    return completer.future;
+  }
+}
 
-const String ALL_JSON = '''
+/// HTTP response simulation
+const String IN_MEMORY_JSON = '''
 [
   {
   "tag":"upcoming","adult": false,
-  "backdrop_path": "/6pCLzhp06ua2ltbukUsD2KiEDsJ.jpg",
   "id": 180894,
   "original_title": "Ninja: Shadow of a Tear",
   "release_date": "2013-12-31",
@@ -42,7 +61,6 @@ const String ALL_JSON = '''
   },
   {
   "tag":"upcoming","adult": false,
-  "backdrop_path": null,
   "id": 245589,
   "original_title": "Voodoo Possession",
   "release_date": "2014-01-14",
@@ -54,7 +72,6 @@ const String ALL_JSON = '''
   },
   {
   "tag":"upcoming","adult": false,
-  "backdrop_path": "/c84yL713Qq33w4pTDB3tQ3D6KiI.jpg",
   "id": 188207,
   "original_title": "The Legend of Hercules",
   "release_date": "2014-01-10",
@@ -66,7 +83,6 @@ const String ALL_JSON = '''
   },
   {
   "tag":"upcoming","adult": false,
-  "backdrop_path": "/w8z49q0hCuGP59wR2lGpYIZ9i6F.jpg",
   "id": 137094,
   "original_title": "Jack Ryan: Shadow Recruit",
   "release_date": "2014-01-17",
@@ -78,7 +94,6 @@ const String ALL_JSON = '''
   },
   {
   "tag":"upcoming","adult": false,
-  "backdrop_path": "/zTe27FXP113lHiv6qCADhQHqemd.jpg",
   "id": 227359,
   "original_title": "Force of Execution",
   "release_date": "2013-12-31",
@@ -90,7 +105,6 @@ const String ALL_JSON = '''
   },
   {
   "tag":"upcoming","adult": false,
-  "backdrop_path": "/gkZmIwSaUvj3aOYOYVpss6LeeXW.jpg",
   "id": 214140,
   "original_title": "McCanick",
   "release_date": "2013-12-31",
@@ -102,7 +116,6 @@ const String ALL_JSON = '''
   },
   {
   "tag":"upcoming","adult": false,
-  "backdrop_path": "/aKdfFihGoCCUokcR5ZeotwzFW5g.jpg",
   "id": 202220,
   "original_title": "不二神探",
   "release_date": "2013-12-31",
@@ -114,7 +127,6 @@ const String ALL_JSON = '''
   },
   {
   "tag":"upcoming","adult": false,
-  "backdrop_path": "/izYCpovyAIKLI2i3gmhSKxlR8Pk.jpg",
   "id": 193756,
   "original_title": "Lone Survivor",
   "release_date": "2014-01-10",
@@ -126,7 +138,6 @@ const String ALL_JSON = '''
   },
   {
   "tag":"upcoming","adult": false,
-  "backdrop_path": null,
   "id": 244534,
   "original_title": "Happy Christmas",
   "release_date": "2014-01-19",
@@ -138,7 +149,6 @@ const String ALL_JSON = '''
   },
   {
   "tag":"upcoming","adult": false,
-  "backdrop_path": null,
   "id": 246013,
   "original_title": "War Story",
   "release_date": "2014-01-19",
@@ -150,7 +160,6 @@ const String ALL_JSON = '''
   },
   {
   "tag":"upcoming","adult": false,
-  "backdrop_path": "/xYucQImC9FIS7HXhwwUxgepeOlS.jpg",
   "id": 168530,
   "original_title": "Ride Along",
   "release_date": "2014-01-17",
@@ -162,7 +171,6 @@ const String ALL_JSON = '''
   },
   {
   "tag":"upcoming","adult": false,
-  "backdrop_path": "/5NA3xjZxZt6dX4aMLnwFIl2ELq.jpg",
   "id": 227348,
   "original_title": "Paranormal Activity: The Marked Ones",
   "release_date": "2014-01-03",
@@ -174,7 +182,6 @@ const String ALL_JSON = '''
   },
   {
   "tag":"upcoming","adult": false,
-  "backdrop_path": null,
   "id": 244786,
   "original_title": "Whiplash",
   "release_date": "2014-01-16",
@@ -186,7 +193,6 @@ const String ALL_JSON = '''
   },
   {
   "tag":"upcoming","adult": false,
-  "backdrop_path": null,
   "id": 244772,
   "original_title": "The Skeleton Twins",
   "release_date": "2014-01-18",
@@ -198,7 +204,6 @@ const String ALL_JSON = '''
   },
   {
   "tag":"upcoming","adult": false,
-  "backdrop_path": "/l50jqsHUSHKQHWHQL9aFODF1kmO.jpg",
   "id": 106136,
   "original_title": "Chasing Shakespeare",
   "release_date": "2014-01-01",
@@ -210,7 +215,6 @@ const String ALL_JSON = '''
   },
   {
   "tag":"upcoming","adult": false,
-  "backdrop_path": null,
   "id": 245775,
   "original_title": "Yves Saint Laurent",
   "release_date": "2014-01-08",
@@ -222,7 +226,6 @@ const String ALL_JSON = '''
   },
   {
   "tag":"upcoming","adult": false,
-  "backdrop_path": null,
   "id": 8947,
   "original_title": "Dirty Tricks",
   "release_date": "2013-12-31",
@@ -234,7 +237,6 @@ const String ALL_JSON = '''
   },
   {
   "tag":"upcoming","adult": false,
-  "backdrop_path": null,
   "id": 236426,
   "original_title": "Cleanin' Up the Town: Remembering Ghostbusters",
   "release_date": "2014-01-01",
@@ -246,7 +248,6 @@ const String ALL_JSON = '''
   },
   {
   "tag":"upcoming","adult": false,
-  "backdrop_path": null,
   "id": 152751,
   "original_title": "33 días",
   "release_date": "2014-01-01",
@@ -258,7 +259,6 @@ const String ALL_JSON = '''
   },
   {
   "tag":"upcoming","adult": false,
-  "backdrop_path": "/jPeHX1rqTb44JyNoHzCM77lD0k4.jpg",
   "id": 127560,
   "original_title": "The Railway Man",
   "release_date": "2014-01-01",
@@ -270,7 +270,6 @@ const String ALL_JSON = '''
   },
   {
   "tag": "now_playing","adult": false,
-  "backdrop_path": "/7BqRYnVXoxtTjlETp0belv1JzPJ.jpg",
   "id": 57158,
   "original_title": "The Hobbit: The Desolation of Smaug",
   "release_date": "2013-12-13",
@@ -282,7 +281,6 @@ const String ALL_JSON = '''
   },
   {
   "tag": "now_playing","adult": false,
-  "backdrop_path": "qlAll8FyQD6E2PSkZ3ID90YFxs1.jpg",
   "id": 172803,
   "original_title": "Hours",
   "release_date": "2013-12-12",
@@ -294,7 +292,6 @@ const String ALL_JSON = '''
   },
   {
   "tag": "now_playing","adult": false,
-  "backdrop_path": "/8DtQhSXPDowtoXV9vywKQEyOlvp.jpg",
   "id": 106646,
   "original_title": "The Wolf of Wall Street",
   "release_date": "2013-12-25",
@@ -306,7 +303,6 @@ const String ALL_JSON = '''
   },
   {
   "tag": "now_playing","adult": false,
-  "backdrop_path": "/ffJff2KWHd2rbwYWPRxKxTBypRB.jpg",
   "id": 168672,
   "original_title": "American Hustle",
   "release_date": "2013-12-18",
@@ -318,7 +314,6 @@ const String ALL_JSON = '''
   },
   {
   "tag": "now_playing","adult": false,
-  "backdrop_path": "/wemkx5CeiS56v8Vyl2H9eQ7Rigq.jpg",
   "id": 230222,
   "original_title": "Tarzan",
   "release_date": "2013-12-18",
@@ -330,7 +325,6 @@ const String ALL_JSON = '''
   },
   {
   "tag": "now_playing","adult": false,
-  "backdrop_path": "/mrvlpJFAzKwZZkLm9VD7Rh2VECi.jpg",
   "id": 116745,
   "original_title": "The Secret Life of Walter Mitty",
   "release_date": "2013-12-25",
@@ -342,7 +336,6 @@ const String ALL_JSON = '''
   },
   {
   "tag": "now_playing","adult": false,
-  "backdrop_path": "/noQw3MlnYYASctocGTH2qoLTQ7V.jpg",
   "id": 140823,
   "original_title": "Saving Mr. Banks",
   "release_date": "2013-12-20",
@@ -354,7 +347,6 @@ const String ALL_JSON = '''
   },
   {
   "tag": "now_playing","adult": false,
-  "backdrop_path": "/mTMnfiWuvhbCdez9LAzbYy0vLSG.jpg",
   "id": 109443,
   "original_title": "Anchorman 2: The Legend Continues",
   "release_date": "2013-12-18",
@@ -366,7 +358,6 @@ const String ALL_JSON = '''
   },
   {
   "tag": "now_playing","adult": false,
-  "backdrop_path": "/jCscmcou3Y7appIefa7cyUiJRbG.jpg",
   "id": 238589,
   "original_title": "Enemies Closer",
   "release_date": "2013-12-24",
@@ -378,7 +369,6 @@ const String ALL_JSON = '''
   },
   {
   "tag": "now_playing","adult": false,
-  "backdrop_path": null,
   "id": 239530,
   "original_title": "Majokko Shimai no Yoyo to Nene",
   "release_date": "2013-12-28",
@@ -390,7 +380,6 @@ const String ALL_JSON = '''
   },
   {
   "tag": "now_playing","adult": false,
-  "backdrop_path": "/6pCLzhp06ua2ltbukUsD2KiEDsJ.jpg",
   "id": 180894,
   "original_title": "Ninja: Shadow of a Tear",
   "release_date": "2013-12-31",
@@ -402,7 +391,6 @@ const String ALL_JSON = '''
   },
   {
   "tag": "now_playing","adult": false,
-  "backdrop_path": "/jnGydHpWBqxWvw0bAMj0ebpsR5F.jpg",
   "id": 64686,
   "original_title": "47 Ronin",
   "release_date": "2013-12-25",
@@ -414,7 +402,6 @@ const String ALL_JSON = '''
   },
   {
   "tag": "now_playing","adult": false,
-  "backdrop_path": "/pH6IGq7KZKcKiuIJRrnrycMdTpF.jpg",
   "id": 239523,
   "original_title": "劇場版 HUNTERxHUNTER THE LAST MISSION",
   "release_date": "2013-12-27",
@@ -426,7 +413,6 @@ const String ALL_JSON = '''
   },
   {
   "tag": "now_playing","adult": false,
-  "backdrop_path": "/sB8KE4wg9ijNl0SLG9IyEy2vxOq.jpg",
   "id": 229405,
   "original_title": "Panic in the Mailroom",
   "release_date": "2013-12-10",
@@ -438,7 +424,6 @@ const String ALL_JSON = '''
   },
   {
   "tag": "now_playing","adult": false,
-  "backdrop_path": null,
   "id": 243790,
   "original_title": "A Young Doctor's Notebook and Other Stories",
   "release_date": "2013-12-12",
@@ -450,7 +435,6 @@ const String ALL_JSON = '''
   },
   {
   "tag": "now_playing","adult": false,
-  "backdrop_path": "/awepqjHYn1lXUIqz8rTfZadsVSv.jpg",
   "id": 175555,
   "original_title": "Tyler Perry's A Madea Christmas",
   "release_date": "2013-12-13",
@@ -462,7 +446,6 @@ const String ALL_JSON = '''
   },
   {
   "tag": "now_playing","adult": false,
-  "backdrop_path": "/ojAvtm8yCcyQvhLVmdDA12eeZS2.jpg",
   "id": 64807,
   "original_title": "Grudge Match",
   "release_date": "2013-12-25",
@@ -474,7 +457,6 @@ const String ALL_JSON = '''
   },
   {
   "tag": "now_playing","adult": false,
-  "backdrop_path": "/t4I19gZ15kNnSfoajwf4oWNWpWx.jpg",
   "id": 44977,
   "original_title": "Dhoom 3",
   "release_date": "2013-12-20",
@@ -486,7 +468,6 @@ const String ALL_JSON = '''
   },
   {
   "tag": "now_playing","adult": false,
-  "backdrop_path": "/5Dd6NeZZFk1E1yxAksz0qZHcKPp.jpg",
   "id": 111473,
   "original_title": "The Invisible Woman",
   "release_date": "2013-12-25",
@@ -498,7 +479,6 @@ const String ALL_JSON = '''
   },
   {
   "tag": "now_playing","adult": false,
-  "backdrop_path": "/zTe27FXP113lHiv6qCADhQHqemd.jpg",
   "id": 227359,
   "original_title": "Force of Execution",
   "release_date": "2013-12-31",
