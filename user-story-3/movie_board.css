@@ -10,18 +10,6 @@ body {
   padding: 0px;
 }
 
-p {
-  color: white;
-}
-
-#sample_container_id {
-  width: 100%;
-  height: 400px;
-  position: relative;
-  border: 1px solid #ccc;
-  background-color: #fff;
-}
-
 h1 {
   color: white;
   padding-left: 70px;

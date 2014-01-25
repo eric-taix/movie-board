@@ -1,0 +1,19 @@
+<polymer-element name='movie-posters'>
+  <template>
+     <div id="movies">
+       <div class="toolbar">
+         <label>Search : </label><input type="text" placeholder="Search for movie, tv show..." value="{{ searchTerm }}">
+         <label>Sort by :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+         <a href="#" class="gb gb-left" on-click="{{sort}}" data-field="title">A-Z</a>
+         <a href="#" class="gb" on-click="{{sort}}" data-field="vote">&#x2605;</a>
+         <a href="#" class="gb gb-right" on-click="{{sort}}" data-field="favorite">&#x2665;</a>
+       </div>
+       <div class="content">
+         <template repeat="{{ m in movies | filter(searchFilter) | sortBy(sortField, sortAscending) }}">
+           <movie-poster movie="{{ m }}"></movie-poster>
+         </template>
+       </div>
+     </div>
+  </template>
+  <script type="application/dart" src="posters.dart"></script>
+</polymer-element>
