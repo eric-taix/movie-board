@@ -6,4 +6,4 @@ dependencies:
 transformers:
 - polymer:
     entry_points:
-    - web/index.html
+    - web/movie_board.html
