@@ -63,12 +63,12 @@ This codelab is divided into the following user-stories :
 
 1. [Show a movie's poster and content](docs/user-story-1.md)
 2. [Show the list of all movies (and load movies from a JSON stream)](docs/user-story-2.md)
-3. [Filter movies and sort the movie list](docs/user-story-3.md)
-4. [Show movies by 'category'](docs/user-story-4.md)
-5. [Use routes to develop a Single Page Application](docs/user-story-6.md)
-6. [Show a movie's detail](docs/user-story-6.md)
-7. [Store comments and favorites into the local storage](docs/user-story-7.md)
-8. [Build the JS application and deploy to the cloud](docs/user-story-8.md)
+3. [Filter movies and sort the movie list](user-story-3.md)
+4. [Show movies by 'category'](user-story-4.md)
+5. [Use routes to develop a Single Page Application](user-story-6.md)
+6. [Show a movie's detail](user-story-6.md)
+7. [Store comments and favorites into the local storage](user-story-7.md)
+8. [Build the JS application and deploy to the cloud](user-story-8.md)
   
 # Templates
 Static HTML templates and Cascaded Styles Sheets are provided. This codelab does not aim to learn you how to write HTML page or CSS.  
