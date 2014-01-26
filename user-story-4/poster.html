@@ -1,11 +1,11 @@
 <polymer-element name="movie-poster">
   <template>
       <li class="movie">
-      <span class="favorite">&#x2665;</span>
+      <span class="{{ movie.favorite | asFavoriteClass }}" on-click="{{flipFavorite}}">&#x2665;</span>
       <section class="overlay"> 
         <h2>{{movie.title}}</h2> 
         <div>Release date: {{movie.releasedDate }}</div>
-        <div>Rating: <span class="rating">{{ movie.voteAverage | asStars }}</span><span>{{ movie.voteAverage | compTo10 | asStars }}</span></div>
+        <div>Rating: <span class="rating">{{ movie.voteAverage | asStars }}</span><span>{{ movie.voteAverage | complementTo10 | asStars }}</span></div>
         <div>Voters : {{ movie.voteCount }}</div>
         <div class="comment">Well done guys !</div>
       </section>
