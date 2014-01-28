@@ -1,3 +1,4 @@
+library movie.models;
 
 import 'package:polymer/polymer.dart';
 
@@ -8,6 +9,7 @@ class Movie extends Observable {
   @observable String releasedDate;
   @observable int voteAverage;
   @observable int voteCount;
+  @observable bool favorite;
   
   Movie.sample() {
     id = 1;
