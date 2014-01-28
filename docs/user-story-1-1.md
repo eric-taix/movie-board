@@ -117,6 +117,12 @@
 
 2. Remplacez le contenu de `movie_board.html` par le code suivant :  
 	
+    Importez votre nouveau composant (dans les headers):
+
+	```
+	<link rel="import" href="poster.html">
+	```
+	
 	
 	```
 	<body>
