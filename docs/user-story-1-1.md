@@ -199,13 +199,12 @@
   
     **Note importante :**   
     - Polymer utilise le pattern MDV (Model Driven View), ce qui signifie que la vue (le fichier HTML) est pilotée par le modèle (le fichier dart). Si la valeur d'une propriété du modèle est modifiée, la vue (ou une partie de la vue) est rafraichie afin de refléter la nouvelle valeur. La réciproque est vraie aussi : si vous saisissez une valeur dans un input, la valeur du modèle est modifiée. Cette liaison entre le modèle et la vue est effectuée grâce à l'annotation `@observable`
-    - Si vous ne rajouter pas l'annotation `@observable`, le code que vous venez d'écrire fonctionne dans Dartium mais ne marchera plus une fois compilé en Javascript. En effet Dart2Js (le compilateur qui produit du javascript) effectue à des fins d'optimisation du `tree shaking` qui consiste à supprimer tout le code qui n'est pas utilisé. Or les attributs utilisés dans les vues ne sont pas prises en compte pour le `tree shaking`, vous devez donc indiquer dans votre code que vos attributs sont observables grâce à l'annotation `@observable` et votre classe `Movie` doit étendre (ou utiliser le mixin) `Observable`.  
+    - Lors du `tree shaking` Dart2JS supprime tous les élements / attributs non utilisés par votre code. Or les attributs utilisés dans des Polymer Expressions ne sont pas (actuellement) pris en compte dans l'évaluation du `tree shaking`. Vous devez donc indiquer à Dart2JS qu'il ne faut pas supprimer vos attributs. Pour cela il suffit soit de rajouter l'annotation `@observable` devant un attribut, soit ajouter l'annotation `@reflectable` (accessible par réflexion : appelé Mirror en Dart).
 
 4. Pour que ce code fonctionne aussi en javascript, modifiez le code de la façon suivante :  
 
-   - Importez le package grâce au code suivant `import 'package:polymer/polymer.dart';` qui contient la classe `Observable`  
-   - Faites étendre `Observable` à `Movie` : `class Movie extends Observable {`  
-   - Ajoutez l'annotation `@observable` devant chaque attribut  
+   - Importez le package Polymer grâce au code suivant `import 'package:polymer/polymer.dart';` 
+   - Ajoutez l'annotation `@reflectable` devant chaque attribut  
    
 5. Dans le fichier `poster.dart`, ajoutez la déclaration et l'initiation d'un attribut dans la classe `Poster`:  
    
