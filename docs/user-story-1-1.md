@@ -78,6 +78,8 @@
   
 ###Votre 1er composant...###
 
+**Votre répertoire de travail est `web`, sauf si vous décidez de repartir d'une user-story finalisée. Dans ce cas travaillez directement dans le répertoire adéquate.**
+
 1. Créez un nouveau composant nommé `movie-poster` 
    - Créez le fichier `poster.html` avec le contenu suivant:  
    
@@ -122,7 +124,7 @@
 	```
 	<link rel="import" href="poster.html">
 	```
-	
+	Puis modifiez le corps du fichier html :
 	
 	```
 	<body>
@@ -170,7 +172,7 @@
   	  String releasedDate;
   	  int voteAverage;
   	  int voteCount;
-  	   bool favorite;
+  	  bool favorite;
   
       Movie.sample() {
         id = ...;
@@ -202,7 +204,7 @@
 4. Pour que ce code fonctionne aussi en javascript, modifiez le code de la façon suivante :  
 
    - Importez le package grâce au code suivant `import 'package:polymer/polymer.dart';` qui contient la classe `Observable`  
-   - Etendez `Movie`à `Observable` : `class Movie extends Observable {`  
+   - Faites étendre `Observable` à `Movie` : `class Movie extends Observable {`  
    - Ajoutez l'annotation `@observable` devant chaque attribut  
    
 5. Dans le fichier `poster.dart`, ajoutez la déclaration et l'initiation d'un attribut dans la classe `Poster`:  
@@ -255,8 +257,7 @@ Dernier conseil, il est possible d'empiler les filtres les uns derrière les aut
 
 [Voir 'Dart - Functions are fun'](https://www.dartlang.org/dart-tips/dart-tips-ep-7.html) et cherchez sur cette page la fonction `makeAdder` pour un exemple sur les closures en Dart.  
 
-  
-  [Passez à la user-story n°2](docs/user-story-2.md)
+##[Passez à la user-story n°2 >>](docs/user-story-2.md)
 
 
 ****
@@ -290,7 +291,7 @@ Dernier conseil, il est possible d'empiler les filtres les uns derrière les aut
 >    ```
 >    library <nom de la librairie>;  
 >    // Par exemple  
->    library movie.utils;  
+>    library movie.models;  
 >    ```  
 
 
