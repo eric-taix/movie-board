@@ -125,7 +125,7 @@
 					<br />
 				</section>	
 				<section>
-					<h1>COMPIL TO JAVASCRIPT</h1>	
+					<h1>COMPILE TO JAVASCRIPT</h1>	
 					<br /><br />
 					<img src="../img/chrome.png" width="180px"><img src="../img/firefox.png" width="180px">
 					<img src="../img/ie.png" width="180px"><img src="../img/opera.png" width="180px"><img src="../img/safari.png" width="180px"> <br>
@@ -146,7 +146,7 @@
 				<section>
 					<h1>
 						<img src="../img/battery.png"
-							style="vertical-align: middle; border: 0.0px; background: transparent; box-shadow: none; width: 100px">&nbsp;BATTERY INCLUDED
+							style="vertical-align: middle; border: 0.0px; background: transparent; box-shadow: none; width: 100px">&nbsp;BATTERIES INCLUDED
 					</h1>
 					<br /> <br /> 
 					<ul>
@@ -178,10 +178,10 @@
 				<section>
 					<h1>TYPES</h1>
 					<br />
-					<h3>Type is optionnal</h3>
+					<h3>Types are optional</h3>
 					<div>
 						<pre><code>
-						var name = 'Robert Nelson',
+  var name = 'Robert Nelson';
 						</code></pre>	
 					</div>
 					<h3>Type shows an intent for what a value category should be</h3>
@@ -190,10 +190,10 @@
 					<h1>NUMBERS</h1>
 					<br /><br/>
 					<pre><code>
-							var m = 3;
-							num n = 9;
-							int x = 33;
-							double y = 2.548;
+  var m = 3;
+  num n = 9;
+  int x = 33;
+  double y = 2.548;
 						</code></pre>
 					<ul>
 						<li>num : int or double</code>
@@ -205,9 +205,9 @@
 					<h1>BOOLEAN</h1>
 					<br /><br/>
 					<pre><code>
-							bool selected = false;
+  bool selected = false;
 							
-							var displayed = true;
+  var displayed = true;
 						</code></pre>
 					<ul>
 						<li>bool is 'true' or 'false' (nothing else)
@@ -218,14 +218,14 @@
 					<h1>LIST</h1>
 					<br /><br/>
 					<pre><code>
-							List names = ['Anne', 'Robert', 'Louise'];
+  List names = ['Anne', 'Robert', 'Louise'];
 							
-							var towns = [];
+  var towns = [];
 
-							List countries = new List();
-							countries.add('France');
+  List countries = new List();
+  countries.add('France');
 
-							String name = name.length > 1 ? name[1] : "unknown";
+  String name = name.length > 1 ? name[1] : "unknown";
 						</code></pre>
 					<h3>List is a sequence of values</h3>
 				</section>	
@@ -233,15 +233,15 @@
 					<h1>MAP</h1>
 					<br /><br/>
 					<pre><code>
-							Map names = {
-							'Dart' : 'http://www.dartlang.org',
-							'Html5Rock' : 'http://www.html5rocks.com' };
+  Map names = {
+    'Dart' : 'http://www.dartlang.org',
+    'Html5Rock' : 'http://www.html5rocks.com' };
 							
-							Map dartFS = new Map();
-							dartFS['Montpellier'] = 'http://www.jug-montpellier.org';
-							dartFS['Paris'] = 'http://www.parisjug.org';
+  Map dartFS = new Map();
+  dartFS['Montpellier'] = 'http://www.jug-montpellier.org';
+  dartFS['Paris'] = 'http://www.parisjug.org';
 
-							String url = dartFS['Montpellier'];
+  String url = dartFS['Montpellier'];
 						</code></pre>
 					<h3>Map is a dictionary of pairs</h3>
 				</section>	
@@ -262,50 +262,50 @@
 				</section>													
 				<section>
 					<h1>CLASSES</h1>
-						<pre><code contenteditable>						class Hug {
-						  int strength; // Public attribute 
+						<pre><code contenteditable>class Hug {
+    int strength; // Public attribute 
+    // --- Modify online to use a getter ---
 
+    Hug(this.strength); // Terse
 
-						  Hug(this.strength); // Terse
+    Hug operator +(Hug other) { // Operator overriding
+      return new Hug(strength + other.strength);
+    }
+  }	
 
-						  Hug operator +(Hug other) { // Operator overriding
-    					    return new Hug(strength + other.strength);
-  						  }
-						}	
-
-						Hug hug = new Hug(10);
-						int v = hug.strength;	</code></pre>	
+  Hug hug = new Hug(10);
+  int v = hug.strength;	</code></pre>	
 				</section>
 				<section>
 					<h1>CLASSES</h1>
 						<pre><code>
-						class Hug {
-						  ...
-						  // Optional params w/ default value
-						  void patBack({int hands: 1}) { ... }
+  class Hug {
+    ...
+    // Optional params w/ default value
+    void patBack({int hands: 1}) { ... }
 
-						  // Named params w/ default value
-  						  void sayGoodBye([int times= 1]) { ... }
+    // Named params w/ default value
+    void sayGoodBye([int times= 1]) { ... }
 
-  						  // One line function & String interpolation
-  						  String toString() => "Embraceometer reads $_strength"; 
-						}						</code></pre>	
+    // One line function & String interpolation
+    String toString() => "Embraceometer reads $_strength"; 
+  }						</code></pre>	
 				</section>	
 				<section>
 					<h1>CONTRUCTORS</h1>
 						<pre><code contenteditable>
-						class Hug {
-						  static Hug _shared = new Hug(99);
+  class Hug {
+    static Hug _shared = new Hug(99);
+	
+    // Default constructor (no name)
+    Hug(this._strength);
 
-						  // Default constructor (no name)
-						  Hug(this._strength);
+    // Named constructor
+    Hug.withFriend(int strength) : this(strength * 2);
 
-						  // Named constructor
-						  Hug.withFriend(int strength) : this(strength * 2);
-
-						  // Factory : new Hug.shared() return the same instance
-						  factory Hug.shared() => _shared;
-						}						</code></pre>	
+    // Factory : new Hug.shared() return the same instance
+    factory Hug.shared() => _shared;
+  }						</code></pre>	
 				</section>	
 				<section>
 					<h1>INHERITANCE / IMPLEMENTATION</h1>
@@ -319,7 +319,7 @@
 				</section>		
 				<section>
 					<h1>MIXIN</h1>
-					<img src="../img/mixin1.png" style=""> <br>
+					<img src="../img/mixin1.png" width="150px" style=""> <br>
 					<pre><code>class Employee extends Persistable { ... }</code></pre>
 					<br>
 					<h3>But Employee is NOT a Persistable</h3>
@@ -335,16 +335,16 @@
 					<h1>METHOD CASCADES</h1>
 					<br>
 					<pre><code>
-						List dfSchools = new List();
-						dfSchools.add('San Francisco');
-						dfSchools.add('Montpellier');
-						dfSchools.add('Paris');
+  List dfSchools = new List();
+  dfSchools.add('San Francisco');
+  dfSchools.add('Montpellier');
+  dfSchools.add('Paris');
 					</code></pre>
 					<h3>Yikes ! 'dfSchools' is repeated 4 times, so ...</h3>
 					<pre><code>
-						List dfSchools = new List() ..add('San Francisco') 
-						                            ..add('Montpellier')
-						                            ..add('Paris');
+  List dfSchools = new List() ..add('San Francisco') 
+                              ..add('Montpellier')
+                              ..add('Paris');
 					</code></pre>
 				</section>																			
 			</section>
@@ -359,27 +359,26 @@
 					<h1>FUNCTIONS</h1>
 					<br>
 					<pre><code>
-						String addSign(String msg) {
-						  return '$msg (from Montpellier JUG)';
-						}
+  String addSign(String msg) {
+    return '$msg (from Montpellier JUG)';
+  }
 					</code></pre>		
 					<h3>or short form</h3>	
 					<pre><code>
-						addSign(msg) => '$msg (from Montpellier JUG)';
+  addSign(msg) => '$msg (from Montpellier JUG)';
 					</code></pre>			
 				</section>
 				 <section>
 					<h1>FUNCTIONS AS PARAM</h1>
 					<br>
 					<pre><code>
-						String sayHi(String to, String msg, Function signFct) {
-						  return 'Hello $to, ${signFct(msg)}';
-						}
+String sayHi(String to, String msg, Function signFct) {
+  return 'Hello $to, ${signFct(msg)}';
+}
 
-						main() {
-						  print(sayHi('Dartisans', 'Dart Flight School is awesome',
-						               addSign));
-						}
+main() {
+  print(sayHi('Dartisans', 'Dart Flight School is awesome',addSign));
+}
 					</code></pre>					
 				</section>				
 			    <!-- ############## Iterables ############## -->
@@ -387,20 +386,20 @@
 					<h1>LOOPS</h1>
 					<br>
 					<pre><code>
-						for(int i = 0; i < list.length; i++) {
-						  print(list[i]);
-						} 
+  for(int i = 0; i < list.length; i++) {
+    print(list[i]);
+  } 
 					</code></pre>
 					<div class="fragment">
 					<h3>or short form</h3>
 					<pre><code>
-						list.forEach((v) => print(v));
+  list.forEach((v) => print(v));
 					</code></pre>	
 					</div>
 					<div class="fragment">
 					<h3>or shorter form</h3>
 					<pre><code>
-						list.forEach(print);
+  list.forEach(print);
 					</code></pre>	
 					</div>										
 				</section>				
@@ -408,14 +407,14 @@
 					<h1>MAP</h1>
 					<br>
 					<pre><code>
-						['19','02','2014','19','00'].map((String s) {
-						    return int.parse(s);
-						});
+  ['19','02','2014','19','00'].map((String s) {
+    return int.parse(s);
+  });
 					</code></pre>
 					<div class="fragment">
 					<h3>or short form</h3>
 					<pre><code>
-						['19','02','2014','19','00'].map((s) => int.parse(s));
+  ['19','02','2014','19','00'].map((s) => int.parse(s));
 					</code></pre>										
 					</div>										
 				</section>	
@@ -423,14 +422,14 @@
 					<h1>REDUCE</h1>
 					<br>
 					<pre><code>
-						new List.generate(4, (i) => i).reduce((int v, int e) {
-						    return v * e;
-						});
+  new List.generate(4, (i) => i).reduce((int v, int e) {
+    return v * e;
+  });
 					</code></pre>
 					<div class="fragment">
 					<h3>or short form</h3>
 					<pre><code>
-						new List.generate(4, (i) => i).reduce((v,e) => v+e);
+  new List.generate(4, (i) => i).reduce((v,e) => v+e);
 					</code></pre>										
 					</div>										
 				</section>	
@@ -438,16 +437,16 @@
 					<h1>WHERE</h1>
 					<br>
 					<pre><code>
-						for(int i = 0; i < list.length; i++) {
-						  if (list[i] % 2 == 0) {
-						    print('$i is even');
-						  }
-						} 
+  for(int i = 0; i < list.length; i++) {
+    if (list[i] % 2 == 0) {
+      print('$i is even');
+    }
+  } 
 					</code></pre>
 					<div class="fragment">
 					<h3>or short form</h3>
 					<pre><code>
-						list.where((v) => v.isEven).forEach(print);
+  list.where((v) => v.isEven).forEach(print);
 					</code></pre>										
 					</div>										
 				</section>		
@@ -455,19 +454,19 @@
 					<h1>EVERY</h1>
 					<br>
 					<pre><code>
-						bool allEven = true;
-						for(int i = 0; i < list.length; i++) {
-						  if (list[i] % 2 != 0) {
-						    allEvent = false;
-						    break;
-						  }
-						} 
-						if (allEvent) print('Great!');
+  bool allEven = true;
+    for(int i = 0; i < list.length; i++) {
+      if (list[i] % 2 != 0) {
+        allEvent = false;
+        break;
+      }
+    } 
+  if (allEvent) print('Great!');
 					</code></pre>
 					<div class="fragment">
 					<h3>or short form</h3>
 					<pre><code>
-					    if (list.every((v) => v.isEven)) print('Great!');					
+  if (list.every((v) => v.isEven)) print('Great!');					
 					</code></pre>										
 					</div>										
 				</section>	
@@ -475,18 +474,18 @@
 					<h1>ANY</h1>
 					<br>
 					<pre><code>
-						for(int i = 0; i < list.length; i++) {
-						  if (list[i] % 2 == 0) {
-						    print('Great!');
-						    break;
-						  }
-						} 
-						if (allEvent) print('Great!');
+  for(int i = 0; i < list.length; i++) {
+    if (list[i] % 2 == 0) {
+      print('Great!');
+      break;
+    }
+  } 
+  if (allEvent) print('Great!');
 					</code></pre>
 					<div class="fragment">
 					<h3>or short form</h3>
 					<pre><code>
-					    if (list.any((v) => v.isEven)) print('Great!');					
+  if (list.any((v) => v.isEven)) print('Great!');					
 					</code></pre>										
 					</div>										
 				</section>
@@ -494,15 +493,15 @@
 					<h1>ITERABLE</h1>
 					<br>
 					<pre><code>
-						Iterable l1 = [1,2,3,4,5].where((x) => x.isEven);
-						Iterable l2 = l1.map((x) => x*2);
-						Iterable l3 = l2.map((x) => x+1);
+  Iterable l1 = [1,2,3,4,5].where((x) => x.isEven);
+  Iterable l2 = l1.map((x) => x*2);
+  Iterable l3 = l2.map((x) => x+1);
 					</code></pre>
 					<h3>or short form</h3>					
 					<pre><code>
-						[1,2,3,4,5].where((x) => x.isEven)
-						           .map((x) => x*2)
-						           .map((x) => x+1);
+  [1,2,3,4,5].where((x) => x.isEven)
+             .map((x) => x*2)
+             .map((x) => x+1);
 					</code></pre>
 					<h3>Quizz: how many times, items are accessed?</h3>
 				</section>	
@@ -517,18 +516,18 @@
 					<h1>CLOSURE</h1>
 					<br>
 					<pre><code>
-			    DateTime today = new DateTime.now();
-			    employees.where((e) => e.name.startsWith('T'))
-			             .where((e) => e.birthday == today); 
+  DateTime today = new DateTime.now();
+  employees.where((e) => e.name.startsWith('T'))
+           .where((e) => e.birthday == today); 
 					</code></pre>
 					<h3>This code is not reusable!</h3>
 					<div class="fragment">
 					<pre><code>
-   					nameStartWith(start) => (e) => e.name.startsWith(start);
-   					birthdayIs(when) => (e) => e.birthday == when;
+  nameStartWith(start) => (e) => e.name.startsWith(start);
+  birthdayIs(when) => (e) => e.birthday == when;
 
-   					employees.where(nameStartWith('T'))
-		 			  .where(birthdayIs(new DateTime.now())); 
+  employees.where(nameStartWith('T'))
+           .where(birthdayIs(new DateTime.now())); 
 					</code></pre>	
 					<h3>This one is better</h3>						
 					</div>			
@@ -537,19 +536,19 @@
 					<h1>CLOSURE</h1>
 					<br>
 					<pre><code>
-   					nameStartWith(start) => (e) => e.name.startsWith(start);
-   					birthdayIs(when) => (e) => e.birthday == when;
+  nameStartWith(start) => (e) => e.name.startsWith(start);
+  birthdayIs(when) => (e) => e.birthday == when;
 
-   					and(List filters) => (e) => filters.every((f) => f(e));
-   					or(List filters) => (e) => filters.any((f) => f(e));
+  and(List filters) => (e) => filters.every((f) => f(e));
+  or(List filters) => (e) => filters.any((f) => f(e));
 
-   					employees.where(
-   					  and([ nameStartWith('T'), birthdayIs(new DateTime.now()) ]
-   					); 
+  employees.where(
+       and([ birthdayIs(new DateTime.now()),
+	     or([ nameStartWith('T'), namesStartWith('A')]) ])
+  ); 
 					</code></pre>	
 					<h2>I love <3</h2>										
-				</section>																																	
-			</section>
+				</section>																								</section>
 
 			<!--  ########### CLOSURE ########### -->
 			<section>
