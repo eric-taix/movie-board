@@ -1,8 +1,10 @@
 ## 1. Afficher les données d'un film (titre, poster, date de sortie)
 > **Objectifs :** _Comprendre la structure principale d'un projet Dart, Apprendre à créer un composant web avec Polymer, Effectuer le binding sur un objet métier, Utiliser Polymer Expressions et les filtres, Créer sa 1ère closure en Dart_  
   
-  ![poster](img/goal1-user-story1.png) ![rating](img/goal2-user-story1.png)
-
+  ![poster](img/goal1-user-story1.png) ![rating](img/goal2-user-story1.png) 
+  
+  *Résultat obtenu à la fin de ce chapitre*
+  
 ###Premiers pas...###
 
 1. Commencez par lancer Dart Editor et ouvrez le répertoire `movie-board` (dans lequel vous avez décompressé l'archive) et explorez la structure du projet (ces éléments sont les éléments standards que vous retrouverez lorsque vous créez une nouvelle application Polymer en partant d'un exemple):
@@ -169,7 +171,7 @@ Pour mettre un peu de piment, essayez de ne pas faire une fonction figée qui fa
 [Voir 'Dart - Functions are fun'](https://www.dartlang.org/dart-tips/dart-tips-ep-7.html) et cherchez sur cette page la fonction `makeAdder` pour un exemple sur les closures en Dart.  
 
   
-  [Passez à la user-story n°2](docs/user-story-2.md)
+  [Passez à la user-story n°2](user-story-2.md)
 
 
 ****
