@@ -208,13 +208,7 @@
   - Importez le package Polymer grâce au code suivant `import 'package:polymer/polymer.dart';` 
   - Ajoutez l'annotation `@reflectable` devant chaque attribut
 
-  1. test
-    *test*
-  2. retest
-    **testtest**
-  3. test fin
-
-4. Dans le fichier `poster.dart`, ajoutez la déclaration et l'initiation d'un attribut dans la classe `Poster`:  
+4. Dans le fichier `poster.dart`, ajoutez la déclaration et l'initiation d'un attribut dans la classe `Poster` :  
    
    ```@observable Movie movie = new Movie.sample();```  
 
