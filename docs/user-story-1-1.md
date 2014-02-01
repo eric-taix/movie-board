@@ -207,7 +207,7 @@
 
    - Importez le package Polymer grâce au code suivant `import 'package:polymer/polymer.dart';` 
    - Ajoutez l'annotation `@reflectable` devant chaque attribut  
-   
+
 4. Dans le fichier `poster.dart`, ajoutez la déclaration et l'initiation d'un attribut dans la classe `Poster`:  
    
    ```@observable Movie movie = new Movie.sample();```  
@@ -217,16 +217,15 @@
    > **Explications :**  
    > - C'est à travers cet attribut que les différents valeurs du film seront affichées  
    > - Cet attribut doit aussi avoir l'annotation `@observable` pour les mêmes raisons que précédemment
-   
+
 5. Dans le fichier `poster.html`, remplacez le titre du film (`<h2>Dart Flight School - Montpellier JUG</h2>`) par une expression Polymer `<h2>{{movie.title}}</h2>` et rafrachissez Dartium  
 
    > **Explications :**  
    > - Une expression Polymer s'écrit de la façon suivante : `{{ <expression> }}`  
    > - Dans une expression polymer vous pouvez utilisez tous les attributs défini dans la classe dart associée au composant  
 
-  
 6. Dans le fichier `poster.html`, remplacez les valeurs statiques restantes avec des expressions Polymer en utilisant les différents attributs définis dans la classe `Movie` (laissez de coté le vote moyen pour l'instant).
-  
+
 7. Pour afficher le vote moyen sous forme d'étoile, vous allez utiliser un filtre. Un filtre est une fonction qui possède un seul paramètre (la valeur) et retourne une autre valeur (qui peut être d'un autre type). Son utilisation est la suivante :
     ```
     {{ movie.voteAverage | asStars }}
