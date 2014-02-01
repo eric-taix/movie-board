@@ -1,7 +1,7 @@
 
 #2- Afficher l'ensemble des films#
 
-> **Objectifs :**  
+> **![image](img/goal.png) Objectifs :**  
   - Décoder un flux JSON  
   - Instancier un objet métier à partir d'un flux JSON  
   - Utiliser le `template repeat` pour afficher un ensemble de valeurs  
