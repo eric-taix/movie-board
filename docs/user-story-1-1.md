@@ -203,9 +203,8 @@
     - Polymer utilise le pattern MDV (Model Driven View), ce qui signifie que la vue (le fichier HTML) est pilotée par le modèle (le fichier dart). Si la valeur d'une propriété du modèle est modifiée, la vue (ou une partie de la vue) est rafraichie afin de refléter la nouvelle valeur. La réciproque est vraie aussi : si vous saisissez une valeur dans un input, la valeur du modèle est modifiée. Cette liaison entre le modèle et la vue est effectuée grâce à l'annotation `@observable`
     - Lors du `tree shaking` Dart2JS supprime tous les élements / attributs non utilisés par votre code. Or les attributs utilisés dans des Polymer Expressions ne sont pas (actuellement) pris en compte dans l'évaluation du `tree shaking`. Vous devez donc indiquer à Dart2JS qu'il ne faut pas supprimer vos attributs. Pour cela il suffit soit de rajouter l'annotation `@observable` devant un attribut, soit ajouter l'annotation `@reflectable` (accessible par réflexion : appelé Mirror en Dart).
 
-3. Pour que ce code fonctionne aussi en javascript, modifiez le code de la façon suivante :  
-
-  - Importez le package Polymer grâce au code suivant `import 'package:polymer/polymer.dart';` 
+3. Pour que ce code fonctionne aussi en javascript, modifiez le code de la façon suivante :
+  - Importez le package Polymer grâce au code suivant `import 'package:polymer/polymer.dart';`
   - Ajoutez l'annotation `@reflectable` devant chaque attribut
 
 4. Dans le fichier `poster.dart`, ajoutez la déclaration et l'initiation d'un attribut dans la classe `Poster` :  
