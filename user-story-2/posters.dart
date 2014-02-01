@@ -12,6 +12,6 @@ class Posters extends PolymerElement {
   bool get applyAuthorStyles => true;
   
   Posters.created() : super.created() {
-    moviesService.getAllMovies().then((List ms) => movies = ms);
+    movieService.getAllMovies().then((List ms) => movies = ms);
   }
 }

@@ -1,5 +1,5 @@
 
-#Afficher l'ensemble des films#
+#2- Afficher l'ensemble des films#
 -------
 > **Objectifs :**  
   - Décoder un flux JSON  
@@ -15,8 +15,9 @@
 ###Chargement du modèle métier à partir d'un flux JSON
 
 1. Créez le fichier `services.dart` qui contiendra les services de l'application. Dans ce fichier créez une classe abstraite `MovieService` avec la méthode suivante:  
-   - `getAllMovies()` renvoyant la liste des films  
+   - `Future<List<Movie>> getAllMovies();` renvoyant la liste des films  
    
+   > **![image](img/explain.png) Explications :**
    > Lorsqu'on effectue une opération longue (c'est le cas d'un appel réseau par exemple), Dart utilise systématiquement des `Future` qui permette de définir une opération qui se terminera plus tard dans le temps.  
    > On utilise les `Future`de la manière suivante :  
    > 
@@ -32,7 +33,7 @@
    > **La méthode du service doit donc renvoyer un `Future<List<Movie>>` afin de signifier que le résultat (qui sera une liste de films) sera retournée plus tard dans le temps.**
 
 2. Dans le fichier `services.dart` créez une chaine constante `IN_MEMORY_JSON` et initialisez la avec le contenu du fichier `common/json/all.json`.
-   > **Astuces :**  
+   > **![image](img/tip.png) Astuce :**  
    >  
    > - Utilisez la notation chaine multilines pour plus de facilité  
    >   String s = '''  
@@ -40,11 +41,41 @@
    >   multiple lines  
    >   ''';
    >  
-   > - Cette constante simule le contenu de la réponse HTTP que l'on recoit d'un backend, donc une chaine de caractère  
+   > - Cette constante simule la réponse HTTP que l'on recoit d'un backend, donc une chaine de caractère  
    >  
    > - Une constante est une variable initialisée et non modifiable. Contrairement à `final` la référence mais aussi le contenu sont immutables. Une constante se définit grâce au mot clé `const`.   
    
-3. Chaque film sera initialisé à partir d'un flux JSON. Pour faciliter cette opération, créez un nouveau constructeur nommé `fromJSON` dans la classe `Movie` et prenant en paramètre une `Map<String,Object>` et initialisez les différents attributs de la classe `Movie` à partir des clés de la `Map`. Une `Map` s'accède de la façon suivante : ```String myVar = map['key'];``` 
+   *Extrait:*  
+   
+   ```
+   const String IN_MEMORY_JSON = '''
+[
+  {
+  "tag":"upcoming","adult": false,
+  "id": 180894,
+  "original_title": "Ninja: Shadow of a Tear",
+  ...
+  ...
+  "title": "Force of Execution",
+  "vote_average": 7.5,
+  "vote_count": 4
+  }]
+''';
+  ```
+3. Chaque film sera initialisé à partir d'un flux JSON. Pour faciliter cette opération, créez un nouveau constructeur nommé `fromJSON` dans la classe `Movie` et prenant en paramètre une `Map<String,Object>` et initialisez les différents attributs de la classe `Movie` à partir des clés de la `Map` de la façon suivante :  
+  
+   ```
+  Movie.fromJSON(Map<String, Object> json) {
+    id=json['id'];
+    title=json['title'];
+    posterPath=json['poster_path'] != null ? "../common/json/images/posters${json['poster_path']}" : "../common/img/no-poster-w130.jpg";
+    releasedDate=json['release_date'];
+    voteAverage=(json['vote_average'] as num).toInt();
+    voteCount=json['vote_count'];
+    tag=json['tag'];
+  }
+   ``` 
+   *Le contructeur ```fromJSON``` et la méthode ```toJSON``` sont 'normalisés', d'ailleurs la prochaine version de Dart Editor propose un générateur automatique à partir des attributs de la classe*
    
    **Les clés du flux JSON sont les suivants :**
    - `id` int contenant l'identifiant d'un film  
@@ -55,48 +86,120 @@
    - `vote_count` contenant le nombre de votant
    - `tag`String contenant une étiquette sur le type de film 
    
-   > Pour l'initialisation de l'attribut `posterPath`, utilisez le chemin suivante : `../common/json/images/posters` + la valeur de l'attribut `poster_path`. Utilisez l'interpolation de chaine (sous la forme `${}` plutôt que la concaténation)
-   > 
-   > Certains films n'ont pas de poster. Utilisez donc l'opérateur ternaire `var x = y != null ? y : "default value";` 
   
-4. Dans le fichier `services.dart` créez une implémentation `InMemoryMovieService` qui implémente `MovieService`.  
+4. Dans le fichier `services.dart` créez une implémentation `InMemoryMovieService` qui implémente `MovieService`.    
+  
+   ```
+   class InMemoryMovieService implements MovieService {
+   
+   }
+   ```
+  
    >**Note d'implémentation :** Le coté back-end n'existant pas, cette implementation va charger tous les films et les stocker dans une `List<Movie>`. Les autres méthodes du service (qui seront écrites ultérieurement feront appel à cette `List` en mémoire plutôt qu'au réseau).  
   
-5. Dans cette implémentation, ajoutez un attribut privé `_movies` et dans le constructeur par défaut initialisez cet attribut.  
+5. Dans cette implémentation, ajoutez un attribut privé `List<Movie> _movies` et dans le constructeur par défaut initialisez cet attribut.  
+   
+   ```
+   InMemoryMovieService() {
+      _movies = JSON.decode(IN_MEMORY_JSON).map((Map map) {
+        new Movie.fromJSON(map));
+      }).toList();
+   }
+   ``` 
+  
    - La méthode `JSON.decode` permet de convertir une chaine en une `List<Map>`  
-   - Utilisez la méthode `Iterable.map` pour convertir chaque instance de `Map`en `Movie`
-   - Utilisez le constructeur `fromJSON`créé précédement  
-   - Faites le sur une seule ligne !
+   - La méthode `Iterable.map` permet de convertir chaque instance de `Map`en `Movie`
+   - La création de chaque film est effectuée par le constructeur `fromJSON`créé précédement  
+   - La méthode ```toList()``` permet de forcer le parcours de la liste et donc d'effectuer le traitement  
+   - Vous devez importer ```import 'dart:convert';``` qui contient la classe ```JSON```
+   
+   
+   *Vous pouvez écrire cette méthode sur une seule ligne ;-)*
    
    [dart:convert library](https://api.dartlang.org/docs/channels/stable/latest/dart_convert.html)  
    [Iterable.map](https://api.dartlang.org/docs/channels/stable/latest/dart_core/Iterable.html)  
    
-6. Dans `MovieService` ajoutez un constructeur de type `factory` qui retourne une nouvelle instance de `InMemoryMoviesService` et ajoutez au fichier `services.dart` une variable globale `movieService` et initialisez là en créant une nouvelle instance de `MovieService`.
+6. Dans `MovieService` ajoutez un constructeur de type `factory` qui retourne une nouvelle instance de `InMemoryMoviesService`  
+  
+   ```
+   factory MovieService() => new InMemoryMovieService();
+   ```
+    
+   Et ajoutez au fichier `services.dart` une variable globale `movieService` et initialisez là en créant une nouvelle instance de `MovieService`  
+   
+   ```
+   final MovieService moviesService = new MovieService();
+   ```
+   
+   > **![image](img/explain.png) Note :** Même si la classe ```MovieService``` est abstraite, le fait de créer un constructeur de type ```factory``` permet de pouvoir faire comme si on crée une instance de ```MovieService``` (le détail de l'implémentation réelle étant caché et permettant d'être modifié sans impacter les clients)
   
 ###Création du composant 'grille de films'###
 1. Créez un nouveau composant nommé `movies-posters` avec les fichiers `posters.dart`et `posters.html` et géré par la classe `Posters`.  
-   *=> Prenez exemple sur le composant `movie-poster`.*  
-   Dans le corps du template, utilisez pour l'instant une chaine en dur.   
+   
+   poster.html:  
+   
+   ```
+   <polymer-element name='movie-posters'>
+    <template>
+      Posters
+    </template>
+    <script type="application/dart" src="posters.dart"></script>
+   </polymer-element>
+   ```
+   
+   poster.dart:  
+   
+   ```
+   library movie.posters;
+
+   import 'package:polymer/polymer.dart';
+
+   @CustomTag('movie-posters')
+   class Posters extends PolymerElement {
+  
+     @observable List<Movie> movies;
+  
+     bool get applyAuthorStyles => true;
+  
+    Posters.created() : super.created();
+   }
+   ``` 
  
-2. Remplacez le tag `movie-poster` dans le fichier `movie_board.hml` par le composant que vous venez de créer et validez que votre chaine en dur s'affiche bien dans Dartium.
+2. Remplacez le tag `movie-poster` dans le fichier `movie_board.hml` par le tag `movie-posters` que vous venez de créer et validez que votre chaine en dur s'affiche bien dans Dartium.
    
 3. Dans la classe `Posters` ajoutez un attribut `movies`qui contiendra la liste des films à afficher et dans la méthode `created()`, initialisez cet attribut en utilisant le service défini dans la variable globale `movieService`  
-   > **Note :** Pour rappel le résultat d'une `Future` s'obtient dans la fonction passée en paramètre de la méthode `then((result) => // Here is your code);` de la `Fufure`
+
+   ```
+   @observable List<Movie> movies;
+   ```
+
+   ```
+    Posters.created() : super.created() {
+      movieService.getAllMovies().then((List ms) => movies = ms);
+    }
+   ```
+ 
+   > **![image](img/tip.png)Note :** Pour rappel le résultat d'une `Future` s'obtient dans la fonction passée en paramètre de la méthode `then((result) => // Here is your code);` de la `Fufure`
 
 4. Remplacez le corps du `template` de `Posters.html` par le code suivant et rafrachissez Dartium:  
   
    ```  
-   <template repeat="{{ m in movies }}">  
-      <movie-poster></movie-poster>  
-    </template>  
+  <template>
+    <template repeat="{{ m in movies }}">
+      <movie-poster></movie-poster>
+    </template>
+  </template> 
    ```
    
-   > Un `<template repeat ...>` permet de parcourir les valeurs d'un `Iterable`
+   
+   > **![image](img/explain.png) Explications :**  
+   > - Un `<template repeat ...>` permet de parcourir les valeurs d'un `Iterable`
    
    **Vous devriez voir apparaître 40 posters de Dart Fligh School mais pour l'instant tous identiques !**  
    
 5. Pour pouvoir fixer sur chaque poster la valeur d'un film différent, modifiez l'annotation `@observable` de l'attribut `movie`de la classe `Poster` en `@published` 
 
+   > **![image](img/explain.png) Explications :**  
    > `@published` permet de rendre un attribut:  
    >  - observable  
    >  - non éligible au tree shaking  
@@ -110,7 +213,7 @@
    Et rafraichissez Dartium...
    
    
-###Bonus : Charger le flux JSON à partir du résultat d'une requête HTTP###
+###![image](img/gift.png) Bonus : Charger le flux JSON à partir du résultat d'une requête HTTP###
   
   1. Commencez par créer une autre implémentation de `MovieService` que vous appelerez `HttpMovieService`  
   
@@ -129,7 +232,7 @@
 ****
     
 <a name="user-story-1-hints"></a>
-> **Astuces:**  
+> **![image](img/tip.png)Astuces:**  
 >
 > - Une interface en Dart est une classe concrète (si vous avez une implémentation pour chaque méthode) ou une classe abstraite (si vous n'avez toutes les implémentations des méthodes)
 >

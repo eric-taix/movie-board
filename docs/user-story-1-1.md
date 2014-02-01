@@ -173,6 +173,7 @@
   	  int voteAverage;
   	  int voteCount;
   	  bool favorite;
+  	  String tag;
   
       Movie.sample() {
         id = ...;
@@ -181,6 +182,7 @@
         releasedDate= ...;
         voteAverage = ...;
         voteCount = ...;
+        tag = ...;
       }
     }
       

@@ -1,14 +1,15 @@
 
 import 'package:polymer/polymer.dart';
 
-class Movie extends Observable {
-  @observable int id;
-  @observable String title;
-  @observable String posterPath;
-  @observable String releasedDate;
-  @observable int voteAverage;
-  @observable int voteCount;
-  @observable String tag;
+class Movie {
+  @reflectable int id;
+  @reflectable String title;
+  @reflectable String posterPath;
+  @reflectable String releasedDate;
+  @reflectable int voteAverage;
+  @reflectable int voteCount;
+  @reflectable bool favorite;
+  String tag;
   
   Movie.sample() {
     id = 1;
@@ -17,6 +18,7 @@ class Movie extends Observable {
     releasedDate="2014/02/19";
     voteAverage = 1;
     voteCount = 8000;
+    tag = "now_playing";
   }
   
   Movie.fromJSON(Map<String, Object> json) {

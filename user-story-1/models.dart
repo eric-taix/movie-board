@@ -10,6 +10,7 @@ class Movie {
   @reflectable int voteAverage;
   @reflectable int voteCount;
   @reflectable bool favorite;
+  String tag;
   
   Movie.sample() {
     id = 1;
@@ -18,5 +19,6 @@ class Movie {
     releasedDate="2014/02/19";
     voteAverage = 1;
     voteCount = 8000;
+    tag = "now_playing";
   }
 }
