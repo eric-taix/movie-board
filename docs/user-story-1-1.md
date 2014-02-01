@@ -23,7 +23,7 @@
         - polymer:
           entry_points: web/movie_board.html
   ```
-> **Conseil** Si vous souhaitez renommer votre point d'entrée `movie_board.html` en `index.html`par exemple, pensez bien à modifier votre fichier `pubspec.yaml` afin de modifier la valeur de `entry_points` sinon `dart2js` ne sera pas capable de compiler votre code Dart en Javascript.       
+> **Conseil** Si vous souhaitez renommer votre point d'entrée `movie_board.html` en `index.html` par exemple, pensez bien à modifier votre fichier `pubspec.yaml` afin de modifier la valeur de `entry_points` sinon `dart2js` ne sera pas capable de compiler votre code Dart en Javascript.       
     
   - `build.dart` est le script Dart qui est lancé après une sauvegarde et permet d'afficher les warning dans l'éditeur
     
@@ -132,13 +132,13 @@
   	</body>
   	```  
   	
-4. Rafraichissez Dartium (vous n'êtes pas obligé de le relancer systématiquement: un simple refresh suffit à le mettre à jour avec vos dernières modifications de code) et vous devriez obtenir ce résultat ! Passez la souris sur l'affiche pour voir les détails du film.   
+3. Rafraichissez Dartium (vous n'êtes pas obligé de le relancer systématiquement: un simple refresh suffit à le mettre à jour avec vos dernières modifications de code) et vous devriez obtenir ce résultat ! Passez la souris sur l'affiche pour voir les détails du film.   
 
 	[Ca ne marche pas ?](#user-story-1-hints)
      
    ![static-comp](img/static-comp.png) 
         
-5. Copiez plusieurs fois le tag du composant dans le fichier `movie_board.html` et rafraichissez Dartium. Cool non ?  
+4. Copiez plusieurs fois le tag du composant dans le fichier `movie_board.html` et rafraichissez Dartium. Cool non ?  
     
     
 > **Explications :**  
@@ -203,14 +203,16 @@
     - Polymer utilise le pattern MDV (Model Driven View), ce qui signifie que la vue (le fichier HTML) est pilotée par le modèle (le fichier dart). Si la valeur d'une propriété du modèle est modifiée, la vue (ou une partie de la vue) est rafraichie afin de refléter la nouvelle valeur. La réciproque est vraie aussi : si vous saisissez une valeur dans un input, la valeur du modèle est modifiée. Cette liaison entre le modèle et la vue est effectuée grâce à l'annotation `@observable`
     - Lors du `tree shaking` Dart2JS supprime tous les élements / attributs non utilisés par votre code. Or les attributs utilisés dans des Polymer Expressions ne sont pas (actuellement) pris en compte dans l'évaluation du `tree shaking`. Vous devez donc indiquer à Dart2JS qu'il ne faut pas supprimer vos attributs. Pour cela il suffit soit de rajouter l'annotation `@observable` devant un attribut, soit ajouter l'annotation `@reflectable` (accessible par réflexion : appelé Mirror en Dart).
 
-4. Pour que ce code fonctionne aussi en javascript, modifiez le code de la façon suivante :  
+3. Pour que ce code fonctionne aussi en javascript, modifiez le code de la façon suivante :  
 
    - Importez le package Polymer grâce au code suivant `import 'package:polymer/polymer.dart';` 
    - Ajoutez l'annotation `@reflectable` devant chaque attribut  
    
-5. Dans le fichier `poster.dart`, ajoutez la déclaration et l'initiation d'un attribut dans la classe `Poster`:  
+4. Dans le fichier `poster.dart`, ajoutez la déclaration et l'initiation d'un attribut dans la classe `Poster`:  
    
    ```@observable Movie movie = new Movie.sample();```  
+
+   Ne pas oublier de placer `import 'models.dart';` au début de ce fichier.
    
    > **Explications :**  
    > - C'est à travers cet attribut que les différents valeurs du film seront affichées  
@@ -245,7 +247,7 @@
     **Cette fonction peut s'écrire sur une seule ligne...**  
     
     > **Explication :**  
-    > - Lors de l'évaluation de l'expression polymer, la valeur de `movie.voteAverage` est passé au filtre `asStars` (qui donc doit avoir comme paramètre un `int`). Cette méthode génère une chaine et la retourne. C'est la valeur retournée qui sera affichée.
+    > - Lors de l'évaluation de l'expression polymer, la valeur de `movie.voteAverage` est passée au filtre `asStars` (qui donc doit avoir comme paramètre un `int`). Cette méthode génère une chaine et la retourne. C'est la valeur retournée qui sera affichée.
     
   
 ###Vous êtes en avance sur le timing : voici un bonus !###
