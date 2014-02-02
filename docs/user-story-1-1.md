@@ -23,7 +23,7 @@
         - polymer:
           entry_points: web/movie_board.html
   ```
-> **Conseil** Si vous souhaitez renommer votre point d'entrée `movie_board.html` en `index.html`par exemple, pensez bien à modifier votre fichier `pubspec.yaml` afin de modifier la valeur de `entry_points` sinon `dart2js` ne sera pas capable de compiler votre code Dart en Javascript.       
+> **Conseil** Si vous souhaitez renommer votre point d'entrée `movie_board.html` en `index.html` par exemple, pensez bien à modifier votre fichier `pubspec.yaml` afin de modifier la valeur de `entry_points` sinon `dart2js` ne sera pas capable de compiler votre code Dart en Javascript.       
     
   - `build.dart` est le script Dart qui est lancé après une sauvegarde et permet d'afficher les warning dans l'éditeur
     
@@ -78,6 +78,8 @@
   
 ###Votre 1er composant...###
 
+**Votre répertoire de travail est `web`, sauf si vous décidez de repartir d'une user-story finalisée. Dans ce cas travaillez directement dans le répertoire adéquate.**
+
 1. Créez un nouveau composant nommé `movie-poster` 
    - Créez le fichier `poster.html` avec le contenu suivant:  
    
@@ -122,7 +124,7 @@
 	```
 	<link rel="import" href="poster.html">
 	```
-	
+	Puis modifiez le corps du fichier html :
 	
 	```
 	<body>
@@ -130,13 +132,13 @@
   	</body>
   	```  
   	
-4. Rafraichissez Dartium (vous n'êtes pas obligé de le relancer systématiquement: un simple refresh suffit à le mettre à jour avec vos dernières modifications de code) et vous devriez obtenir ce résultat ! Passez la souris sur l'affiche pour voir les détails du film.   
+3. Rafraichissez Dartium (vous n'êtes pas obligé de le relancer systématiquement: un simple refresh suffit à le mettre à jour avec vos dernières modifications de code) et vous devriez obtenir ce résultat ! Passez la souris sur l'affiche pour voir les détails du film.   
 
 	[Ca ne marche pas ?](#user-story-1-hints)
      
    ![static-comp](img/static-comp.png) 
         
-5. Copiez plusieurs fois le tag du composant dans le fichier `movie_board.html` et rafraichissez Dartium. Cool non ?  
+4. Copiez plusieurs fois le tag du composant dans le fichier `movie_board.html` et rafraichissez Dartium. Cool non ?  
     
     
 > **Explications :**  
@@ -170,7 +172,8 @@
   	  String releasedDate;
   	  int voteAverage;
   	  int voteCount;
-  	   bool favorite;
+  	  bool favorite;
+  	  String tag;
   
       Movie.sample() {
         id = ...;
@@ -179,6 +182,7 @@
         releasedDate= ...;
         voteAverage = ...;
         voteCount = ...;
+        tag = ...;
       }
     }
       
@@ -197,31 +201,30 @@
   
     **Note importante :**   
     - Polymer utilise le pattern MDV (Model Driven View), ce qui signifie que la vue (le fichier HTML) est pilotée par le modèle (le fichier dart). Si la valeur d'une propriété du modèle est modifiée, la vue (ou une partie de la vue) est rafraichie afin de refléter la nouvelle valeur. La réciproque est vraie aussi : si vous saisissez une valeur dans un input, la valeur du modèle est modifiée. Cette liaison entre le modèle et la vue est effectuée grâce à l'annotation `@observable`
-    - Si vous ne rajouter pas l'annotation `@observable`, le code que vous venez d'écrire fonctionne dans Dartium mais ne marchera plus une fois compilé en Javascript. En effet Dart2Js (le compilateur qui produit du javascript) effectue à des fins d'optimisation du `tree shaking` qui consiste à supprimer tout le code qui n'est pas utilisé. Or les attributs utilisés dans les vues ne sont pas prises en compte pour le `tree shaking`, vous devez donc indiquer dans votre code que vos attributs sont observables grâce à l'annotation `@observable` et votre classe `Movie` doit étendre (ou utiliser le mixin) `Observable`.  
+    - Lors du `tree shaking` Dart2JS supprime tous les élements / attributs non utilisés par votre code. Or les attributs utilisés dans des Polymer Expressions ne sont pas (actuellement) pris en compte dans l'évaluation du `tree shaking`. Vous devez donc indiquer à Dart2JS qu'il ne faut pas supprimer vos attributs. Pour cela il suffit soit de rajouter l'annotation `@observable` devant un attribut, soit ajouter l'annotation `@reflectable` (accessible par réflexion : appelé Mirror en Dart).
 
-4. Pour que ce code fonctionne aussi en javascript, modifiez le code de la façon suivante :  
+3. Pour que ce code fonctionne aussi en javascript, modifiez le code de la façon suivante :
+  - Importez le package Polymer grâce au code suivant `import 'package:polymer/polymer.dart';`
+  - Ajoutez l'annotation `@reflectable` devant chaque attribut
 
-   - Importez le package grâce au code suivant `import 'package:polymer/polymer.dart';` qui contient la classe `Observable`  
-   - Etendez `Movie`à `Observable` : `class Movie extends Observable {`  
-   - Ajoutez l'annotation `@observable` devant chaque attribut  
-   
-5. Dans le fichier `poster.dart`, ajoutez la déclaration et l'initiation d'un attribut dans la classe `Poster`:  
+4. Dans le fichier `poster.dart`, ajoutez la déclaration et l'initiation d'un attribut dans la classe `Poster` :  
    
    ```@observable Movie movie = new Movie.sample();```  
+
+   Ne pas oublier de placer `import 'models.dart';` au début de ce fichier.
    
    > **Explications :**  
    > - C'est à travers cet attribut que les différents valeurs du film seront affichées  
    > - Cet attribut doit aussi avoir l'annotation `@observable` pour les mêmes raisons que précédemment
-   
+
 5. Dans le fichier `poster.html`, remplacez le titre du film (`<h2>Dart Flight School - Montpellier JUG</h2>`) par une expression Polymer `<h2>{{movie.title}}</h2>` et rafrachissez Dartium  
 
    > **Explications :**  
    > - Une expression Polymer s'écrit de la façon suivante : `{{ <expression> }}`  
    > - Dans une expression polymer vous pouvez utilisez tous les attributs défini dans la classe dart associée au composant  
 
-  
 6. Dans le fichier `poster.html`, remplacez les valeurs statiques restantes avec des expressions Polymer en utilisant les différents attributs définis dans la classe `Movie` (laissez de coté le vote moyen pour l'instant).
-  
+
 7. Pour afficher le vote moyen sous forme d'étoile, vous allez utiliser un filtre. Un filtre est une fonction qui possède un seul paramètre (la valeur) et retourne une autre valeur (qui peut être d'un autre type). Son utilisation est la suivante :
     ```
     {{ movie.voteAverage | asStars }}
@@ -242,7 +245,7 @@
     **Cette fonction peut s'écrire sur une seule ligne...**  
     
     > **Explication :**  
-    > - Lors de l'évaluation de l'expression polymer, la valeur de `movie.voteAverage` est passé au filtre `asStars` (qui donc doit avoir comme paramètre un `int`). Cette méthode génère une chaine et la retourne. C'est la valeur retournée qui sera affichée.
+    > - Lors de l'évaluation de l'expression polymer, la valeur de `movie.voteAverage` est passée au filtre `asStars` (qui donc doit avoir comme paramètre un `int`). Cette méthode génère une chaine et la retourne. C'est la valeur retournée qui sera affichée.
     
   
 ###Vous êtes en avance sur le timing : voici un bonus !###
@@ -255,8 +258,7 @@ Dernier conseil, il est possible d'empiler les filtres les uns derrière les aut
 
 [Voir 'Dart - Functions are fun'](https://www.dartlang.org/dart-tips/dart-tips-ep-7.html) et cherchez sur cette page la fonction `makeAdder` pour un exemple sur les closures en Dart.  
 
-  
-  [Passez à la user-story n°2](docs/user-story-2.md)
+##[Passez à la user-story n°2 >>](docs/user-story-2.md)
 
 
 ****
@@ -290,7 +292,7 @@ Dernier conseil, il est possible d'empiler les filtres les uns derrière les aut
 >    ```
 >    library <nom de la librairie>;  
 >    // Par exemple  
->    library movie.utils;  
+>    library movie.models;  
 >    ```  
 
 

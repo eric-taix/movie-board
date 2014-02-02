@@ -6,7 +6,7 @@ import 'dart:html';
 
 import 'models.dart';
 
-final MovieService moviesService = new MovieService();
+final MovieService movieService = new MovieService();
 
 /// Service definition
 abstract class MovieService {
@@ -27,7 +27,6 @@ class InMemoryMovieService implements MovieService {
   }
   
   Future<List<Movie>> getAllMovies() => new Future(() => _movies);
-
 }
 
 /// HTTP service implementation
@@ -487,4 +486,5 @@ const String IN_MEMORY_JSON = '''
   "title": "Force of Execution",
   "vote_average": 7.5,
   "vote_count": 4
-  }]''';
+  }]
+''';

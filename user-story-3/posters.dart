@@ -41,6 +41,5 @@ class Posters extends PolymerElement {
     sortAscending = field == sortField ? !sortAscending : true;
     sortField = field;
     applySelectedCSS(target, "gb");
-  }
-  
+  } 
 }
