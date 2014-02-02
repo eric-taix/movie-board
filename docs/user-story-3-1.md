@@ -18,7 +18,7 @@
 
 ###Effectuer un filtre sur le titre du film
 
-1. Modifiez le template de `poster.hml` avec le code HTML suivant et rafraichissez Dartium :  
+1. Modifiez le template de `posters.hml` avec le code HTML suivant et rafraichissez Dartium :  
    
    ```
     <div id="movies">
@@ -30,7 +30,7 @@
         <a href="#" class="gb gb-right">&#x2665;</a>
       </div>
       <div class="content">
-        <template repeat="{{m in movies}}">
+        <template repeat="{{movie in movies}}">
           <movie-poster movie="{{movie}}"></movie-poster>
         </template>
       </div>
@@ -130,7 +130,7 @@
 
    ```
    <a href="#" class="gb gb-left" on-click="{{sort}}" data-field="title">A-Z</a>
-   <a href="#" class="gb" on-click="{{sort}}" "data-field="vote">&#x2605;</a>
+   <a href="#" class="gb" on-click="{{sort}}" data-field="vote">&#x2605;</a>
    <a href="#" class="gb gb-right" on-click="{{sort}}" data-field="favorite">&#x2665;</a>
    ```
    
@@ -235,7 +235,7 @@ Lorsque vous avez implémenté le filtre vous avez dû remarquer que, pour quasi
 2. Implémentez un système qui permette de filtrer les films mais seulement après un temps de 400 ms suite à la dernière frappe de l'utilisateur (un temps inférieur annule l'opération).
   
    ![image](img/tip.png) Les éléments suivants vous seront utiles pour parvenir au résultat :  
-   - Ajoutez une attribut observable `searchFiter`  
+   - Ajoutez une attribut observable `searchFilter`  
    - Utilisez ce nouvel attribut en paramètre de `filter` à la place de `searchTerm`
    - Dans la méthode `searchTermChanged` implémentez un `Timer` qui au bout du temps indiqué, affectera la valeur de `searchTerm` à `searchFilter`  
    - Pensez à annuler le timer si le terme change à nouveau avant que le Timer ne soit déclenché
