@@ -18,7 +18,7 @@
 
 ###Effectuer un filtre sur le titre du film
 
-1. Modifiez le template de `posters.hml` avec le code HTML suivant et rafraichissez Dartium :  
+1. Modifiez le template de `posters.html` avec le code HTML suivant et rafraichissez Dartium :  
    
    ```
     <div id="movies">
@@ -31,13 +31,13 @@
       </div>
       <div class="content">
         <template repeat="{{movie in movies}}">
-          <movie-poster movie="{{movie}}"></movie-poster>
+          <movie-poster movie="{{m}}"></movie-poster>
         </template>
       </div>
     </div>
    ```
    
-   *Rafraichissez Dartium pour découvrir les ajouts dans l'interface graphique*
+   *Rafraichissez Dartium pour découvrir les ajouts dans l'interface graphique.*
    
 2. Dans la classe `Posters`, ajoutez un attribut nommé `searchTerm` initialisé avec une chaine vide, observable et utilisez une Polymer expression pour afficher cet attribut dans la valeur du champ de recherche.  
    
@@ -48,24 +48,24 @@
    > **![image](img/explain.png) Explications:**
    > La propriété `searchTerm` utilisée dans la polymer expression est lié au champ `input`. Si la valeur de la propriété est modifiée, la valeur affichée dans le champ texte sera automatiquement modifiée. Et inversement si vous saisissez une valeur dans le champ texte, la valeur de la propriété est automatiquement modifiée. 
    
-3. Dans le fichier `poster.html`, ajoutez un filtre à `movies` dans le `<template repeat=...` de cette façon :  
+3. Dans le fichier `posters.html`, ajoutez un filtre à `movies` dans le `<template repeat=...` de cette façon :  
    
    ```
-   <template repeat {{ m in movies | filter }}>
+   <template repeat="{{ m in movies | filter }}">
    ```
     
-3. Implémentez la méthode `filter` permettant de filter la liste `movies` en vérifiant si le titre de chaque film contient le `searchTerm` en utilisant le code suivant:  
+4. Implémentez la méthode `filter` permettant de filter la liste `movies` en vérifiant si le titre de chaque film contient le `searchTerm` en utilisant le code suivant :
    
    ```
    filter(List ms) {
      if (searchTerm.isEmpty) return movies;
      return ms.where((Movie m) {
-       return m.title.toLowerCase().contains(searchTerm.toLowerCase()));
+       return m.title.toLowerCase().contains(searchTerm.toLowerCase());
      }).toList();
    }
    ```
    
-   *Ce filtre peut s'écrire sur une seule ligne*
+   *Ce filtre peut s'écrire sur une seule ligne.*
    
    > **![image](img/explain.png) Explications :**  
    > - Si le `searchTerm`est vide alors on renvoie toute la liste  
@@ -76,19 +76,19 @@
    > [String API](https://api.dartlang.org/docs/channels/stable/latest/dart_core/String.html)
 
    Vérifiez le fontionnement de votre code !  
-   **Cela ne fonctionne pas ! Parce que la méthode `filter` n'est pas appelée lorsque vous modifiez le `searchTerm`**  
+   **Cela ne fonctionne pas ! Parce que la méthode `filter` n'est pas appelée lorsque vous modifiez le `searchTerm`.**
    
    > ![image](img/tip.png) Les templates sont évalués à la création de votre composant et chaque fois qu'un attribut observable **ET** faisant partie du template est modifié. Le problème dans le code actuel, est que la méthode `filter` n'est appelée qu'une seule fois à la création. La modification de la valeur de `searchTerm` ne relance pas l'appel à `filter` puisque `searchTerm` ne fait pas partie de l'évaluation du template.
    
-4. Modifiez la Polymer expression dans `Posters.html` en passant à `filter` le `searchTerm`  
+5. Modifiez la Polymer expression dans `Posters.html` en passant à `filter` le `searchTerm`.
 
    ```
-   <template repeat="{{ m in movies | filter(searchTerm)">
+   <template repeat="{{ m in movies | filter(searchTerm) }}">
    ```
    
    > **![image](img/explain.png) Explication :** En ajoutant `searchTerm` dans l'évaluation du template, on force l'appel de la méthode `filter` à chaque modification de cet attribut.
 
-5. Modifiez l'implémentation de la méthode `filter` de la façon suivante :  
+6. Modifiez l'implémentation de la méthode `filter` de la façon suivante :  
    - Un seul paramètre de type `String` qui contient la valeur du terme à chercher  
    - Retourne une fonction qui filtre une liste de `Movie` 
    
@@ -96,31 +96,31 @@
    filter(String term) { 
      var fct = (List<Movie> m) {
        return term.isNotEmpty ? m.where((Movie m) => m.title.toLowerCase().contains(searchTerm.toLowerCase())) : m;
-     }
+     };
      return fct;
    }
    ```
-   *Essayez d'écrire cette méthode sur une seule ligne*
+   *Essayez d'écrire cette méthode sur une seule ligne.*
    
    > **![image](img/explain.png)Explications :**  
    > - C'est une fonction qui renvoie une fonction  
    > - C'est une Closure qui exploite le paramètre de `filter` dans l'implémentation de la fonction retournée  
    
-6. Rafraichissez Dartium et tapez des termes correspondants à des parties de titre de films pour vérifier que les films sont bien filtrés en fonction du terme saisi  
+7. Rafraichissez Dartium et tapez des termes correspondants à des parties de titre de films pour vérifier que les films sont bien filtrés en fonction du terme saisi.
 
 ###Trier les films
 
-1. Dans le modèle métier `Movie`, créez une `Map` `static`et `final` privée que nous nommerez `_comparators`. 
-   Cette map contiendra en clé le nom du champ qui sert de comparaison ('title', 'vote', 'favorite') et comme valeur une fonction comparant 2 instances de `Movie`  
+1. Dans le modèle métier `Movie`, créez une `Map` `static` et `final` privée que vous nommerez `_comparators`. 
+   Cette map contiendra en clé le nom du champ qui sert de comparaison ('title', 'vote', 'favorite') et comme valeur une fonction comparant 2 instances de `Movie`.
 
-   Initialisez cette map de la façon suivante:   
+   Initialisez cette map de la façon suivante :   
 
     ```  
     static final Map _comparators = {  
       "default": (Movie a, Movie b) => 0,
       "title": (Movie a, Movie b) => a.title.compareTo(b.title),  
-      "vote": (Movie a, Movie b) => // comparaison sur le vote moyen,  
-      "favorite": (Movie a, Movie b) // comparaison sur le coté favori d'un film,  
+      "vote": (Movie a, Movie b) => // comparaison sur le vote moyen (code à fournir),  
+      "favorite": (Movie a, Movie b) // comparaison sur le coté favori d'un film (code à fournir),  
     };
     ```  
     
@@ -140,10 +140,8 @@
    > - L'attribut `data-field`, sert à ajouter un paramètre, ce dernier sera interprété afin de connaitre sur quel champ l'utilisateur désire effectuer le tri (une autre solution aurait consisté à définir 3 méthodes différentes: `sortByTitle`, `sortByVote`, `sortByFavorite`)
  
 4. Dans la classe `Posters`, ajoutez 2 attributs observable :  
-
-   - `sortField` de type `String`
-   
-   - `sortAscending` de type `bool` 
+   - `sortField` de type `String` initialisé à `"default"`
+   - `sortAscending` de type `bool` initialisé à `true`
    
 5. Dans la classe `Posters`, créez la méthode qui recevra les clics sur les liens :   
    
@@ -162,14 +160,14 @@
 6. Modifiez dans `posters.html` le `template repeat` de la façon suivante :  
 
    ```
-   <template repeat="{{ m in movies | filter(searchFilter) | sortBy(sortField, sortAscending) }}">
+   <template repeat="{{ m in movies | filter(searchTerm) | sortBy(sortField, sortAscending) }}">
    ``` 
 
    > **![image](img/tip.png) Note :**  
    > 
    > - Les filtres s'enchainent avec l'opérateur `|` et sont appelés dans l'ordre ou ils apparaissent dans l'expression : les films sont passés au filtre `filter` et le résultat est passé à son tour au filtre `sortBy`
     
-7. Créez dans la classe `Posters`, la méthode `sortBy(String field, bool asc)`  
+7. Créez dans la classe `Posters`, la méthode `sortBy(String field, bool asc)`.
 
    ```
    sortBy(String field, bool asc) => (Iterable<Movie> ms) {
@@ -187,12 +185,12 @@
    > [List API](https://api.dartlang.org/docs/channels/stable/latest/dart_core/List.html)
    
 
-   Testez votre code en rafrachissant Dartium
+   Testez votre code en rafrachissant Dartium.
 
    ![image](img/tip.png) **Le principe du code précédent est le suivant :**  
   1- Un click sur l'un des liens appelle la méthode `sort`  
   2- La méthode `sort` affecte les attributs `sortAscending` et `sortField`  
-  3- Ces attributs étant utilisés dans l'expression polymer `{{ m in movies | filter(searchFilter) | sortBy(sortField, sortAscending) }}`, le template est réévalué  
+  3- Ces attributs étant utilisés dans l'expression polymer `{{ m in movies | filter(searchTerm) | sortBy(sortField, sortAscending) }}`, le template est réévalué  
   4- La méthode `sortBy` est donc appelée avec les nouvelles valeurs de tri  
   5- Celle-ci renvoie les films triés (et filtrés par `filter`)
 
@@ -201,11 +199,11 @@
 
 Afin que l'utilisateur puisse visualiser l'ordre de tri courant nous allons appliquer un style sur certains éléments du DOM.
 
-1. Créez le fichier `utils.dart` et ajoutez la fonction suivant :
+1. Créez le fichier `utils.dart` et ajoutez la fonction suivante :
 
    ```
    applySelected(Element target, String prefix) {
-     String classname = "${classPrefix}-selected";
+     String classname = "${prefix}-selected";
      if (!target.classes.contains(classname)) {
        target.parent.children.forEach((e) => e.classes.remove(classname));
        target.classes.add(classname);
@@ -217,7 +215,7 @@ Afin que l'utilisateur puisse visualiser l'ordre de tri courant nous allons appl
    > Cette méthode va permettre d'appliquer le style `<prefix>-selected` à l'élément `target` du DOM et va supprimer ce même style à tous les éléments frères de `target`  
    > Cette fonction est générique, elle pourra donc être utilisée sur n'importe quel parti du DOM
 
-3. Dans la méthode `sort` de la classe `Poster`, faites appel à la fonction `applySelected` en utilisant comme prefixe `"gb"` et en l'appliquant à `target`  
+3. Dans la méthode `sort` de la classe `Posters`, faites appel à la fonction `applySelected` en utilisant comme prefixe `"gb"` et en l'appliquant à `target`.
 
    Vérifiez dans Dartium que vous visualisez bien sur quel champ est effectué le tri lorsque vous cliquez sur l'un des boutons de tri.  
 
@@ -226,16 +224,16 @@ Afin que l'utilisateur puisse visualiser l'ordre de tri courant nous allons appl
 
 Lorsque vous avez implémenté le filtre vous avez dû remarquer que, pour quasiment chaque frappe sur le clavier, le filtre se mettait en route ce qui provoque un sentiment désagréable pour l'utilisateur et n'est pas fluide...
   
-1. Dans la classe `Posters` ajoutez la méthode `searchTermChanged(String oldValue)` 
+1. Dans la classe `Posters` ajoutez la méthode `searchTermChanged(String oldValue)`.
    > **![image](img/explain.png) Notes :**  
-   > - Cette méthode est appelée automatique lorsque la valeur de `searchTerm` est modifiée  
+   > - Cette méthode est appelée automatiquement lorsque la valeur de `searchTerm` est modifiée  
    > - `oldValue` contient la valeur précédente  
    > - Ce système est valable pour tous les attributs `@observable`d'un `PolymerElement`. Le nom de la méthode est `<attrname>Changed(E oldValue)` avec `E` étant du même type que l'attribut.  Il s'agit d'une manière élégante et facile d'être prévenu d'un changement de valeur d'un attribut observable.  
 
 2. Implémentez un système qui permette de filtrer les films mais seulement après un temps de 400 ms suite à la dernière frappe de l'utilisateur (un temps inférieur annule l'opération).
   
    ![image](img/tip.png) Les éléments suivants vous seront utiles pour parvenir au résultat :  
-   - Ajoutez une attribut observable `searchFilter`  
+   - Ajoutez un attribut observable `searchFilter`  
    - Utilisez ce nouvel attribut en paramètre de `filter` à la place de `searchTerm`
    - Dans la méthode `searchTermChanged` implémentez un `Timer` qui au bout du temps indiqué, affectera la valeur de `searchTerm` à `searchFilter`  
    - Pensez à annuler le timer si le terme change à nouveau avant que le Timer ne soit déclenché
