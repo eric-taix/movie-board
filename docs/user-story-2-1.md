@@ -227,7 +227,7 @@
      - Essayez de n'écrire pas plus de 6 lignes de code pour l'implémentation de `getAllMovies`
      
  
-###[Prochaine user-story >>>](user-story-3.md)
+###[Prochaine user-story >>>](user-story-3-1.md)
 
 ****
     

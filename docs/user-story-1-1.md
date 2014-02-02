@@ -1,5 +1,5 @@
 ## 1. Afficher les données d'un film (titre, poster, date de sortie)
-> **Objectifs :**   
+> **![image](img/goal.png) Objectifs :**   
 > - _Comprendre la structure principale d'un projet Dart  
 > - Apprendre à créer un composant web avec Polymer  
 > - Effectuer le binding sur un objet métier
@@ -49,7 +49,7 @@
 	  
   `clickcounter.html` importe `clickcounter.dart` (à travers le tag script) et ces 2 fichiers forment le composant car ils partagent le même nom : `click-counter` (1)
   
-> **Note:** Le nom d'un composant doit toujours être composé de 2 mots séparés par un tiret : `xxx-yyy`  
+> **![image](img/tip.png) Note:** Le nom d'un composant doit toujours être composé de 2 mots séparés par un tiret : `xxx-yyy`  
   
   - `movie_board.html` importe le composant `click-counter` (1) afin de pouvoir l'utiliser et initialise Dart (2) et Polymer (3)    
 
@@ -73,7 +73,7 @@
   - Les autres répertoires (user-story-X, common, docs) sont des répertoires dédiés à faciliter codelab .  
   **ATTENTION :** Votre répertoire de travail est `web`. Ne regardez pas le contenu des répertoires `user-story-xxx` !!!
   
-> **Astuce :** Sachez que si vous êtes perdu, vous pouvez toujours repartir d'un des répertoires `user-story-X`. Ces répertoires contiennent le résultat typique que vous devez obtenir à la fin de chaque user story.  
+> **![image](img/tip.png) Astuce :** Sachez que si vous êtes perdu, vous pouvez toujours repartir d'un des répertoires `user-story-X`. Ces répertoires contiennent le résultat typique que vous devez obtenir à la fin de chaque user story.  
   
   
 ###Votre 1er composant...###
@@ -141,7 +141,7 @@
 4. Copiez plusieurs fois le tag du composant dans le fichier `movie_board.html` et rafraichissez Dartium. Cool non ?  
     
     
-> **Explications :**  
+> **![image](img/explain.png) Explications :**  
 > - Le nom du composant est défini dans l'attribut `name` du PolymerElement du fichier html  
 > - Le fichier html importe un fichier dart grâce au code `<script type="application/dart" src="poster.dart"></script>`  
 > - Le nom des fichiers n'a aucune importance  
@@ -213,13 +213,13 @@
 
    Ne pas oublier de placer `import 'models.dart';` au début de ce fichier.
    
-   > **Explications :**  
+   > **![image](img/explain.png) Explications :**  
    > - C'est à travers cet attribut que les différents valeurs du film seront affichées  
    > - Cet attribut doit aussi avoir l'annotation `@observable` pour les mêmes raisons que précédemment
 
-5. Dans le fichier `poster.html`, remplacez le titre du film (`<h2>Dart Flight School - Montpellier JUG</h2>`) par une expression Polymer `<h2>{{movie.title}}</h2>` et rafrachissez Dartium  
+5. Dans le fichier `poster.html`, remplacez le titre du film `<h2>Dart Flight School - Montpellier JUG</h2>` par une expression Polymer `<h2>{{movie.title}}</h2>` et rafrachissez Dartium  
 
-   > **Explications :**  
+   > **![image](img/explain.png) Explications :**  
    > - Une expression Polymer s'écrit de la façon suivante : `{{ <expression> }}`  
    > - Dans une expression polymer vous pouvez utilisez tous les attributs défini dans la classe dart associée au composant  
 
@@ -242,9 +242,9 @@
       return xxxxx;
     }
     ```    
-    **Cette fonction peut s'écrire sur une seule ligne...**  
+    *Cette fonction peut s'écrire sur une seule ligne...*  
     
-    > **Explication :**  
+    > **![image](img/explain.png) Explication :**  
     > - Lors de l'évaluation de l'expression polymer, la valeur de `movie.voteAverage` est passée au filtre `asStars` (qui donc doit avoir comme paramètre un `int`). Cette méthode génère une chaine et la retourne. C'est la valeur retournée qui sera affichée.
     
   
@@ -258,13 +258,13 @@ Dernier conseil, il est possible d'empiler les filtres les uns derrière les aut
 
 [Voir 'Dart - Functions are fun'](https://www.dartlang.org/dart-tips/dart-tips-ep-7.html) et cherchez sur cette page la fonction `makeAdder` pour un exemple sur les closures en Dart.  
 
-##[Passez à la user-story n°2 >>](docs/user-story-2.md)
-
-
-****
+  
+###[Passez à la user-story n°2 >>](docs/user-story-2-1.md)
+  
+  
     
 <a name="user-story-1-hints"></a>
-> **Astuces:**  
+> **![image](img/tip.png) Astuces:**  
 >
 > - Si votre composant n'affiche rien, vérifiez que les fichiers utilisent le même nom de composant et vérifiez que votre fichier dart est bien importé dans le fichier HTML (sinon vous aurez une belle page vide)  
 >
