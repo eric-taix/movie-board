@@ -32,7 +32,7 @@
    >
    > **La méthode du service doit donc renvoyer un `Future<List<Movie>>` afin de signifier que le résultat (qui sera une liste de films) sera retournée plus tard dans le temps.**
 
-2. Dans le fichier `services.dart` créez une chaine constante `IN_MEMORY_JSON` et initialisez la avec le contenu du fichier `common/json/all.json`.
+2. Dans le fichier `services.dart`, en dehors de classe `MovieService`, créez une chaine constante `IN_MEMORY_JSON` et initialisez la avec le contenu du fichier `common/json/all.json`.
    > **![image](img/tip.png) Astuce :**  
    >  
    > - Utilisez la notation chaine multilines pour plus de facilité  
@@ -84,9 +84,8 @@
    - `release_date` String contenant la date de sortie
    - `vote_average` int contenant la note moyenne sur 10
    - `vote_count` contenant le nombre de votant
-   - `tag`String contenant une étiquette sur le type de film 
+   - `tag`String contenant une étiquette sur le type de film
    
-  
 4. Dans le fichier `services.dart` créez une implémentation `InMemoryMovieService` qui implémente `MovieService`.    
   
    ```
@@ -102,7 +101,7 @@
    ```
    InMemoryMovieService() {
       _movies = JSON.decode(IN_MEMORY_JSON).map((Map map) {
-        new Movie.fromJSON(map));
+        return new Movie.fromJSON(map);
       }).toList();
    }
    ``` 
@@ -113,12 +112,11 @@
    - La méthode ```toList()``` permet de forcer le parcours de la liste et donc d'effectuer le traitement  
    - Vous devez importer ```import 'dart:convert';``` qui contient la classe ```JSON```
    
-   
    *Vous pouvez écrire cette méthode sur une seule ligne ;-)*
    
    [dart:convert library](https://api.dartlang.org/docs/channels/stable/latest/dart_convert.html)  
-   [Iterable.map](https://api.dartlang.org/docs/channels/stable/latest/dart_core/Iterable.html)  
-   
+   [Iterable.map](https://api.dartlang.org/docs/channels/stable/latest/dart_core/Iterable.html)
+
 6. Dans `MovieService` ajoutez un constructeur de type `factory` qui retourne une nouvelle instance de `InMemoryMoviesService`  
   
    ```
@@ -128,7 +126,7 @@
    Et ajoutez au fichier `services.dart` une variable globale `movieService` et initialisez là en créant une nouvelle instance de `MovieService`  
    
    ```
-   final MovieService moviesService = new MovieService();
+   final MovieService movieService = new MovieService();
    ```
    
    > **![image](img/explain.png) Note :** Même si la classe ```MovieService``` est abstraite, le fait de créer un constructeur de type ```factory``` permet de pouvoir faire comme si on crée une instance de ```MovieService``` (le détail de l'implémentation réelle étant caché et permettant d'être modifié sans impacter les clients)
@@ -141,7 +139,7 @@
    ```
    <polymer-element name='movie-posters'>
     <template>
-      Posters
+      <p>Posters</p>
     </template>
     <script type="application/dart" src="posters.dart"></script>
    </polymer-element>
@@ -153,6 +151,8 @@
    library movie.posters;
 
    import 'package:polymer/polymer.dart';
+   
+   import 'models.dart';
 
    @CustomTag('movie-posters')
    class Posters extends PolymerElement {
@@ -161,7 +161,7 @@
   
      bool get applyAuthorStyles => true;
   
-    Posters.created() : super.created();
+     Posters.created() : super.created();
    }
    ``` 
  
@@ -191,7 +191,6 @@
   </template> 
    ```
    
-   
    > **![image](img/explain.png) Explications :**  
    > - Un `<template repeat ...>` permet de parcourir les valeurs d'un `Iterable`
    
@@ -219,7 +218,7 @@
   
   2. Implémentez l'appel HTTP et le décodage de la réponse en prenant en compte les conseils suivants :  
      
-     - Utilisez un attribut privé `_movies` pour stocker le résultat de `getAllMovies` (le stockage n'est à faire que si `_movies`est null)
+     - Utilisez un attribut privé `_movies` pour stocker le résultat de `getAllMovies` (le stockage n'est à faire que si `_movies` n'est pas encore initialisé , valeur à null)
      - Utilisez une méthode de `HttpRequest` pour effectuer votre requête HTTP  
        [HttpRequest API](https://api.dartlang.org/docs/channels/stable/latest/dart_html/HttpRequest.html)
      - Utilisez un `Completer` pour retourner le résultat de la méthode `getAllMovies`  
