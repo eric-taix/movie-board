@@ -44,13 +44,15 @@ class Posters extends PolymerElement {
     applySelectedCSS(target, "gb");
   }
   
+  _updateMovies(Future<List<Movie>> f) => f.then((List<Movie> ms) => movies = ms);
+  
   showCategory(Event e, var detail, Element target) {
     applySelectedCSS(target, "item");
     switch (target.id) {
-      case "all" : favMenu = false; moviesService.getAllMovies().then((List<Movie> ms) => movies = ms); break;
-      case "playing" : favMenu = false;  moviesService.getMovies("now_playing").then((List<Movie> ms) => movies = ms); break;
-      case "upcoming" : favMenu = false;  moviesService.getMovies("upcoming").then((List<Movie> ms) => movies = ms); break;
-      case "favorite" : favMenu = true; moviesService.getFavorites().then((List<Movie> ms) => movies = ms); break;
+      case "all" : favMenu = false; _updateMovies(moviesService.getAllMovies()); break;
+      case "playing" : favMenu = false;  _updateMovies(moviesService.getMovies("now_playing")); break;
+      case "upcoming" : favMenu = false;  _updateMovies(moviesService.getMovies("upcoming")); break;
+      case "favorite" : favMenu = true; _updateMovies(moviesService.getFavorites()); break;
     }
   }
   

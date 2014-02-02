@@ -1,4 +1,7 @@
 
+import 'dart:html';
+import 'dart:convert';
+
 import 'package:polymer/polymer.dart';
 
 class Movie extends Observable {
@@ -39,5 +42,20 @@ class Movie extends Observable {
     voteAverage=(json['vote_average'] as num).toInt();
     voteCount=json['vote_count'];
     tag=json['tag'];
+    
+    favorite = false;
+    try {
+      String data = window.localStorage["${id}"];
+      if (data != null) {
+        favorite = JSON.decode(data)["fav"];
+      }
+    }
+    catch(e) {
+      print(e);
+    }
+    new PathObserver(this, 'favorite').changes.listen((records) {
+      window.localStorage["${id}"] = '{ "fav" : ${records[0].newValue} }';
+    });
+
   }
 }

@@ -5,7 +5,7 @@ import 'dart:html';
 import 'package:polymer/polymer.dart';
 
 import 'models.dart';
-import 'utils.dart';
+
 
 @CustomTag('movie-poster')
 class Poster extends PolymerElement {
@@ -16,9 +16,11 @@ class Poster extends PolymerElement {
   
   bool get applyAuthorStyles => true;
   
-  Function asStars = intToStars;
-  Function complementTo10 = complement(10);
-  Function asFavoriteClass = selectedToClass('favorite');
+  asStars(int nb) => new List.generate(nb, (_) => "\u2605").join();
+  
+  complementTo(int comp) => (int nb) => comp - nb;
+  
+  asFavoriteClass(bool b) => b ? "favorite-selected" : "favorite";
   
   flipFavorite(Event e, var detail, Element target) => dispatchEvent(new CustomEvent("movieupdated", detail: movie ..favorite = !movie.favorite));
 }
