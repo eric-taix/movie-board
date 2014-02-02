@@ -14,7 +14,7 @@
 
 ###Chargement du modèle métier à partir d'un flux JSON
 
-1. Créez le fichier `services.dart` qui contiendra les services de l'application. Dans ce fichier créez une classe abstraite `MovieService` avec la méthode suivante:  
+1. Créez le fichier `services.dart` qui contiendra les services de l'application. Dans ce fichier créez une classe abstraite `MovieService` avec la méthode suivante :  
    - `Future<List<Movie>> getAllMovies();` renvoyant la liste des films  
    
    > **![image](img/explain.png) Explications :**
@@ -36,14 +36,16 @@
    > **![image](img/tip.png) Astuce :**  
    >  
    > - Utilisez la notation chaine multilines pour plus de facilité  
+   >   ```
    >   String s = '''  
    >   A string which is on  
    >   multiple lines  
    >   ''';
+   >   ```
    >  
    > - Cette constante simule la réponse HTTP que l'on recoit d'un backend, donc une chaine de caractère  
    >  
-   > - Une constante est une variable initialisée et non modifiable. Contrairement à `final` la référence mais aussi le contenu sont immutables. Une constante se définit grâce au mot clé `const`.   
+   > - Une constante est une variable initialisée et non modifiable. Contrairement à `final` la référence mais aussi le contenu sont immutables. Une constante se définit grâce au mot clé `const`
    
    *Extrait:*  
    
@@ -75,7 +77,7 @@
     tag=json['tag'];
   }
    ``` 
-   *Le contructeur ```fromJSON``` et la méthode ```toJSON``` sont 'normalisés', d'ailleurs la prochaine version de Dart Editor propose un générateur automatique à partir des attributs de la classe*
+   *Le contructeur ```fromJSON``` et la méthode ```toJSON``` sont 'normalisés', d'ailleurs la prochaine version de Dart Editor propose un générateur automatique à partir des attributs de la classe.*
    
    **Les clés du flux JSON sont les suivants :**
    - `id` int contenant l'identifiant d'un film  
@@ -94,19 +96,24 @@
    
    }
    ```
+
+   N'oubliez pas d'implémenter la méthode `getAllMovies()`.
+
+   ```
+   Future<List<Movie>> getAllMovies() => new Future(() => _movies);
+   ```
   
-   >**Note d'implémentation :** Le coté back-end n'existant pas, cette implementation va charger tous les films et les stocker dans une `List<Movie>`. Les autres méthodes du service (qui seront écrites ultérieurement feront appel à cette `List` en mémoire plutôt qu'au réseau).  
+   >**Note d'implémentation :** Le coté back-end n'existant pas, cette implementation va charger tous les films et les stocker dans une `List<Movie>`. Les autres méthodes du service (qui seront écrites ultérieurement) feront appel à cette `List` en mémoire plutôt qu'au réseau.  
   
 5. Dans cette implémentation, ajoutez un attribut privé `List<Movie> _movies` et dans le constructeur par défaut initialisez cet attribut.  
    
    ```
    InMemoryMovieService() {
       _movies = JSON.decode(IN_MEMORY_JSON).map((Map map) {
-        new Movie.fromJSON(map));
+        return new Movie.fromJSON(map);
       }).toList();
    }
    ``` 
-  
    - La méthode `JSON.decode` permet de convertir une chaine en une `List<Map>`  
    - La méthode `Iterable.map` permet de convertir chaque instance de `Map`en `Movie`
    - La création de chaque film est effectuée par le constructeur `fromJSON`créé précédement  
@@ -119,24 +126,24 @@
    [dart:convert library](https://api.dartlang.org/docs/channels/stable/latest/dart_convert.html)  
    [Iterable.map](https://api.dartlang.org/docs/channels/stable/latest/dart_core/Iterable.html)  
    
-6. Dans `MovieService` ajoutez un constructeur de type `factory` qui retourne une nouvelle instance de `InMemoryMoviesService`  
+6. Dans `MovieService` ajoutez un constructeur de type `factory` qui retourne une nouvelle instance de `InMemoryMoviesService`. 
   
    ```
    factory MovieService() => new InMemoryMovieService();
    ```
     
-   Et ajoutez au fichier `services.dart` une variable globale `movieService` et initialisez là en créant une nouvelle instance de `MovieService`  
+   Ajoutez au fichier `services.dart` une variable globale `moviesService` et initialisez là en créant une nouvelle instance de `MovieService`.
    
    ```
    final MovieService moviesService = new MovieService();
    ```
    
-   > **![image](img/explain.png) Note :** Même si la classe ```MovieService``` est abstraite, le fait de créer un constructeur de type ```factory``` permet de pouvoir faire comme si on crée une instance de ```MovieService``` (le détail de l'implémentation réelle étant caché et permettant d'être modifié sans impacter les clients)
+   > **![image](img/explain.png) Note :** Même si la classe ```MovieService``` est abstraite, le fait de créer un constructeur de type ```factory``` permet de pouvoir faire comme si on crée une instance de ```MovieService``` (le détail de l'implémentation réelle étant caché et permettant d'être modifié sans impacter les clients).
   
 ###Création du composant 'grille de films'###
-1. Créez un nouveau composant nommé `movies-posters` avec les fichiers `posters.dart`et `posters.html` et géré par la classe `Posters`.  
+1. Créez un nouveau composant nommé `movie-posters` avec les fichiers `posters.dart`et `posters.html` et géré par la classe `Posters`.  
    
-   poster.html:  
+   posters.html :
    
    ```
    <polymer-element name='movie-posters'>
@@ -147,7 +154,7 @@
    </polymer-element>
    ```
    
-   poster.dart:  
+   posters.dart :  
    
    ```
    library movie.posters;
@@ -167,7 +174,7 @@
  
 2. Remplacez le tag `movie-poster` dans le fichier `movie_board.hml` par le tag `movie-posters` que vous venez de créer et validez que votre chaine en dur s'affiche bien dans Dartium.
    
-3. Dans la classe `Posters` ajoutez un attribut `movies`qui contiendra la liste des films à afficher et dans la méthode `created()`, initialisez cet attribut en utilisant le service défini dans la variable globale `movieService`  
+3. Dans la classe `Posters` ajoutez un attribut `movies` qui contiendra la liste des films à afficher et dans la méthode `created()`, initialisez cet attribut en utilisant le service défini dans la variable globale `movieService`.
 
    ```
    @observable List<Movie> movies;
@@ -175,13 +182,13 @@
 
    ```
     Posters.created() : super.created() {
-      movieService.getAllMovies().then((List ms) => movies = ms);
+      moviesService.getAllMovies().then((List ms) => movies = ms);
     }
    ```
  
-   > **![image](img/tip.png)Note :** Pour rappel le résultat d'une `Future` s'obtient dans la fonction passée en paramètre de la méthode `then((result) => // Here is your code);` de la `Fufure`
+   > **![image](img/tip.png)Note :** Pour rappel le résultat d'une `Future` s'obtient dans la fonction passée en paramètre de la méthode `then((result) => // Here is your code);` de la `Fufure`.
 
-4. Remplacez le corps du `template` de `Posters.html` par le code suivant et rafrachissez Dartium:  
+4. Remplacez le corps du `template` de `posters.html` par le code suivant et rafraichissez Dartium.
   
    ```  
   <template>
@@ -191,21 +198,20 @@
   </template> 
    ```
    
-   
    > **![image](img/explain.png) Explications :**  
    > - Un `<template repeat ...>` permet de parcourir les valeurs d'un `Iterable`
    
    **Vous devriez voir apparaître 40 posters de Dart Fligh School mais pour l'instant tous identiques !**  
    
-5. Pour pouvoir fixer sur chaque poster la valeur d'un film différent, modifiez l'annotation `@observable` de l'attribut `movie`de la classe `Poster` en `@published` 
+5. Pour pouvoir fixer sur chaque poster la valeur d'un film différent, modifiez l'annotation `@observable` de l'attribut `movie` de la classe `Poster` en `@published`.
 
    > **![image](img/explain.png) Explications :**  
-   > `@published` permet de rendre un attribut:  
+   > `@published` permet de rendre un attribut :  
    >  - observable  
    >  - non éligible au tree shaking  
    >  - d'être publié, c'est à dire visible et utilisable dans le tag du composant  
    
-6. Modifiez maintenant le template de `Posters.html` en utilisant le nouvel attribut publié:  
+6. Modifiez maintenant le template de `posters.html` en utilisant le nouvel attribut publié.
    
    ```
    <movie-poster movie="{{ m }}"></movie-poster>
