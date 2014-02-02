@@ -30,8 +30,8 @@
         <a href="#" class="gb gb-right">&#x2665;</a>
       </div>
       <div class="content">
-        <template repeat="{{movie in movies}}">
-          <movie-poster movie="{{movie}}"></movie-poster>
+        <template repeat="{{ m in movies }}">
+          <movie-poster movie="{{ m }}"></movie-poster>
         </template>
       </div>
     </div>
@@ -54,13 +54,13 @@
    <template repeat {{ m in movies | filter }}>
    ```
     
-3. Implémentez la méthode `filter` permettant de filter la liste `movies` en vérifiant si le titre de chaque film contient le `searchTerm` en utilisant le code suivant:  
+4. Implémentez la méthode `filter` permettant de filter la liste `movies` en vérifiant si le titre de chaque film contient le `searchTerm` en utilisant le code suivant:  
    
    ```
    filter(List ms) {
      if (searchTerm.isEmpty) return movies;
      return ms.where((Movie m) {
-       return m.title.toLowerCase().contains(searchTerm.toLowerCase()));
+       return m.title.toLowerCase().contains(searchTerm.toLowerCase());
      }).toList();
    }
    ```
@@ -80,7 +80,7 @@
    
    > ![image](img/tip.png) Les templates sont évalués à la création de votre composant et chaque fois qu'un attribut observable **ET** faisant partie du template est modifié. Le problème dans le code actuel, est que la méthode `filter` n'est appelée qu'une seule fois à la création. La modification de la valeur de `searchTerm` ne relance pas l'appel à `filter` puisque `searchTerm` ne fait pas partie de l'évaluation du template.
    
-4. Modifiez la Polymer expression dans `Posters.html` en passant à `filter` le `searchTerm`  
+5. Modifiez la Polymer expression dans `Posters.html` en passant à `filter` le `searchTerm`  
 
    ```
    <template repeat="{{ m in movies | filter(searchTerm)">
@@ -88,7 +88,7 @@
    
    > **![image](img/explain.png) Explication :** En ajoutant `searchTerm` dans l'évaluation du template, on force l'appel de la méthode `filter` à chaque modification de cet attribut.
 
-5. Modifiez l'implémentation de la méthode `filter` de la façon suivante :  
+6. Modifiez l'implémentation de la méthode `filter` de la façon suivante :  
    - Un seul paramètre de type `String` qui contient la valeur du terme à chercher  
    - Retourne une fonction qui filtre une liste de `Movie` 
    
@@ -98,7 +98,7 @@
        return term.isNotEmpty ? m.where((Movie m) => m.title.toLowerCase().contains(searchTerm.toLowerCase())) : m;
      }
      return fct;
-   }
+   };
    ```
    *Essayez d'écrire cette méthode sur une seule ligne*
    
@@ -106,14 +106,14 @@
    > - C'est une fonction qui renvoie une fonction  
    > - C'est une Closure qui exploite le paramètre de `filter` dans l'implémentation de la fonction retournée  
    
-6. Rafraichissez Dartium et tapez des termes correspondants à des parties de titre de films pour vérifier que les films sont bien filtrés en fonction du terme saisi  
+7. Rafraichissez Dartium et tapez des termes correspondants à des parties de titre de films pour vérifier que les films sont bien filtrés en fonction du terme saisi  
 
 ###Trier les films
 
 1. Dans le modèle métier `Movie`, créez une `Map` `static`et `final` privée que nous nommerez `_comparators`. 
    Cette map contiendra en clé le nom du champ qui sert de comparaison ('title', 'vote', 'favorite') et comme valeur une fonction comparant 2 instances de `Movie`  
 
-   Initialisez cette map de la façon suivante:   
+   Initialisez cette map de la façon suivante (implémentez le comparator pour les champs 'vote' et 'favorite'):   
 
     ```  
     static final Map _comparators = {  
@@ -141,9 +141,9 @@
  
 4. Dans la classe `Posters`, ajoutez 2 attributs observable :  
 
-   - `sortField` de type `String`
+   - `sortField` de type `String` (initialisé avec la valeur 'default')
    
-   - `sortAscending` de type `bool` 
+   - `sortAscending` de type `bool` (initialisé avec la valeur `true`)
    
 5. Dans la classe `Posters`, créez la méthode qui recevra les clics sur les liens :   
    
@@ -154,6 +154,9 @@
       sortField = field;
    }
    ```
+   > **![image](img/tip.png) Note :**  
+   > 
+   > - La classe `Element` nécessite l'import suivant `import 'dart:html';`
    
    > **![image](img/explain.png) Explication :**  
    > - On récupère la valeur du paramètre défini dans `data-field` en récupérant sa valeur dans `target.dataset` (si l'attribut du tag à été défini par `data-xyz` alors le nom de la clé à utiliser est `xyz`)  
@@ -162,7 +165,7 @@
 6. Modifiez dans `posters.html` le `template repeat` de la façon suivante :  
 
    ```
-   <template repeat="{{ m in movies | filter(searchFilter) | sortBy(sortField, sortAscending) }}">
+   <template repeat="{{ m in movies | filter(searchTerm) | sortBy(sortField, sortAscending) }}">
    ``` 
 
    > **![image](img/tip.png) Note :**  
@@ -192,7 +195,7 @@
    ![image](img/tip.png) **Le principe du code précédent est le suivant :**  
   1- Un click sur l'un des liens appelle la méthode `sort`  
   2- La méthode `sort` affecte les attributs `sortAscending` et `sortField`  
-  3- Ces attributs étant utilisés dans l'expression polymer `{{ m in movies | filter(searchFilter) | sortBy(sortField, sortAscending) }}`, le template est réévalué  
+  3- Ces attributs étant utilisés dans l'expression polymer `{{ m in movies | filter(searchTerm) | sortBy(sortField, sortAscending) }}`, le template est réévalué  
   4- La méthode `sortBy` est donc appelée avec les nouvelles valeurs de tri  
   5- Celle-ci renvoie les films triés (et filtrés par `filter`)
 
@@ -205,7 +208,7 @@ Afin que l'utilisateur puisse visualiser l'ordre de tri courant nous allons appl
 
    ```
    applySelected(Element target, String prefix) {
-     String classname = "${classPrefix}-selected";
+     String classname = "${prefix}-selected";
      if (!target.classes.contains(classname)) {
        target.parent.children.forEach((e) => e.classes.remove(classname));
        target.classes.add(classname);
