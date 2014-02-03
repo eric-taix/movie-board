@@ -25,7 +25,7 @@
         - polymer:
           entry_points: web/movie_board.html
     ```
-    
+
 > **![image](img/tip.png) Conseil** Si vous souhaitez renommer votre point d'entrée `movie_board.html` en `index.html` par exemple, pensez bien à modifier votre fichier `pubspec.yaml` afin de modifier la valeur de `entry_points` sinon `dart2js` ne sera pas capable de compiler votre code Dart en Javascript.       
     
   - `build.dart` est le script Dart qui est lancé après une sauvegarde et permet d'afficher les warning dans l'éditeur
@@ -248,7 +248,7 @@
     > - Lors de l'évaluation de l'expression polymer, la valeur de `movie.voteAverage` est passée au filtre `asStars` (qui donc doit avoir comme paramètre un `int`). Cette méthode génère une chaine et la retourne. C'est la valeur retournée qui sera affichée.
     
   
-###Vous êtes en avance sur le timing : voici un bonus !###
+###![image](img/gift.png)Vous êtes en avance sur le timing : voici un bonus !###
 
 Le vote moyen étant sur 10, utilisez les techniques vues précédemment afin de faire un complément à 10 et affichez le nombre d'étoiles manquantes pour avoir la note maximum dans le 2ème tag ```<span>```.  
 
