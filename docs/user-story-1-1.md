@@ -1,29 +1,32 @@
 ## 1. Afficher les données d'un film (titre, poster, date de sortie)
 > **![image](img/goal.png) Objectifs :**   
-> - _Comprendre la structure principale d'un projet Dart  
+> - Comprendre la structure principale d'un projet Dart  
 > - Apprendre à créer un composant web avec Polymer  
 > - Effectuer le binding sur un objet métier
 > - Utiliser Polymer Expressions et les filtres
-> - Créer sa 1ère closure en Dart_  
+> - Créer sa 1ère closure en Dart
   
-  ![poster](img/goal1-user-story1.png) ![rating](img/goal2-user-story1.png) 
+  ![poster](img/goal1-user-story1.png) ![rating](img/goal2-user-story1.png)
+  
+  *Résultat obtenu à la fin de ce chapitre*
 
 ###Premiers pas...###
 
-1. Commencez par lancer Dart Editor et ouvrez le répertoire `movie-board` (dans lequel vous avez décompressé l'archive) et explorez la structure du projet (ces éléments sont les éléments standards que vous retrouverez lorsque vous créez une nouvelle application Polymer en partant d'un exemple):
+ - Commencez par lancer Dart Editor et ouvrez le répertoire `movie-board` (dans lequel vous avez décompressé l'archive) et explorez la structure du projet (ces éléments sont les éléments standards que vous retrouverez lorsque vous créez une nouvelle application Polymer en partant d'un exemple):
 
     ![image](img/explore-project.png) 
   
   - Ouvrez le fichier `pubspec.yaml`: il contient les dépendances du projet ainsi que des indications sur comment compiler celui-ci
 
-  ```
+  ```language
+```
    dependencies:  
         polymer: any  
       transformers:  
         - polymer:
           entry_points: web/movie_board.html
   ```
-> **Conseil** Si vous souhaitez renommer votre point d'entrée `movie_board.html` en `index.html` par exemple, pensez bien à modifier votre fichier `pubspec.yaml` afin de modifier la valeur de `entry_points` sinon `dart2js` ne sera pas capable de compiler votre code Dart en Javascript.       
+> **![image](img/tip.png) Conseil** Si vous souhaitez renommer votre point d'entrée `movie_board.html` en `index.html` par exemple, pensez bien à modifier votre fichier `pubspec.yaml` afin de modifier la valeur de `entry_points` sinon `dart2js` ne sera pas capable de compiler votre code Dart en Javascript.       
     
   - `build.dart` est le script Dart qui est lancé après une sauvegarde et permet d'afficher les warning dans l'éditeur
     
@@ -87,7 +90,7 @@
    <polymer-element name="movie-poster">
   	 <template>
     	<li class="movie">
-      		<span class="favorite">V</span>
+      		<span class="favorite">&#x2665;</span>
       		<section class="overlay"> 
         		<h2>Dart Flight School - Montpellier JUG</h2> 
         		<div>Release date: 2014/02/19</div>
@@ -161,12 +164,11 @@
   
 2. Dans ce fichier créez la classe `Movie` avec le code suivant :   
   	  
-    ```  
-  	library movie.models;  
+    ```
+    library movie.models;
   
-
     class Movie {
-	  int id;
+    	int id;
   	  String title;
   	  String posterPath;
   	  String releasedDate;
@@ -185,19 +187,17 @@
         tag = ...;
       }
     }
-      
 	```
-	
+
 	Initialisez les valeurs des attributs avec des valeurs de votre choix. Pour `posterPath` vous pouvez utiliser l'image `../common/img/dart-flight-school.jpg`
-	
-    > **Explications :**   
-    > - Cette classe représente le modèle métier qui sera utilisé pour afficher un film  
-    > - En dart on ne peut pas faire (comme en java) plusieurs constructeurs avec différents paramètres  
-    > - Pour gérer ce cas de figure, dart a introduit les constructeurs nommés    
-    > - Un constructeur nommé s'écrit de la façon suivante `<nom de la class>.<nom du constructeur>`  
-    > - `Movie.sample()` est un constructeur nommé  
+
+    > **![image](img/explain.png) Explications :**
+    > - Cette classe représente le modèle métier qui sera utilisé pour afficher un film
+	> - En dart on ne peut pas faire (comme en java) plusieurs constructeurs avec différents paramètres
+    > - Pour gérer ce cas de figure, dart a introduit les constructeurs nommés
+    > - Un constructeur nommé s'écrit de la façon suivante `<nom de la class>.<nom du constructeur>`
+    > - `Movie.sample()` est un constructeur nommé
     > - On peut l'appeler par le code suivant : `Movie m = new Movie.sample();`
-  
   
     **Note importante :**   
     - Polymer utilise le pattern MDV (Model Driven View), ce qui signifie que la vue (le fichier HTML) est pilotée par le modèle (le fichier dart). Si la valeur d'une propriété du modèle est modifiée, la vue (ou une partie de la vue) est rafraichie afin de refléter la nouvelle valeur. La réciproque est vraie aussi : si vous saisissez une valeur dans un input, la valeur du modèle est modifiée. Cette liaison entre le modèle et la vue est effectuée grâce à l'annotation `@observable`
@@ -258,13 +258,13 @@ Dernier conseil, il est possible d'empiler les filtres les uns derrière les aut
 
 [Voir 'Dart - Functions are fun'](https://www.dartlang.org/dart-tips/dart-tips-ep-7.html) et cherchez sur cette page la fonction `makeAdder` pour un exemple sur les closures en Dart.  
 
-  
-###[Passez à la user-story n°2 >>](docs/user-story-2-1.md)
-  
-  
+##[Passez à la user-story n°2 >>](./user-story-2-1.md)
+
+
+****
     
 <a name="user-story-1-hints"></a>
-> **![image](img/tip.png) Astuces:**  
+> **![image](img/tip.png)Astuces:**  
 >
 > - Si votre composant n'affiche rien, vérifiez que les fichiers utilisent le même nom de composant et vérifiez que votre fichier dart est bien importé dans le fichier HTML (sinon vous aurez une belle page vide)  
 >
