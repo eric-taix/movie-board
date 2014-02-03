@@ -18,14 +18,14 @@
   
   - Ouvrez le fichier `pubspec.yaml`: il contient les dépendances du projet ainsi que des indications sur comment compiler celui-ci
 
-  ```language
-```
+   ```
    dependencies:  
         polymer: any  
       transformers:  
         - polymer:
           entry_points: web/movie_board.html
-  ```
+    ```
+    
 > **![image](img/tip.png) Conseil** Si vous souhaitez renommer votre point d'entrée `movie_board.html` en `index.html` par exemple, pensez bien à modifier votre fichier `pubspec.yaml` afin de modifier la valeur de `entry_points` sinon `dart2js` ne sera pas capable de compiler votre code Dart en Javascript.       
     
   - `build.dart` est le script Dart qui est lancé après une sauvegarde et permet d'afficher les warning dans l'éditeur
