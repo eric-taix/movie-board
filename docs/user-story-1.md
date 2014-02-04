@@ -94,6 +94,9 @@
 4. Rafraichissez Dartium (vous n'êtes pas obligé de le relancer systématiquement: un simple refresh suffit à la mettre à jour avec vos dernières modifications de code) et vous devriez obtenir ce résultat ! Passez la souris sur l'affiche pour voir les détails du film...  [Ca ne marche pas ?](#user-story-1-hints)
      
    ![static-comp](img/static-comp.png) 
+   
+   **Note** : un composant peut définir son propre style ou utiliser le style de son parent. dans notre cas, pensez à définir votre composant comme utilisant le style de son père :
+   ```bool get applyAuthorStyles => true; ``` 
         
 5. Copiez plusieurs fois le tag du composant dans le fichier `movie-board.html` et rafraichissez Dartium. Cool non ?  
     
