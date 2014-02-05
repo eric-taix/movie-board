@@ -1,5 +1,5 @@
 
-##3- Effectuer des filtres et des tris sur les films  
+##3. Effectuer des filtres et des tris sur les films  
 
 
 > **![image](img/goal.png) Objectifs :**  

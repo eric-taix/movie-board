@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="utf-8"><style>body
+{
+  font-size:15px;
+  line-height:1.7;
+  overflow-x:hidden;
+
+    background-color: white;
+    border-radius: 3px;
+    border: 3px solid #EEE;
+    box-shadow: inset 0 0 0 1px #CECECE;
+    font-family: Helvetica, arial, freesans, clean, sans-serif;
+    width: 912px;
+    padding: 30px;
+    margin: 2em auto;
+
+    color:#333333;
+}
+
+
+.body-classic{
+  color:#444;
+  font-family:Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', "Hiragino Sans GB", "STXihei", "微软雅黑", serif;
+  font-size:16px;
+  line-height:1.5em;
+  background:#fefefe;
+  width: 45em;
+  margin: 10px auto;
+  padding: 1em;
+  outline: 1300px solid #FAFAFA;
+}
+
+body>:first-child
+{
+  margin-top:0!important;
+}
+
+body>:last-child
+{
+  margin-bottom:0!important;
+}
+
+blockquote,dl,ol,p,pre,table,ul {
+  border: 0;
+  margin: 15px 0;
+  padding: 0;
+}
+
+body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+body a:hover {
+  text-decoration: underline;
+}
+
+body a.absent
+{
+  color:#c00;
+}
+
+body a.anchor
+{
+  display:block;
+  padding-left:30px;
+  margin-left:-30px;
+  cursor:pointer;
+  position:absolute;
+  top:0;
+  left:0;
+  bottom:0
+}
+
+/*h4,h5,h6{ font-weight: bold; }*/
+
+.octicon{
+  font:normal normal 16px sans-serif;
+  width: 1em;
+  height: 1em;
+  line-height:1;
+  display:inline-block;
+  text-decoration:none;
+  -webkit-font-smoothing:antialiased
+}
+
+.octicon-link {
+  background: url("data:image/svg+xml;utf8,<?xml version='1.0' standalone='no'?> <!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'> <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 832'> <metadata>Copyright (C) 2013 by GitHub</metadata> <!-- scale(0.01565557729941) --> <path transform='' d='M768 64h-192s-254 0-256 256c0 22 3 43 8 64h137c-11-19-18-41-18-64 0-128 128-128 128-128h192s128 0 128 128-128 128-128 128 0 64-64 128h64s256 0 256-256-256-256-256-256z m-72 192h-137c11 19 18 41 18 64 0 128-128 128-128 128h-192s-128 0-128-128 128-128 128-128-4-65 66-128h-66s-256 0-256 256 256 256 256 256h192s256 0 256-256c0-22-4-44-8-64z'/> </svg>");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+.octicon-link:before{
+  content:'\a0';
+}
+
+body h1,body h2,body h3,body h4,body h5,body h6{
+  margin:1em 0 15px;
+  padding:0;
+  font-weight:bold;
+  line-height:1.7;
+  cursor:text;
+  position:relative
+}
+
+body h1 .octicon-link,body h2 .octicon-link,body h3 .octicon-link,body h4 .octicon-link,body h5 .octicon-link,body h6 .octicon-link{
+  display:none;
+  color:#000
+}
+
+body h1:hover a.anchor,body h2:hover a.anchor,body h3:hover a.anchor,body h4:hover a.anchor,body h5:hover a.anchor,body h6:hover a.anchor{
+  text-decoration:none;
+  line-height:1;
+  padding-left:0;
+  margin-left:-22px;
+  top:15%
+}
+
+body h1:hover a.anchor .octicon-link,body h2:hover a.anchor .octicon-link,body h3:hover a.anchor .octicon-link,body h4:hover a.anchor .octicon-link,body h5:hover a.anchor .octicon-link,body h6:hover a.anchor .octicon-link{
+  display:inline-block
+}
+
+body h1 tt,body h1 code,body h2 tt,body h2 code,body h3 tt,body h3 code,body h4 tt,body h4 code,body h5 tt,body h5 code,body h6 tt,body h6 code{
+  font-size:inherit
+}
+
+body h1{
+  font-size:2.5em;
+  border-bottom:1px solid #ddd
+}
+
+body h2{
+  font-size:2em;
+  border-bottom:1px solid #eee
+}
+
+body h3{
+  font-size:1.5em
+}
+
+body h4{
+  font-size:1.2em
+}
+
+body h5{
+  font-size:1em
+}
+
+body h6{
+  color:#777;
+  font-size:1em
+}
+
+body p,body blockquote,body ul,body ol,body dl,body table,body pre{
+  margin:15px 0
+}
+
+body h1 tt,body h1 code,body h2 tt,body h2 code,body h3 tt,body h3 code,body h4 tt,body h4 code,body h5 tt,body h5 code,body h6 tt,body h6 code
+{
+  font-size:inherit;
+}
+
+
+body hr
+{
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC);
+  background-repeat: repeat-x;
+  /*background:transparent url(http://overblown.net/files/markdown/dirty-shade.png) repeat-x 0 0;*/
+  background-color: transparent;
+  background-position: 0;
+  border:0 none;
+  color:#ccc;
+  height:4px;
+  margin:15px 0;
+  padding:0;
+}
+
+body li p.first
+{
+  display:inline-block;
+}
+
+body ul,body ol
+{
+  padding-left:30px;
+}
+
+body ul.no-list,body ol.no-list
+{
+  list-style-type:none;
+  padding:0;
+}
+
+body ul ul,body ul ol,body ol ol,body ol ul
+{
+  margin-bottom:0;
+  margin-top:0;
+}
+
+body dl
+{
+  padding:0;
+}
+
+body dl dt
+{
+  font-size:14px;
+  font-style:italic;
+  font-weight:700;
+  margin-top:15px;
+  padding:0;
+}
+
+body dl dd
+{
+  margin-bottom:15px;
+  padding:0 15px;
+}
+
+body blockquote
+{
+  border-left:4px solid #DDD;
+  color:#777;
+  padding:0 15px;
+}
+
+body blockquote>:first-child
+{
+  margin-top:0;
+}
+
+body blockquote>:last-child
+{
+  margin-bottom:0;
+}
+
+body table
+{
+  display:block;
+  overflow:auto;
+  width:100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  padding: 0;
+}
+
+body table th
+{
+  font-weight:700;
+}
+
+body table th,body table td
+{
+  border:1px solid #ddd;
+  padding:6px 13px;
+}
+
+body table tr
+{
+  background-color:#fff;
+  border-top:1px solid #ccc;
+}
+
+body table tr:nth-child(2n)
+{
+  background-color:#f8f8f8;
+}
+
+body img
+{
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+  max-width:100%;
+}
+
+body span.frame
+{
+  display:block;
+  overflow:hidden;
+}
+
+body span.frame>span
+{
+  border:1px solid #ddd;
+  display:block;
+  float:left;
+  margin:13px 0 0;
+  overflow:hidden;
+  padding:7px;
+  width:auto;
+}
+
+body span.frame span img
+{
+  display:block;
+  float:left;
+}
+
+body span.frame span span
+{
+  clear:both;
+  color:#333;
+  display:block;
+  padding:5px 0 0;
+}
+
+body span.align-center
+{
+  clear:both;
+  display:block;
+  overflow:hidden;
+}
+
+body span.align-center>span
+{
+  display:block;
+  margin:13px auto 0;
+  overflow:hidden;
+  text-align:center;
+}
+
+body span.align-center span img
+{
+  margin:0 auto;
+  text-align:center;
+}
+
+body span.align-right
+{
+  clear:both;
+  display:block;
+  overflow:hidden;
+}
+
+body span.align-right>span
+{
+  display:block;
+  margin:13px 0 0;
+  overflow:hidden;
+  text-align:right;
+}
+
+body span.align-right span img
+{
+  margin:0;
+  text-align:right;
+}
+
+body span.float-left
+{
+  display:block;
+  float:left;
+  margin-right:13px;
+  overflow:hidden;
+}
+
+body span.float-left span
+{
+  margin:13px 0 0;
+}
+
+body span.float-right
+{
+  display:block;
+  float:right;
+  margin-left:13px;
+  overflow:hidden;
+}
+
+body span.float-right>span
+{
+  display:block;
+  margin:13px auto 0;
+  overflow:hidden;
+  text-align:right;
+}
+
+body code,body tt
+{
+  background-color:#f8f8f8;
+  border:1px solid #ddd;
+  border-radius:3px;
+  margin:0 2px;
+  padding:0 5px;
+}
+
+body code
+{
+  white-space:nowrap;
+}
+
+
+code,pre{
+  font-family:Consolas, "Liberation Mono", Courier, monospace;
+  font-size:12px
+}
+
+body pre>code
+{
+  background:transparent;
+  border:none;
+  margin:0;
+  padding:0;
+  white-space:pre;
+}
+
+body .highlight pre,body pre
+{
+  background-color:#f8f8f8;
+  border:1px solid #ddd;
+  font-size:13px;
+  line-height:19px;
+  overflow:auto;
+  padding:6px 10px;
+  border-radius:3px
+}
+
+body pre code,body pre tt
+{
+  background-color:transparent;
+  border:none;
+  margin:0;
+  padding:0;
+}
+
+body .task-list{
+  list-style-type:none;
+  padding-left:10px
+}
+
+.task-list-item{
+  padding-left:20px
+}
+
+.task-list-item label{
+  font-weight:normal
+}
+
+.task-list-item.enabled label{
+  cursor:pointer
+}
+
+.task-list-item+.task-list-item{
+  margin-top:5px
+}
+
+.task-list-item-checkbox{
+  float:left;
+  margin-left:-20px;
+  margin-top:7px
+}
+
+
+.highlight{
+  background:#ffffff
+}
+
+.highlight .c{
+  color:#999988;
+  font-style:italic
+}
+
+.highlight .err{
+  color:#a61717;
+  background-color:#e3d2d2
+}
+
+.highlight .k{
+  font-weight:bold
+}
+
+.highlight .o{
+  font-weight:bold
+}
+
+.highlight .cm{
+  color:#999988;
+  font-style:italic
+}
+
+.highlight .cp{
+  color:#999999;
+  font-weight:bold
+}
+
+.highlight .c1{
+  color:#999988;
+  font-style:italic
+}
+
+.highlight .cs{
+  color:#999999;
+  font-weight:bold;
+  font-style:italic
+}
+
+.highlight .gd{
+  color:#000000;
+  background-color:#ffdddd
+}
+
+.highlight .gd .x{
+  color:#000000;
+  background-color:#ffaaaa
+}
+
+.highlight .ge{
+  font-style:italic
+}
+
+.highlight .gr{
+  color:#aa0000
+}
+
+.highlight .gh{
+  color:#999999
+}
+
+.highlight .gi{
+  color:#000000;
+  background-color:#ddffdd
+}
+
+.highlight .gi .x{
+  color:#000000;
+  background-color:#aaffaa
+}
+
+.highlight .go{
+  color:#888888
+}
+
+.highlight .gp{
+  color:#555555
+}
+
+.highlight .gs{
+  font-weight:bold
+}
+
+.highlight .gu{
+  color:#800080;
+  font-weight:bold
+}
+
+.highlight .gt{
+  color:#aa0000
+}
+
+.highlight .kc{
+  font-weight:bold
+}
+
+.highlight .kd{
+  font-weight:bold
+}
+
+.highlight .kn{
+  font-weight:bold
+}
+
+.highlight .kp{
+  font-weight:bold
+}
+
+.highlight .kr{
+  font-weight:bold
+}
+
+.highlight .kt{
+  color:#445588;
+  font-weight:bold
+}
+
+.highlight .m{
+  color:#009999
+}
+
+.highlight .s{
+  color:#d14
+}
+
+.highlight .n{
+  color:#333333
+}
+
+.highlight .na{
+  color:#008080
+}
+
+.highlight .nb{
+  color:#0086B3
+}
+
+.highlight .nc{
+  color:#445588;
+  font-weight:bold
+}
+
+.highlight .no{
+  color:#008080
+}
+
+.highlight .ni{
+  color:#800080
+}
+
+.highlight .ne{
+  color:#990000;
+  font-weight:bold
+}
+
+.highlight .nf{
+  color:#990000;
+  font-weight:bold
+}
+
+.highlight .nn{
+  color:#555555
+}
+
+.highlight .nt{
+  color:#000080
+}
+
+.highlight .nv{
+  color:#008080
+}
+
+.highlight .ow{
+  font-weight:bold
+}
+
+.highlight .w{
+  color:#bbbbbb
+}
+
+.highlight .mf{
+  color:#009999
+}
+
+.highlight .mh{
+  color:#009999
+}
+
+.highlight .mi{
+  color:#009999
+}
+
+.highlight .mo{
+  color:#009999
+}
+
+.highlight .sb{
+  color:#d14
+}
+
+.highlight .sc{
+  color:#d14
+}
+
+.highlight .sd{
+  color:#d14
+}
+
+.highlight .s2{
+  color:#d14
+}
+
+.highlight .se{
+  color:#d14
+}
+
+.highlight .sh{
+  color:#d14
+}
+
+.highlight .si{
+  color:#d14
+}
+
+.highlight .sx{
+  color:#d14
+}
+
+.highlight .sr{
+  color:#009926
+}
+
+.highlight .s1{
+  color:#d14
+}
+
+.highlight .ss{
+  color:#990073
+}
+
+.highlight .bp{
+  color:#999999
+}
+
+.highlight .vc{
+  color:#008080
+}
+
+.highlight .vg{
+  color:#008080
+}
+
+.highlight .vi{
+  color:#008080
+}
+
+.highlight .il{
+  color:#009999
+}
+
+.highlight .gc{
+  color:#999;
+  background-color:#EAF2F5
+}
+
+.type-csharp .highlight .k{
+  color:#0000FF
+}
+
+.type-csharp .highlight .kt{
+  color:#0000FF
+}
+
+.type-csharp .highlight .nf{
+  color:#000000;
+  font-weight:normal
+}
+
+.type-csharp .highlight .nc{
+  color:#2B91AF
+}
+
+.type-csharp .highlight .nn{
+  color:#000000
+}
+
+.type-csharp .highlight .s{
+  color:#A31515
+}
+
+.type-csharp .highlight .sc{
+  color:#A31515
+}</style><title>user-story-2-1</title></head><body><h1>
+<a name="2--afficher-lensemble-des-films" class="anchor" href="#2--afficher-lensemble-des-films"><span class="octicon octicon-link"></span></a>2. Afficher l'ensemble des films</h1>
+
+<blockquote>
+<p><strong><a href="img/goal.png" target="_blank"><img src="img/goal.png" alt="image" style="max-width:100%;"></a> Objectifs :</strong>  </p>
+
+<ul>
+<li>Décoder un flux JSON<br>
+</li>
+<li>Instancier un objet métier à partir d'un flux JSON<br>
+</li>
+<li>Utiliser le <code>template repeat</code> pour afficher un ensemble de valeurs<br>
+</li>
+<li>Publier un attribut d'un composant permettant de paramétrer un composant depuis l'extérieur<br>
+</li>
+<li>Bonus : Charger le flux JSON à partir d'un flux HTTP</li>
+</ul>
+</blockquote>
+
+<p><a href="img/goal1-user-story-2.png" target="_blank"><img src="img/goal1-user-story-2.png" alt="poster" style="max-width:100%;"></a><br><em>Résultat obtenu à la fin de ce chapitre</em></p>
+
+<h3>
+<a name="chargement-du-mod%C3%A8le-m%C3%A9tier-%C3%A0-partir-dun-flux-json" class="anchor" href="#chargement-du-mod%C3%A8le-m%C3%A9tier-%C3%A0-partir-dun-flux-json"><span class="octicon octicon-link"></span></a>Chargement du modèle métier à partir d'un flux JSON</h3>
+
+<ol>
+<li>
+<p>Créez le fichier <code>services.dart</code> qui contiendra les services de l'application. Dans ce fichier créez une classe abstraite <code>MovieService</code> avec la méthode suivante :  </p>
+
+<ul>
+<li>
+<code>Future&lt;List&lt;Movie&gt;&gt; getAllMovies();</code> renvoyant la liste des films<br>
+</li>
+</ul>
+<blockquote>
+<p><strong><a href="img/explain.png" target="_blank"><img src="img/explain.png" alt="image" style="max-width:100%;"></a> Explications :</strong>
+Lorsqu'on effectue une opération longue (c'est le cas d'un appel réseau par exemple), Dart utilise systématiquement des <code>Future</code> qui permette de définir une opération qui se terminera plus tard dans le temps.<br>
+On utilise les <code>Future</code>de la manière suivante :  </p>
+
+<pre><code>Future f = operationLongue();
+f.then((result) {
+  // Traitement du résultat
+});
+</code></pre>
+
+<p>ou plus simplement</p>
+
+<pre><code>operationLongue().then((result) =&gt; // Traitement du résultat ));
+</code></pre>
+
+<p><strong>La méthode du service doit donc renvoyer un <code>Future&lt;List&lt;Movie&gt;&gt;</code> afin de signifier que le résultat (qui sera une liste de films) sera retournée plus tard dans le temps.</strong></p>
+</blockquote>
+</li>
+<li>
+<p>Dans le fichier <code>services.dart</code>, en dehors de classe <code>MovieService</code>, créez une chaine constante <code>IN_MEMORY_JSON</code> et initialisez la avec le contenu du fichier <code>common/json/all.json</code>.</p>
+
+<blockquote>
+<p><strong><a href="img/tip.png" target="_blank"><img src="img/tip.png" alt="image" style="max-width:100%;"></a> Astuce :</strong>  </p>
+
+<ul>
+<li>
+<p>Utilisez la notation chaine multilines pour plus de facilité  </p>
+
+<pre><code>String s = '''  
+A string which is on  
+multiple lines  
+''';
+</code></pre>
+</li>
+<li><p>Cette constante simule la réponse HTTP que l'on recoit d'un backend, donc une chaine de caractère  </p></li>
+<li><p>Une constante est une variable initialisée et non modifiable. Contrairement à <code>final</code> la référence mais aussi le contenu sont immutables. Une constante se définit grâce au mot clé <code>const</code></p></li>
+</ul>
+</blockquote>
+
+<p><em>Extrait:</em>  </p>
+
+<pre><code>const String IN_MEMORY_JSON = '''
+[
+{
+"tag":"upcoming","adult": false,
+"id": 180894,
+"original_title": "Ninja: Shadow of a Tear",
+...
+...
+"title": "Force of Execution",
+"vote_average": 7.5,
+"vote_count": 4
+}]
+''';
+</code></pre>
+</li>
+<li>
+<p>Chaque film sera initialisé à partir d'un flux JSON. Pour faciliter cette opération, créez un nouveau constructeur nommé <code>fromJSON</code> dans la classe <code>Movie</code> et prenant en paramètre une <code>Map&lt;String,Object&gt;</code> et initialisez les différents attributs de la classe <code>Movie</code> à partir des clés de la <code>Map</code> de la façon suivante :  </p>
+
+<pre><code>Movie.fromJSON(Map&lt;String, Object&gt; json) {
+  id=json['id'];
+  title=json['title'];
+  posterPath=json['poster_path'] != null ? "../common/json/images/posters${json['poster_path']}" : "../common/img/no-poster-w130.jpg";
+  releasedDate=json['release_date'];
+  voteAverage=(json['vote_average'] as num).toInt();
+  voteCount=json['vote_count'];
+  tag=json['tag'];
+}
+</code></pre>
+
+<p><em>Le contructeur <code>fromJSON</code> et la méthode <code>toJSON</code> sont 'normalisés', d'ailleurs la prochaine version de Dart Editor propose un générateur automatique à partir des attributs de la classe.</em></p>
+
+<p><strong>Les clés du flux JSON sont les suivants :</strong></p>
+
+<ul>
+<li>
+<code>id</code> int contenant l'identifiant d'un film<br>
+</li>
+<li>
+<code>title</code> String contenant le titre du film<br>
+</li>
+<li>
+<code>poster_path</code> String contenant le chemin pour l'affiche du film</li>
+<li>
+<code>release_date</code> String contenant la date de sortie</li>
+<li>
+<code>vote_average</code> int contenant la note moyenne sur 10</li>
+<li>
+<code>vote_count</code> contenant le nombre de votant</li>
+<li>
+<code>tag</code>String contenant une étiquette sur le type de film</li>
+</ul>
+</li>
+<li>
+<p>Dans le fichier <code>services.dart</code> créez une implémentation <code>InMemoryMovieService</code> qui implémente <code>MovieService</code>.    </p>
+
+<pre><code>class InMemoryMovieService implements MovieService {
+
+}
+</code></pre>
+
+<p>N'oubliez pas d'implémenter la méthode <code>getAllMovies()</code>.</p>
+
+<pre><code>Future&lt;List&lt;Movie&gt;&gt; getAllMovies() =&gt; new Future(() =&gt; _movies);
+</code></pre>
+
+<blockquote>
+<p><strong>Note d'implémentation :</strong> Le coté back-end n'existant pas, cette implementation va charger tous les films et les stocker dans une <code>List&lt;Movie&gt;</code>. Les autres méthodes du service (qui seront écrites ultérieurement) feront appel à cette <code>List</code> en mémoire plutôt qu'au réseau.  </p>
+</blockquote>
+</li>
+<li>
+<p>Dans cette implémentation, ajoutez un attribut privé <code>List&lt;Movie&gt; _movies</code> et dans le constructeur par défaut initialisez cet attribut.  </p>
+
+<pre><code>InMemoryMovieService() {
+  _movies = JSON.decode(IN_MEMORY_JSON).map((Map map) {
+    return new Movie.fromJSON(map);
+  }).toList();
+}
+</code></pre>
+
+<ul>
+<li>La méthode <code>JSON.decode</code> permet de convertir une chaine en une <code>List&lt;Map&gt;</code><br>
+</li>
+<li>La méthode <code>Iterable.map</code> permet de convertir chaque instance de <code>Map</code>en <code>Movie</code>
+</li>
+<li>La création de chaque film est effectuée par le constructeur <code>fromJSON</code>créé précédement<br>
+</li>
+<li>La méthode <code>toList()</code> permet de forcer le parcours de la liste et donc d'effectuer le traitement<br>
+</li>
+<li>Vous devez importer <code>import 'dart:convert';</code> qui contient la classe <code>JSON</code>
+</li>
+</ul>
+<p><em>Vous pouvez écrire cette méthode sur une seule ligne ;-)</em></p>
+
+<p><a href="https://api.dartlang.org/docs/channels/stable/latest/dart_convert.html">dart:convert library</a><br><a href="https://api.dartlang.org/docs/channels/stable/latest/dart_core/Iterable.html">Iterable.map</a></p>
+</li>
+<li>
+<p>Dans <code>MovieService</code> ajoutez un constructeur de type <code>factory</code> qui retourne une nouvelle instance de <code>InMemoryMoviesService</code>  </p>
+
+<pre><code>factory MovieService() =&gt; new InMemoryMovieService();
+</code></pre>
+
+<p>Ajoutez au fichier <code>services.dart</code> une variable globale <code>moviesService</code> et initialisez là en créant une nouvelle instance de <code>MovieService</code>.</p>
+
+<pre><code>final MovieService movieService = new MovieService();
+</code></pre>
+
+<blockquote>
+<p><strong><a href="img/explain.png" target="_blank"><img src="img/explain.png" alt="image" style="max-width:100%;"></a> Note :</strong> Même si la classe <code>MovieService</code> est abstraite, le fait de créer un constructeur de type <code>factory</code> permet de pouvoir faire comme si on crée une instance de <code>MovieService</code> (le détail de l'implémentation réelle étant caché et permettant d'être modifié sans impacter les clients).</p>
+</blockquote>
+</li>
+</ol><h3>
+<a name="cr%C3%A9ation-du-composant-grille-de-films" class="anchor" href="#cr%C3%A9ation-du-composant-grille-de-films"><span class="octicon octicon-link"></span></a>Création du composant 'grille de films'</h3>
+
+<ol>
+<li>
+<p>Créez un nouveau composant nommé <code>movie-posters</code> avec les fichiers <code>posters.dart</code>et <code>posters.html</code> et géré par la classe <code>Posters</code>.  </p>
+
+<p>posters.html :</p>
+
+<pre><code>&lt;polymer-element name='movie-posters'&gt;
+&lt;template&gt;
+  &lt;p&gt;Posters&lt;/p&gt;
+&lt;/template&gt;
+&lt;script type="application/dart" src="posters.dart"&gt;&lt;/script&gt;
+&lt;/polymer-element&gt;
+</code></pre>
+
+<p>posters.dart :  </p>
+
+<pre><code>library movie.posters;
+
+import 'package:polymer/polymer.dart';
+
+import 'models.dart';
+
+@CustomTag('movie-posters')
+class Posters extends PolymerElement {
+
+ @observable List&lt;Movie&gt; movies;
+
+ bool get applyAuthorStyles =&gt; true;
+
+ Posters.created() : super.created();
+}
+</code></pre>
+</li>
+<li><p>Remplacez le tag <code>movie-poster</code> dans le fichier <code>movie_board.hml</code> par le tag <code>movie-posters</code> que vous venez de créer et validez que votre chaine en dur s'affiche bien dans Dartium.</p></li>
+<li>
+<p>Dans la classe <code>Posters</code> ajoutez un attribut <code>movies</code> qui contiendra la liste des films à afficher et dans la méthode <code>created()</code>, initialisez cet attribut en utilisant le service défini dans la variable globale <code>movieService</code>.</p>
+
+<pre><code>@observable List&lt;Movie&gt; movies;
+</code></pre>
+
+<pre><code>Posters.created() : super.created() {
+  moviesService.getAllMovies().then((List ms) =&gt; movies = ms);
+}
+</code></pre>
+
+<blockquote>
+<p><strong><a href="img/tip.png" target="_blank"><img src="img/tip.png" alt="image" style="max-width:100%;"></a>Note :</strong> Pour rappel le résultat d'une <code>Future</code> s'obtient dans la fonction passée en paramètre de la méthode <code>then((result) =&gt; // Here is your code);</code> de la <code>Fufure</code>.</p>
+</blockquote>
+</li>
+<li>
+<p>Remplacez le corps du <code>template</code> de <code>posters.html</code> par le code suivant et rafraichissez Dartium.</p>
+
+<pre><code>&lt;template&gt;
+  &lt;template repeat="{{ m in movies }}"&gt;
+    &lt;movie-poster&gt;&lt;/movie-poster&gt;
+  &lt;/template&gt;
+&lt;/template&gt; 
+</code></pre>
+
+<blockquote>
+<p><strong><a href="img/explain.png" target="_blank"><img src="img/explain.png" alt="image" style="max-width:100%;"></a> Explications :</strong>  </p>
+
+<ul>
+<li>Un <code>&lt;template repeat ...&gt;</code> permet de parcourir les valeurs d'un <code>Iterable</code>
+</li>
+</ul>
+</blockquote>
+
+<p><strong>Vous devriez voir apparaître 40 posters de Dart Fligh School mais pour l'instant tous identiques !</strong>  </p>
+</li>
+<li>
+<p>Pour pouvoir fixer sur chaque poster la valeur d'un film différent, modifiez l'annotation <code>@observable</code> de l'attribut <code>movie</code> de la classe <code>Poster</code> en <code>@published</code>.</p>
+
+<blockquote>
+<p><strong><a href="img/explain.png" target="_blank"><img src="img/explain.png" alt="image" style="max-width:100%;"></a> Explications :</strong><br><code>@published</code> permet de rendre un attribut :  </p>
+
+<ul>
+<li>observable<br>
+</li>
+<li>non éligible au tree shaking<br>
+</li>
+<li>d'être publié, c'est à dire visible et utilisable dans le tag du composant<br>
+</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p>Modifiez maintenant le template de <code>posters.html</code> en utilisant le nouvel attribut publié.</p>
+
+<pre><code>&lt;movie-poster movie="{{ m }}"&gt;&lt;/movie-poster&gt;
+</code></pre>
+
+<p>Et rafraichissez Dartium...</p>
+</li>
+</ol><h3>
+<a name="-bonus--charger-le-flux-json-%C3%A0-partir-du-r%C3%A9sultat-dune-requ%C3%AAte-http" class="anchor" href="#-bonus--charger-le-flux-json-%C3%A0-partir-du-r%C3%A9sultat-dune-requ%C3%AAte-http"><span class="octicon octicon-link"></span></a><a href="img/gift.png" target="_blank"><img src="img/gift.png" alt="image" style="max-width:100%;"></a> Bonus : Charger le flux JSON à partir du résultat d'une requête HTTP</h3>
+
+<ol>
+<li><p>Commencez par créer une autre implémentation de <code>MovieService</code> que vous appelerez <code>HttpMovieService</code>  </p></li>
+<li>
+<p>Implémentez l'appel HTTP et le décodage de la réponse en prenant en compte les conseils suivants :  </p>
+
+<ul>
+<li>Utilisez un attribut privé <code>_movies</code> pour stocker le résultat de <code>getAllMovies</code> (le stockage n'est à faire que si <code>_movies</code> n'est pas encore initialisé , valeur à null)</li>
+<li>Utilisez une méthode de <code>HttpRequest</code> pour effectuer votre requête HTTP<br><a href="https://api.dartlang.org/docs/channels/stable/latest/dart_html/HttpRequest.html">HttpRequest API</a>
+</li>
+<li>Utilisez un <code>Completer</code> pour retourner le résultat de la méthode <code>getAllMovies</code><br><a href="https://api.dartlang.org/docs/channels/stable/latest/dart_async/Completer.html">Completer API</a><br>
+</li>
+<li>Essayez de n'écrire pas plus de 6 lignes de code pour l'implémentation de <code>getAllMovies</code>
+</li>
+</ul>
+</li>
+</ol><h3>
+<a name="prochaine-user-story-" class="anchor" href="#prochaine-user-story-"><span class="octicon octicon-link"></span></a><a href="file:///home/ruizb/dart-flight-school/movie-board/docs/user-story-3-1.html">Prochaine user-story &gt;&gt;&gt;</a>
+</h3>
+
+<hr><p><a name="user-story-1-hints"></a></p>
+
+<blockquote>
+<p><strong><a href="img/tip.png" target="_blank"><img src="img/tip.png" alt="image" style="max-width:100%;"></a>Astuces :</strong>  </p>
+
+<ul>
+<li><p>Une interface en Dart est une classe concrète (si vous avez une implémentation pour chaque méthode) ou une classe abstraite (si vous n'avez toutes les implémentations des méthodes)</p></li>
+<li><p>Pour utiliser les <code>Future</code>il faut importer <code>dart:async</code></p></li>
+<li><p>Une propriété, méthode ou classe privée est simplement préfixée par un <code>_</code>  </p></li>
+<li><p>Il faut toujours importer le fichier HTML d'un composant que l'on souhaite utiliser par <code>&lt;link rel="import" ..&gt;</code></p></li>
+<li><p>Un constructeur de type <code>factory</code> permet de contrôler ce qui est réellement créé. Les cas d'utilisation sont variés, comme retourner une implémentation différente, retourner une instance d'un cache plutôt qu'une nouvelle valeur, retourner un Singleton. Son nom est apparenté au pattern du même nom.  </p></li>
+<li><p>Un grand nombre des méthodes de <code>Iterable</code> retournent des <code>LazyIterable</code>. Sur ce type de liste les éléments ne sont parcourus que lorsque l'on y accède et ceci à des fins d'optimisation. Pour affecter un <code>LazyIterable</code> a une <code>List</code>, il faut appeler la méthode <code>toList()</code> sinon une erreur est déclenchée.</p></li>
+</ul>
+<p><strong>Aller plus loin</strong>:  </p>
+
+<p><a href="https://www.dartlang.org/docs/tutorials/futures/">Use Future Based APIs</a><br><a href="https://www.dartlang.org/docs/tutorials/fetchdata/">Fetch Data Dynamically</a><br><a href="https://www.dartlang.org/dart-tips/dart-tips-ep-5.html">Collections In Dart - Dart Tips, Ep 5</a><br><a href="http://blog.sethladd.com/2012/03/using-futures-in-dart-for-better-async.html">Using Futures in Dart for Better Async Code</a></p>
+</blockquote></body></html>

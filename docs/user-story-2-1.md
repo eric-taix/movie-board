@@ -1,5 +1,5 @@
 
-#2- Afficher l'ensemble des films#
+#2. Afficher l'ensemble des films#
 
 > **![image](img/goal.png) Objectifs :**  
   - Décoder un flux JSON  
@@ -238,7 +238,7 @@
 ****
     
 <a name="user-story-1-hints"></a>
-> **![image](img/tip.png)Astuces:**  
+> **![image](img/tip.png)Astuces :**  
 >
 > - Une interface en Dart est une classe concrète (si vous avez une implémentation pour chaque méthode) ou une classe abstraite (si vous n'avez toutes les implémentations des méthodes)
 >
