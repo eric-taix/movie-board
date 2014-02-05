@@ -54,13 +54,8 @@
    <template repeat="{{ m in movies | filter }}">
    ```
     
-<<<<<<< HEAD
 4. Implémentez la méthode `filter` permettant de filter la liste `movies` en vérifiant si le titre de chaque film contient le `searchTerm` en utilisant le code suivant :
 
-=======
-4. Implémentez la méthode `filter` permettant de filter la liste `movies` en vérifiant si le titre de chaque film contient le `searchTerm` en utilisant le code suivant:  
-   
->>>>>>> 28a514b679db63127db6bfd5f16f43eed29bde81
    ```
    filter(List ms) {
      if (searchTerm.isEmpty) return movies;
@@ -85,13 +80,8 @@
    
    > ![image](img/tip.png) Les templates sont évalués à la création de votre composant et chaque fois qu'un attribut observable **ET** faisant partie du template est modifié. Le problème dans le code actuel, est que la méthode `filter` n'est appelée qu'une seule fois à la création. La modification de la valeur de `searchTerm` ne relance pas l'appel à `filter` puisque `searchTerm` ne fait pas partie de l'évaluation du template.
    
-<<<<<<< HEAD
 5. Modifiez la Polymer expression dans `Posters.html` en passant à `filter` le `searchTerm`.
-
-=======
-5. Modifiez la Polymer expression dans `Posters.html` en passant à `filter` le `searchTerm`  
->>>>>>> 28a514b679db63127db6bfd5f16f43eed29bde81
-
+   
    ```
    <template repeat="{{ m in movies | filter(searchTerm) }}">
    ```
@@ -116,12 +106,8 @@
    > - C'est une fonction qui renvoie une fonction  
    > - C'est une Closure qui exploite le paramètre de `filter` dans l'implémentation de la fonction retournée  
    
-<<<<<<< HEAD
 7. Rafraichissez Dartium et tapez des termes correspondants à des parties de titre de films pour vérifier que les films sont bien filtrés en fonction du terme saisi.
-
-=======
-7. Rafraichissez Dartium et tapez des termes correspondants à des parties de titre de films pour vérifier que les films sont bien filtrés en fonction du terme saisi  
->>>>>>> 28a514b679db63127db6bfd5f16f43eed29bde81
+   
 
 ###Trier les films
 
@@ -130,10 +116,7 @@
 
    Initialisez cette map de la façon suivante :   
 
-<<<<<<< HEAD
-=======
    Initialisez cette map de la façon suivante (implémentez le comparator pour les champs 'vote' et 'favorite'):   
->>>>>>> 28a514b679db63127db6bfd5f16f43eed29bde81
 
     ```  
     static final Map _comparators = {  
@@ -161,15 +144,11 @@
  
 4. Dans la classe `Posters`, ajoutez 2 attributs observable :  
 
-<<<<<<< HEAD
-   - `sortField` de type `String` initialisé à `"default"`
-   - `sortAscending` de type `bool` initialisé à `true`
 
-=======
    - `sortField` de type `String` (initialisé avec la valeur 'default')
    
    - `sortAscending` de type `bool` (initialisé avec la valeur `true`)
->>>>>>> 28a514b679db63127db6bfd5f16f43eed29bde81
+
    
 5. Dans la classe `Posters`, créez la méthode qui recevra les clics sur les liens :   
    
