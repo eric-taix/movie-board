@@ -14,12 +14,14 @@
 
 ###Chargement du modèle métier à partir d'un flux JSON
 
-1. Créez le fichier `services.dart` qui contiendra les services de l'application. Dans ce fichier créez une classe abstraite `MovieService` avec la méthode suivante :  
-   - `Future<List<Movie>> getAllMovies();` renvoyant la liste des films  
-   
+1. Créez le fichier `services.dart` qui contiendra les services de l'application. Dans ce fichier, créez une classe abstraite `MovieService` avec la méthode suivante :  
+   ```
+   Future<List<Movie>> getAllMovies(); // renvoie la liste des films  
+   ```
+
    > **![image](img/explain.png) Explications :**
-   > Lorsqu'on effectue une opération longue (c'est le cas d'un appel réseau par exemple), Dart utilise systématiquement des `Future` qui permette de définir une opération qui se terminera plus tard dans le temps.  
-   > On utilise les `Future`de la manière suivante :  
+   > Lorsque l'on effectue une opération longue (c'est le cas d'un appel réseau par exemple), Dart utilise systématiquement des `Future` qui permettent de définir une opération qui se terminera plus tard dans le temps.  
+   > On utilise les `Future` de la manière suivante :  
    > 
    >     Future f = operationLongue();
    >     f.then((result) {
@@ -30,12 +32,12 @@
    >
    >     operationLongue().then((result) => // Traitement du résultat ));
    >
-   > **La méthode du service doit donc renvoyer un `Future<List<Movie>>` afin de signifier que le résultat (qui sera une liste de films) sera retournée plus tard dans le temps.**
+   > **La méthode du service doit donc renvoyer un `Future<List<Movie>>` afin de signifier que le résultat (qui sera une liste de films) sera retourné plus tard dans le temps.**
 
-2. Dans le fichier `services.dart`, en dehors de classe `MovieService`, créez une chaine constante `IN_MEMORY_JSON` et initialisez la avec le contenu du fichier `common/json/all.json`.
+2. Dans le fichier `services.dart`, en dehors de la classe `MovieService`, créez une chaine constante `IN_MEMORY_JSON` et initialisez-la avec le contenu du fichier `common/json/all.json`.
    > **![image](img/tip.png) Astuce :**  
    >  
-   > - Utilisez la notation chaine multilines pour plus de facilité  
+   > - Utilisez la notation chaine multilignes pour plus de facilité :
    >   ```
    >   String s = '''  
    >   A string which is on  
@@ -43,11 +45,11 @@
    >   ''';
    >   ```
    >  
-   > - Cette constante simule la réponse HTTP que l'on recoit d'un backend, donc une chaine de caractère  
+   > - Cette constante simule la réponse HTTP que l'on reçoit d'un backend, donc une chaine de caractère
    >  
-   > - Une constante est une variable initialisée et non modifiable. Contrairement à `final` la référence mais aussi le contenu sont immutables. Une constante se définit grâce au mot clé `const`
+   > - Une constante est une variable initialisée et non modifiable. Contrairement à `final`, la référence mais aussi le contenu sont immutables. Une constante se définit grâce au mot clé `const`
    
-   *Extrait:*  
+   *Extrait :*  
    
    ```
    const String IN_MEMORY_JSON = '''
@@ -77,9 +79,9 @@
     tag=json['tag'];
   }
    ``` 
-   *Le contructeur ```fromJSON``` et la méthode ```toJSON``` sont 'normalisés', d'ailleurs la prochaine version de Dart Editor propose un générateur automatique à partir des attributs de la classe.*
+   *Le constructeur `fromJSON` et la méthode `toJSON` sont 'normalisés', d'ailleurs la prochaine version de Dart Editor propose un générateur automatique à partir des attributs de la classe.*
    
-   **Les clés du flux JSON sont les suivants :**
+   **Les clés du flux JSON sont les suivantes :**
    - `id` int contenant l'identifiant d'un film  
    - `title` String contenant le titre du film  
    - `poster_path` String contenant le chemin pour l'affiche du film
@@ -102,7 +104,7 @@
    Future<List<Movie>> getAllMovies() => new Future(() => _movies);
    ```
   
-   >**Note d'implémentation :** Le coté back-end n'existant pas, cette implementation va charger tous les films et les stocker dans une `List<Movie>`. Les autres méthodes du service (qui seront écrites ultérieurement) feront appel à cette `List` en mémoire plutôt qu'au réseau.  
+   >**Note d'implémentation :** Le coté back-end n'existant pas, cette implémentation va charger tous les films et les stocker dans une `List<Movie>`. Les autres méthodes du service (qui seront écrites ultérieurement) feront appel à cette `List` en mémoire plutôt qu'au réseau.
   
 5. Dans cette implémentation, ajoutez un attribut privé `List<Movie> _movies` et dans le constructeur par défaut initialisez cet attribut.  
    
@@ -124,16 +126,16 @@
    [dart:convert library](https://api.dartlang.org/docs/channels/stable/latest/dart_convert.html)  
    [Iterable.map](https://api.dartlang.org/docs/channels/stable/latest/dart_core/Iterable.html)
 
-6. Dans `MovieService` ajoutez un constructeur de type `factory` qui retourne une nouvelle instance de `InMemoryMoviesService`  
+6. Dans `MovieService` ajoutez un constructeur de type `factory` qui retourne une nouvelle instance de `InMemoryMoviesService`. 
   
    ```
    factory MovieService() => new InMemoryMovieService();
    ```
     
-   Ajoutez au fichier `services.dart` une variable globale `moviesService` et initialisez là en créant une nouvelle instance de `MovieService`.
+   Ajoutez au fichier `services.dart` une variable globale `moviesService` et initialisez-la en créant une nouvelle instance de `MovieService`.
    
    ```
-   final MovieService movieService = new MovieService();
+   final MovieService moviesService = new MovieService();
    ```
    
    > **![image](img/explain.png) Note :** Même si la classe ```MovieService``` est abstraite, le fait de créer un constructeur de type ```factory``` permet de pouvoir faire comme si on crée une instance de ```MovieService``` (le détail de l'implémentation réelle étant caché et permettant d'être modifié sans impacter les clients).
@@ -186,7 +188,7 @@
     }
    ```
  
-   > **![image](img/tip.png)Note :** Pour rappel le résultat d'une `Future` s'obtient dans la fonction passée en paramètre de la méthode `then((result) => // Here is your code);` de la `Fufure`.
+   > **![image](img/explain.png) Note :** Pour rappel, le résultat d'une `Future` s'obtient dans la fonction passée en paramètre de la méthode `then((result) => // Here is your code);` de la `Fufure`.
 
 4. Remplacez le corps du `template` de `posters.html` par le code suivant et rafraichissez Dartium.
   

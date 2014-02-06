@@ -54,7 +54,7 @@
    <template repeat="{{ m in movies | filter }}">
    ```
     
-4. Implémentez la méthode `filter` permettant de filter la liste `movies` en vérifiant si le titre de chaque film contient le `searchTerm` en utilisant le code suivant :
+4. Implémentez la méthode `filter` permettant de filtrer la liste `movies` en vérifiant si le titre de chaque film contient le `searchTerm` en utilisant le code suivant :
 
    ```
    filter(List ms) {
@@ -98,7 +98,7 @@
        return term.isNotEmpty ? m.where((Movie m) => m.title.toLowerCase().contains(searchTerm.toLowerCase())) : m;
      };
      return fct;
-   };
+   }
    ```
    *Essayez d'écrire cette méthode sur une seule ligne.*
    
@@ -113,8 +113,6 @@
 
 1. Dans le modèle métier `Movie`, créez une `Map` `static` et `final` privée que vous nommerez `_comparators`. 
    Cette map contiendra en clé le nom du champ qui sert de comparaison ('title', 'vote', 'favorite') et comme valeur une fonction comparant 2 instances de `Movie`.
-
-   Initialisez cette map de la façon suivante :   
 
    Initialisez cette map de la façon suivante (implémentez le comparator pour les champs 'vote' et 'favorite'):   
 
@@ -161,7 +159,7 @@
    ```
    > **![image](img/tip.png) Note :**  
    > 
-   > - La classe `Element` nécessite l'import suivant `import 'dart:html';`
+   > - Les classes `Event` et `Element` nécessitent l'import suivant : `import 'dart:html';`.
    
    > **![image](img/explain.png) Explication :**  
    > - On récupère la valeur du paramètre défini dans `data-field` en récupérant sa valeur dans `target.dataset` (si l'attribut du tag à été défini par `data-xyz` alors le nom de la clé à utiliser est `xyz`)  
@@ -194,8 +192,7 @@
    > - Si le tri est descendant, on inverse la liste grâce à la méthode `reversed` de `List`  
    > [List API](https://api.dartlang.org/docs/channels/stable/latest/dart_core/List.html)
    
-
-   Testez votre code en rafrachissant Dartium.
+  *Testez votre code en rafraichissant Dartium.*
 
    ![image](img/tip.png) **Le principe du code précédent est le suivant :**  
   1- Un click sur l'un des liens appelle la méthode `sort`  
@@ -222,12 +219,12 @@ Afin que l'utilisateur puisse visualiser l'ordre de tri courant nous allons appl
    ```
    
    > **![image](img/explain.png) Explications :**  
-   > Cette méthode va permettre d'appliquer le style `<prefix>-selected` à l'élément `target` du DOM et va supprimer ce même style à tous les éléments frères de `target`  
-   > Cette fonction est générique, elle pourra donc être utilisée sur n'importe quel parti du DOM
+   > Cette méthode va permettre d'appliquer le style `<prefix>-selected` à l'élément `target` du DOM et va supprimer ce même style à tous les éléments frères de `target`.
+   > Cette fonction est générique, elle pourra donc être utilisée sur n'importe quelle partie du DOM.
 
 3. Dans la méthode `sort` de la classe `Posters`, faites appel à la fonction `applySelected` en utilisant comme prefixe `"gb"` et en l'appliquant à `target`.
 
-   Vérifiez dans Dartium que vous visualisez bien sur quel champ est effectué le tri lorsque vous cliquez sur l'un des boutons de tri.  
+   *Vérifiez dans Dartium que vous visualisez bien sur quel champ est effectué le tri lorsque vous cliquez sur l'un des boutons de tri.*  
 
 
 ##![image](img/gift.png)Bonus
