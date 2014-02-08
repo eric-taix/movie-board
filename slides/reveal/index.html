@@ -63,12 +63,13 @@
 						<img src="../img/logo.png"
 							style="border: 0.0px; background: transparent; box-shadow: none; vertical-align: middle">&nbsp;Montpellier JUG
 					</h2>
-					<br /><br /><br />
+					<br />
 					<h1>
 						<img src="../img/Flight_School_Event_White.png"
 							style="border: 0.0px; background: transparent; box-shadow: none;">
 					</h1>
-					<br /><br />
+					<h3>Use #flydart hashtag (twitter or Google+)</h3>
+					<br />
 				</section>
 				<section>
 					<h2>Eric Taix : Senior Java developer, tech addict and Dart lover</h2>
@@ -76,11 +77,25 @@
 						<img src="../img/google.png" style="width: 70px; vertical-align: middle">&nbsp;+EricTaix</h2><br>					
 					<br /><br/>
 					<h3>Thanks to</h3><br />
-					<h3>Christophe Mourette, Stéphane Rémillieux, Olivier Nouguier, Sylvain Fraïssé, Arnaud Castelltort<br/></h3>
+					<h3>Christophe Mourette, Stéphane Rémillieux, Olivier Nouguier, Arnaud Castelltort<br/></h3>
 					<h3><br>and students<br/></h3>
-					<h3>Alaric Calmette, Benoît Ruiz, Kévin Langles,Yot Kevin, Victor Hiairrassary. <br/></h3>					
+					<h3>Alaric Calmette, Benoît Ruiz, Kévin Langles, Kevin Yot, Victor Hiairrassary. <br/></h3>					
 					<br />
-				</section>					
+				</section>	
+				<section>
+					<h2>Agenda</h2>
+					<br><br><br>
+					<pre><code>
+  welcome()
+    .then((_) => introduceDart()) // 30 minutes
+    .then((_) => codeLab(part1))  // 1 hour
+    .then((_) => eatPizzas())     // 30 minutes
+    .then((_) => codeLab(part2))  // 1 hour
+    .then((_) => takeSurvey());   // 5 minutes
+
+						</code></pre>				
+					<br />
+				</section>								
 			</section>
 			<section>
 				<section>
@@ -198,7 +213,7 @@
 					<ul>
 						<li>num : int or double</code>
 						<li>int : integer (53 bits because they compile to JS)</li>
-						<li>double : doudle (64 bits)</li>						
+						<li>double : double (64 bits)</li>						
 					</ul>
 				</section>	
 				<section>
@@ -292,7 +307,7 @@
   }						</code></pre>	
 				</section>	
 				<section>
-					<h1>CONTRUCTORS</h1>
+					<h1>CONSTRUCTORS</h1>
 						<pre><code contenteditable>
   class Hug {
     static Hug _shared = new Hug(99);
@@ -503,7 +518,7 @@ main() {
              .map((x) => x*2)
              .map((x) => x+1);
 					</code></pre>
-					<h3>Quizz: how many times, items are accessed?</h3>
+					<h3>Quiz: how many times, items are accessed?</h3>
 				</section>	
 				<section>
 					<h1>LAZY ITERABLE</h1>
