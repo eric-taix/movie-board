@@ -16,28 +16,28 @@ Vous pouvez tester le [résultat final](http://eric-taix.github.io/movie-board/)
 
 Le but de cette application est de développer une application gérant des films. Les utilisateurs seront capables :  
 -  d'afficher les informations d'un film  
--  d'afficher les films par catégories (tous, films en salle, films bientôt sur les écrans)  
--  de trier les films par vote moyen, nom, favoris  
+-  d'afficher les films par catégorie (tous, films en salle, films bientôt sur les écrans)  
+-  de trier les films par vote moyen, nom, favori  
 -  d'effectuer une recherche sur le titre du film  
 -  d'ajouter / supprimer des films à leurs favoris  
 -  de stocker leurs films favoris dans les données du navigateur  
 
 ### Données des films
-L'ensemble des données des films proviennent de [The Movie DataBase](http://www.themoviedb.org/)
+Les données des films proviennent de [The Movie DataBase](http://www.themoviedb.org/)
   
-Ces données ont déjà été récupérés et donc ne nécessitent donc pas de créer un compte sur TMDB.org : ce codelab est donc complétement autonome et ne nécessite pas obligatoirement une connexion internet même si celle-ci est préférable pour consulter les documentations en ligne de DartLang.
+Ces données ont déjà été récupérées et ne nécessitent donc pas de créer un compte sur TMDB.org : ce codelab est donc complétement autonome et une connexion internet n'est pas obligatoire même si celle-ci est préférable pour consulter les documentations en ligne de DartLang.
 
 ### Que pouvez-vous espérer ?
 
 
 Ce codelab n'est pas un remplacement aux informations du site web Dartlang : après ce codelab, nous vous conseillons de visiter [le site web DartLang](https://www.dartlang.org/) et d'essayer les autres exemples, tutoriels, ... Il existe aussi de nombreux autres sites web, groupes d'utilisateurs et blogs qui vous permettent de découvrir la plateforme Dart.  
   
-En voici quelques un, non exhaustifs :  
+En voici quelques-uns non exhaustifs :  
 - [Dartisans : Communauté Google+ Dart](https://plus.google.com/u/0/communities/114566943291919232850)  
 - [DartLangFr : Communauté Google+ en francais](https://plus.google.com/u/0/communities/104813951711720144450)  
 - [Game Store Codelab : un autre codelab réalisé par DartLangFr](https://github.com/dartlangfr/game-store-codelab)  
 - [ng-darrrt-codelab : un portage du codelab darrrt avec Angular.dart par DartLangFr](https://github.com/dartlangfr/ng-darrrt-codelab)  
-- [Blog de Seth Ladd : developper advocate chez Google](http://blog.sethladd.com/)
+- [Blog de Seth Ladd : developer advocate chez Google](http://blog.sethladd.com/)
 
   
 Qu'allez-vous apprendre dans ce codelab ?
@@ -104,25 +104,25 @@ Qu'est ce que vous n'apprendrez pas ?
 * Effectuez un clic-droit sur le fichier `build/sample.html` puis cliquez sur `Run as Javascript`. Vérifiez à nouveau le comportement de l'application dans votre navigateur.
 
 
-Si vous avez réussi à passer toutes ces étapes avec succès, vous êtes prêt pour assiter au codelab.  Si au contraire vous avez du mal à passer ces différentes étapes, n'hésitez pas à vous rapprocher des organisateurs du codelab.
+Si vous avez réussi à passer toutes ces étapes avec succès, vous êtes prêt pour assister au codelab.  Si au contraire vous avez du mal à passer ces différentes étapes, n'hésitez pas à vous rapprocher des organisateurs du codelab.
 
 **Important: N'ouvrez pas le projet `movie-board` et ne consultez pas les user-stories avant le codelab !**  
   
 # User stories
-Ce codelab est divisé en 4 user-story :
+Ce codelab est divisé en 4 parties :
 
 1. [Afficher les données d'un film (titre, poster, date de sortie)](docs/user-story-1-1.md)
 2. [Afficher l'ensemble des films](docs/user-story-2-1.md)
 3. [Effectuer des filtres et des tris sur les films](docs/user-story-3-1.md)
 4. [Gérer les favoris et les catégories de films](docs/user-story-4-1.md)
 
-Chaque user-story est prévu pour durer 30 minutes.  
+Chaque partie est prévue pour durer 30 minutes.  
   
-Le temps pour chaque personne étant variable en fonction de son expérience dans divers domaines, nous avons prévu pour chaque histoire 1 ou plusieurs bonus. Ces bonus sont optionnels et ne sont à réaliser que si vous êtes en avance sur le temps prévu.
+Le temps étant variable en fonction de votre expérience, nous avons prévu pour chaque partie 1 ou plusieurs bonus. Ces bonus sont optionnels et ne sont à réaliser que si vous êtes en avance sur le temps prévu.
 
 Le projet contient plusieurs répertoires nommés `user-story-X` où `X` correspond au numéro de l'histoire. Chacun de ces répertoires contient le code auquel vous auriez pu arriver à la fin de l'histoire `X`. Dans le cas où vous seriez perdu ou trop en retard, n'hésitez pas à laisser votre code actuel de coté et travaillez directement dans l'un de ces répertoires.
 
-Le répertoire `user-story-final` contient le code final de l'application. Cette application contient des fonctionnalités que vous ne verrez pas dans les 4 histoires énoncées précédemment et le code peut varier par rapport à celui que vous avez réalisé (notamment parce que nous avions prévu plus de choses à l'origine et que nous avons dû modifier un certain nombre de choses). 
+Le répertoire `user-story-final` contient le code final de l'application. Cette application contient des fonctionnalités que vous ne verrez pas dans les 4 parties énoncées précédemment et le code peut varier par rapport à celui que vous avez réalisé (notamment parce que nous avions prévu plus de choses à l'origine et que nous avons dû modifier un certain nombre de choses). 
   
 # Templates et styles
 Ce codelab étant prévu pour une durée de 2 heures, le code est largement fournit durant tout le codelab. Seuls les bonus vous demande un peu plus d'écrire du code par vous même. Le copier/coller des templates ne nous semble pas forcément une bonne solution pour apprendre mais vous êtes libre de faire ce que bon vous semble.  
