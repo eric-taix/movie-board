@@ -1,8 +1,8 @@
-**The following explanations are in French. We had expected to translate this codelab in English but unfortunately we haven't had enough time. If you speak French and want to help us translate, you are really welcome :  
+**The following explanations are in French. We had expected to translate this codelab in English but unfortunately we haven't had enough time. If you speak French and want to help us translate, you are really welcome :**  
 - fork this project  
 - copy each `user-story-x.md` to `user-story-X-<locale>` (where locale is `en`, or whatever you want)  
 - translate  
-- send push request**  
+- send push request 
   
 # Movie-Board
 
