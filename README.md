@@ -7,14 +7,14 @@
 # Movie-Board
 
 
-Cette application Dart a été crée à l'occasion de l'évenement mondial [Dart Flight School](https://www.dartlang.org/events/2014/flight-school/) au [Montpellier JUG](http://www.jug-montpellier.org).  
+Cette application Dart a été créée à l'occasion de l'évènement mondial [Dart Flight School](https://www.dartlang.org/events/2014/flight-school/) au [Montpellier JUG](http://www.jug-montpellier.org).  
 
 Vous pouvez tester le [résultat final](http://eric-taix.github.io/movie-board/) de l'application.
 
 # Introduction
 
 
-Le but de cette application est de développer une application gérant des films. Les utilisateurs seront capables :  
+Le but est de développer une application gérant des films. Les utilisateurs seront capables :  
 -  d'afficher les informations d'un film  
 -  d'afficher les films par catégorie (tous, films en salle, films bientôt sur les écrans)  
 -  de trier les films par vote moyen, nom, favori  
@@ -23,14 +23,14 @@ Le but de cette application est de développer une application gérant des films
 -  de stocker leurs films favoris dans les données du navigateur  
 
 ### Données des films
-Les données des films proviennent de [The Movie DataBase](http://www.themoviedb.org/)
+Les données des films proviennent de [The Movie DataBase](http://www.themoviedb.org/).
   
-Ces données ont déjà été récupérées et ne nécessitent donc pas de créer un compte sur TMDB.org : ce codelab est donc complétement autonome et une connexion internet n'est pas obligatoire même si celle-ci est préférable pour consulter les documentations en ligne de DartLang.
+Ces données ont déjà été récupérées et ne nécessitent donc pas de créer un compte sur TMDB.org : ce codelab est donc complètement autonome et une connexion internet n'est pas obligatoire (même si celle-ci est préférable pour consulter les documentations en ligne de DartLang).
 
 ### Que pouvez-vous espérer ?
 
 
-Ce codelab n'est pas un remplacement aux informations du site web Dartlang : après ce codelab, nous vous conseillons de visiter [le site web DartLang](https://www.dartlang.org/) et d'essayer les autres exemples, tutoriels, ... Il existe aussi de nombreux autres sites web, groupes d'utilisateurs et blogs qui vous permettent de découvrir la plateforme Dart.  
+Ce codelab n'est pas un remplacement aux informations du site web Dartlang : après ce codelab, nous vous conseillons de visiter [le site web DartLang](https://www.dartlang.org/) et d'essayer les autres exemples, tutoriels, etc. Il existe aussi de nombreux autres sites web, groupes d'utilisateurs et blogs qui vous permettent de découvrir la plateforme Dart.  
   
 En voici quelques-uns non exhaustifs :  
 - [Dartisans : Communauté Google+ Dart](https://plus.google.com/u/0/communities/114566943291919232850)  
@@ -49,13 +49,13 @@ Qu'allez-vous apprendre dans ce codelab ?
 *   Comment écrire du code fonctionnel    
 *   Comment utiliser le localstorage du navigateur  
   
-Qu'est ce que vous n'apprendrez pas ?  
+Qu'est-ce que vous n'apprendrez pas ?  
   
 *   A écrire du code HTML    
 *   A écrire du code CSS  
 *   La programmation orienté objet
 
-*Ces derniers éléments doivent déjà être connus pour participer sereinement à ce codelab*  
+*Ces derniers éléments doivent déjà être connus pour participer sereinement à ce codelab.*  
 
   
   
@@ -76,15 +76,14 @@ Qu'est ce que vous n'apprendrez pas ?
   
 * Téléchargez ensuite le projet en cliquant sur le bouton `Download ZIP` :  
 ![image](docs/img/download.png)  
-*Vous pouvez aussi cloner le projet si vous connaissez Git*  
+*Vous pouvez aussi cloner le projet si vous connaissez Git.*  
 
-* Décompressez l'archive sur votre PC portable  
-  **N'ouvrez pas le projet avant le jour du codelab !**  
+* Décompressez l'archive sur votre PC portable. **N'ouvrez pas le projet avant le jour du codelab !**  
 
 * Lancez Dart Editor et créez une nouvelle application `sample` en cliquant sur `File - New application` et en sélectionnant `web application (using the polymer application)` et en sélectionnant l'option `Generate sample content` :  
   ![image](docs/img/new_sample.png)
   
-* Ouvrez le fichier `pubspec.yaml` et modifiez la version de polymer en remplacant `any` par `0.9.4`  :
+* Ouvrez le fichier `pubspec.yaml` et modifiez la version de polymer en remplaçant `any` par `0.9.4`  :
   ![image](docs/img/polymer.0.9.4.png)  
   
 * Sauvegardez le fichier `pubspec.yaml`
@@ -94,7 +93,7 @@ Qu'est ce que vous n'apprendrez pas ?
   > - Etre sûr que nous utilisions tous la même version de Polymer pendant le codelab  
   > - Télécharger le package `Polymer` et ses dépendances avant votre venue au codelab  
 
-* Effectuez un clic-droit sur le fichier `sample.html` puis cliquez sur `Run in Dartium`. Vérifiez le bon fonctionnement de l'application : en cliquant sur le bouton `Click me`, le compteur s'incrémente.
+* Effectuez un clic-droit sur le fichier `sample.html` puis cliquez sur `Run in Dartium`. Vérifiez le bon fonctionnement de l'application : en cliquant sur le bouton `Click me`, le compteur s'incrémente
 
 * Effectuez enfin un clic-droit sur le fichier `sample.html` puis cliquez sur `Build Polymer App`
 
@@ -106,7 +105,7 @@ Qu'est ce que vous n'apprendrez pas ?
 
 Si vous avez réussi à passer toutes ces étapes avec succès, vous êtes prêt pour assister au codelab.  Si au contraire vous avez du mal à passer ces différentes étapes, n'hésitez pas à vous rapprocher des organisateurs du codelab.
 
-**Important: N'ouvrez pas le projet `movie-board` et ne consultez pas les user-stories avant le codelab !**  
+**Important : n'ouvrez pas le projet `movie-board` et ne consultez pas les user-stories avant le codelab !**  
   
 # User stories
 Ce codelab est divisé en 4 parties :
@@ -118,20 +117,20 @@ Ce codelab est divisé en 4 parties :
 
 Chaque partie est prévue pour durer 30 minutes.  
   
-Le temps étant variable en fonction de votre expérience, nous avons prévu pour chaque partie 1 ou plusieurs bonus. Ces bonus sont optionnels et ne sont à réaliser que si vous êtes en avance sur le temps prévu.
+Le temps étant variable en fonction de votre expérience, nous avons prévu pour chaque partie un ou plusieurs bonus. Ces bonus sont optionnels et ne sont à réaliser que si vous êtes en avance sur le temps prévu.
 
-Le projet contient plusieurs répertoires nommés `user-story-X` où `X` correspond au numéro de l'histoire. Chacun de ces répertoires contient le code auquel vous auriez pu arriver à la fin de l'histoire `X`. Dans le cas où vous seriez perdu ou trop en retard, n'hésitez pas à laisser votre code actuel de coté et travaillez directement dans l'un de ces répertoires.
+Le projet contient plusieurs répertoires nommés `user-story-X` où `X` correspond au numéro de l'histoire. Chacun de ces répertoires contient le code auquel vous auriez pu arriver à la fin de l'histoire `X`. Dans le cas où vous seriez perdu ou trop en retard, n'hésitez pas à laisser votre code actuel de côté et travaillez directement dans l'un de ces répertoires.
 
-Le répertoire `user-story-final` contient le code final de l'application. Cette application contient des fonctionnalités que vous ne verrez pas dans les 4 parties énoncées précédemment et le code peut varier par rapport à celui que vous avez réalisé (notamment parce que nous avions prévu plus de choses à l'origine et que nous avons dû modifier un certain nombre de choses). 
+Le répertoire `user-story-final` contient le code final de l'application. Cette application contient des fonctionnalités que vous ne verrez pas dans les 4 parties énoncées précédemment et le code peut varier par rapport à celui que vous avez réalisé (notamment parce que nous avions prévu plus d'activités à l'origine et que nous avons dû en modifier ou en supprimer certaines afin de ne pas dépasser la durée maximale du codelab). 
   
 # Templates et styles
-Ce codelab étant prévu pour une durée de 2 heures, le code est largement fournit durant tout le codelab. Seuls les bonus vous demande un peu plus d'écrire du code par vous même. Le copier/coller des templates ne nous semble pas forcément une bonne solution pour apprendre mais vous êtes libre de faire ce que bon vous semble.  
+Ce codelab étant prévu pour une durée de 2 heures, le code est largement fourni durant tout le codelab. Seuls les bonus vous demandent un peu plus d'effort sur l'écriture du code. Le copier/coller des templates ne nous semble pas forcément une bonne solution pour apprendre mais vous êtes libre de faire ce que bon vous semble.  
 
 Cette fourniture de code est notamment valable pour le code HTML ainsi que pour les styles CSS.  
 **Ne modifiez pas le code HTML, ni les styles utilisés** : même si cela pourrait être largement amélioré, ce codelab n'a pas pour but d'apprendre le HTML et ni le CSS. De plus le code actuel fonctionne ;-)
 
 # Prêt ?
-Vous êtes prêt à démarrer le codelab. Cela se passe ici : [Afficher les données d'un film (titre, poster, date de sortie)](docs/user-story-1-1.md)
+Vous êtes prêt à démarrer le codelab. Cela se passe ici : [Afficher les données d'un film (titre, poster, date de sortie)](docs/user-story-1-1.md).
   
 # Credits
 
@@ -145,12 +144,12 @@ Je remercie donc vivement les personnes suivantes qui ont su donner de leur temp
  - Christophe Mourette  
 Et notamment les étudiants de 4ème année de Polytech Montpellier :   
  - Alaric Calmette  
- - Benoît Ruiz  
- - Kevin Langles  
- - Kevin Yot   
+ - Benoît Ruiz ([+Benoît Ruiz](https://plus.google.com/u/0/+BenoîtRuiz))
+ - Kévin Langles ([+Kévin Langles](https://plus.google.com/u/0/+KévinLangles_Wawamaniac))
+ - Kévin Yot   
  - Victor Hiairrassary   
  
-Un remerciement aussi à [+Nicolas François](https://plus.google.com/+NicolasFrancois) et à [+Guillaume Girou](https://plus.google.com/+GuillaumeGirou). Je me suis largement inspiré de leur codelab [Game Store Codelab](https://github.com/dartlangfr/game-store-codelab)  
+Un remerciement aussi à [+Nicolas François](https://plus.google.com/+NicolasFrancois) et à [+Guillaume Girou](https://plus.google.com/+GuillaumeGirou). Je me suis largement inspiré de leur codelab [Game Store Codelab](https://github.com/dartlangfr/game-store-codelab).  
   
   
 [1]: https://www.dartlang.org/
@@ -158,5 +157,3 @@ Un remerciement aussi à [+Nicolas François](https://plus.google.com/+NicolasFr
 [3]: http://api.dartlang.org/docs/channels/stable/latest/
 [4]: https://www.dartlang.org/polymer-dart/
 [5]: https://github.com/sethladd/dart-polymer-dart-examples/tree/master/web
-
- 
