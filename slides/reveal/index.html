@@ -387,6 +387,8 @@
 					<h1>FUNCTIONS AS PARAM</h1>
 					<br>
 					<pre><code>
+addSign(msg) => '$msg (from Montpellier JUG)';						
+
 String sayHi(String to, String msg, Function signFct) {
   return 'Hello $to, ${signFct(msg)}';
 }
@@ -421,13 +423,19 @@ main() {
 				<section>
 					<h1>MAP</h1>
 					<br>
-					<pre><code>
-  ['19','02','2014','19','00'].map((String s) {
-    return int.parse(s);
-  });
-					</code></pre>
+					<pre><code>List&lt;int&gt; result = [];
+List&lt;String&gt; values = ['19','02','2014','19','00'];
+for(int i = 0; i < values.length; i++) {
+  result.add(int.parse(values[i]));
+}					</code></pre>					
 					<div class="fragment">
-					<h3>or short form</h3>
+					<h3>or short form</h3>						
+					<pre><code>['19','02','2014','19','00'].map((String s) {
+    return int.parse(s);
+  });					</code></pre>
+				    </div>
+					<div class="fragment">
+					<h3>or shorter form</h3>
 					<pre><code>
   ['19','02','2014','19','00'].map((s) => int.parse(s));
 					</code></pre>										
@@ -527,6 +535,23 @@ main() {
 					<h3>where, expand and map return lazy iterable</h3>
 					<h2>=> Call toList, reduce, forEach, ... to iterate over items</h2>
 				</section>	
+				<section>
+					<h1>CLOSURE</h1>
+					<br>
+					<pre><code>makeAdder(int addBy) {
+  adder(int a) {
+    return a + addBy;
+  }
+  return adder;
+}					</code></pre>
+					<div class="fragment">
+				    <h3>shorter form</h3>
+					<pre><code>makeAdder(int addBy) => (int a) => a + addBy;</code></pre>						
+					</div>
+					<h3>Use it</h3>							
+                    <pre><code>var add100 = makeAdder(100);
+var result = add100(53); // 153</code></pre>	
+				</section>					
 				<section>
 					<h1>CLOSURE</h1>
 					<br>
