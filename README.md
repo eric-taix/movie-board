@@ -145,8 +145,8 @@ Je remercie donc vivement les personnes suivantes qui ont su donner de leur temp
 Et notamment les étudiants de 4ème année de Polytech Montpellier :   
  - Alaric Calmette  
  - Benoît Ruiz ([+Benoît Ruiz](https://plus.google.com/u/0/+BenoîtRuiz))
- - Kevin Langles  
- - Kevin Yot   
+ - Kévin Langles ([+Kévin Langles](https://plus.google.com/u/0/+KévinLangles_Wawamaniac))
+ - Kévin Yot   
  - Victor Hiairrassary   
  
 Un remerciement aussi à [+Nicolas François](https://plus.google.com/+NicolasFrancois) et à [+Guillaume Girou](https://plus.google.com/+GuillaumeGirou). Je me suis largement inspiré de leur codelab [Game Store Codelab](https://github.com/dartlangfr/game-store-codelab).  
