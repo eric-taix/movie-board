@@ -16,21 +16,26 @@
 
     ![image](img/explore-project.png) 
   
+  > ![image](img/tip.png) **Astuce :**  
+  > Le répertoire `docs` contient les fichiers markdown des user-stories mais aussi la version HTML afin de pouvoir lire les énoncés depuis un navigateur.  
+  >  
+  > Lors de l'ouverture du projet, Dart Editor va essayer de compiler ces fichiers HTML et vous générer une erreur. Pour supprimer les erreurs du répertoires `docs`, effectuez un clic-droit sur le répertoire puis cliquez sur `Don't analyse'  
+  
   - Ouvrez le fichier `pubspec.yaml`: il contient les dépendances du projet ainsi que des indications sur comment compiler celui-ci
 
-   ```
-   dependencies:  
+    ```
+    dependencies:  
         polymer: any  
       transformers:  
         - polymer:
           entry_points: web/movie_board.html
     ```
 
-> **![image](img/tip.png) Conseil** Si vous souhaitez renommer votre point d'entrée `movie_board.html` en `index.html` par exemple, pensez bien à modifier votre fichier `pubspec.yaml` afin de modifier la valeur de `entry_points` sinon `dart2js` ne sera pas capable de compiler votre code Dart en Javascript.       
+  > **![image](img/tip.png) Conseil** Si vous souhaitez renommer votre point d'entrée `movie_board.html` en `index.html` par exemple, pensez bien à modifier votre fichier `pubspec.yaml` afin de modifier la valeur de `entry_points` sinon `dart2js` ne sera pas capable de compiler votre code Dart en Javascript.       
     
   - `build.dart` est le script Dart qui est lancé après une sauvegarde et permet d'afficher les warning dans l'éditeur
     
-  - `clickcounter.html` et `clickcounter.dart` représente un composant personnalisé nommé `click-counter`. Ouvrez ces 2 fichiers.  
+  - Dans le répertoire `web`, les fichiers `clickcounter.html` et `clickcounter.dart` représente un composant personnalisé nommé `click-counter`. Ouvrez ces 2 fichiers.  
       _Nous ne nous servirons pas de ces fichiers mais gardez les à titre d'exemple !_
   
       ```
@@ -73,15 +78,15 @@
   
     ![packages](img/packages.png)  
   
-  - Les autres répertoires (user-story-X, common, docs) sont des répertoires dédiés à faciliter codelab .  
-  **ATTENTION :** Votre répertoire de travail est `web`. Ne regardez pas le contenu des répertoires `user-story-xxx` !!!
+  - Les autres répertoires (user-story-X, common, docs) sont des répertoires dédiés à faciliter le codelab .  
+  **ATTENTION : Votre répertoire de travail est `web`. Ne regardez pas le contenu des répertoires `user-story-xxx` !!!**
   
 > **![image](img/tip.png) Astuce :** Sachez que si vous êtes perdu, vous pouvez toujours repartir d'un des répertoires `user-story-X`. Ces répertoires contiennent le résultat typique que vous devez obtenir à la fin de chaque user story.  
   
   
 ###Votre 1er composant...###
 
-**Votre répertoire de travail est `web`, sauf si vous décidez de repartir d'une user-story finalisée. Dans ce cas travaillez directement dans le répertoire adéquate.**
+**Votre répertoire de travail est `web`, sauf si vous décidez de repartir d'une user-story finalisée. Dans ce cas travaillez directement dans le répertoire adéquat.**
 
 1. Créez un nouveau composant nommé `movie-poster` 
    - Créez le fichier `poster.html` avec le contenu suivant:  
@@ -96,7 +101,6 @@
         		<div>Release date: 2014/02/19</div>
         		<div>Rating: <span class="rating">XXXXXXXXX</span><span>X</span></div>
         		<div>Voters : 80</div>
-        		<div class="comment">Well done guys !</div>
       		</section>
       		<img src="../common/img/dart-flight-school.jpg">
     	</li>
@@ -189,24 +193,25 @@
     }
 	```
 
-	Initialisez les valeurs des attributs avec des valeurs de votre choix. Pour `posterPath` vous pouvez utiliser l'image `../common/img/dart-flight-school.jpg`
+	Initialisez les valeurs des attributs avec des valeurs de votre choix. Pour `posterPath` vous pouvez utiliser une des images du répertoire `.../common/json/images/posters/` (Utilisez clic-droit `rename` pour copier le nom du fichier mais **ne renommez pas** ce dernier)
 
-    > **![image](img/explain.png) Explications :**
-    > - Cette classe représente le modèle métier qui sera utilisé pour afficher un film
-	> - En dart on ne peut pas faire (comme en java) plusieurs constructeurs avec différents paramètres
-    > - Pour gérer ce cas de figure, dart a introduit les constructeurs nommés
-    > - Un constructeur nommé s'écrit de la façon suivante `<nom de la class>.<nom du constructeur>`
-    > - `Movie.sample()` est un constructeur nommé
-    > - On peut l'appeler par le code suivant : `Movie m = new Movie.sample();`
+    > **![image](img/explain.png) Explications :**  
+    > - Cette classe représente le modèle métier qui sera utilisé pour afficher un film  
+	> - En dart on ne peut pas faire (comme en java) plusieurs constructeurs avec différents paramètres  
+    > - Pour gérer ce cas de figure, dart a introduit les constructeurs nommés  
+    > - Un constructeur nommé s'écrit de la façon suivante `<nom de la class>.<nom du constructeur>`  
+    > - `Movie.sample()` est un constructeur nommé  
+    > - On peut l'appeler par le code suivant : `Movie m = new Movie.sample();`  
   
     **Note importante :**   
     - Polymer utilise le pattern MDV (Model Driven View), ce qui signifie que la vue (le fichier HTML) est pilotée par le modèle (le fichier dart). Si la valeur d'une propriété du modèle est modifiée, la vue (ou une partie de la vue) est rafraichie afin de refléter la nouvelle valeur. La réciproque est vraie aussi : si vous saisissez une valeur dans un input, la valeur du modèle est modifiée. Cette liaison entre le modèle et la vue est effectuée grâce à l'annotation `@observable`
     - Lors du `tree shaking` Dart2JS supprime tous les élements / attributs non utilisés par votre code. Or les attributs utilisés dans des Polymer Expressions ne sont pas (actuellement) pris en compte dans l'évaluation du `tree shaking`. Vous devez donc indiquer à Dart2JS qu'il ne faut pas supprimer vos attributs. Pour cela il suffit soit de rajouter l'annotation `@observable` devant un attribut, soit ajouter l'annotation `@reflectable` (accessible par réflexion : appelé Mirror en Dart).
 
-3. Pour que ce code fonctionne aussi en javascript, modifiez le code de la façon suivante :
-  - Importez le package Polymer grâce au code suivant `import 'package:polymer/polymer.dart';`
-  - Ajoutez l'annotation `@reflectable` devant chaque attribut
-
+3. Pour que ce code fonctionne aussi en javascript, modifiez le code de la façon suivante :   
+  
+   - Importez le package Polymer grâce au code suivant `import 'package:polymer/polymer.dart';`  
+   - Ajoutez l'annotation `@reflectable` devant chaque attribut    
+   
 4. Dans le fichier `poster.dart`, ajoutez la déclaration et l'initiation d'un attribut dans la classe `Poster` :  
    
    ```@observable Movie movie = new Movie.sample();```  
@@ -217,7 +222,9 @@
    > - C'est à travers cet attribut que les différents valeurs du film seront affichées  
    > - Cet attribut doit aussi avoir l'annotation `@observable` pour les mêmes raisons que précédemment
 
-5. Dans le fichier `poster.html`, remplacez le titre du film `<h2>Dart Flight School - Montpellier JUG</h2>` par une expression Polymer `<h2>{{movie.title}}</h2>` et rafrachissez Dartium  
+5. Dans le fichier `poster.html`, remplacez le titre du film `<h2>Dart Flight School - Montpellier JUG</h2>` par une expression Polymer `<h2>{{movie.title}}</h2>`
+
+   Rafrachissez Dartium pour vérifier que le titre provient bien de la propriété `title` du film.  
 
    > **![image](img/explain.png) Explications :**  
    > - Une expression Polymer s'écrit de la façon suivante : `{{ <expression> }}`  
