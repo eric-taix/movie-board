@@ -1,9 +1,8 @@
 name: task_board
 description: A sample Polymer application
 dependencies:
-  polymer: any
+  polymer: 0.9.4
   route: any
-  unittest: any
 transformers:
 - polymer:
     entry_points:
