@@ -1,8 +1,9 @@
+<link rel="import" href="poster.html">
 <polymer-element name='movie-posters'>
-  <template>
-    <template repeat="{{ m in movies }}">
-      <movie-poster movie="{{ m }}"></movie-poster>
-    </template>
-  </template>
-  <script type="application/dart" src="posters.dart"></script>
-</polymer-element>
+<template>
+ <template repeat="{{ m in movies }}">
+   <movie-poster movie="{{ m }}"></movie-poster>
+ </template>
+</template>  
+ <script type="application/dart" src="posters.dart"></script>
+</polymer-element> 
