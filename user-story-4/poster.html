@@ -1,16 +1,15 @@
 <polymer-element name="movie-poster">
   <template>
-      <li class="movie">
-      <span class="{{ movie.favorite | asFavoriteClass }}" on-click="{{flipFavorite}}">&#x2665;</span>
-      <section class="overlay"> 
-        <h2>{{movie.title}}</h2> 
-        <div>Release date: {{movie.releasedDate }}</div>
-        <div>Rating: <span class="rating">{{ movie.voteAverage | asStars }}</span><span>{{ movie.voteAverage | complementTo10 | asStars }}</span></div>
-        <div>Voters : {{ movie.voteCount }}</div>
-        <div class="comment">Well done guys !</div>
-      </section>
-      <img src="{{ movie.posterPath }}">
-    </li>
+     <li class="movie">
+         <span class="{{ movie.favorite | asFavoriteClass }}" on-click="{{ flipFavorite }}">&#x2665;</span>
+         <section class="overlay"> 
+             <h2>{{ movie.title}}</h2> 
+             <div>Release date: {{ movie.releasedDate }}</div>
+             <div>Rating: <span class="rating">{{ movie.voteAverage | asStars }}</span><span>{{ movie.voteAverage | complementTo(10) | asStars }}</span></div>
+             <div>Voters : {{ movie.voteCount }}</div>
+         </section>
+         <img src="{{ movie.posterPath }}">
+     </li>
   </template>
   <script type="application/dart" src="poster.dart"></script>  
 </polymer-element>

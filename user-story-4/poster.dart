@@ -2,10 +2,8 @@ library movie.poster;
 
 import 'dart:html';
 
-import 'package:polymer/polymer.dart';
-
 import 'models.dart';
-
+import 'package:polymer/polymer.dart';
 
 @CustomTag('movie-poster')
 class Poster extends PolymerElement {
@@ -18,7 +16,7 @@ class Poster extends PolymerElement {
   
   asStars(int nb) => new List.generate(nb, (_) => "\u2605").join();
   
-  complementTo(int comp) => (int nb) => comp - nb;
+  complementTo(int comp) => (nb) => comp - nb;
   
   asFavoriteClass(bool b) => b ? "favorite-selected" : "favorite";
   

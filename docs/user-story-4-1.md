@@ -42,20 +42,13 @@
    
 4. Ajoutez dans la classe `MovieService` la méthode `Future<List<Movie>> getMovies(String tag);` qui permettra de récupérer les films ayant un tag particulier.
 
-5. Implémentez cette nouvelle méthode de l'interface dans votre implémentation.
+5. Implémentez cette nouvelle méthode de l'interface dans votre implémentation en effectuant un filtre sur la liste des films de votre service.
 
-   ```
-   Future<List<Movie>> getMovies(String tag) {
-     return new Future(() {
-       return _movies.where((Movie m ) => m.tag == tag).toList();
-     });
-   }
-   ```
-   *Vous pouvez écrire cette méthode sur une seule ligne !*
+   *Ecrivez cette méthode sur une seule ligne !*
    
-   > **![image](img/explain.png) Explications :**
+   > **![image](img/tip.png) Astuces :**
    > - On effectue un filtre sur `_movies` en vérifiant l'égalité du `tag` du film avec le `tag` passé en paramètre  
-   > - La méthode `where` renvoie un `LazyIterable` : il faut donc appeler la méthode `toList` !  
+   > - N'oubliez pas que méthode `where` renvoie un `LazyIterable` !  
    > - L'égalité entre 2 objets se fait grâce à l'opérateur `==` (il est d'ailleurs possible de surcharger cet opérateur)
      
    
@@ -77,25 +70,9 @@
    
    
    > **![image](img/tip.png) Astuce :**  
-   > Le code précédent est redondant. La seule partie spécifique est l'appel de la bonne méthode du service, en fonction de l'id de la `target`. Le reste est identique quelque soit le service appelé ! 
+   > Le code précédent est redondant. La seule partie spécifique est l'appel de la bonne méthode du service, en fonction de l'id de la `target`. La mise à jour effective des films est identique quelque soit le service appelé ! 
    > 
-   > Une amélioration consiste donc :
-   > 
-   > - A créer une méthode privée permettant de mettre à jour la liste des films à partir d'une `Future`.
-   >    ```
-   >    _updateMovies(Future<List<Movie>> f) => f.then((List<Movie> ms) => movies = ms);
-   >    ```
-   > 
-   > - A modifier la méthode `showCategory` de la façon suivante :
-   > 
-   >    ```
-   >    switch (target.id) {  
-   >      case "all" : _updateMovies(moviesService.getAllMovies()); break;
-   >      case "playing" : _updateMovies(moviesService.getMovies("now_playing")); break;
-   >      case "upcoming" : _updateMovies(moviesService.getMovies("upcoming")); break;
-   >      case "favorite" : // La gestion des favoris est pour plus tard
-   >    }
-   >    ```
+   > **Essayez d'améliorer ce code en factorisant le code redondant**  
    
    *Vérifiez dans Dartium que lors d'un clic sur l'un des menus, la liste des films affichés est modifiée.*
    
@@ -111,26 +88,18 @@
 	> - `asFavoriteClass`est une fonction attendant un `bool` en paramètre et qui renverra une `String` contenant la classe CSS en fonction de la valeur du paramètre 
 	> - En faisant ainsi, toutes modifications de la valeur de `movie.favorite` sera répercutée sur la vue
 	
-2. Dans la classe `Poster`, ajoutez la méthode suivante :
-
-   ```
-   asFavoriteClass(bool b) => b ? "favorite-selected" : "favorite";
-   ```
+2. Dans la classe `Poster`, implémentez le filtre Polymer `asFavoriteClass` qui prenne en paramètre un `bool` et qui retourne `favorite-selected` si le paramètre est `true` sinon qui retourne `favorite`.  
 
    > **![image](img/explain.png) Explications :**  
    > - Cette méthode est un filtre utilisé dans le point précédent  
    > - Partant d'un `bool`, elle renvoie le nom d'une classe CSS  
    
 
-3. Dans le fichier `poster.html`, modifiez à nouveau le `span` gérant le favori :  
+3. Dans le fichier `poster.html`, modifiez à nouveau le `span` et ajoutez la gestion du clic souris comme vous l'avez déjà fait précédemment. Le nom de la méthode à appeler sera `flipFavorite` :  
 
-   ```<span class="{{ movie.favorite | asFavoriteClass }}" on-click="{{flipFavorite}}">&#x2665;</span>```
    
-4. Dans la classe `Poster`, ajoutez la méthode qui répondra au clic sur l'icone favori :  
+4. Dans la classe `Poster`, ajoutez la méthode `flipFavorite` qui répondra au clic sur l'icone favori, et permuttez la valeur de `movie.favorite` à chaque appel.    
 
-   ```
-   flipFavorite(Event e, var detail, Element target) => movie.favorite = !movie.favorite;
-   ```
    *Vérifiez dans Dartium qu'un clic sur le bouton favori déclenche la permutation de son état.*
 
    Si l'icone ne s'affiche pas, vérifiez bien que l'attribut `favorite` du modèle est bien `@observable` et initialisé à `false` :
@@ -228,5 +197,11 @@
 	
    > **![image](img/explain.png) Explications :**  
    > - On charge la valeur du favori à partir du local-storage
-   > - On protège le code pour éviter d'un changement de stockage qui provoquerait une erreur et ne permettrait pas à l'application de fonctionner
+   > - On protège le code pour éviter d'un changement de stockage qui provoquerait une erreur et ne permettrait pas à l'application de fonctionner  
+
+  ##Bravo vous venez de terminer le codelab !  
+
+  Avant de regarder le code du répertoire user-story-final qui implémente d'autres fonctionnalités, merci de remplir le questionnaire qui vous a été envoyé par email.  
+  
+  Merci  
    
