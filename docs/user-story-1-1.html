@@ -1,801 +1,356 @@
-<!DOCTYPE html>
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="utf-8"><style>body
-{
-  font-size:15px;
-  line-height:1.7;
-  overflow-x:hidden;
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<style>
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
 
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
     background-color: white;
-    border-radius: 3px;
-    border: 3px solid #EEE;
-    box-shadow: inset 0 0 0 1px #CECECE;
-    font-family: Helvetica, arial, freesans, clean, sans-serif;
-    width: 912px;
-    padding: 30px;
-    margin: 2em auto;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
 
-    color:#333333;
-}
+img {
+  max-width: 100%; }
 
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
 
-.body-classic{
-  color:#444;
-  font-family:Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', "Hiragino Sans GB", "STXihei", "微软雅黑", serif;
-  font-size:16px;
-  line-height:1.5em;
-  background:#fefefe;
-  width: 45em;
-  margin: 10px auto;
-  padding: 1em;
-  outline: 1300px solid #FAFAFA;
-}
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
 
-body>:first-child
-{
-  margin-top:0!important;
-}
-
-body>:last-child
-{
-  margin-bottom:0!important;
-}
-
-blockquote,dl,ol,p,pre,table,ul {
-  border: 0;
-  margin: 15px 0;
+pre code {
+  margin: 0;
   padding: 0;
-}
-
-body a {
-  color: #4183c4;
-  text-decoration: none;
-}
-
-body a:hover {
-  text-decoration: underline;
-}
-
-body a.absent
-{
-  color:#c00;
-}
-
-body a.anchor
-{
-  display:block;
-  padding-left:30px;
-  margin-left:-30px;
-  cursor:pointer;
-  position:absolute;
-  top:0;
-  left:0;
-  bottom:0
-}
-
-/*h4,h5,h6{ font-weight: bold; }*/
-
-.octicon{
-  font:normal normal 16px sans-serif;
-  width: 1em;
-  height: 1em;
-  line-height:1;
-  display:inline-block;
-  text-decoration:none;
-  -webkit-font-smoothing:antialiased
-}
-
-.octicon-link {
-  background: url("data:image/svg+xml;utf8,<?xml version='1.0' standalone='no'?> <!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'> <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 832'> <metadata>Copyright (C) 2013 by GitHub</metadata> <!-- scale(0.01565557729941) --> <path transform='' d='M768 64h-192s-254 0-256 256c0 22 3 43 8 64h137c-11-19-18-41-18-64 0-128 128-128 128-128h192s128 0 128 128-128 128-128 128 0 64-64 128h64s256 0 256-256-256-256-256-256z m-72 192h-137c11 19 18 41 18 64 0 128-128 128-128 128h-192s-128 0-128-128 128-128 128-128-4-65 66-128h-66s-256 0-256 256 256 256 256 256h192s256 0 256-256c0-22-4-44-8-64z'/> </svg>");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: bottom;
-}
-
-.octicon-link:before{
-  content:'\a0';
-}
-
-body h1,body h2,body h3,body h4,body h5,body h6{
-  margin:1em 0 15px;
-  padding:0;
-  font-weight:bold;
-  line-height:1.7;
-  cursor:text;
-  position:relative
-}
-
-body h1 .octicon-link,body h2 .octicon-link,body h3 .octicon-link,body h4 .octicon-link,body h5 .octicon-link,body h6 .octicon-link{
-  display:none;
-  color:#000
-}
-
-body h1:hover a.anchor,body h2:hover a.anchor,body h3:hover a.anchor,body h4:hover a.anchor,body h5:hover a.anchor,body h6:hover a.anchor{
-  text-decoration:none;
-  line-height:1;
-  padding-left:0;
-  margin-left:-22px;
-  top:15%
-}
-
-body h1:hover a.anchor .octicon-link,body h2:hover a.anchor .octicon-link,body h3:hover a.anchor .octicon-link,body h4:hover a.anchor .octicon-link,body h5:hover a.anchor .octicon-link,body h6:hover a.anchor .octicon-link{
-  display:inline-block
-}
-
-body h1 tt,body h1 code,body h2 tt,body h2 code,body h3 tt,body h3 code,body h4 tt,body h4 code,body h5 tt,body h5 code,body h6 tt,body h6 code{
-  font-size:inherit
-}
-
-body h1{
-  font-size:2.5em;
-  border-bottom:1px solid #ddd
-}
-
-body h2{
-  font-size:2em;
-  border-bottom:1px solid #eee
-}
-
-body h3{
-  font-size:1.5em
-}
-
-body h4{
-  font-size:1.2em
-}
-
-body h5{
-  font-size:1em
-}
-
-body h6{
-  color:#777;
-  font-size:1em
-}
-
-body p,body blockquote,body ul,body ol,body dl,body table,body pre{
-  margin:15px 0
-}
-
-body h1 tt,body h1 code,body h2 tt,body h2 code,body h3 tt,body h3 code,body h4 tt,body h4 code,body h5 tt,body h5 code,body h6 tt,body h6 code
-{
-  font-size:inherit;
-}
-
-
-body hr
-{
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC);
-  background-repeat: repeat-x;
-  /*background:transparent url(http://overblown.net/files/markdown/dirty-shade.png) repeat-x 0 0;*/
-  background-color: transparent;
-  background-position: 0;
-  border:0 none;
-  color:#ccc;
-  height:4px;
-  margin:15px 0;
-  padding:0;
-}
-
-body li p.first
-{
-  display:inline-block;
-}
-
-body ul,body ol
-{
-  padding-left:30px;
-}
-
-body ul.no-list,body ol.no-list
-{
-  list-style-type:none;
-  padding:0;
-}
-
-body ul ul,body ul ol,body ol ol,body ol ul
-{
-  margin-bottom:0;
-  margin-top:0;
-}
-
-body dl
-{
-  padding:0;
-}
-
-body dl dt
-{
-  font-size:14px;
-  font-style:italic;
-  font-weight:700;
-  margin-top:15px;
-  padding:0;
-}
-
-body dl dd
-{
-  margin-bottom:15px;
-  padding:0 15px;
-}
-
-body blockquote
-{
-  border-left:4px solid #DDD;
-  color:#777;
-  padding:0 15px;
-}
-
-body blockquote>:first-child
-{
-  margin-top:0;
-}
-
-body blockquote>:last-child
-{
-  margin-bottom:0;
-}
-
-body table
-{
-  display:block;
-  overflow:auto;
-  width:100%;
-  border-collapse: collapse;
-  border-spacing: 0;
-  padding: 0;
-}
-
-body table th
-{
-  font-weight:700;
-}
-
-body table th,body table td
-{
-  border:1px solid #ddd;
-  padding:6px 13px;
-}
-
-body table tr
-{
-  background-color:#fff;
-  border-top:1px solid #ccc;
-}
-
-body table tr:nth-child(2n)
-{
-  background-color:#f8f8f8;
-}
-
-body img
-{
-  -moz-box-sizing:border-box;
-  box-sizing:border-box;
-  max-width:100%;
-}
-
-body span.frame
-{
-  display:block;
-  overflow:hidden;
-}
-
-body span.frame>span
-{
-  border:1px solid #ddd;
-  display:block;
-  float:left;
-  margin:13px 0 0;
-  overflow:hidden;
-  padding:7px;
-  width:auto;
-}
-
-body span.frame span img
-{
-  display:block;
-  float:left;
-}
-
-body span.frame span span
-{
-  clear:both;
-  color:#333;
-  display:block;
-  padding:5px 0 0;
-}
-
-body span.align-center
-{
-  clear:both;
-  display:block;
-  overflow:hidden;
-}
-
-body span.align-center>span
-{
-  display:block;
-  margin:13px auto 0;
-  overflow:hidden;
-  text-align:center;
-}
-
-body span.align-center span img
-{
-  margin:0 auto;
-  text-align:center;
-}
-
-body span.align-right
-{
-  clear:both;
-  display:block;
-  overflow:hidden;
-}
-
-body span.align-right>span
-{
-  display:block;
-  margin:13px 0 0;
-  overflow:hidden;
-  text-align:right;
-}
-
-body span.align-right span img
-{
-  margin:0;
-  text-align:right;
-}
-
-body span.float-left
-{
-  display:block;
-  float:left;
-  margin-right:13px;
-  overflow:hidden;
-}
-
-body span.float-left span
-{
-  margin:13px 0 0;
-}
-
-body span.float-right
-{
-  display:block;
-  float:right;
-  margin-left:13px;
-  overflow:hidden;
-}
-
-body span.float-right>span
-{
-  display:block;
-  margin:13px auto 0;
-  overflow:hidden;
-  text-align:right;
-}
-
-body code,body tt
-{
-  background-color:#f8f8f8;
-  border:1px solid #ddd;
-  border-radius:3px;
-  margin:0 2px;
-  padding:0 5px;
-}
-
-body code
-{
-  white-space:nowrap;
-}
-
-
-code,pre{
-  font-family:Consolas, "Liberation Mono", Courier, monospace;
-  font-size:12px
-}
-
-body pre>code
-{
-  background:transparent;
-  border:none;
-  margin:0;
-  padding:0;
-  white-space:pre;
-}
-
-body .highlight pre,body pre
-{
-  background-color:#f8f8f8;
-  border:1px solid #ddd;
-  font-size:13px;
-  line-height:19px;
-  overflow:auto;
-  padding:6px 10px;
-  border-radius:3px
-}
-
-body pre code,body pre tt
-{
-  background-color:transparent;
-  border:none;
-  margin:0;
-  padding:0;
-}
-
-body .task-list{
-  list-style-type:none;
-  padding-left:10px
-}
-
-.task-list-item{
-  padding-left:20px
-}
-
-.task-list-item label{
-  font-weight:normal
-}
-
-.task-list-item.enabled label{
-  cursor:pointer
-}
-
-.task-list-item+.task-list-item{
-  margin-top:5px
-}
-
-.task-list-item-checkbox{
-  float:left;
-  margin-left:-20px;
-  margin-top:7px
-}
-
-
-.highlight{
-  background:#ffffff
-}
-
-.highlight .c{
-  color:#999988;
-  font-style:italic
-}
-
-.highlight .err{
-  color:#a61717;
-  background-color:#e3d2d2
-}
-
-.highlight .k{
-  font-weight:bold
-}
-
-.highlight .o{
-  font-weight:bold
-}
-
-.highlight .cm{
-  color:#999988;
-  font-style:italic
-}
-
-.highlight .cp{
-  color:#999999;
-  font-weight:bold
-}
-
-.highlight .c1{
-  color:#999988;
-  font-style:italic
-}
-
-.highlight .cs{
-  color:#999999;
-  font-weight:bold;
-  font-style:italic
-}
-
-.highlight .gd{
-  color:#000000;
-  background-color:#ffdddd
-}
-
-.highlight .gd .x{
-  color:#000000;
-  background-color:#ffaaaa
-}
-
-.highlight .ge{
-  font-style:italic
-}
-
-.highlight .gr{
-  color:#aa0000
-}
-
-.highlight .gh{
-  color:#999999
-}
-
-.highlight .gi{
-  color:#000000;
-  background-color:#ddffdd
-}
-
-.highlight .gi .x{
-  color:#000000;
-  background-color:#aaffaa
-}
-
-.highlight .go{
-  color:#888888
-}
-
-.highlight .gp{
-  color:#555555
-}
-
-.highlight .gs{
-  font-weight:bold
-}
-
-.highlight .gu{
-  color:#800080;
-  font-weight:bold
-}
-
-.highlight .gt{
-  color:#aa0000
-}
-
-.highlight .kc{
-  font-weight:bold
-}
-
-.highlight .kd{
-  font-weight:bold
-}
-
-.highlight .kn{
-  font-weight:bold
-}
-
-.highlight .kp{
-  font-weight:bold
-}
-
-.highlight .kr{
-  font-weight:bold
-}
-
-.highlight .kt{
-  color:#445588;
-  font-weight:bold
-}
-
-.highlight .m{
-  color:#009999
-}
-
-.highlight .s{
-  color:#d14
-}
-
-.highlight .n{
-  color:#333333
-}
-
-.highlight .na{
-  color:#008080
-}
-
-.highlight .nb{
-  color:#0086B3
-}
-
-.highlight .nc{
-  color:#445588;
-  font-weight:bold
-}
-
-.highlight .no{
-  color:#008080
-}
-
-.highlight .ni{
-  color:#800080
-}
-
-.highlight .ne{
-  color:#990000;
-  font-weight:bold
-}
-
-.highlight .nf{
-  color:#990000;
-  font-weight:bold
-}
-
-.highlight .nn{
-  color:#555555
-}
-
-.highlight .nt{
-  color:#000080
-}
-
-.highlight .nv{
-  color:#008080
-}
-
-.highlight .ow{
-  font-weight:bold
-}
-
-.highlight .w{
-  color:#bbbbbb
-}
-
-.highlight .mf{
-  color:#009999
-}
-
-.highlight .mh{
-  color:#009999
-}
-
-.highlight .mi{
-  color:#009999
-}
-
-.highlight .mo{
-  color:#009999
-}
-
-.highlight .sb{
-  color:#d14
-}
-
-.highlight .sc{
-  color:#d14
-}
-
-.highlight .sd{
-  color:#d14
-}
-
-.highlight .s2{
-  color:#d14
-}
-
-.highlight .se{
-  color:#d14
-}
-
-.highlight .sh{
-  color:#d14
-}
-
-.highlight .si{
-  color:#d14
-}
-
-.highlight .sx{
-  color:#d14
-}
-
-.highlight .sr{
-  color:#009926
-}
-
-.highlight .s1{
-  color:#d14
-}
-
-.highlight .ss{
-  color:#990073
-}
-
-.highlight .bp{
-  color:#999999
-}
-
-.highlight .vc{
-  color:#008080
-}
-
-.highlight .vg{
-  color:#008080
-}
-
-.highlight .vi{
-  color:#008080
-}
-
-.highlight .il{
-  color:#009999
-}
-
-.highlight .gc{
-  color:#999;
-  background-color:#EAF2F5
-}
-
-.type-csharp .highlight .k{
-  color:#0000FF
-}
-
-.type-csharp .highlight .kt{
-  color:#0000FF
-}
-
-.type-csharp .highlight .nf{
-  color:#000000;
-  font-weight:normal
-}
-
-.type-csharp .highlight .nc{
-  color:#2B91AF
-}
-
-.type-csharp .highlight .nn{
-  color:#000000
-}
-
-.type-csharp .highlight .s{
-  color:#A31515
-}
-
-.type-csharp .highlight .sc{
-  color:#A31515
-}</style><title>user-story-1-1</title></head><body><h2>
-<a name="1-afficher-les-donn%C3%A9es-dun-film-titre-poster-date-de-sortie" class="anchor" href="#1-afficher-les-donn%C3%A9es-dun-film-titre-poster-date-de-sortie"><span class="octicon octicon-link"></span></a>1. Afficher les données d'un film (titre, poster, date de sortie)</h2>
-
-<blockquote>
-<p><strong><a href="img/goal.png" target="_blank"><img src="img/goal.png" alt="image" style="max-width:100%;"></a> Objectifs :</strong>   </p>
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+<title>1. Afficher les données d'un film (titre, poster, date de sortie)</title>
+
+</head>
+<body>
+<h2>1. Afficher les données d'un film (titre, poster, date de sortie)</h2>
+
+<blockquote><p><strong><img src="img/goal.png" alt="image" /> Objectifs :</strong> <br/>
+- Comprendre la structure principale d'un projet Dart<br/>
+- Apprendre à créer un composant web avec Polymer<br/>
+- Effectuer le binding sur un objet métier
+- Utiliser Polymer Expressions et les filtres
+- Créer sa 1ère closure en Dart</p></blockquote>
+
+<p>  <img src="img/goal1-user-story1.png" alt="poster" /> <img src="img/goal2-user-story1.png" alt="rating" /></p>
+
+<p>  <em>Résultat obtenu à la fin de ce chapitre</em></p>
+
+<h3>Premiers pas...</h3>
 
 <ul>
-<li>Comprendre la structure principale d'un projet Dart<br>
-</li>
-<li>Apprendre à créer un composant web avec Polymer<br>
-</li>
-<li>Effectuer le binding sur un objet métier</li>
-<li>Utiliser Polymer Expressions et les filtres</li>
-<li>Créer sa 1ère closure en Dart</li>
+<li><p>Commencez par lancer Dart Editor et ouvrez le répertoire <code>movie-board</code> (dans lequel vous avez décompressé l'archive) et explorez la structure du projet (ces éléments sont les éléments standards que vous retrouverez lorsque vous créez une nouvelle application Polymer en partant d'un exemple):</p>
+
+<p> <img src="img/explore-project.png" alt="image" /></p></li>
 </ul>
-</blockquote>
 
-<p><a href="img/goal1-user-story1.png" target="_blank"><img src="img/goal1-user-story1.png" alt="poster" style="max-width:100%;"></a><a href="img/goal2-user-story1.png" target="_blank"><img src="img/goal2-user-story1.png" alt="rating" style="max-width:100%;"></a></p>
 
-<p><em>Résultat obtenu à la fin de ce chapitre</em></p>
+<blockquote><p><img src="img/tip.png" alt="image" /> <strong>Astuce :</strong><br/>
+Le répertoire <code>docs</code> contient les fichiers markdown des user-stories mais aussi la version HTML afin de pouvoir lire les énoncés depuis un navigateur.</p>
 
-<h3>
-<a name="premiers-pas" class="anchor" href="#premiers-pas"><span class="octicon octicon-link"></span></a>Premiers pas...</h3>
+<p>Lors de l'ouverture du projet, Dart Editor va essayer de compiler ces fichiers HTML et vous générer une erreur. Pour supprimer les erreurs du répertoires <code>docs</code>, effectuez un clic-droit sur le répertoire puis cliquez sur `Don't analyse'</p></blockquote>
 
 <ul>
-<li>
-<p>Commencez par lancer Dart Editor et ouvrez le répertoire <code>movie-board</code> (dans lequel vous avez décompressé l'archive) et explorez la structure du projet (ces éléments sont les éléments standards que vous retrouverez lorsque vous créez une nouvelle application Polymer en partant d'un exemple):</p>
+<li><p>Ouvrez le fichier <code>pubspec.yaml</code>: il contient les dépendances du projet ainsi que des indications sur comment compiler celui-ci</p>
 
-<p><a href="img/explore-project.png" target="_blank"><img src="img/explore-project.png" alt="image" style="max-width:100%;"></a></p>
-
-<ul>
-<li>Ouvrez le fichier <code>pubspec.yaml</code>: il contient les dépendances du projet ainsi que des indications sur comment compiler celui-ci</li>
-</ul>
 <pre><code>dependencies:  
     polymer: any  
   transformers:  
     - polymer:
       entry_points: web/movie_board.html
-</code></pre>
-</li>
-</ul><blockquote>
-<p><strong><a href="img/tip.png" target="_blank"><img src="img/tip.png" alt="image" style="max-width:100%;"></a> Conseil</strong> Si vous souhaitez renommer votre point d'entrée <code>movie_board.html</code> en <code>index.html</code> par exemple, pensez bien à modifier votre fichier <code>pubspec.yaml</code> afin de modifier la valeur de <code>entry_points</code> sinon <code>dart2js</code> ne sera pas capable de compiler votre code Dart en Javascript.       </p>
-</blockquote>
+</code></pre></li>
+</ul>
+
+
+<blockquote><p><strong><img src="img/tip.png" alt="image" /> Conseil</strong> Si vous souhaitez renommer votre point d'entrée <code>movie_board.html</code> en <code>index.html</code> par exemple, pensez bien à modifier votre fichier <code>pubspec.yaml</code> afin de modifier la valeur de <code>entry_points</code> sinon <code>dart2js</code> ne sera pas capable de compiler votre code Dart en Javascript.</p></blockquote>
 
 <ul>
 <li><p><code>build.dart</code> est le script Dart qui est lancé après une sauvegarde et permet d'afficher les warning dans l'éditeur</p></li>
-<li>
-<p><code>clickcounter.html</code> et <code>clickcounter.dart</code> représente un composant personnalisé nommé <code>click-counter</code>. Ouvrez ces 2 fichiers.<br><em>Nous ne nous servirons pas de ces fichiers mais gardez les à titre d'exemple !</em></p>
+<li><p>Dans le répertoire <code>web</code>, les fichiers <code>clickcounter.html</code> et <code>clickcounter.dart</code> représente un composant personnalisé nommé <code>click-counter</code>. Ouvrez ces 2 fichiers.<br/>
+  <em>Nous ne nous servirons pas de ces fichiers mais gardez les à titre d'exemple !</em></p>
 
 <pre><code>  &lt;polymer-element name="click-counter" attributes="count"&gt; (1)
     &lt;template&gt;
@@ -810,17 +365,16 @@ body .task-list{
   class ClickCounter extends PolymerElement {
     ClickCounter.created() : super.created();
   }
-</code></pre>
+</code></pre></li>
+</ul>
 
-<p><code>clickcounter.html</code> importe <code>clickcounter.dart</code> (à travers le tag script) et ces 2 fichiers forment le composant car ils partagent le même nom : <code>click-counter</code> (1)</p>
-</li>
-</ul><blockquote>
-<p><strong><a href="img/tip.png" target="_blank"><img src="img/tip.png" alt="image" style="max-width:100%;"></a> Note:</strong> Le nom d'un composant doit toujours être composé de 2 mots séparés par un tiret : <code>xxx-yyy</code>  </p>
-</blockquote>
+
+<p>  <code>clickcounter.html</code> importe <code>clickcounter.dart</code> (à travers le tag script) et ces 2 fichiers forment le composant car ils partagent le même nom : <code>click-counter</code> (1)</p>
+
+<blockquote><p><strong><img src="img/tip.png" alt="image" /> Note:</strong> Le nom d'un composant doit toujours être composé de 2 mots séparés par un tiret : <code>xxx-yyy</code></p></blockquote>
 
 <ul>
-<li>
-<p><code>movie_board.html</code> importe le composant <code>click-counter</code> (1) afin de pouvoir l'utiliser et initialise Dart (2) et Polymer (3)    </p>
+<li><p><code>movie_board.html</code> importe le composant <code>click-counter</code> (1) afin de pouvoir l'utiliser et initialise Dart (2) et Polymer (3)</p>
 
 <pre><code>  &lt;head&gt;
     &lt;link rel="import" href="clickcounter.html"&gt; (1)
@@ -830,293 +384,246 @@ body .task-list{
   &lt;body&gt;   
     &lt;click-counter count="5"&gt;&lt;/click-counter&gt;
   &lt;/body&gt;
-</code></pre>
-</li>
-<li><p>Effectuez un clic-droit sur <code>movie_board.html</code> et sélectionnez <code>Run in Dartium</code>et testez l'application  </p></li>
-<li>
-<p>Le répertoire <code>packages</code>contient les packages Dart que vous utilisez dans votre projet.  </p>
+</code></pre></li>
+<li><p>Effectuez un clic-droit sur <code>movie_board.html</code> et sélectionnez <code>Run in Dartium</code>et testez l'application</p></li>
+<li><p>Le répertoire <code>packages</code>contient les packages Dart que vous utilisez dans votre projet.</p>
 
-<p><a href="img/packages.png" target="_blank"><img src="img/packages.png" alt="packages" style="max-width:100%;"></a></p>
-</li>
-<li><p>Les autres répertoires (user-story-X, common, docs) sont des répertoires dédiés à faciliter codelab .<br><strong>ATTENTION :</strong> Votre répertoire de travail est <code>web</code>. Ne regardez pas le contenu des répertoires <code>user-story-xxx</code> !!!</p></li>
-</ul><blockquote>
-<p><strong><a href="img/tip.png" target="_blank"><img src="img/tip.png" alt="image" style="max-width:100%;"></a> Astuce :</strong> Sachez que si vous êtes perdu, vous pouvez toujours repartir d'un des répertoires <code>user-story-X</code>. Ces répertoires contiennent le résultat typique que vous devez obtenir à la fin de chaque user story.  </p>
-</blockquote>
+<p><img src="img/packages.png" alt="packages" /></p></li>
+<li><p>Les autres répertoires (user-story-X, common, docs) sont des répertoires dédiés à faciliter le codelab .<br/>
+<strong>ATTENTION : Votre répertoire de travail est <code>web</code>. Ne regardez pas le contenu des répertoires <code>user-story-xxx</code> !!!</strong></p></li>
+</ul>
 
-<h3>
-<a name="votre-1er-composant" class="anchor" href="#votre-1er-composant"><span class="octicon octicon-link"></span></a>Votre 1er composant...</h3>
 
-<p><strong>Votre répertoire de travail est <code>web</code>, sauf si vous décidez de repartir d'une user-story finalisée. Dans ce cas travaillez directement dans le répertoire adéquate.</strong></p>
+<blockquote><p><strong><img src="img/tip.png" alt="image" /> Astuce :</strong> Sachez que si vous êtes perdu, vous pouvez toujours repartir d'un des répertoires <code>user-story-X</code>. Ces répertoires contiennent le résultat typique que vous devez obtenir à la fin de chaque user story.</p></blockquote>
+
+<h3>Votre 1er composant...</h3>
+
+<p><strong>Votre répertoire de travail est <code>web</code>, sauf si vous décidez de repartir d'une user-story finalisée. Dans ce cas travaillez directement dans le répertoire adéquat.</strong></p>
 
 <ol>
-<li>
-<p>Créez un nouveau composant nommé <code>movie-poster</code> </p>
+<li><p>Créez un nouveau composant nommé <code>movie-poster</code></p>
 
 <ul>
-<li>Créez le fichier <code>poster.html</code> avec le contenu suivant:<br>
-</li>
+<li>Créez le fichier <code>poster.html</code> avec le contenu suivant:</li>
 </ul>
+
+
 <pre><code>&lt;polymer-element name="movie-poster"&gt;
- &lt;template&gt;
-    &lt;li class="movie"&gt;
-        &lt;span class="favorite"&gt;&amp;#x2665;&lt;/span&gt;
-        &lt;section class="overlay"&gt; 
-            &lt;h2&gt;Dart Flight School - Montpellier JUG&lt;/h2&gt; 
-            &lt;div&gt;Release date: 2014/02/19&lt;/div&gt;
-            &lt;div&gt;Rating: &lt;span class="rating"&gt;XXXXXXXXX&lt;/span&gt;&lt;span&gt;X&lt;/span&gt;&lt;/div&gt;
-            &lt;div&gt;Voters : 80&lt;/div&gt;
-            &lt;div class="comment"&gt;Well done guys !&lt;/div&gt;
-        &lt;/section&gt;
-        &lt;img src="../common/img/dart-flight-school.jpg"&gt;
-    &lt;/li&gt;
- &lt;/template&gt;
- &lt;script type="application/dart" src="poster.dart"&gt;&lt;/script&gt;  
+  &lt;template&gt;
+     &lt;li class="movie"&gt;
+         &lt;span class="favorite"&gt;&amp;#x2665;&lt;/span&gt;
+         &lt;section class="overlay"&gt; 
+             &lt;h2&gt;Dart Flight School - Montpellier JUG&lt;/h2&gt; 
+             &lt;div&gt;Release date: 2014/02/19&lt;/div&gt;
+             &lt;div&gt;Rating: &lt;span class="rating"&gt;XXXXXXXXX&lt;/span&gt;&lt;span&gt;X&lt;/span&gt;&lt;/div&gt;
+             &lt;div&gt;Voters : 80&lt;/div&gt;
+         &lt;/section&gt;
+         &lt;img src="../common/img/dart-flight-school.jpg"&gt;
+     &lt;/li&gt;
+  &lt;/template&gt;
+  &lt;script type="application/dart" src="poster.dart"&gt;&lt;/script&gt;  
 &lt;/polymer-element&gt;
 </code></pre>
 
 <ul>
-<li>Créez le fichier <code>poster.dart</code> avec le contenu suivant:<br>
-</li>
+<li>Créez le fichier <code>poster.dart</code> avec le contenu suivant:</li>
 </ul>
-<pre><code>library movie.poster;
 
-import 'package:polymer/polymer.dart';
 
-@CustomTag('movie-poster')
-class Poster extends PolymerElement {
+<pre><code> library movie.poster;
 
-  Poster.created() : super.created();
+ import 'package:polymer/polymer.dart';
 
-  bool get applyAuthorStyles =&gt; true;
-}
+ @CustomTag('movie-poster')
+ class Poster extends PolymerElement {
+
+   Poster.created() : super.created();
+
+   bool get applyAuthorStyles =&gt; true;
+ }
+</code></pre></li>
+<li><p>Remplacez le contenu de <code>movie_board.html</code> par le code suivant :</p>
+
+<p> Importez votre nouveau composant (dans les headers):</p>
+
+<pre><code> &lt;link rel="import" href="poster.html"&gt;
 </code></pre>
-</li>
-<li>
-<p>Remplacez le contenu de <code>movie_board.html</code> par le code suivant :  </p>
 
-<p>Importez votre nouveau composant (dans les headers):</p>
+<p> Puis modifiez le corps du fichier html :</p>
 
-<pre><code>&lt;link rel="import" href="poster.html"&gt;
-</code></pre>
+<pre><code> &lt;body&gt;
+     &lt;movie-poster&gt;&lt;/movie-poster&gt;
+ &lt;/body&gt;
+</code></pre></li>
+<li><p>Rafraichissez Dartium (vous n'êtes pas obligé de le relancer systématiquement: un simple refresh suffit à le mettre à jour avec vos dernières modifications de code) et vous devriez obtenir ce résultat ! Passez la souris sur l'affiche pour voir les détails du film.</p>
 
-<p>Puis modifiez le corps du fichier html :</p>
+<p> <a href="#user-story-1-hints">Ca ne marche pas ?</a></p>
 
-<pre><code>&lt;body&gt;
-    &lt;movie-poster&gt;&lt;/movie-poster&gt;
-&lt;/body&gt;
-</code></pre>
-</li>
-<li>
-<p>Rafraichissez Dartium (vous n'êtes pas obligé de le relancer systématiquement: un simple refresh suffit à le mettre à jour avec vos dernières modifications de code) et vous devriez obtenir ce résultat ! Passez la souris sur l'affiche pour voir les détails du film.   </p>
+<p><img src="img/static-comp.png" alt="static-comp" /></p></li>
+<li><p>Copiez plusieurs fois le tag du composant dans le fichier <code>movie_board.html</code> et rafraichissez Dartium. Cool non ?</p></li>
+</ol>
 
-<p><a href="#user-story-1-hints">Ca ne marche pas ?</a></p>
 
-<p><a href="img/static-comp.png" target="_blank"><img src="img/static-comp.png" alt="static-comp" style="max-width:100%;"></a></p>
-</li>
-<li><p>Copiez plusieurs fois le tag du composant dans le fichier <code>movie_board.html</code> et rafraichissez Dartium. Cool non ?  </p></li>
-</ol><blockquote>
-<p><strong><a href="img/explain.png" target="_blank"><img src="img/explain.png" alt="image" style="max-width:100%;"></a> Explications :</strong>  </p>
+<blockquote><p><strong><img src="img/explain.png" alt="image" /> Explications :</strong><br/>
+- Le nom du composant est défini dans l'attribut <code>name</code> du PolymerElement du fichier html<br/>
+- Le fichier html importe un fichier dart grâce au code <code>&lt;script type="application/dart" src="poster.dart"&gt;&lt;/script&gt;</code><br/>
+- Le nom des fichiers n'a aucune importance<br/>
+- La classe définie dans le fichier dart est relié au composant grâce à l'annotation <code>@CustomTag</code> et doit définir exactement le même nom que celui défini dans l'attribut <code>name</code>dans le fichier html<br/>
+- La classe dart doit étendre <code>PolymerElement</code><br/>
+- <code>PolymerElement</code> se trouve dans le package <code>package:polymer/polymer.dart</code> qu'il faut donc importer<br/>
+- Le mot clé <code>library</code> permet de définir une librairie dans laquelle plusieurs fichiers peuvent exister. Pour simplifier le codelab, chaque fichier dart définira sa propre librairie avec la convention suivant : <code>library movie.&lt;filename&gt;;</code><br/>
+- Afin de simplifier ce codelab, les styles CSS ont été défini de façon globale. Pour pouvoir appliquer les styles globaux sur un composant, il faut surcharger le getter <code>applyAuthorStyles</code> et renvoyer <code>true</code><br/>
+- Tous composants polymer doit surcharger le constructeur <code>created</code> et appeler le constructeur hérité</p></blockquote>
 
-<ul>
-<li>Le nom du composant est défini dans l'attribut <code>name</code> du PolymerElement du fichier html<br>
-</li>
-<li>Le fichier html importe un fichier dart grâce au code <code>&lt;script type="application/dart" src="poster.dart"&gt;&lt;/script&gt;</code><br>
-</li>
-<li>Le nom des fichiers n'a aucune importance<br>
-</li>
-<li>La classe définie dans le fichier dart est relié au composant grâce à l'annotation <code>@CustomTag</code> et doit définir exactement le même nom que celui défini dans l'attribut <code>name</code>dans le fichier html<br>
-</li>
-<li>La classe dart doit étendre <code>PolymerElement</code><br>
-</li>
-<li>
-<code>PolymerElement</code> se trouve dans le package <code>package:polymer/polymer.dart</code> qu'il faut donc importer<br>
-</li>
-<li>Le mot clé <code>library</code> permet de définir une librairie dans laquelle plusieurs fichiers peuvent exister. Pour simplifier le codelab, chaque fichier dart définira sa propre librairie avec la convention suivant : <code>library movie.&lt;filename&gt;;</code><br>
-</li>
-<li>Afin de simplifier ce codelab, les styles CSS ont été défini de façon globale. Pour pouvoir appliquer les styles globaux sur un composant, il faut surcharger le getter <code>applyAuthorStyles</code> et renvoyer <code>true</code><br>
-</li>
-<li>Tous composants polymer doit surcharger le constructeur <code>created</code> et appeler le constructeur hérité<br>
-</li>
-</ul>
-</blockquote>
+<p> <strong>Bravo ! Vous venez de réaliser votre 1er composant</strong></p>
 
-<p><strong>Bravo ! Vous venez de réaliser votre 1er composant</strong>  </p>
-
-<h3>
-<a name="ajoutons-des-donn%C3%A9es-dynamiques" class="anchor" href="#ajoutons-des-donn%C3%A9es-dynamiques"><span class="octicon octicon-link"></span></a>Ajoutons des données dynamiques...</h3>
+<h3>Ajoutons des données dynamiques...</h3>
 
 <ol>
-<li><p>Créez le fichier <code>models.dart</code> et ajoutez la définition de la librairie <code>library movie.models;</code>  </p></li>
-<li>
-<p>Dans ce fichier créez la classe <code>Movie</code> avec le code suivant :   </p>
+<li><p>Créez le fichier <code>models.dart</code> et ajoutez la définition de la librairie <code>library movie.models;</code></p></li>
+<li><p>Dans ce fichier créez la classe <code>Movie</code> avec le code suivant :</p>
 
-<pre><code>library movie.models;
+<pre><code> library movie.models;
 
-class Movie {
-    int id;
-  String title;
-  String posterPath;
-  String releasedDate;
-  int voteAverage;
-  int voteCount;
-  bool favorite;
-  String tag;
+ class Movie {
+     int id;
+   String title;
+   String posterPath;
+   String releasedDate;
+   int voteAverage;
+   int voteCount;
+   bool favorite;
+   String tag;
 
-  Movie.sample() {
-    id = ...;
-    title = .....;
-    posterPath = ...;
-    releasedDate= ...;
-    voteAverage = ...;
-    voteCount = ...;
-    tag = ...;
-  }
-}
+   Movie.sample() {
+     id = ...;
+     title = .....;
+     posterPath = ...;
+     releasedDate= ...;
+     voteAverage = ...;
+     voteCount = ...;
+     tag = ...;
+   }
+ }
 </code></pre>
 
-<p>Initialisez les valeurs des attributs avec des valeurs de votre choix. Pour <code>posterPath</code> vous pouvez utiliser l'image <code>../common/img/dart-flight-school.jpg</code></p>
+<p> Initialisez les valeurs des attributs avec des valeurs de votre choix. Pour <code>posterPath</code> vous pouvez utiliser une des images du répertoire <code>.../common/json/images/posters/</code> (Utilisez clic-droit <code>rename</code> pour copier le nom du fichier mais <strong>ne renommez pas</strong> ce dernier)</p>
 
-<blockquote>
-<p><strong><a href="img/explain.png" target="_blank"><img src="img/explain.png" alt="image" style="max-width:100%;"></a> Explications :</strong></p>
+<blockquote><p><strong><img src="img/explain.png" alt="image" /> Explications :</strong><br/>
+- Cette classe représente le modèle métier qui sera utilisé pour afficher un film<br/>
+- En dart on ne peut pas faire (comme en java) plusieurs constructeurs avec différents paramètres<br/>
+- Pour gérer ce cas de figure, dart a introduit les constructeurs nommés<br/>
+- Un constructeur nommé s'écrit de la façon suivante <code>&lt;nom de la class&gt;.&lt;nom du constructeur&gt;</code><br/>
+- <code>Movie.sample()</code> est un constructeur nommé<br/>
+- On peut l'appeler par le code suivant : <code>Movie m = new Movie.sample();</code></p></blockquote>
 
-<ul>
-<li>Cette classe représente le modèle métier qui sera utilisé pour afficher un film</li>
-<li>En dart on ne peut pas faire (comme en java) plusieurs constructeurs avec différents paramètres</li>
-<li>Pour gérer ce cas de figure, dart a introduit les constructeurs nommés</li>
-<li>Un constructeur nommé s'écrit de la façon suivante <code>&lt;nom de la class&gt;.&lt;nom du constructeur&gt;</code>
-</li>
-<li>
-<code>Movie.sample()</code> est un constructeur nommé</li>
-<li>On peut l'appeler par le code suivant : <code>Movie m = new Movie.sample();</code>
-</li>
-</ul>
-</blockquote>
-
-<p><strong>Note importante :</strong>   </p>
+ <strong>Note importante :</strong>
 
 <ul>
-<li>Polymer utilise le pattern MDV (Model Driven View), ce qui signifie que la vue (le fichier HTML) est pilotée par le modèle (le fichier dart). Si la valeur d'une propriété du modèle est modifiée, la vue (ou une partie de la vue) est rafraichie afin de refléter la nouvelle valeur. La réciproque est vraie aussi : si vous saisissez une valeur dans un input, la valeur du modèle est modifiée. Cette liaison entre le modèle et la vue est effectuée grâce à l'annotation <code>@observable</code>
-</li>
+<li>Polymer utilise le pattern MDV (Model Driven View), ce qui signifie que la vue (le fichier HTML) est pilotée par le modèle (le fichier dart). Si la valeur d'une propriété du modèle est modifiée, la vue (ou une partie de la vue) est rafraichie afin de refléter la nouvelle valeur. La réciproque est vraie aussi : si vous saisissez une valeur dans un input, la valeur du modèle est modifiée. Cette liaison entre le modèle et la vue est effectuée grâce à l'annotation <code>@observable</code></li>
 <li>Lors du <code>tree shaking</code> Dart2JS supprime tous les élements / attributs non utilisés par votre code. Or les attributs utilisés dans des Polymer Expressions ne sont pas (actuellement) pris en compte dans l'évaluation du <code>tree shaking</code>. Vous devez donc indiquer à Dart2JS qu'il ne faut pas supprimer vos attributs. Pour cela il suffit soit de rajouter l'annotation <code>@observable</code> devant un attribut, soit ajouter l'annotation <code>@reflectable</code> (accessible par réflexion : appelé Mirror en Dart).</li>
 </ul>
 </li>
-<li>
-<p>Pour que ce code fonctionne aussi en javascript, modifiez le code de la façon suivante :</p>
+<li><p>Pour que ce code fonctionne aussi en javascript, modifiez le code de la façon suivante :</p>
 
 <ul>
-<li>Importez le package Polymer grâce au code suivant <code>import 'package:polymer/polymer.dart';</code>
-</li>
+<li>Importez le package Polymer grâce au code suivant <code>import 'package:polymer/polymer.dart';</code></li>
 <li>Ajoutez l'annotation <code>@reflectable</code> devant chaque attribut</li>
 </ul>
 </li>
-<li>
-<p>Dans le fichier <code>poster.dart</code>, ajoutez la déclaration et l'initiation d'un attribut dans la classe <code>Poster</code> :  </p>
+<li><p>Dans le fichier <code>poster.dart</code>, ajoutez la déclaration et l'initiation d'un attribut dans la classe <code>Poster</code> :</p>
 
-<p><code>@observable Movie movie = new Movie.sample();</code>  </p>
+<p><code>@observable Movie movie = new Movie.sample();</code></p>
 
 <p>Ne pas oublier de placer <code>import 'models.dart';</code> au début de ce fichier.</p>
 
-<blockquote>
-<p><strong><a href="img/explain.png" target="_blank"><img src="img/explain.png" alt="image" style="max-width:100%;"></a> Explications :</strong>  </p>
+<blockquote><p><strong><img src="img/explain.png" alt="image" /> Explications :</strong><br/>
+- C'est à travers cet attribut que les différents valeurs du film seront affichées<br/>
+- Cet attribut doit aussi avoir l'annotation <code>@observable</code> pour les mêmes raisons que précédemment</p></blockquote></li>
+<li><p>Dans le fichier <code>poster.html</code>, remplacez le titre du film <code>&lt;h2&gt;Dart Flight School - Montpellier JUG&lt;/h2&gt;</code> par une expression Polymer <code>&lt;h2&gt;{{movie.title}}&lt;/h2&gt;</code></p>
 
-<ul>
-<li>C'est à travers cet attribut que les différents valeurs du film seront affichées<br>
-</li>
-<li>Cet attribut doit aussi avoir l'annotation <code>@observable</code> pour les mêmes raisons que précédemment</li>
-</ul>
-</blockquote>
-</li>
-<li>
-<p>Dans le fichier <code>poster.html</code>, remplacez le titre du film <code>&lt;h2&gt;Dart Flight School - Montpellier JUG&lt;/h2&gt;</code> par une expression Polymer <code>&lt;h2&gt;{{movie.title}}&lt;/h2&gt;</code> et rafrachissez Dartium  </p>
+<p>Rafrachissez Dartium pour vérifier que le titre provient bien de la propriété <code>title</code> du film.</p>
 
-<blockquote>
-<p><strong><a href="img/explain.png" target="_blank"><img src="img/explain.png" alt="image" style="max-width:100%;"></a> Explications :</strong>  </p>
-
-<ul>
-<li>Une expression Polymer s'écrit de la façon suivante : <code>{{ &lt;expression&gt; }}</code><br>
-</li>
-<li>Dans une expression polymer vous pouvez utilisez tous les attributs défini dans la classe dart associée au composant<br>
-</li>
-</ul>
-</blockquote>
-</li>
+<blockquote><p><strong><img src="img/explain.png" alt="image" /> Explications :</strong><br/>
+- Une expression Polymer s'écrit de la façon suivante : <code>{{ &lt;expression&gt; }}</code><br/>
+- Dans une expression polymer vous pouvez utilisez tous les attributs défini dans la classe dart associée au composant</p></blockquote></li>
 <li><p>Dans le fichier <code>poster.html</code>, remplacez les valeurs statiques restantes avec des expressions Polymer en utilisant les différents attributs définis dans la classe <code>Movie</code> (laissez de coté le vote moyen pour l'instant).</p></li>
-<li>
-<p>Pour afficher le vote moyen sous forme d'étoile, vous allez utiliser un filtre. Un filtre est une fonction qui possède un seul paramètre (la valeur) et retourne une autre valeur (qui peut être d'un autre type). Son utilisation est la suivante :</p>
+<li><p>Pour afficher le vote moyen sous forme d'étoile, vous allez utiliser un filtre. Un filtre est une fonction qui possède un seul paramètre (la valeur) et retourne une autre valeur (qui peut être d'un autre type). Son utilisation est la suivante :
+ <code>
+ {{ movie.voteAverage | asStars }}
+</code><br/>
+ <a href="http://pub.dartlang.org/packages/polymer_expressions">Voir les Polymer Expressions</a></p>
 
-<pre><code>{{ movie.voteAverage | asStars }}
+<p> <em>Ici le vote moyen (de type <code>int</code>) est passé en paramètre de la fonction <code>asStars</code>.</em></p>
+
+<p> Ajoutez une méthode à la classe <code>Poster</code> qui prenne en paramètre un <code>int</code> et qui retourne une chaine. Utilisez les méthodes <code>List.generate</code>et <code>List.join</code> pour créer votre chaîne en utilisant le caractère étoile : <code>\u2605</code><br/>
+ <a href="https://api.dartlang.org/docs/channels/stable/latest/dart_core/List.html">Documentation de l'API List</a></p>
+
+<pre><code> asStars(int nb) { 
+   // Ici votre code pour générer le bon nombre d'étoiles 
+   return xxxxx;
+ }
 </code></pre>
 
-<p><a href="http://pub.dartlang.org/packages/polymer_expressions">Voir les Polymer Expressions</a>  </p>
+<p> <em>Cette fonction peut s'écrire sur une seule ligne...</em></p>
 
-<p><em>Ici le vote moyen (de type <code>int</code>) est passé en paramètre de la fonction <code>asStars</code>.</em></p>
+<blockquote><p><strong><img src="img/explain.png" alt="image" /> Explication :</strong><br/>
+- Lors de l'évaluation de l'expression polymer, la valeur de <code>movie.voteAverage</code> est passée au filtre <code>asStars</code> (qui donc doit avoir comme paramètre un <code>int</code>). Cette méthode génère une chaine et la retourne. C'est la valeur retournée qui sera affichée.</p></blockquote></li>
+</ol>
 
-<p>Ajoutez une méthode à la classe <code>Poster</code> qui prenne en paramètre un <code>int</code> et qui retourne une chaine. Utilisez les méthodes <code>List.generate</code>et <code>List.join</code> pour créer votre chaîne en utilisant le caractère étoile : <code>\u2605</code><br><a href="https://api.dartlang.org/docs/channels/stable/latest/dart_core/List.html">Documentation de l'API List</a></p>
 
-<pre><code>asStars(int nb) { 
-  // Ici votre code pour générer le bon nombre d'étoiles 
-  return xxxxx;
-}
-</code></pre>
+<h3><img src="img/gift.png" alt="image" />Vous êtes en avance sur le timing : voici un bonus !</h3>
 
-<p><em>Cette fonction peut s'écrire sur une seule ligne...</em>  </p>
-
-<blockquote>
-<p><strong><a href="img/explain.png" target="_blank"><img src="img/explain.png" alt="image" style="max-width:100%;"></a> Explication :</strong>  </p>
-
-<ul>
-<li>Lors de l'évaluation de l'expression polymer, la valeur de <code>movie.voteAverage</code> est passée au filtre <code>asStars</code> (qui donc doit avoir comme paramètre un <code>int</code>). Cette méthode génère une chaine et la retourne. C'est la valeur retournée qui sera affichée.</li>
-</ul>
-</blockquote>
-</li>
-</ol><h3>
-<a name="vous-%C3%AAtes-en-avance-sur-le-timing--voici-un-bonus-" class="anchor" href="#vous-%C3%AAtes-en-avance-sur-le-timing--voici-un-bonus-"><span class="octicon octicon-link"></span></a><a href="img/gift.png" target="_blank"><img src="img/gift.png" alt="image" style="max-width:100%;"></a>Vous êtes en avance sur le timing : voici un bonus !</h3>
-
-<p>Le vote moyen étant sur 10, utilisez les techniques vues précédemment afin de faire un complément à 10 et affichez le nombre d'étoiles manquantes pour avoir la note maximum dans le 2ème tag <code>&lt;span&gt;</code>.  </p>
+<p>Le vote moyen étant sur 10, utilisez les techniques vues précédemment afin de faire un complément à 10 et affichez le nombre d'étoiles manquantes pour avoir la note maximum dans le 2ème tag <code>&lt;span&gt;</code>.</p>
 
 <p>Pour mettre un peu de piment, essayez ensuite de ne pas faire une fonction figée qui fasse toujours le complément à 10 ! Essayez plutôt d'utiliser une closure afin de rendre paramétrable la valeur du complement.</p>
 
 <p>Dernier conseil, il est possible d'empiler les filtres les uns derrière les autres de la façon suivante : <code>{{ value | filter1 | filter 2 | filter n }}</code></p>
 
-<p><a href="https://www.dartlang.org/dart-tips/dart-tips-ep-7.html">Voir 'Dart - Functions are fun'</a> et cherchez sur cette page la fonction <code>makeAdder</code> pour un exemple sur les closures en Dart.  </p>
+<p><a href="https://www.dartlang.org/dart-tips/dart-tips-ep-7.html">Voir 'Dart - Functions are fun'</a> et cherchez sur cette page la fonction <code>makeAdder</code> pour un exemple sur les closures en Dart.</p>
 
-<h2>
-<a name="passez-%C3%A0-la-user-story-n2-" class="anchor" href="#passez-%C3%A0-la-user-story-n2-"><span class="octicon octicon-link"></span></a><a href="file:///home/ruizb/dart-flight-school/movie-board/docs/user-story-2-1.html">Passez à la user-story n°2 &gt;&gt;</a>
-</h2>
+<h2><a href="./user-story-2-1.md">Passez à la user-story n°2 >></a></h2>
 
-<hr><p><a name="user-story-1-hints"></a></p>
+<hr />
 
-<blockquote>
-<p><strong><a href="img/tip.png" target="_blank"><img src="img/tip.png" alt="image" style="max-width:100%;"></a>Astuces:</strong>  </p>
+<p><a name="user-story-1-hints"></a></p>
+
+<blockquote><p><strong><img src="img/tip.png" alt="image" />Astuces:</strong></p>
 
 <ul>
-<li><p>Si votre composant n'affiche rien, vérifiez que les fichiers utilisent le même nom de composant et vérifiez que votre fichier dart est bien importé dans le fichier HTML (sinon vous aurez une belle page vide)  </p></li>
-<li>
-<p>Pour pouvoir utiliser un composant dans une page HTML ou dans un autre composant, vous devez importer le fichier HTML de ce composant :   </p>
+<li><p>Si votre composant n'affiche rien, vérifiez que les fichiers utilisent le même nom de composant et vérifiez que votre fichier dart est bien importé dans le fichier HTML (sinon vous aurez une belle page vide)</p></li>
+<li><p>Pour pouvoir utiliser un composant dans une page HTML ou dans un autre composant, vous devez importer le fichier HTML de ce composant :</p></li>
+</ul>
 
-<pre><code>&lt;link rel="import" href="poster.html"&gt;
-</code></pre>
-</li>
-<li>
-<p>Pour appliquer les styles définis au niveau document sur contenu d'un composant, vous devez ajouter le getter suivant à votre classe Dart (par défaut seuls les styles définis dans le composant sont appliqués à son contenu): </p>
 
-<pre><code>bool get applyAuthorStyles =&gt; true;
+<pre><code>  &lt;link rel="import" href="poster.html"&gt;
 </code></pre>
-</li>
-<li><p>Si une classe est indiquée comme non définie, cela signifie que vous le l'avez pas importée : <code>import &lt;fichier dart&gt;;</code> </p></li>
-<li>
-<p>Pour utiliser les classes définies dans Polymer vous devez effectuer un import  </p>
 
-<pre><code>import 'package:polymer/polymer.dart';
+<ul>
+<li>Pour appliquer les styles définis au niveau document sur contenu d'un composant, vous devez ajouter le getter suivant à votre classe Dart (par défaut seuls les styles définis dans le composant sont appliqués à son contenu):</li>
+</ul>
+
+
+<pre><code>  bool get applyAuthorStyles =&gt; true;
 </code></pre>
-</li>
-<li>
-<p>Tous les fichiers Dart se trouve dans une librairie et sans définition ils se trouvent dans la librairie par défaut. Dart Editor vous affichera un warning si vous essayez, depuis un même fichier, d'importer 2 fichiers se trouvant dans la même librairie. Pour éviter ce warning, vous devez ajouter une entête dans chaque fichier Dart définissant le nom de la librairie:  </p>
+
+<ul>
+<li><p>Si une classe est indiquée comme non définie, cela signifie que vous le l'avez pas importée : <code>import &lt;fichier dart&gt;;</code></p></li>
+<li><p>Pour utiliser les classes définies dans Polymer vous devez effectuer un import</p></li>
+</ul>
+
+
+<pre><code>  import 'package:polymer/polymer.dart';
+</code></pre>
+
+<ul>
+<li><p>Tous les fichiers Dart se trouve dans une librairie et sans définition ils se trouvent dans la librairie par défaut. Dart Editor vous affichera un warning si vous essayez, depuis un même fichier, d'importer 2 fichiers se trouvant dans la même librairie. Pour éviter ce warning, vous devez ajouter une entête dans chaque fichier Dart définissant le nom de la librairie:</p>
 
 <pre><code>library &lt;nom de la librairie&gt;;  
 // Par exemple  
 library movie.models;  
-</code></pre>
-</li>
+</code></pre></li>
 </ul>
-</blockquote></body></html>
+</blockquote>
+</body>
+</html>

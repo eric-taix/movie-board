@@ -1,1087 +1,551 @@
-<!DOCTYPE html>
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="utf-8"><style>body
-{
-  font-size:15px;
-  line-height:1.7;
-  overflow-x:hidden;
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<style>
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
 
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
     background-color: white;
-    border-radius: 3px;
-    border: 3px solid #EEE;
-    box-shadow: inset 0 0 0 1px #CECECE;
-    font-family: Helvetica, arial, freesans, clean, sans-serif;
-    width: 912px;
-    padding: 30px;
-    margin: 2em auto;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
 
-    color:#333333;
-}
+img {
+  max-width: 100%; }
 
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
 
-.body-classic{
-  color:#444;
-  font-family:Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', "Hiragino Sans GB", "STXihei", "微软雅黑", serif;
-  font-size:16px;
-  line-height:1.5em;
-  background:#fefefe;
-  width: 45em;
-  margin: 10px auto;
-  padding: 1em;
-  outline: 1300px solid #FAFAFA;
-}
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
 
-body>:first-child
-{
-  margin-top:0!important;
-}
-
-body>:last-child
-{
-  margin-bottom:0!important;
-}
-
-blockquote,dl,ol,p,pre,table,ul {
-  border: 0;
-  margin: 15px 0;
+pre code {
+  margin: 0;
   padding: 0;
-}
-
-body a {
-  color: #4183c4;
-  text-decoration: none;
-}
-
-body a:hover {
-  text-decoration: underline;
-}
-
-body a.absent
-{
-  color:#c00;
-}
-
-body a.anchor
-{
-  display:block;
-  padding-left:30px;
-  margin-left:-30px;
-  cursor:pointer;
-  position:absolute;
-  top:0;
-  left:0;
-  bottom:0
-}
-
-/*h4,h5,h6{ font-weight: bold; }*/
-
-.octicon{
-  font:normal normal 16px sans-serif;
-  width: 1em;
-  height: 1em;
-  line-height:1;
-  display:inline-block;
-  text-decoration:none;
-  -webkit-font-smoothing:antialiased
-}
-
-.octicon-link {
-  background: url("data:image/svg+xml;utf8,<?xml version='1.0' standalone='no'?> <!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'> <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 832'> <metadata>Copyright (C) 2013 by GitHub</metadata> <!-- scale(0.01565557729941) --> <path transform='' d='M768 64h-192s-254 0-256 256c0 22 3 43 8 64h137c-11-19-18-41-18-64 0-128 128-128 128-128h192s128 0 128 128-128 128-128 128 0 64-64 128h64s256 0 256-256-256-256-256-256z m-72 192h-137c11 19 18 41 18 64 0 128-128 128-128 128h-192s-128 0-128-128 128-128 128-128-4-65 66-128h-66s-256 0-256 256 256 256 256 256h192s256 0 256-256c0-22-4-44-8-64z'/> </svg>");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: bottom;
-}
-
-.octicon-link:before{
-  content:'\a0';
-}
-
-body h1,body h2,body h3,body h4,body h5,body h6{
-  margin:1em 0 15px;
-  padding:0;
-  font-weight:bold;
-  line-height:1.7;
-  cursor:text;
-  position:relative
-}
-
-body h1 .octicon-link,body h2 .octicon-link,body h3 .octicon-link,body h4 .octicon-link,body h5 .octicon-link,body h6 .octicon-link{
-  display:none;
-  color:#000
-}
-
-body h1:hover a.anchor,body h2:hover a.anchor,body h3:hover a.anchor,body h4:hover a.anchor,body h5:hover a.anchor,body h6:hover a.anchor{
-  text-decoration:none;
-  line-height:1;
-  padding-left:0;
-  margin-left:-22px;
-  top:15%
-}
-
-body h1:hover a.anchor .octicon-link,body h2:hover a.anchor .octicon-link,body h3:hover a.anchor .octicon-link,body h4:hover a.anchor .octicon-link,body h5:hover a.anchor .octicon-link,body h6:hover a.anchor .octicon-link{
-  display:inline-block
-}
-
-body h1 tt,body h1 code,body h2 tt,body h2 code,body h3 tt,body h3 code,body h4 tt,body h4 code,body h5 tt,body h5 code,body h6 tt,body h6 code{
-  font-size:inherit
-}
-
-body h1{
-  font-size:2.5em;
-  border-bottom:1px solid #ddd
-}
-
-body h2{
-  font-size:2em;
-  border-bottom:1px solid #eee
-}
-
-body h3{
-  font-size:1.5em
-}
-
-body h4{
-  font-size:1.2em
-}
-
-body h5{
-  font-size:1em
-}
-
-body h6{
-  color:#777;
-  font-size:1em
-}
-
-body p,body blockquote,body ul,body ol,body dl,body table,body pre{
-  margin:15px 0
-}
-
-body h1 tt,body h1 code,body h2 tt,body h2 code,body h3 tt,body h3 code,body h4 tt,body h4 code,body h5 tt,body h5 code,body h6 tt,body h6 code
-{
-  font-size:inherit;
-}
-
-
-body hr
-{
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC);
-  background-repeat: repeat-x;
-  /*background:transparent url(http://overblown.net/files/markdown/dirty-shade.png) repeat-x 0 0;*/
-  background-color: transparent;
-  background-position: 0;
-  border:0 none;
-  color:#ccc;
-  height:4px;
-  margin:15px 0;
-  padding:0;
-}
-
-body li p.first
-{
-  display:inline-block;
-}
-
-body ul,body ol
-{
-  padding-left:30px;
-}
-
-body ul.no-list,body ol.no-list
-{
-  list-style-type:none;
-  padding:0;
-}
-
-body ul ul,body ul ol,body ol ol,body ol ul
-{
-  margin-bottom:0;
-  margin-top:0;
-}
-
-body dl
-{
-  padding:0;
-}
-
-body dl dt
-{
-  font-size:14px;
-  font-style:italic;
-  font-weight:700;
-  margin-top:15px;
-  padding:0;
-}
-
-body dl dd
-{
-  margin-bottom:15px;
-  padding:0 15px;
-}
-
-body blockquote
-{
-  border-left:4px solid #DDD;
-  color:#777;
-  padding:0 15px;
-}
-
-body blockquote>:first-child
-{
-  margin-top:0;
-}
-
-body blockquote>:last-child
-{
-  margin-bottom:0;
-}
-
-body table
-{
-  display:block;
-  overflow:auto;
-  width:100%;
-  border-collapse: collapse;
-  border-spacing: 0;
-  padding: 0;
-}
-
-body table th
-{
-  font-weight:700;
-}
-
-body table th,body table td
-{
-  border:1px solid #ddd;
-  padding:6px 13px;
-}
-
-body table tr
-{
-  background-color:#fff;
-  border-top:1px solid #ccc;
-}
-
-body table tr:nth-child(2n)
-{
-  background-color:#f8f8f8;
-}
-
-body img
-{
-  -moz-box-sizing:border-box;
-  box-sizing:border-box;
-  max-width:100%;
-}
-
-body span.frame
-{
-  display:block;
-  overflow:hidden;
-}
-
-body span.frame>span
-{
-  border:1px solid #ddd;
-  display:block;
-  float:left;
-  margin:13px 0 0;
-  overflow:hidden;
-  padding:7px;
-  width:auto;
-}
-
-body span.frame span img
-{
-  display:block;
-  float:left;
-}
-
-body span.frame span span
-{
-  clear:both;
-  color:#333;
-  display:block;
-  padding:5px 0 0;
-}
-
-body span.align-center
-{
-  clear:both;
-  display:block;
-  overflow:hidden;
-}
-
-body span.align-center>span
-{
-  display:block;
-  margin:13px auto 0;
-  overflow:hidden;
-  text-align:center;
-}
-
-body span.align-center span img
-{
-  margin:0 auto;
-  text-align:center;
-}
-
-body span.align-right
-{
-  clear:both;
-  display:block;
-  overflow:hidden;
-}
-
-body span.align-right>span
-{
-  display:block;
-  margin:13px 0 0;
-  overflow:hidden;
-  text-align:right;
-}
-
-body span.align-right span img
-{
-  margin:0;
-  text-align:right;
-}
-
-body span.float-left
-{
-  display:block;
-  float:left;
-  margin-right:13px;
-  overflow:hidden;
-}
-
-body span.float-left span
-{
-  margin:13px 0 0;
-}
-
-body span.float-right
-{
-  display:block;
-  float:right;
-  margin-left:13px;
-  overflow:hidden;
-}
-
-body span.float-right>span
-{
-  display:block;
-  margin:13px auto 0;
-  overflow:hidden;
-  text-align:right;
-}
-
-body code,body tt
-{
-  background-color:#f8f8f8;
-  border:1px solid #ddd;
-  border-radius:3px;
-  margin:0 2px;
-  padding:0 5px;
-}
-
-body code
-{
-  white-space:nowrap;
-}
-
-
-code,pre{
-  font-family:Consolas, "Liberation Mono", Courier, monospace;
-  font-size:12px
-}
-
-body pre>code
-{
-  background:transparent;
-  border:none;
-  margin:0;
-  padding:0;
-  white-space:pre;
-}
-
-body .highlight pre,body pre
-{
-  background-color:#f8f8f8;
-  border:1px solid #ddd;
-  font-size:13px;
-  line-height:19px;
-  overflow:auto;
-  padding:6px 10px;
-  border-radius:3px
-}
-
-body pre code,body pre tt
-{
-  background-color:transparent;
-  border:none;
-  margin:0;
-  padding:0;
-}
-
-body .task-list{
-  list-style-type:none;
-  padding-left:10px
-}
-
-.task-list-item{
-  padding-left:20px
-}
-
-.task-list-item label{
-  font-weight:normal
-}
-
-.task-list-item.enabled label{
-  cursor:pointer
-}
-
-.task-list-item+.task-list-item{
-  margin-top:5px
-}
-
-.task-list-item-checkbox{
-  float:left;
-  margin-left:-20px;
-  margin-top:7px
-}
-
-
-.highlight{
-  background:#ffffff
-}
-
-.highlight .c{
-  color:#999988;
-  font-style:italic
-}
-
-.highlight .err{
-  color:#a61717;
-  background-color:#e3d2d2
-}
-
-.highlight .k{
-  font-weight:bold
-}
-
-.highlight .o{
-  font-weight:bold
-}
-
-.highlight .cm{
-  color:#999988;
-  font-style:italic
-}
-
-.highlight .cp{
-  color:#999999;
-  font-weight:bold
-}
-
-.highlight .c1{
-  color:#999988;
-  font-style:italic
-}
-
-.highlight .cs{
-  color:#999999;
-  font-weight:bold;
-  font-style:italic
-}
-
-.highlight .gd{
-  color:#000000;
-  background-color:#ffdddd
-}
-
-.highlight .gd .x{
-  color:#000000;
-  background-color:#ffaaaa
-}
-
-.highlight .ge{
-  font-style:italic
-}
-
-.highlight .gr{
-  color:#aa0000
-}
-
-.highlight .gh{
-  color:#999999
-}
-
-.highlight .gi{
-  color:#000000;
-  background-color:#ddffdd
-}
-
-.highlight .gi .x{
-  color:#000000;
-  background-color:#aaffaa
-}
-
-.highlight .go{
-  color:#888888
-}
-
-.highlight .gp{
-  color:#555555
-}
-
-.highlight .gs{
-  font-weight:bold
-}
-
-.highlight .gu{
-  color:#800080;
-  font-weight:bold
-}
-
-.highlight .gt{
-  color:#aa0000
-}
-
-.highlight .kc{
-  font-weight:bold
-}
-
-.highlight .kd{
-  font-weight:bold
-}
-
-.highlight .kn{
-  font-weight:bold
-}
-
-.highlight .kp{
-  font-weight:bold
-}
-
-.highlight .kr{
-  font-weight:bold
-}
-
-.highlight .kt{
-  color:#445588;
-  font-weight:bold
-}
-
-.highlight .m{
-  color:#009999
-}
-
-.highlight .s{
-  color:#d14
-}
-
-.highlight .n{
-  color:#333333
-}
-
-.highlight .na{
-  color:#008080
-}
-
-.highlight .nb{
-  color:#0086B3
-}
-
-.highlight .nc{
-  color:#445588;
-  font-weight:bold
-}
-
-.highlight .no{
-  color:#008080
-}
-
-.highlight .ni{
-  color:#800080
-}
-
-.highlight .ne{
-  color:#990000;
-  font-weight:bold
-}
-
-.highlight .nf{
-  color:#990000;
-  font-weight:bold
-}
-
-.highlight .nn{
-  color:#555555
-}
-
-.highlight .nt{
-  color:#000080
-}
-
-.highlight .nv{
-  color:#008080
-}
-
-.highlight .ow{
-  font-weight:bold
-}
-
-.highlight .w{
-  color:#bbbbbb
-}
-
-.highlight .mf{
-  color:#009999
-}
-
-.highlight .mh{
-  color:#009999
-}
-
-.highlight .mi{
-  color:#009999
-}
-
-.highlight .mo{
-  color:#009999
-}
-
-.highlight .sb{
-  color:#d14
-}
-
-.highlight .sc{
-  color:#d14
-}
-
-.highlight .sd{
-  color:#d14
-}
-
-.highlight .s2{
-  color:#d14
-}
-
-.highlight .se{
-  color:#d14
-}
-
-.highlight .sh{
-  color:#d14
-}
-
-.highlight .si{
-  color:#d14
-}
-
-.highlight .sx{
-  color:#d14
-}
-
-.highlight .sr{
-  color:#009926
-}
-
-.highlight .s1{
-  color:#d14
-}
-
-.highlight .ss{
-  color:#990073
-}
-
-.highlight .bp{
-  color:#999999
-}
-
-.highlight .vc{
-  color:#008080
-}
-
-.highlight .vg{
-  color:#008080
-}
-
-.highlight .vi{
-  color:#008080
-}
-
-.highlight .il{
-  color:#009999
-}
-
-.highlight .gc{
-  color:#999;
-  background-color:#EAF2F5
-}
-
-.type-csharp .highlight .k{
-  color:#0000FF
-}
-
-.type-csharp .highlight .kt{
-  color:#0000FF
-}
-
-.type-csharp .highlight .nf{
-  color:#000000;
-  font-weight:normal
-}
-
-.type-csharp .highlight .nc{
-  color:#2B91AF
-}
-
-.type-csharp .highlight .nn{
-  color:#000000
-}
-
-.type-csharp .highlight .s{
-  color:#A31515
-}
-
-.type-csharp .highlight .sc{
-  color:#A31515
-}</style><title>user-story-3-1</title></head><body><h2>
-<a name="3--effectuer-des-filtres-et-des-tris-sur-les-films" class="anchor" href="#3--effectuer-des-filtres-et-des-tris-sur-les-films"><span class="octicon octicon-link"></span></a>3. Effectuer des filtres et des tris sur les films</h2>
-
-<blockquote>
-<p><strong><a href="img/goal.png" target="_blank"><img src="img/goal.png" alt="image" style="max-width:100%;"></a> Objectifs :</strong>  </p>
-
-<ul>
-<li>Utiliser des templates de répétition<br>
-</li>
-<li>Répondre aux modifications d'un champ dans le template<br>
-</li>
-<li>Utiliser un filtre sur une liste<br>
-</li>
-<li>Publier un attribut d'un composant et utilisation de cet attribut<br>
-</li>
-<li>Répondre à un événement du DOM dans le code Dart<br>
-</li>
-<li>Passer des paramètres à ces événements<br>
-</li>
-<li>Utilisez des attributs intermédiaires pour rafraichir la vue au moment opportun<br>
-</li>
-<li>Manipuler les classes CSS sur des éléments du DOM<br>
-</li>
-<li>Bonus : Répondre aux modifications d'un attribut dans le code Dart et utiliser un timer pour une opération retardée dans le temps</li>
-</ul>
-</blockquote>
-
-<p><a href="img/goal1-user-story-3.png" target="_blank"><img src="img/goal1-user-story-3.png" alt="image" style="max-width:100%;"></a><em>Résultat obtenu à la fin de ce chapitre</em></p>
-
-<h3>
-<a name="effectuer-un-filtre-sur-le-titre-du-film" class="anchor" href="#effectuer-un-filtre-sur-le-titre-du-film"><span class="octicon octicon-link"></span></a>Effectuer un filtre sur le titre du film</h3>
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+<title>3. Effectuer des filtres et des tris sur les films</title>
+
+</head>
+<body>
+<h2>3. Effectuer des filtres et des tris sur les films</h2>
+
+<blockquote><p><strong><img src="img/goal.png" alt="image" /> Objectifs :</strong><br/>
+  - Utiliser des templates de répétition<br/>
+  - Répondre aux modifications d'un champ dans le template  <br/>
+  - Utiliser un filtre sur une liste<br/>
+  - Publier un attribut d'un composant et utilisation de cet attribut <br/>
+  - Répondre à un événement du DOM dans le code Dart<br/>
+  - Passer des paramètres à ces événements<br/>
+  - Utilisez des attributs intermédiaires pour rafraichir la vue au moment opportun<br/>
+  - Manipuler les classes CSS sur des éléments du DOM<br/>
+  - Bonus : Répondre aux modifications d'un attribut dans le code Dart et utiliser un timer pour une opération retardée dans le temps</p></blockquote>
+
+<p>  <img src="img/goal1-user-story-3.png" alt="image" />
+  <em>Résultat obtenu à la fin de ce chapitre</em></p>
+
+<h3>Effectuer un filtre sur le titre du film</h3>
 
 <ol>
-<li>
-<p>Modifiez le template de <code>posters.html</code> avec le code HTML suivant et rafraichissez Dartium :  </p>
+<li><p>Modifiez le template de <code>posters.html</code> avec le code HTML suivant et rafraichissez Dartium :</p>
 
-<pre><code>&lt;div id="movies"&gt;
-  &lt;div class="toolbar"&gt;
-    &lt;label&gt;Search : &lt;/label&gt;&lt;input type="text" placeholder="Search for movie, tv show..." value=""&gt;
-    &lt;label&gt;Sort by :&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/label&gt;
-    &lt;a href="#" class="gb gb-left"&gt;A-Z&lt;/a&gt;
-    &lt;a href="#" class="gb"&gt;&amp;#x2605;&lt;/a&gt;
-    &lt;a href="#" class="gb gb-right"&gt;&amp;#x2665;&lt;/a&gt;
-  &lt;/div&gt;
-  &lt;div class="content"&gt;
-    &lt;template repeat="{{movie in movies}}"&gt;
-      &lt;movie-poster movie="{{m}}"&gt;&lt;/movie-poster&gt;
-    &lt;/template&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+<pre><code> &lt;div id="movies"&gt;
+   &lt;div class="toolbar"&gt;
+     &lt;label&gt;Search : &lt;/label&gt;&lt;input type="text" placeholder="Search for movie, tv show..." value=""&gt;
+     &lt;label&gt;Sort by :&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/label&gt;
+     &lt;a href="#" class="gb gb-left"&gt;A-Z&lt;/a&gt;
+     &lt;a href="#" class="gb"&gt;&amp;#x2605;&lt;/a&gt;
+     &lt;a href="#" class="gb gb-right"&gt;&amp;#x2665;&lt;/a&gt;
+   &lt;/div&gt;
+   &lt;div class="content"&gt;
+     &lt;template repeat="{{ m in movies }}"&gt;
+       &lt;movie-poster movie="{{ m }}"&gt;&lt;/movie-poster&gt;
+     &lt;/template&gt;
+   &lt;/div&gt;
+ &lt;/div&gt;
 </code></pre>
 
-<p><em>Rafraichissez Dartium pour découvrir les ajouts dans l'interface graphique.</em></p>
-</li>
-<li>
-<p>Dans la classe <code>Posters</code>, ajoutez un attribut nommé <code>searchTerm</code> initialisé avec une chaine vide, observable et utilisez une Polymer expression pour afficher cet attribut dans la valeur du champ de recherche.  </p>
+<p><em>Rafraichissez Dartium pour découvrir les ajouts dans l'interface graphique.</em></p></li>
+<li><p>Dans la classe <code>Posters</code>, ajoutez un attribut nommé <code>searchTerm</code> initialisé avec une chaine vide, observable et utilisez une Polymer expression pour afficher cet attribut dans la valeur du champ de recherche.</p>
 
 <p><code>@observable String searchTerm = '';</code></p>
 
 <p><code>&lt;input type="text" placeholder="Search for movie, tv show..." value="{{ searchTerm }}"&gt;</code></p>
 
-<blockquote>
-<p><strong><a href="img/explain.png" target="_blank"><img src="img/explain.png" alt="image" style="max-width:100%;"></a> Explications:</strong>
-La propriété <code>searchTerm</code> utilisée dans la polymer expression est lié au champ <code>input</code>. Si la valeur de la propriété est modifiée, la valeur affichée dans le champ texte sera automatiquement modifiée. Et inversement si vous saisissez une valeur dans le champ texte, la valeur de la propriété est automatiquement modifiée. </p>
-</blockquote>
-</li>
-<li>
-<p>Dans le fichier <code>posters.html</code>, ajoutez un filtre à <code>movies</code> dans le <code>&lt;template repeat=...</code> de cette façon :  </p>
+<blockquote><p><strong><img src="img/explain.png" alt="image" /> Explications:</strong>
+La propriété <code>searchTerm</code> utilisée dans la polymer expression est lié au champ <code>input</code>. Si la valeur de la propriété est modifiée, la valeur affichée dans le champ texte sera automatiquement modifiée. Et inversement si vous saisissez une valeur dans le champ texte, la valeur de la propriété est automatiquement modifiée.</p></blockquote></li>
+<li><p>Dans le fichier <code>posters.html</code>, ajoutez un filtre à <code>movies</code> dans le <code>&lt;template repeat=...</code> de cette façon :</p>
 
 <pre><code>&lt;template repeat="{{ m in movies | filter }}"&gt;
-</code></pre>
-</li>
-<li>
-<p>Implémentez la méthode <code>filter</code> permettant de filter la liste <code>movies</code> en vérifiant si le titre de chaque film contient le <code>searchTerm</code> en utilisant le code suivant :</p>
+</code></pre></li>
+<li><p>Implémentez la méthode <code>filter</code> permettant de filtrer la liste <code>movies</code> en vérifiant si le titre de chaque film contient le <code>searchTerm</code> en utilisant le code suivant :</p>
 
 <pre><code>filter(List ms) {
- if (searchTerm.isEmpty) return movies;
- return ms.where((Movie m) {
-   return m.title.toLowerCase().contains(searchTerm.toLowerCase());
- }).toList();
+  if (searchTerm.isEmpty) return movies;
+  return ms.where((Movie m) {
+    return m.title.toLowerCase().contains(searchTerm.toLowerCase());
+  }).toList();
 }
 </code></pre>
 
 <p><em>Ce filtre peut s'écrire sur une seule ligne.</em></p>
 
-<blockquote>
-<p><strong><a href="img/explain.png" target="_blank"><img src="img/explain.png" alt="image" style="max-width:100%;"></a> Explications :</strong>  </p>
+<blockquote><p><strong><img src="img/explain.png" alt="image" /> Explications :</strong><br/>
+- Si le <code>searchTerm</code>est vide alors on renvoie toute la liste<br/>
+- Pour filtrer on utilise la méthode <code>List.where</code><br/>
+- Pour vérifier si le titre d'un film contient le <code>searchTerm</code>, on utilise la méthode <code>String.contains</code></p>
 
-<ul>
-<li>Si le <code>searchTerm</code>est vide alors on renvoie toute la liste<br>
-</li>
-<li>Pour filtrer on utilise la méthode <code>List.where</code><br>
-</li>
-<li>Pour vérifier si le titre d'un film contient le <code>searchTerm</code>, on utilise la méthode <code>String.contains</code> </li>
-</ul>
-<p><a href="https://www.dartlang.org/dart-tips/dart-tips-ep-5.html">Collections In Dart - Dart Tips, Ep 5</a><br><a href="https://api.dartlang.org/docs/channels/stable/latest/dart_core/String.html">String API</a></p>
-</blockquote>
+<p><a href="https://www.dartlang.org/dart-tips/dart-tips-ep-5.html">Collections In Dart - Dart Tips, Ep 5</a><br/>
+<a href="https://api.dartlang.org/docs/channels/stable/latest/dart_core/String.html">String API</a></p></blockquote>
 
-<p>Vérifiez le fontionnement de votre code !<br><strong>Cela ne fonctionne pas ! Parce que la méthode <code>filter</code> n'est pas appelée lorsque vous modifiez le <code>searchTerm</code>.</strong></p>
+<p>Vérifiez le fontionnement de votre code !<br/>
+<strong>Cela ne fonctionne pas ! Parce que la méthode <code>filter</code> n'est pas appelée lorsque vous modifiez le <code>searchTerm</code>.</strong></p>
 
-<blockquote>
-<p><a href="img/tip.png" target="_blank"><img src="img/tip.png" alt="image" style="max-width:100%;"></a> Les templates sont évalués à la création de votre composant et chaque fois qu'un attribut observable <strong>ET</strong> faisant partie du template est modifié. Le problème dans le code actuel, est que la méthode <code>filter</code> n'est appelée qu'une seule fois à la création. La modification de la valeur de <code>searchTerm</code> ne relance pas l'appel à <code>filter</code> puisque <code>searchTerm</code> ne fait pas partie de l'évaluation du template.</p>
-</blockquote>
-</li>
-<li>
-<p>Modifiez la Polymer expression dans <code>Posters.html</code> en passant à <code>filter</code> le <code>searchTerm</code>.</p>
+<blockquote><p><img src="img/tip.png" alt="image" /> Les templates sont évalués à la création de votre composant et chaque fois qu'un attribut observable <strong>ET</strong> faisant partie du template est modifié. Le problème dans le code actuel, est que la méthode <code>filter</code> n'est appelée qu'une seule fois à la création. La modification de la valeur de <code>searchTerm</code> ne relance pas l'appel à <code>filter</code> puisque <code>searchTerm</code> ne fait pas partie de l'évaluation du template.</p></blockquote></li>
+<li><p>Modifiez la Polymer expression dans <code>Posters.html</code> en passant à <code>filter</code> le <code>searchTerm</code>.</p>
 
 <pre><code>&lt;template repeat="{{ m in movies | filter(searchTerm) }}"&gt;
 </code></pre>
 
-<blockquote>
-<p><strong><a href="img/explain.png" target="_blank"><img src="img/explain.png" alt="image" style="max-width:100%;"></a> Explication :</strong> En ajoutant <code>searchTerm</code> dans l'évaluation du template, on force l'appel de la méthode <code>filter</code> à chaque modification de cet attribut.</p>
-</blockquote>
-</li>
-<li>
-<p>Modifiez l'implémentation de la méthode <code>filter</code> de la façon suivante :  </p>
+<blockquote><p><strong><img src="img/explain.png" alt="image" /> Explication :</strong> En ajoutant <code>searchTerm</code> dans l'évaluation du template, on force l'appel de la méthode <code>filter</code> à chaque modification de cet attribut.</p></blockquote></li>
+<li><p>Modifiez l'implémentation de la méthode <code>filter</code> de la façon suivante :</p>
 
 <ul>
-<li>Un seul paramètre de type <code>String</code> qui contient la valeur du terme à chercher<br>
-</li>
-<li>Retourne une fonction qui filtre une liste de <code>Movie</code> </li>
+<li>Un seul paramètre de type <code>String</code> qui contient la valeur du terme à chercher</li>
+<li>Retourne une fonction qui filtre une liste de <code>Movie</code></li>
 </ul>
-<pre><code>filter(String term) { 
- var fct = (List&lt;Movie&gt; m) {
-   return term.isNotEmpty ? m.where((Movie m) =&gt; m.title.toLowerCase().contains(searchTerm.toLowerCase())) : m;
- };
- return fct;
-}
-</code></pre>
+
 
 <p><em>Essayez d'écrire cette méthode sur une seule ligne.</em></p>
 
-<blockquote>
-<p><strong><a href="img/explain.png" target="_blank"><img src="img/explain.png" alt="image" style="max-width:100%;"></a>Explications :</strong>  </p>
-
-<ul>
-<li>C'est une fonction qui renvoie une fonction<br>
-</li>
-<li>C'est une Closure qui exploite le paramètre de <code>filter</code> dans l'implémentation de la fonction retournée<br>
-</li>
-</ul>
-</blockquote>
-</li>
+<blockquote><p><strong><img src="img/explain.png" alt="image" />Explications :</strong><br/>
+- C'est une fonction qui renvoie une fonction<br/>
+- C'est une Closure qui exploite le paramètre de <code>filter</code> dans l'implémentation de la fonction retournée</p></blockquote></li>
 <li><p>Rafraichissez Dartium et tapez des termes correspondants à des parties de titre de films pour vérifier que les films sont bien filtrés en fonction du terme saisi.</p></li>
-</ol><h3>
-<a name="trier-les-films" class="anchor" href="#trier-les-films"><span class="octicon octicon-link"></span></a>Trier les films</h3>
+</ol>
+
+
+<h3>Trier les films</h3>
 
 <ol>
-<li>
-<p>Dans le modèle métier <code>Movie</code>, créez une <code>Map</code> <code>static</code> et <code>final</code> privée que vous nommerez <code>_comparators</code>. 
+<li><p>Dans le modèle métier <code>Movie</code>, créez une <code>Map</code> <code>static</code> et <code>final</code> privée que vous nommerez <code>_comparators</code>.
 Cette map contiendra en clé le nom du champ qui sert de comparaison ('title', 'vote', 'favorite') et comme valeur une fonction comparant 2 instances de <code>Movie</code>.</p>
 
-<p>Initialisez cette map de la façon suivante :   </p>
+<p>Initialisez cette map de la façon suivante (implémentez le comparator pour les champs 'vote' et 'favorite'):</p>
 
-<pre><code>static final Map _comparators = {  
-  "default": (Movie a, Movie b) =&gt; 0,
-  "title": (Movie a, Movie b) =&gt; a.title.compareTo(b.title),  
-  "vote": (Movie a, Movie b) =&gt; // comparaison sur le vote moyen (code à fournir),  
-  "favorite": (Movie a, Movie b) // comparaison sur le coté favori d'un film (code à fournir),  
-};
-</code></pre>
-</li>
+<pre><code> static final Map _comparators = {  
+   "default": (Movie a, Movie b) =&gt; 0,
+   "title": (Movie a, Movie b) =&gt; a.title.compareTo(b.title),  
+   "vote": (Movie a, Movie b) =&gt; // comparaison sur le vote moyen (code à fournir),  
+   "favorite": (Movie a, Movie b) // comparaison sur le coté favori d'un film (code à fournir),  
+ };
+</code></pre></li>
 <li><p>Dans la classe <code>Movie</code> ajoutez la méthode <code>static getComparator(String field)</code> ayant pour paramètre le nom du champ sur lequel on souhaite obtenir un comparateur. Implémentez cette méthode en retournant la bonne instance de la fonction de comparaison stockée dans <code>_comparators</code>.</p></li>
-<li>
-<p>Dans la toolbar du template <code>posters.html</code> modifiez les liens pour obtenir le code suivant :</p>
+<li><p>Dans la toolbar du template <code>posters.html</code> modifiez les liens pour obtenir le code suivant :</p>
 
 <pre><code>&lt;a href="#" class="gb gb-left" on-click="{{sort}}" data-field="title"&gt;A-Z&lt;/a&gt;
 &lt;a href="#" class="gb" on-click="{{sort}}" data-field="vote"&gt;&amp;#x2605;&lt;/a&gt;
 &lt;a href="#" class="gb gb-right" on-click="{{sort}}" data-field="favorite"&gt;&amp;#x2665;&lt;/a&gt;
 </code></pre>
 
-<blockquote>
-<p><strong><a href="img/explain.png" target="_blank"><img src="img/explain.png" alt="image" style="max-width:100%;"></a> Explications :</strong>  </p>
+<blockquote><p><strong><img src="img/explain.png" alt="image" /> Explications :</strong><br/>
+- C'est bien <code>on-click</code> qui est utilisé et non <code>onClick</code> (cette dernière correspondant à un appel JavaScript, vous aurez d'ailleurs un warning si vous utilisez la dernière forme)<br/>
+- Le nom contenu dans la Polymer expression correspond au nom de la méthode qui sera appelée lors du clic sur le lien<br/>
+- L'attribut <code>data-field</code>, sert à ajouter un paramètre, ce dernier sera interprété afin de connaitre sur quel champ l'utilisateur désire effectuer le tri (une autre solution aurait consisté à définir 3 méthodes différentes: <code>sortByTitle</code>, <code>sortByVote</code>, <code>sortByFavorite</code>)</p></blockquote></li>
+<li><p>Dans la classe <code>Posters</code>, ajoutez 2 attributs observable :</p>
 
 <ul>
-<li>C'est bien <code>on-click</code> qui est utilisé et non <code>onClick</code> (cette dernière correspondant à un appel JavaScript, vous aurez d'ailleurs un warning si vous utilisez la dernière forme)<br>
-</li>
-<li>Le nom contenu dans la Polymer expression correspond au nom de la méthode qui sera appelée lors du clic sur le lien<br>
-</li>
-<li>L'attribut <code>data-field</code>, sert à ajouter un paramètre, ce dernier sera interprété afin de connaitre sur quel champ l'utilisateur désire effectuer le tri (une autre solution aurait consisté à définir 3 méthodes différentes: <code>sortByTitle</code>, <code>sortByVote</code>, <code>sortByFavorite</code>)</li>
-</ul>
-</blockquote>
-</li>
-<li>
-<p>Dans la classe <code>Posters</code>, ajoutez 2 attributs observable :  </p>
-
-<ul>
-<li>
-<code>sortField</code> de type <code>String</code> initialisé à <code>"default"</code>
-</li>
-<li>
-<code>sortAscending</code> de type <code>bool</code> initialisé à <code>true</code>
-</li>
+<li><code>sortField</code> de type <code>String</code> (initialisé avec la valeur <code>default</code>)</li>
+<li><code>sortAscending</code> de type <code>bool</code> (initialisé avec la valeur <code>true</code>)</li>
 </ul>
 </li>
-<li>
-<p>Dans la classe <code>Posters</code>, créez la méthode qui recevra les clics sur les liens :   </p>
+<li><p>Dans la classe <code>Posters</code>, créez la méthode qui recevra les clics sur les liens :</p>
 
 <pre><code>sort(Event e, var detail, Element target) {
-  var field = target.dataset['field'];
-  sortAscending = field == sortField ? !sortAscending : true;
-  sortField = field;
+   var field = target.dataset['field'];
+   sortAscending = field == sortField ? !sortAscending : true;
+   sortField = field;
 }
 </code></pre>
 
-<blockquote>
-<p><strong><a href="img/explain.png" target="_blank"><img src="img/explain.png" alt="image" style="max-width:100%;"></a> Explication :</strong>  </p>
+<blockquote><p><strong><img src="img/tip.png" alt="image" /> Note :</strong></p>
 
 <ul>
-<li>On récupère la valeur du paramètre défini dans <code>data-field</code> en récupérant sa valeur dans <code>target.dataset</code> (si l'attribut du tag à été défini par <code>data-xyz</code> alors le nom de la clé à utiliser est <code>xyz</code>)<br>
-</li>
-<li>Si le champ est le même que le champ courant, on change l'ordre de tri<br>
-</li>
+<li>Les classes <code>Event</code> et <code>Element</code> nécessitent l'import suivant : <code>import 'dart:html';</code>.</li>
 </ul>
-</blockquote>
-</li>
-<li>
-<p>Modifiez dans <code>posters.html</code> le <code>template repeat</code> de la façon suivante :  </p>
+
+
+<p><strong><img src="img/explain.png" alt="image" /> Explication :</strong><br/>
+- On récupère la valeur du paramètre défini dans <code>data-field</code> en récupérant sa valeur dans <code>target.dataset</code> (si l'attribut du tag à été défini par <code>data-xyz</code> alors le nom de la clé à utiliser est <code>xyz</code>)<br/>
+- Si le champ est le même que le champ courant, on change l'ordre de tri</p></blockquote></li>
+<li><p>Modifiez dans <code>posters.html</code> le <code>template repeat</code> de la façon suivante :</p>
 
 <pre><code>&lt;template repeat="{{ m in movies | filter(searchTerm) | sortBy(sortField, sortAscending) }}"&gt;
 </code></pre>
 
-<blockquote>
-<p><strong><a href="img/tip.png" target="_blank"><img src="img/tip.png" alt="image" style="max-width:100%;"></a> Note :</strong>  </p>
+<blockquote><p><strong><img src="img/tip.png" alt="image" /> Note :</strong></p>
 
 <ul>
-<li>Les filtres s'enchainent avec l'opérateur <code>|</code> et sont appelés dans l'ordre ou ils apparaissent dans l'expression : les films sont passés au filtre <code>filter</code> et le résultat est passé à son tour au filtre <code>sortBy</code>
-</li>
+<li>Les filtres s'enchainent avec l'opérateur <code>|</code> et sont appelés dans l'ordre ou ils apparaissent dans l'expression : les films sont passés au filtre <code>filter</code> et le résultat est passé à son tour au filtre <code>sortBy</code></li>
 </ul>
-</blockquote>
-</li>
-<li>
-<p>Créez dans la classe <code>Posters</code>, la méthode <code>sortBy(String field, bool asc)</code>.</p>
+</blockquote></li>
+<li><p>Créez dans la classe <code>Posters</code>, la méthode <code>sortBy(String field, bool asc)</code>.</p>
 
 <pre><code>sortBy(String field, bool asc) =&gt; (Iterable&lt;Movie&gt; ms) {
- List result = ms.toList()..sort(Movie.getComparator(field));
- return asc ? result : result.reversed;
+  List result = ms.toList()..sort(Movie.getComparator(field));
+  return asc ? result : result.reversed;
 };
 </code></pre>
 
-<blockquote>
-<p><strong><a href="img/explain.png" target="_blank"><img src="img/explain.png" alt="image" style="max-width:100%;"></a> Explications :</strong>  </p>
+<blockquote><p><strong><img src="img/explain.png" alt="image" /> Explications :</strong><br/>
+- Il s'agit encore une fois d'une Closure<br/>
+- La fonction <code>sortBy</code> renvoie un filtre polymer, c'est à dire une fonction ayant pour paramètre une liste de <code>Movie</code> et renvoyant une liste de <code>Movie</code> triée<br/>
+- La méthode <code>filter</code> retourne un <code>Iterable</code> qui ne possède pas de méthode de tri. Il faut donc récupérer un <code>List</code> pour pouvoir effectuer un tri<br/>
+- L'opérateur cascade <code>..</code> est utilisé afin de pouvoir trier la liste et affecter la variable <code>result</code> sur une seule ligne<br/>
+- Si le tri est descendant, on inverse la liste grâce à la méthode <code>reversed</code> de <code>List</code><br/>
+<a href="https://api.dartlang.org/docs/channels/stable/latest/dart_core/List.html">List API</a></p></blockquote></li>
+</ol>
 
-<ul>
-<li>Il s'agit encore une fois d'une Closure<br>
-</li>
-<li>La fonction <code>sortBy</code> renvoie un filtre polymer, c'est à dire une fonction ayant pour paramètre une liste de <code>Movie</code> et renvoyant une liste de <code>Movie</code> triée<br>
-</li>
-<li>La méthode <code>filter</code> retourne un <code>Iterable</code> qui ne possède pas de méthode de tri. Il faut donc récupérer un <code>List</code> pour pouvoir effectuer un tri<br>
-</li>
-<li>L'opérateur cascade <code>..</code> est utilisé afin de pouvoir trier la liste et affecter la variable <code>result</code> sur une seule ligne<br>
-</li>
-<li>Si le tri est descendant, on inverse la liste grâce à la méthode <code>reversed</code> de <code>List</code><br><a href="https://api.dartlang.org/docs/channels/stable/latest/dart_core/List.html">List API</a>
-</li>
-</ul>
-</blockquote>
 
-<p>Testez votre code en rafrachissant Dartium.</p>
+<p>  <em>Testez votre code en rafraichissant Dartium.</em></p>
 
-<p><a href="img/tip.png" target="_blank"><img src="img/tip.png" alt="image" style="max-width:100%;"></a><strong>Le principe du code précédent est le suivant :</strong><br>
-1- Un click sur l'un des liens appelle la méthode <code>sort</code><br>
-2- La méthode <code>sort</code> affecte les attributs <code>sortAscending</code> et <code>sortField</code><br>
-3- Ces attributs étant utilisés dans l'expression polymer <code>{{ m in movies | filter(searchTerm) | sortBy(sortField, sortAscending) }}</code>, le template est réévalué<br>
-4- La méthode <code>sortBy</code> est donc appelée avec les nouvelles valeurs de tri<br>
-5- Celle-ci renvoie les films triés (et filtrés par <code>filter</code>)</p>
-</li>
-</ol><h3>
-<a name="appliquer-un-style-sur-un-%C3%A9l%C3%A9ment-du-dom" class="anchor" href="#appliquer-un-style-sur-un-%C3%A9l%C3%A9ment-du-dom"><span class="octicon octicon-link"></span></a>Appliquer un style sur un élément du DOM</h3>
+<p>   <img src="img/tip.png" alt="image" /> <strong>Le principe du code précédent est le suivant :</strong><br/>
+  1- Un click sur l'un des liens appelle la méthode <code>sort</code><br/>
+  2- La méthode <code>sort</code> affecte les attributs <code>sortAscending</code> et <code>sortField</code><br/>
+  3- Ces attributs étant utilisés dans l'expression polymer <code>{{ m in movies | filter(searchTerm) | sortBy(sortField, sortAscending) }}</code>, le template est réévalué<br/>
+  4- La méthode <code>sortBy</code> est donc appelée avec les nouvelles valeurs de tri<br/>
+  5- Celle-ci renvoie les films triés (et filtrés par <code>filter</code>)</p>
+
+<h3>Appliquer un style sur un élément du DOM</h3>
 
 <p>Afin que l'utilisateur puisse visualiser l'ordre de tri courant nous allons appliquer un style sur certains éléments du DOM.</p>
 
 <ol>
-<li>
-<p>Créez le fichier <code>utils.dart</code> et ajoutez la fonction suivante :</p>
+<li><p>Créez le fichier <code>utils.dart</code> et ajoutez la fonction suivante :</p>
 
 <pre><code>applySelected(Element target, String prefix) {
- String classname = "${prefix}-selected";
- if (!target.classes.contains(classname)) {
-   target.parent.children.forEach((e) =&gt; e.classes.remove(classname));
-   target.classes.add(classname);
- }
+  String classname = "${prefix}-selected";
+  if (!target.classes.contains(classname)) {
+    target.parent.children.forEach((e) =&gt; e.classes.remove(classname));
+    target.classes.add(classname);
+  }
 }
 </code></pre>
 
-<blockquote>
-<p><strong><a href="img/explain.png" target="_blank"><img src="img/explain.png" alt="image" style="max-width:100%;"></a> Explications :</strong><br>
-Cette méthode va permettre d'appliquer le style <code>&lt;prefix&gt;-selected</code> à l'élément <code>target</code> du DOM et va supprimer ce même style à tous les éléments frères de <code>target</code><br>
-Cette fonction est générique, elle pourra donc être utilisée sur n'importe quel parti du DOM</p>
-</blockquote>
-</li>
-<li>
-<p>Dans la méthode <code>sort</code> de la classe <code>Posters</code>, faites appel à la fonction <code>applySelected</code> en utilisant comme prefixe <code>"gb"</code> et en l'appliquant à <code>target</code>.</p>
+<blockquote><p><strong><img src="img/explain.png" alt="image" /> Explications :</strong><br/>
+Cette méthode va permettre d'appliquer le style <code>&lt;prefix&gt;-selected</code> à l'élément <code>target</code> du DOM et va supprimer ce même style à tous les éléments frères de <code>target</code>.
+Cette fonction est générique, elle pourra donc être utilisée sur n'importe quelle partie du DOM.</p></blockquote></li>
+<li><p>Dans la méthode <code>sort</code> de la classe <code>Posters</code>, faites appel à la fonction <code>applySelected</code> en utilisant comme prefixe <code>"gb"</code> et en l'appliquant à <code>target</code>.</p>
 
-<p>Vérifiez dans Dartium que vous visualisez bien sur quel champ est effectué le tri lorsque vous cliquez sur l'un des boutons de tri.  </p>
-</li>
-</ol><h2>
-<a name="bonus" class="anchor" href="#bonus"><span class="octicon octicon-link"></span></a><a href="img/gift.png" target="_blank"><img src="img/gift.png" alt="image" style="max-width:100%;"></a>Bonus</h2>
+<p><em>Vérifiez dans Dartium que vous visualisez bien sur quel champ est effectué le tri lorsque vous cliquez sur l'un des boutons de tri.</em></p></li>
+</ol>
+
+
+<h2><img src="img/gift.png" alt="image" />Bonus</h2>
 
 <p>Lorsque vous avez implémenté le filtre vous avez dû remarquer que, pour quasiment chaque frappe sur le clavier, le filtre se mettait en route ce qui provoque un sentiment désagréable pour l'utilisateur et n'est pas fluide...</p>
 
 <ol>
-<li>
-<p>Dans la classe <code>Posters</code> ajoutez la méthode <code>searchTermChanged(String oldValue)</code>.</p>
+<li><p>Dans la classe <code>Posters</code> ajoutez la méthode <code>searchTermChanged(String oldValue)</code>.</p>
 
-<blockquote>
-<p><strong><a href="img/explain.png" target="_blank"><img src="img/explain.png" alt="image" style="max-width:100%;"></a> Notes :</strong>  </p>
+<blockquote><p><strong><img src="img/explain.png" alt="image" /> Notes :</strong><br/>
+- Cette méthode est appelée automatiquement lorsque la valeur de <code>searchTerm</code> est modifiée<br/>
+- <code>oldValue</code> contient la valeur précédente<br/>
+- Ce système est valable pour tous les attributs <code>@observable</code>d'un <code>PolymerElement</code>. Le nom de la méthode est <code>&lt;attrname&gt;Changed(E oldValue)</code> avec <code>E</code> étant du même type que l'attribut.  Il s'agit d'une manière élégante et facile d'être prévenu d'un changement de valeur d'un attribut observable.</p></blockquote></li>
+<li><p>Implémentez un système qui permette de filtrer les films mais seulement après un temps de 400 ms suite à la dernière frappe de l'utilisateur (un temps inférieur annule l'opération).</p>
 
-<ul>
-<li>Cette méthode est appelée automatiquement lorsque la valeur de <code>searchTerm</code> est modifiée<br>
-</li>
-<li>
-<code>oldValue</code> contient la valeur précédente<br>
-</li>
-<li>Ce système est valable pour tous les attributs <code>@observable</code>d'un <code>PolymerElement</code>. Le nom de la méthode est <code>&lt;attrname&gt;Changed(E oldValue)</code> avec <code>E</code> étant du même type que l'attribut.  Il s'agit d'une manière élégante et facile d'être prévenu d'un changement de valeur d'un attribut observable.<br>
-</li>
-</ul>
-</blockquote>
-</li>
-<li>
-<p>Implémentez un système qui permette de filtrer les films mais seulement après un temps de 400 ms suite à la dernière frappe de l'utilisateur (un temps inférieur annule l'opération).</p>
-
-<p><a href="img/tip.png" target="_blank"><img src="img/tip.png" alt="image" style="max-width:100%;"></a> Les éléments suivants vous seront utiles pour parvenir au résultat :  </p>
+<p><img src="img/tip.png" alt="image" /> Les éléments suivants vous seront utiles pour parvenir au résultat :</p>
 
 <ul>
-<li>Ajoutez un attribut observable <code>searchFilter</code><br>
-</li>
-<li>Utilisez ce nouvel attribut en paramètre de <code>filter</code> à la place de <code>searchTerm</code>
-</li>
-<li>Dans la méthode <code>searchTermChanged</code> implémentez un <code>Timer</code> qui au bout du temps indiqué, affectera la valeur de <code>searchTerm</code> à <code>searchFilter</code><br>
-</li>
+<li>Ajoutez un attribut observable <code>searchFilter</code></li>
+<li>Utilisez ce nouvel attribut en paramètre de <code>filter</code> à la place de <code>searchTerm</code></li>
+<li>Dans la méthode <code>searchTermChanged</code> implémentez un <code>Timer</code> qui au bout du temps indiqué, affectera la valeur de <code>searchTerm</code> à <code>searchFilter</code></li>
 <li>Pensez à annuler le timer si le terme change à nouveau avant que le Timer ne soit déclenché</li>
 </ul>
-<p><a href="https://api.dartlang.org/docs/channels/stable/latest/dart_async/Timer.html">Timer API</a><br><a href="https://www.dartlang.org/articles/io/">An Introduction to the dart:io Library</a></p>
-</li>
-</ol><h3>
-<a name="prochaine-user-story-" class="anchor" href="#prochaine-user-story-"><span class="octicon octicon-link"></span></a><a href="file:///home/ruizb/dart-flight-school/movie-board/docs/user-story-4-1.html">Prochaine user-story &gt;&gt;&gt;</a>
-</h3></body></html>
+
+
+<p><a href="https://api.dartlang.org/docs/channels/stable/latest/dart_async/Timer.html">Timer API</a></p></li>
+</ol>
+
+
+<h3><a href="user-story-4-1.md">Prochaine user-story >>></a></h3>
+</body>
+</html>
