@@ -92,14 +92,6 @@
    - Un seul paramètre de type `String` qui contient la valeur du terme à chercher  
    - Retourne une fonction qui filtre une liste de `Movie` 
    
-   ```
-   filter(String term) { 
-     var fct = (List<Movie> m) {
-       return term.isNotEmpty ? m.where((Movie m) => m.title.toLowerCase().contains(searchTerm.toLowerCase())) : m;
-     };
-     return fct;
-   }
-   ```
    *Essayez d'écrire cette méthode sur une seule ligne.*
    
    > **![image](img/explain.png)Explications :**  
@@ -139,14 +131,10 @@
    > - C'est bien `on-click` qui est utilisé et non `onClick` (cette dernière correspondant à un appel JavaScript, vous aurez d'ailleurs un warning si vous utilisez la dernière forme)  
    > - Le nom contenu dans la Polymer expression correspond au nom de la méthode qui sera appelée lors du clic sur le lien  
    > - L'attribut `data-field`, sert à ajouter un paramètre, ce dernier sera interprété afin de connaitre sur quel champ l'utilisateur désire effectuer le tri (une autre solution aurait consisté à définir 3 méthodes différentes: `sortByTitle`, `sortByVote`, `sortByFavorite`)
- 
+  
 4. Dans la classe `Posters`, ajoutez 2 attributs observable :  
-
-
-   - `sortField` de type `String` (initialisé avec la valeur 'default')
-   
-   - `sortAscending` de type `bool` (initialisé avec la valeur `true`)
-
+   - `sortField` de type `String` (initialisé avec la valeur `default`)  
+   - `sortAscending` de type `bool` (initialisé avec la valeur `true`)  
    
 5. Dans la classe `Posters`, créez la méthode qui recevra les clics sur les liens :   
    
@@ -246,7 +234,6 @@ Lorsque vous avez implémenté le filtre vous avez dû remarquer que, pour quasi
    - Pensez à annuler le timer si le terme change à nouveau avant que le Timer ne soit déclenché
    
    [Timer API](https://api.dartlang.org/docs/channels/stable/latest/dart_async/Timer.html)  
-   [An Introduction to the dart:io Library](https://www.dartlang.org/articles/io/)
    
    
  

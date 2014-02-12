@@ -77,10 +77,6 @@ packages:
     description: template_binding
     source: hosted
     version: "0.9.1"
-  unittest:
-    description: unittest
-    source: hosted
-    version: "0.9.3"
   unmodifiable_collection:
     description: unmodifiable_collection
     source: hosted
