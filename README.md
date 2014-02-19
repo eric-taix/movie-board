@@ -45,7 +45,7 @@ Qu'allez-vous apprendre dans ce codelab ?
 *   Comment écrire un Web-Component avec Polymer  
 *   Comment est organisé une application Dart  
 *   Comment décoder un flux JSON    
-*   Comment utiliser les Fufure    
+*   Comment utiliser les Future    
 *   Comment écrire du code fonctionnel    
 *   Comment utiliser le localstorage du navigateur  
   
