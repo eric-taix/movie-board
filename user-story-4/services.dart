@@ -31,24 +31,29 @@ class InMemoryMovieService implements MovieService {
 
 class HttpMovieService implements MovieService {
   
-  List<Movie> _movies;
+  Completer<List<Movie>> _movieCompleter = new Completer();
   
-  Future<List<Movie>> getAllMovies() {
-    if (_movies == null) {
-      Completer completer = new Completer();
-      HttpRequest.getString('../common/json/all.json').then(JSON.decode).then((List ms) {
-        _movies = ms.map((Map map) => new Movie.fromJSON(map)).toList();
-        completer.complete(_movies);
-      });
-      return completer.future;
-    }
-    else {
-      return new Future(() => _movies);
-    }
+  HttpMovieService() {
+    HttpRequest.getString('../common/json/all.json').then(JSON.decode).then((List ms) {
+      _movieCompleter.complete(
+        ms.map((Map map) => new Movie.fromJSON(map)).toList()
+      );
+    });
   }
   
-  Future<List<Movie>> getMovies(String tag) => new Future(() => _movies.where((Movie m) => m.tag == tag).toList());
-  Future<List<Movie>> getFavorites() => new Future(() => _movies.where((Movie m) => m.favorite).toList());
+  Future<List<Movie>> getAllMovies() => _movieCompleter.future;
+  
+  Future<List<Movie>> getMovies(String tag) { //=> new Future(() => _movies.where((Movie m) => m.tag == tag).toList());
+    Completer<List<Movie>> completer = new Completer();
+    _movieCompleter.future.then((List<Movie> ml) => completer.complete(ml.where((Movie m) => m.tag == tag).toList()));
+    return completer.future;
+  }
+  
+  Future<List<Movie>> getFavorites() { //=> new Future(() => _movies.where((Movie m) => m.favorite).toList());
+    Completer<List<Movie>> completer = new Completer();
+    _movieCompleter.future.then((List<Movie> ml) => completer.complete(ml.where((Movie m) => m.favorite).toList()));
+    return completer.future;
+  }
 }
 
 
