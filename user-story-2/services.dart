@@ -25,21 +25,32 @@ class InMemoryMovieService implements MovieService {
 
 class HttpMovieService implements MovieService {
   
-  List<Movie> _movies;
+  Completer<List<Movie>> completer = new Completer();
   
-  Future<List<Movie>> getAllMovies() {
-    if (_movies == null) {
-      Completer completer = new Completer();
-      HttpRequest.getString('../common/json/all.json').then(JSON.decode).then((List ms) {
-        _movies = ms.map((Map map) => new Movie.fromJSON(map)).toList();
-        completer.complete(_movies);
-      });
-      return completer.future;
-    }
-    else {
-      return new Future(() => _movies);
-    }
+  HttpMovieService() {
+    HttpRequest.getString('../common/json/all.json').then(JSON.decode).then((List ms) {
+      completer.complete(
+        ms.map((Map map) => new Movie.fromJSON(map)).toList()
+      );
+    });
   }
+  
+  Future<List<Movie>> getAllMovies() => completer.future;
+  
+  /*
+   * Lazy version
+   *
+  Future<List<Movie>> getAllMovies() {
+    if (!completer.isCompleted) {
+      HttpRequest.getString('../common/json/all.json').then(JSON.decode).then((List ms) {
+        completer.complete(
+            ms.map((Map map) => new Movie.fromJSON(map)).toList()
+        );
+      });
+    }
+    return completer.future;
+  }
+  */
 }
 
 
